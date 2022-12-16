@@ -4,12 +4,16 @@ URL del repositorio: https://github.com/1022FSNSANCN02ARED/grupo-07.git
 5 sitios de referencia:
 Compra GAMER
 https://compragamer.com/armatupc?tipo=26
+
 MAXIMUS gaming
 https://www.maximus.com.ar/
+
 NVIDIA
 https://www.nvidia.com/es-la/geforce/campaigns/holiday-deals/?&ncid=pa-srch-goog-200997=&cid=se0004_pa-srch-goog_es-la#QVI=
+
 Venex
 https://www.venex.com.ar/
+
 FULL H4RD
 https://www.fullh4rd.com.ar/armatupc
 
