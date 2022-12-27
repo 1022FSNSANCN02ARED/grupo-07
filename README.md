@@ -33,4 +33,4 @@ Paola Gúzman: Mi nombre es Paola Gúzman, soy licenciada en RRHH, y mamá de do
 María Elena: Soy María Elena, me dicen Male, tengo 36 años. Diseñadora grafica, Fotógrafa y Profe. Fan del mate amargo, la música y tejer. Y siempre existe la posibilidad de estar aprendiendo algo nuevo, sumando conocimientos.
 
 Descripción:
-Nuestro sitio web está orientado totalmente a la venta de insumo de hardware, dispositivos externos, ya sea para clientes casuales, trabajadores y/o jugadores de todas las edades, ofreciendo soporte técnico, asistencia para el armado de equipos informáticos, seguimiento, sistema de usuarios, suscripción, para estar al tanto de ofertas e información referente a lo último en dispositivos tecnológicos.
+Nuestro sitio web se está orientado totalmente a la venta de insumo de hardware, dispositivos externos, ya sea para clientes casuales, trabajadores y/o jugadores de todas las edades, ofreciendo soporte técnico, asistencia para el armado de equipos informáticos, seguimiento, sistema de usuarios, suscripción, para estar al tanto de ofertas e información referente a lo último en dispositivos tecnológicos.
