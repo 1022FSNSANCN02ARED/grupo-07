@@ -1,4 +1,5 @@
 # grupo-07
+
 URL del repositorio: https://github.com/1022FSNSANCN02ARED/grupo-07.git
 
 5 sitios de referencia:
@@ -27,10 +28,9 @@ Facundo Yavícoli: Mi nombre es Facundo Yavícoli, tengo 22 años, me gradué de
 
 Martina Schaller: Me llamo Martina Schaller, tengo 19 años y actualmente estoy cursando la tecnicatura de programacion en la UTN. Mi meta es trabajar de programador web, y a su vez tratar de tener algo paralelo referente al hardware.
 
-Paola Gúzman: Mi nombre es Paola Gúzman, soy licenciada en RRHH,  y mamá de dos hermosos niños. Actualmente ama de casa, y dedicada full time, al aprendizaje de la programación.
+Paola Gúzman: Mi nombre es Paola Gúzman, soy licenciada en RRHH, y mamá de dos hermosos niños. Actualmente ama de casa, y dedicada full time, al aprendizaje de la programación.
 
 María Elena: Soy María Elena, me dicen Male, tengo 36 años. Diseñadora grafica, Fotógrafa y Profe. Fan del mate amargo, la música y tejer. Y siempre existe la posibilidad de estar aprendiendo algo nuevo, sumando conocimientos.
 
-Descripción: 
-Nuestro sitio web se está orientado totalmente a la venta de insumo de hardware, dispositivos externos, ya sea para clientes casuales, trabajadores y/o jugadores de todas las edades, ofreciendo soporte técnico, asistencia para el armado de equipos informáticos, seguimiento, sistema de usuarios, suscripción, para estar al tanto de ofertas e información referente a lo último en dispositivos tecnológicos.   
- 
+Descripción:
+Nuestro sitio web está orientado totalmente a la venta de insumo de hardware, dispositivos externos, ya sea para clientes casuales, trabajadores y/o jugadores de todas las edades, ofreciendo soporte técnico, asistencia para el armado de equipos informáticos, seguimiento, sistema de usuarios, suscripción, para estar al tanto de ofertas e información referente a lo último en dispositivos tecnológicos.
