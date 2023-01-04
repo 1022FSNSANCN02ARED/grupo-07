@@ -5,9 +5,6 @@ app.listen(3001, () => {
   console.log("Funcionando");
 });
 
-const jspath = path.join(__dirname, "./script");
-app.use(express.static(jspath));
-
 const publicpath = path.join(__dirname, "./public");
 app.use(express.static(publicpath));
 
