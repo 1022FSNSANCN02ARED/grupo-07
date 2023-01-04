@@ -4,11 +4,17 @@ const app = express();
 app.listen(3001, () => {
   console.log("Funcionando");
 });
+
+const jspath = path.join(__dirname, "./script");
+app.use(express.static(jspath));
+
 const publicpath = path.join(__dirname, "./public");
 app.use(express.static(publicpath));
+
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "views/home.html"));
+  res.sendFile(path.join(__dirname, "views/index.html"));
 });
+
 app.get("/detalle", (req, res) => {
   res.sendFile(path.join(__dirname, "views/detalle.html"));
 });
