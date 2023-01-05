@@ -21,6 +21,7 @@ Menos de:
 •	Esperar a que se nos acumulen las cosas
 
 Dejar de hacer:
+
 •	Esperar a último momento
 
 
