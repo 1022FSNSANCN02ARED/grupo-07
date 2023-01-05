@@ -38,23 +38,5 @@ Descripción:
 Nuestro sitio web se está orientado totalmente a la venta de insumo de hardware, dispositivos externos, ya sea para clientes casuales, trabajadores y/o jugadores de todas las edades, ofreciendo soporte técnico, asistencia para el armado de equipos informáticos, seguimiento, sistema de usuarios, suscripción, para estar al tanto de ofertas e información referente a lo último en dispositivos tecnológicos.
 
 
-Sprint 2:
-Metodo estrella de mar
-Comenzar a hacer: 
-•	Juntas obligatorias semanales 
-•	Juntas semanales opcionales
-Más de:
-•	Tener iniciativa 
-•	Proponer cosas
-•	Organización
-Seguir haciendo:
-•	Seguir buscando inspiración e ideas
-•	Trabajar en equipo
-Menos de:
-•	Esperar a que se nos acumulen las cosas
-
-Dejar de hacer:
-•	Esperar a último momento
-
 
 Tablero de trabajo: https://trello.com/b/1altuBtQ/equipo-7-avance
