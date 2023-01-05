@@ -23,6 +23,3 @@ Menos de:
 Dejar de hacer:
 
 •	Esperar a último momento
-
-
-Tablero de trabajo: https://trello.com/b/1altuBtQ/equipo-7-avance
