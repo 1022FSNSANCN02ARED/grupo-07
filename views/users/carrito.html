@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="carrito.html">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <title>Carrito de Compras</title>
+</head>
+<body>
+    <header>
+        <div class="bg-grey">
+            <div class="buscador">
+                <input type="text" class="barra" placeholder="Buscar..." />
+                <button class="icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+                
+            </div>
+        </div>
+
+    </header>
+    <h2 class="titulo">Carrito de compras</h2>
+    <div class="detalle-producto">
+        <div>
+            <img class="img-monitor" src="img/tecno-monitor-LCD.jpg" alt=""> 
+            <h3 class="descripcion-img">
+                MONITOR ACER LED 21.5'' <br>
+                K222HQL BD DVI+A2
+            </h3>
+            <p class="p-img">$24600</p>
+            <img src="img/eliminar.png"  class="tacho" width="20px">
+            <div class="cantidad">
+                <button type="button">-</button>
+                <input min="1" max="10" type="text" class="cantidadCarrito"> 
+                <button type="button">+</button>
+            </div>
+            
+        </div>
+
+        <div class="">
+            <img src="img/auriculareshyperx.jpeg" class="img-auriculares" alt="">
+            <h3 class="descripcion-img-2">AURICULAR HYPERX CLOUD <br> STINGER CORE / DTS X - NEGRO Y ROJO</h3>
+            <p class="p-img-2">$9800</p>
+            <div class="cantidad-2">
+                <button type="button">-</button>
+                <input min="1" max="10" type="text" class="cantidadCarrito"> 
+                <button type="button">+</button>
+            </div>
+            <img src="img/eliminar.png"  class="tacho-2" width="20px">
+        </div>
+    </div>   
+    <div class="resumen-pedido">
+        <h2 class="titulo-pedido">Resumen De Pedido:</h2>
+        <h4 class="descuento">Desea aplicar un descuento?</h4>
+        <input type="text" class="descuento-input" placeholder="CODIGO DE DESCUENTO">
+        <button class="button-descuento">APLICAR</button>
+        <h4 class="descuento">SUBTOTAL:</h4>
+        <p class="p-resumen">$34400</p>
+        <hr><br>
+        <h2 class="descuento">TOTAL:</h2>
+        <p class="p-resumen">$34400</p>
+        
+    </div>
+    <button class="button-eliminar"><ion-icon name="trash-outline" class="icon"></ion-icon></button>
+    <button class="button-continuar">CONTINUAR</button>
+    
+    <footer>
+
+    </footer>
+</body>
+</html>
