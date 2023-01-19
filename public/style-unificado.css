@@ -276,3 +276,153 @@ footer{
 }
 
 /*-----------------------------------------------------------------------Home-------------------------------------------------*/
+/*Titulo de la pagina*/
+.titulo{
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    margin: 60px;
+}
+.contenedor-carrito{
+    width: 90%;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1,auto);
+}
+.contenedor-carrito div{
+    background-color:#fff ;
+    color: black;
+    border-radius: 4px;
+    box-shadow:3px 3px 5px  #ec268f ;
+}
+.detalle-producto{
+    grid-column: 1/3;
+    height: 400px;
+}
+.producto{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+.resumen-pedido{
+    grid-column: 3/3;
+    height: 300px;
+}
+/*productos*/
+.img-monitor{
+    z-index: 5;
+    width: 18%;
+    padding: 5px;
+    margin: 10px;
+}
+.img-auriculares{
+    z-index: 5;
+    width: 15%;
+    padding: 5px;
+    margin: 10px;
+    margin-right: 25px;
+}
+/*descripcion del producto*/
+.descripcion-img{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin: 40px;
+}
+/*Eliminar el producto solo*/
+.tacho{
+    width: 20px;
+    height: 20px;
+    margin: 40px;
+}
+/*Para aumentar o disminuir la cant. de productos*/
+.cantidad{
+    display: flex;
+    justify-content: center;
+    margin-left:60px ;
+}
+.cantidad button{
+    width: 20px;
+    margin-top: 40px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    color: black;
+    background-color: rgba(27, 36, 43, 0.792);
+}
+.cantidad input{
+    width: 30px;
+    height: 30px;
+    margin-top: 40px ;
+}
+.contenedor-pedido{
+    margin: 20px;
+}
+.titulo-pedido{
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
+.descuento{
+    font-size: 15px;
+}
+.descuento-input{
+    border: solid 1px;
+    border-radius: 4px;
+    width: 70%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+/*Botones provisorios*/
+.button-descuento{
+    color:white;
+    background-color: rgb(118, 118, 241);
+    padding: 5px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+}
+.button-descuento:hover{
+    background-color: blue;
+    box-shadow: 0px 0px 5px black;
+}
+.botones{
+    display: flex;
+    justify-content: flex-end;
+    margin-top:50px ;
+}
+.button-eliminar{
+    background-color: rgba(248, 76, 76, 0.908);
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.button-eliminar:hover{
+    background-color:red;
+    box-shadow: 0px 0px 5px white;
+}
+.button-continuar{
+    background-color: rgb(118, 118, 241);
+    padding: 15px;
+    border: none;
+    color:white;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.button-continuar:hover{
+    background-color: blue;
+}
+/*----------------------------------------------------------------------Carrito-------------------------------------------------*/
