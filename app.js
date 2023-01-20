@@ -43,3 +43,21 @@ app.get("/carrito", (req, res) => {
 app.get("/carga", (req, res) => {
   res.sendFile(path.join(__dirname, "views/users/carga.html"));
 });
+
+//EJS  --------------------------------------------------
+//Configuracón EJS
+app.set('view engine','ejs');
+
+//Ubicación
+app.set('viwes','./partials');
+
+//motor EJS
+app.sett('view engine', 'ejs');
+
+//res.render
+app.get('/',(req,res)=>{
+    res.reder('index')
+});
+
+//recursos estáticos
+app.use(express.static('public'));
