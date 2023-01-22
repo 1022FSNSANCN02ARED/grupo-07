@@ -52,7 +52,7 @@ app.set('view engine','ejs');
 app.set('viwes','./partials');
 
 //motor EJS
-app.sett('view engine', 'ejs');
+app.set('view engine', 'ejs');
 
 //res.render
 app.get('/',(req,res)=>{
