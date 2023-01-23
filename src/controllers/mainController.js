@@ -1,25 +1,25 @@
 const path = require("path");
 
-const controller = {
+module.exports = {
   home: (req, res) => {
-    res.render("index");
+    res.render("users/index");
   },
   car: (req, res) => {
-    res.render("pages/carrito");
+    res.render("users/carrito");
   },
   catalogue: (req, res) => {
-    res.render("pages/catalogo");
+    res.render("users/catalogo");
   },
   login: (req, res) => {
-    res.render("pages/login");
+    res.render("users/login");
   },
   product: (req, res) => {
-    res.render("pages/product");
+    res.render("users/product");
   },
   register: (req, res) => {
-    res.render("pages/register");
+    res.render("users/register");
   },
   turns: (req, res) => {
-    res.render("pages/turns");
+    res.render("users/turns");
   },
 };
