@@ -71,6 +71,9 @@ blanco  #ffffff
   
   .text-right {
     text-align: right; }
+
+  .text-justify {
+    text-align: justify;  }
   
 
 /*Body*/
@@ -426,3 +429,145 @@ footer{
     background-color: blue;
 }
 /*----------------------------------------------------------------------Carrito-------------------------------------------------*/
+
+.ancho{
+    width: 100%;
+  }
+
+.align{
+    align-items: center;
+  }
+
+.boxDetalle{
+    text-align: center;
+    justify-content: center;
+    background-color: #fff;
+    margin: 8px;
+    width: 25%;
+    color: #4d4d4d;
+    border-radius: 4px;
+    box-shadow:3px 3px 5px #777777;
+    margin: 7px;
+  }
+
+.blue{
+    color:blue;
+  }
+
+.button-number {
+    margin-left: 35px;
+    width: 40%;
+    margin-top: 10px;
+    padding: 5px;
+  }
+
+.button {
+    margin-left: 35px;
+    background-color: #ec268f;
+    padding: 10px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+.contenedorDetalle{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: justify;
+  flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    color: white;
+    justify-content: space-between;
+}
+
+.contenedor-art{
+    width: 25%;
+    margin: 10px auto;
+    background-color:#fff ;
+    color: black;
+    border-radius: 4px;
+    box-shadow:3px 3px 5px  #ec268f ;  
+}
+
+.cuotas {
+    border-top: 1px solid gray;
+    padding-top: 15px;
+    color: gray;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.float{
+  float:left;
+}
+
+.flex-direction{
+  flex-direction: row;
+}
+
+.green{
+    color: green;
+}
+
+.gray{
+    color:gray;
+}
+
+.garantia {
+    padding: 5px;
+    font-size: 20px;
+  }
+  
+.garantia-dias {
+    color: gray;
+    text-align: center;
+  }
+
+.imagen-producto {
+    margin-top: 30px;
+   width: 90%;
+   padding-left: 45px;
+}
+
+.opDiv{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.precio-anterior {
+    text-decoration: line-through;
+    text-align: center;
+    color: rgb(148, 148, 148);
+}
+
+.precio-principal {
+    color: #ec268f;
+    font-size: 75px;
+    text-align: center;
+}
+
+.precio-lista {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: rgb(148, 148, 148);
+}
+
+.stock-web {
+    color: #ec268f;
+    padding: 5px;
+    font-size: 20px;
+}
+  
+
+
+
