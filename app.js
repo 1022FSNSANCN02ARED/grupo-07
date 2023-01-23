@@ -16,7 +16,7 @@ app.use(express.static(publicpath));
 
 // Index/home
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "views/users/index.html"));
+  res.sendFile(path.join(__dirname, "views/users/index.ejs"));
 });
 
 // Detalle
@@ -46,18 +46,22 @@ app.get("/carga", (req, res) => {
 
 //EJS  --------------------------------------------------
 //Configuracón EJS
-app.set('view engine','ejs');
-
-//Ubicación
-app.set('viwes','./partials');
-
 //motor EJS
 app.set('view engine', 'ejs');
 
-//res.render
-app.get('/',(req,res)=>{
-    res.reder('index')
-});
+//Ubicación
+app.set('viwes',__dirname + ' /partials');
 
 //recursos estáticos
 app.use(express.static('public'));
+
+app.get('/',(req,res)=>{
+  //console.log(__dirname)
+  res.render("index",)
+})
+
+//res.render
+app.get('/',(req,res)=>{
+    res.render('index')
+});
+
