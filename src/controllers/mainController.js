@@ -4,7 +4,13 @@ module.exports = {
   home: (req, res) => {
     res.render("users/index");
   },
-  car: (req, res) => {
+  carga: (req, res) => {
+    res.render("users/carga");
+  },
+  Detalle: (req, res) => {
+    res.render("products/detalle");
+  },
+  carrito: (req, res) => {
     res.render("users/carrito");
   },
   catalogue: (req, res) => {
