@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100;400&display=swap');
 
+
+
 /*Tipografía general: open sans , variable: Light 300*/
 .font-gnr{
     font-family: 'Open Sans', sans-serif;
@@ -78,10 +80,11 @@ Blanco cremita #f7e3e4;
   .enlaces{
     text-decoration: none;
   }
-
+  
+/*------------Estructura basica-------------------*/
 /*Body*/
 body{
-
+    font-family: Lato-Light;
 }
 
 /*Header*/
