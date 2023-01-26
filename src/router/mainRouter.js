@@ -4,7 +4,7 @@ const router = Router();
 //index
 router.get("/", mainController.home);
 //Detalle
-router.get("/detalle", mainController.Detalle);
+router.get("/detalle", mainController.detalle);
 //login
 router.get("/login", mainController.login);
 //Register

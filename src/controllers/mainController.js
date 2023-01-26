@@ -7,7 +7,7 @@ module.exports = {
   carga: (req, res) => {
     res.render("users/carga");
   },
-  Detalle: (req, res) => {
+  detalle: (req, res) => {
     res.render("products/detalle");
   },
   carrito: (req, res) => {
