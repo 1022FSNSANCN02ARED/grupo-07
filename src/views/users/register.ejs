@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!--Include head-->
+        <%- include('../partials/head') %> 
+        <title>Argon | Register</title>
+</head>
+<body>
+    <header>
+        <div class="contenedorLogo">
+            <img src="/img/logo.png" alt="logo">
+        </div>
+        <div class="contenedorH1">
+            <h1>
+                Tech Argon
+            </h1>
+        </div>
+        <div class="contenedorMenu">
+            <span class="linea1 span"></span>
+            <span class="linea2 span"></span>
+            <span class="linea3 span"></span>
+        </div>
+    </header>
+    <div class="menuDesplegado">
+        <div class="contendorBuscador">
+            <img src="/img/busqueda.svg" alt="">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="contenedorLinks">
+         
+        </div>
+    </div>
+    
+    <section id="productos">
+
+        <div class="cajasProductos">
+            <div class="contenedorInfo">
+                <H3>REGISTRO</H3>
+                <form method="" action="">
+                    <br>
+                    Nombre:<input type="text" name="nombre">
+                    <br>
+                    Apellido:<input type="text" name="apellido">
+                    <br>
+                    Nickname:<input type="text" name="nick">
+                    <br>
+                    Email:<input type="text" name="email">
+                    <br>
+                    Contraseña:<input type="text" name="nick">
+                    <br>
+                    Fecha de nacimiento: <input type="date" name="fechanac">
+                    <br>
+                    Seleccione su país
+                    <br>
+                    <select id="pais" name="pais">
+                        <option value="arg">ARGENTINA</option>
+                        <option value="bra">BRASIL</option>
+                        <option value="chil">CHILE</option>
+                        <option value="uru">URUGUAY</option>
+                    </select>
+                    <br>
+                    Indique sexo:
+                    <br>
+                    Maculino: <input type="radio" name="masc">
+                    <br>
+                    Femenino: <input type="radio" name="masc">
+                    <br>
+                    Otro: <input type="radio" name="otro">
+                    <br>
+                    <input type="submit" value="CREAR CUENTA">
+                    <br>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <!--Include Footer-->
+<%- include('../partials/footer') %> 
+</footer>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
