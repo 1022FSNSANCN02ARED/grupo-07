@@ -123,61 +123,28 @@
       </div>
     </section>
     <section id="productos">
-      <div class="cajasProductos">
-        <div class="contenedorImgProducto">
-          <img src="img/producto.jpg" alt="producto" />
-        </div>
+        <% productos.forEach(producto => { %>
+        <a href="/detail/<%= producto.id %>  "
+          > 
+          <div class="contenedor">
+          <div class="contenedorImgProducto">
+            <img
+              src="<%= producto.imagen %> "
+              alt="producto"
+              class="imagen-producto"
+            />
+          </div>
+        </a>
         <div class="contenedorInfo">
-          <p>PRECIO : $13000</p>
-          <p>PERIFERICO : MOUSE</p>
-          <p>COLOR : ROJO</p>
-          <p>EN STOCK : SI</p>
+          <p>Nombre: <%= producto.nombre %></p>
+          <p>PRECIO :$ <%= producto.precio %></p>
+          <p>Marca :<%= producto.marca %></p>
+          <p>EN STOCK : <%= producto.stock %></p>
         </div>
       </div>
-      <div class="cajasProductos">
-        <div class="contenedorImgProducto">
-          <img src="img/producto.jpg" alt="producto" />
-        </div>
-        <div class="contenedorInfo">
-          <p>PRECIO : $13000</p>
-          <p>PERIFERICO : MOUSE</p>
-          <p>COLOR : ROJO</p>
-          <p>EN STOCK : SI</p>
-        </div>
-      </div>
-      <div class="cajasProductos">
-        <div class="contenedorImgProducto">
-          <img src="img/producto.jpg" alt="producto" />
-        </div>
-        <div class="contenedorInfo">
-          <p>PRECIO : $13000</p>
-          <p>PERIFERICO : MOUSE</p>
-          <p>COLOR : ROJO</p>
-          <p>EN STOCK : SI</p>
-        </div>
-      </div>
-      <div class="cajasProductos">
-        <div class="contenedorImgProducto">
-          <img src="img/producto.jpg" alt="producto" />
-        </div>
-        <div class="contenedorInfo">
-          <p>PRECIO : $13000</p>
-          <p>PERIFERICO : MOUSE</p>
-          <p>COLOR : ROJO</p>
-          <p>EN STOCK : SI</p>
-        </div>
-      </div>
-      <div class="cajasProductos">
-        <div class="contenedorImgProducto">
-          <img src="img/producto.jpg" alt="producto" />
-        </div>
-        <div class="contenedorInfo">
-          <p>PRECIO : $13000</p>
-          <p>PERIFERICO : MOUSE</p>
-          <p>COLOR : ROJO</p>
-          <p>EN STOCK : SI</p>
-        </div>
-      </div>
+    
+
+      <%})%>
     </section>
     <footer>
       <!--Include Footer-->
