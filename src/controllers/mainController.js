@@ -1,17 +1,19 @@
-const path = require("path");
+const productos = require("../data/productos");
 
 module.exports = {
   home: (req, res) => {
-    res.render("users/index");
+    res.render("users/index", { productos });
   },
-  carga: (req, res) => {
-    res.render("users/carga");
-  },
-  detalle: (req, res) => {
-    res.render("products/detalle");
+  detail: (req, res) => {
+    const id = req.params.id;
+    const producto = productos.find((producto) => producto.id == id);
+    res.render("products/detalle", { producto });
   },
   carrito: (req, res) => {
     res.render("users/carrito");
+  },
+  carga: (req, res) => {
+    res.render("users/carga");
   },
   catalogue: (req, res) => {
     res.render("users/catalogo");
