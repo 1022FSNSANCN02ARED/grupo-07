@@ -135,10 +135,9 @@ h1 {
   padding: 5px;
   font-size: 20px;
   border-top: solid 1px rgb(110, 109, 110);
-  color: white;
+
 }
-.garantia-dias {
-  color: white;
+.garantia-dias 
   text-align: center;
 }
 
@@ -149,7 +148,7 @@ h1 {
 }
 .description {
   font-size: 25px;
-  color: white;
+
   background-color: aqua;
   width: 20%;
 }
@@ -162,7 +161,6 @@ h1 {
 }
 .descripcion-producto {
   display: flex;
-  color: white;
   justify-content: space-between;
   border: solid 2px green;
 }
