@@ -45,13 +45,16 @@
        
     </header>
     <main>
-      <h1 class="titulo">Auricular Logitech G332 Gaming</h1>
-    
+      
+      <h1 class="titulo"><%=producto.nombre %>  <%= producto.marca %> </h1>
+     
+       </h1>
+      
     <main>
       <div class="container">
       <div class="img">
         <img
-          src="/img/Auriculares-logitech.jpg"
+          src="<%= producto.imagen %> "
           alt="imagen-producto"
           class="imagen-producto"
         />
@@ -59,12 +62,11 @@
       <div class="detalle-venta">
         
         
-          <h3 class="precio-anterior">$12.931</h3>
-          <h2 class="precio-principal">$ 11.573</h2>
+          
+          <h4 class="precio-principal">Precio:$ <%= producto.precio  %> </h4>
           <h6>Precio Especial</h6>
-          <h4 class="precio-lista">PRECIO LISTA:$16.434,28</h4>
           <p class="cuotas">
-            12 cuotas sin interes de $1369,52 a precio de lista
+          
           </p>
           <a href="#">ver cuotas</a>
 
@@ -84,41 +86,10 @@
          </div>
           <button type="submit" class="button">Agregar al Carrito</button>
       </div>
-    <h2 class="titulo-esp">Especificacion del producto</h2>
+  
     
-      <div class="General-producto text-right">
-        <h4>General</h4>
-        <p>Altura del producto ..... 172Mm</p>
-        <p>Ancho del producto ..... 81.7Mm</p>
-        <p>Profundidad del producto .....182Mm</p>
-        <p>Peso total .....280G</p>
-      </div>
-      <div class="conectividad-producto">
-        <h4>Conectividad</h4>
-        <p>Tipo de conexion ..... Cableado</p>
-        <p>Largo de cable ..... 2M</p>
-        <p>Tipo de conector ..... 3.5Mm</p>
-      </div>
-      <div class="audio-producto">
-        <h4>Audio</h4>
-        <p>Tipo ..... Envolvente</p>
-        <p>Canales ......7.1</p>
-        <p>Tamaño del driver ..... 50mm</p>
-        <p>Microfono ........Si</p>
-        <p>Frecuencia de respuesta ..... 20Hz 20 kHz</p>
-      </div>
-      <div class="compatibilidad-producto">
-        <h4>Compatibilidad</h4>
-        <p>
-          Tipos De Dispositivos ..... PC, Laptop, Nintendo Switch,Playstation
-          4, Xbox One, Tablet, Dispositivo Movil
-        </p>
-        <p>
-          Plataformas De Software Compatibles ..... Windows 7 O Superior, Mac,
-          Nintendo Switch, Play Station, Xbox
-        </p>
-      </div>
-    </div>
+      <h2>Descripción</h2>
+      <p><%= producto.nombre %> ndsjdjsdnsjdnsdsnsds </p>
   </section>
     </main>
     <footer>    

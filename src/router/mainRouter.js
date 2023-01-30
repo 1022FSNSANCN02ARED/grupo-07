@@ -1,10 +1,10 @@
 const { Router } = require("express");
 const mainController = require("../controllers/mainController");
 const router = Router();
-//index
+//index/
 router.get("/", mainController.home);
 //Detalle
-router.get("/detalle", mainController.detalle);
+router.get("/detail/:id", mainController.detail);
 //login
 router.get("/login", mainController.login);
 //Register
