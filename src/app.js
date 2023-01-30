@@ -3,9 +3,10 @@ const express = require("express");
 const path = require("path");
 const mainRouter = require("./router/mainRouter");
 
+//Ejecución de express
 const app = express();
 
-// Puerto
+// Levantar el servidor
 app.listen(3001, () => {
   console.log("Funcionando");
 });
