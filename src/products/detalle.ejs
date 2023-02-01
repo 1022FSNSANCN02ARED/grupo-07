@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Include head-->
+    <%- include('../partials/head') %>
+  </head>
+
+<body class="font-gnr">
+  <header class="font-gnr">
+    <nav >
+       
+      <div class="nav">
+               
+        <ul>
+           <li><i class="fa-sharp fa-solid fa-truck-fast color-g  pd-5"></i>Seguir mi pedido UPS</li>
+           <li><i class="fa-solid fa-file-lines color-g  pd-5"></i>Subir comprobantes</li>
+           <li><i class="fa-solid fa-file-lines color-g  pd-5"></i>RMA Garantia</li>
+           <li><i class="fa-regular fa-circle-question color-g  pd-5"></i>Ayuda</li>
+          </ul>
+     
+     
+         </nav> 
+    
+      <div class="buscador">
+      
+        <form action="/">
+          
+           <input class="barra-buscar"
+            type="text"
+            name="search"
+            placeholder="Buscá productos por nombre, marcas o palabras clave"
+          />
+          <button type="submit" class="button-glass" >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+            <div class="icon-header">
+<i class="fa-regular fa-circle-user  usuario"></i>
+<p class="usuario-p">Usuario</p>
+<i class="fa-solid fa-cart-shopping cart-shop"></i>
+            </div>     
+          
+        </div>   
+          </div>
+       
+    </header>
+    <main>
+      
+      <h1 class="titulo"><%=producto.nombre %>  <%= producto.marca %> </h1>
+     
+       </h1>
+      
+    <main>
+      <div class="container">
+      <div class="img">
+        <img
+          src="<%= producto.imagen %> "
+          alt="imagen-producto"
+          class="imagen-producto"
+        />
+      </div>
+      <div class="detalle-venta">
+        
+        
+          
+          <h4 class="precio-principal">Precio:$ <%= producto.precio  %> </h4>
+          <h6>Precio Especial</h6>
+          <p class="cuotas">
+          
+          </p>
+          <a href="#">ver cuotas</a>
+
+          <h4 class="stock-web">
+            <i class="fa-regular fa-circle-check"></i> Stock Alto en la web
+          </h4>
+          <p class="ph4">Solo para ventas web</p>
+
+          <p class="envios">
+            <i class="fa-solid fa-truck-fast"></i>Envios a todo el pais
+          </p>
+          <h4 class="garantia"><i class="fa-solid fa-shield"></i>Garantia</h4>
+          <p class="garantia-dias">180 Dias</p>
+          <div class="number-b">
+          <input type="number" id="tentacles" name="tentacles"
+       min="1" max="100" class="button-number">
+         </div>
+          <button type="submit" class="button">Agregar al Carrito</button>
+      </div>
+  
+    
+      <h2>Descripción</h2>
+      <p><%= producto.nombre %> ndsjdjsdnsjdnsdsnsds </p>
+  </section>
+    </main>
+    <footer>    
+       <!--Include Footer-->
+      <%- include('../partials/footer') %> 
+    </footer>
+  </body>
+</html>

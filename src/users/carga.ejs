@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!--Include head-->
+        <%- include('../partials/head') %> 
+        <title>Argon | Carga</title>
+</head>
+<body>
+    <header>
+        <!--Include header-->
+     <%- include('../partials/header') %>
+     </header>
+        <!--Include menú-->
+     <%- include('../partials/menu') %>
+    <section class="container">
+        <form action="" method="POST">
+            <label for="producto">Nombre del producto</label>
+            <input type="text" placeholder="Nombre del producto" id="nomb">
+
+            <label for="descripción">Descrpción</label>
+            <input type="text" placeholder="Descripción" id="desc">
+
+            <label for="imagen">Suba una imagen</label>
+            <input type="file" placeholder="Imagen" id="img">
+
+            <label for="categoria">Categoria</label>
+            <input type="text" placeholder="Categoria" id="catg">
+
+            <label for="caracteristicas">características</label>
+            <input type="text" placeholder="Colores, tamaños, talles, etc." id="carac">
+
+            <label for="precio">Precio</label>
+            <input type="text" placeholder="precio">
+            <button>Borrar</button>
+            <button>Cargar</button>
+        </form>
+    </section>
+    <footer>
+            <!--Include Footer-->
+    <%- include('../partials/footer') %> 
+    </footer>
+</body>
+</html>
