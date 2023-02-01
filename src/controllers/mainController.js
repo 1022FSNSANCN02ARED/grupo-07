@@ -2,7 +2,7 @@ const productos = require("../data/productos");
 
 module.exports = {
   home: (req, res) => {
-    res.render("users/index", { productos });
+    res.render("users/home", { productos });
   },
   detail: (req, res) => {
     const id = req.params.id;

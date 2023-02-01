@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const mainController = require("../controllers/mainController");
 const router = Router();
-//index/
+//Home
 router.get("/", mainController.home);
 //Detalle
 router.get("/detail/:id", mainController.detail);
