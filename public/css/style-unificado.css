@@ -3,6 +3,7 @@
 /*Colores*/
 :root {
   --black: #000000ff;
+  --dark:#060606;
   --magenta: #dc1780;
   --magenta-dark: #660846;
   --white:  #ffffffff;
@@ -210,10 +211,10 @@ footer {
 }
 
 /*Desplegable*/
-.span {
+.span{
   width: 100%;
   height: 2px;
-  background-color: var(--black);
+  background-color: var(--magenta);
   transform-origin: 0px;
   transition: 0.5s;
 }
@@ -228,7 +229,7 @@ footer {
   transform: rotate(-45deg);
 }
 .menuDesplegado {
-  background-color: var(--Very-light-gray);
+  background-color: var(--black);
   width: 100%;
   height: 85vh;
   transform: translateX(-100%);
@@ -237,20 +238,26 @@ footer {
   z-index: 10;
 }
 .desplegado {
-  transform: translateX(0);
+  transform: translateX(0%);
 }
 .contendorBuscador {
-  width: 100%;
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 35%;
   height: max-content;
-  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--black) 2px solid;
+  border-radius: 20px;
+  background-color: var(--white);
 }
 .contendorBuscador img {
   width: 1.4rem;
   height: 1.4rem;
 }
 .contendorBuscador input {
-  border: 1px solid var(--black);
-  border-radius: 0.5rem;
+  border:none;
 }
 .contendorBuscador input::placeholder {
   text-align: center;
@@ -260,14 +267,13 @@ footer {
   height: 50vh;
   display: flex;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
-  margin-left: 2.8rem;
 }
 
 .contenedorLinks a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--Light-grayish-red);
 }
 .contenedorSpan {
   width: max-content;
@@ -279,7 +285,7 @@ footer {
 .contenedorSpan span {
   width: 100%;
   height: 2px;
-  background-color: var(--black);
+  background-color: var(--magenta);
   transition: 0.1s;
   position: absolute;
   bottom: 40%;
@@ -295,12 +301,9 @@ footer {
 .carrusel {
   width: 100%;
   height: 30vh;
-  overflow: hidden;
+  
 }
-.carousel {
-  width: 100%;
-  height: 100%;
-}
+
 
 /*opciones hogar, trabajo, gamer*/
 #Opciones {
@@ -536,6 +539,12 @@ footer {
   width: 40%;
   margin-top: 10px;
   padding: 5px;
+}
+
+.lupa{
+  border : none;
+  color: var(--black);
+  background-color: var(--white);
 }
 
 .button {
