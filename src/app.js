@@ -2,8 +2,6 @@
 const express = require("express");
 const path = require("path");
 const mainRouter = require("./routers/main-router");
-// const productsRouter = require("./router/products-router");
-// const usersRouter = require("./router/users-router");
 
 //Ejecución de express
 const app = express();
@@ -27,5 +25,3 @@ app.set("views", path.join(__dirname, "/views"));
 
 //Ejecutar archivo mainRouter
 app.use(mainRouter);
-// app.use(productsRouter);
-// app.use(usersRouter);
