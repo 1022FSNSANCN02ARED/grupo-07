@@ -1,0 +1,49 @@
+[
+
+  {
+    "Identificador": 1,
+    "Nombre": "Facundo",
+    "Apellido": "Yavicoli",
+    "Email": "facuyavicoli@hotmail.com",
+    "Contraseña": "fyavicoli111",
+    "Categoría": "DUEÑO",
+    "Imagen": "imagen"
+  },
+  {
+    "Identificador": 2,
+    "Nombre": "Martina",
+    "Apellido": "Schaller",
+    "Email": "xxxxx@hotmail.com",
+    "Contraseña": "mschaller111",
+    "Categoría": "DUEÑO",
+    "Imagen": "imagen"
+  },
+  {
+    "Identificador": 3,
+    "Nombre": "Luciano",
+    "Apellido": "Voltattorni",
+    "Email": "xxxxx@hotmail.com",
+    "Contraseña": "lvoltattorni111",
+    "Categoría": "DUEÑO",
+    "Imagen": "imagen"
+  },
+  {
+    "Identificador": 4,
+    "Nombre": "Paola",
+    "Apellido": "Guzman",
+    "Email": "xxxxx@hotmail.com",
+    "Contraseña": "pguzman111",
+    "Categoría": "DUEÑO",
+    "Imagen": "imagen"
+  },
+  {
+    "Identificador": 5,
+    "Nombre": "Maria",
+    "Apellido": "Elena",
+    "Email": "xxxxx@hotmail.com",
+    "Contraseña": "melena111",
+    "Categoría": "DUEÑO",
+    "Imagen": "imagen"
+  }
+  
+]
