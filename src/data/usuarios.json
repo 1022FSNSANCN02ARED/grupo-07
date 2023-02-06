@@ -7,7 +7,9 @@
     "Email": "facuyavicoli@hotmail.com",
     "Contraseña": "fyavicoli111",
     "Categoría": "DUEÑO",
-    "Imagen": "imagen"
+    "Imagen": "imagen",
+    "Modprod":true,
+    "Accesototal":true
   },
   {
     "Identificador": 2,
@@ -16,7 +18,9 @@
     "Email": "xxxxx@hotmail.com",
     "Contraseña": "mschaller111",
     "Categoría": "DUEÑO",
-    "Imagen": "imagen"
+    "Imagen": "imagen",
+    "Modprod":true,
+    "Accesototal":true
   },
   {
     "Identificador": 3,
@@ -25,7 +29,9 @@
     "Email": "xxxxx@hotmail.com",
     "Contraseña": "lvoltattorni111",
     "Categoría": "DUEÑO",
-    "Imagen": "imagen"
+    "Imagen": "imagen",
+    "Modprod":true,
+    "Accesototal":true
   },
   {
     "Identificador": 4,
@@ -34,7 +40,9 @@
     "Email": "xxxxx@hotmail.com",
     "Contraseña": "pguzman111",
     "Categoría": "DUEÑO",
-    "Imagen": "imagen"
+    "Imagen": "imagen",
+    "Modprod":true,
+    "Accesototal":true
   },
   {
     "Identificador": 5,
@@ -43,7 +51,31 @@
     "Email": "xxxxx@hotmail.com",
     "Contraseña": "melena111",
     "Categoría": "DUEÑO",
-    "Imagen": "imagen"
+    "Imagen": "imagen",
+    "Modprod":true,
+    "Accesototal":true
+  },
+  {
+    "Identificador": 6,
+    "Nombre": "Benito",
+    "Apellido": "Benitez",
+    "Email": "xxxxx@hotmail.com",
+    "Contraseña": "bbenitez111",
+    "Categoría": "CLIENTE",
+    "Imagen": "imagen",
+    "Modprod":false,
+    "Accesototal":false
+  },
+  {
+    "Identificador": 7,
+    "Nombre": "Rodrigo ",
+    "Apellido": "Rodriguez",
+    "Email": "xxxxx@hotmail.com",
+    "Contraseña": "rrodriguez111",
+    "Categoría": "EMPLEADO",
+    "Imagen": "imagen",
+    "Modprod":true,
+    "Accesototal":false
   }
   
 ]
