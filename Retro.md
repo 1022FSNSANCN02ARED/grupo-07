@@ -46,4 +46,26 @@ Menos de:
 Dejar de hacer:
 •	No cumplir con la fecha estimada del Sprint
 
+Retro 4 --------------------------------------------------------------------------------------------------------------------------------------------------
+Comenzar a hacer:
+
+• Investigar más por nuestra cuenta
+
+Más de:
+
+•	Marcar en Trello apenas se realiza una actividad puntual
+•	Comunicar avance en las actividades 
+
+Seguir haciendo:
+
+• Definir fechas de entrega parciales 
+• Seguir con las reuniones con normalidad
+
+Menos de:
+
+• Esperar a que se nos acumulen las cosas
+
+Dejar de hacer:
+
+• Esperar a último momento
 
