@@ -2,6 +2,7 @@
 const express = require("express");
 const path = require("path");
 const mainRouter = require("./routers/main-router");
+const multer = require('multer')
 
 //Ejecución de express
 const app = express();
