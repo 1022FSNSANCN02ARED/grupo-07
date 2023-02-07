@@ -27,6 +27,7 @@ Dejar de hacer:
 
 
 Retro Sprint 3 --------------------------------------------------------------------------------------------------------------------------------------------------
+
 Comenzar a hacer:
 •	Definir fechas limites para entregar partes del sprint
 
