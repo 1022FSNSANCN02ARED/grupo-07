@@ -2,7 +2,7 @@
 const express = require("express");
 const path = require("path");
 const mainRouter = require("./routers/main-router");
-const multer = require('multer')
+const methodOverride = require("method-override");
 
 //Ejecución de express
 const app = express();
@@ -15,6 +15,11 @@ app.listen(3001, () => {
 // Ruta a archivos public
 const publicpath = path.join(__dirname, "../public");
 app.use(express.static(publicpath));
+
+// middlewares
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(methodOverride("_method"));
 
 //EJS  --------------------------------------------------
 //Configuracón EJS
