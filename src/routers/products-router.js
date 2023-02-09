@@ -14,8 +14,9 @@ const storage = multer.diskStorage({
     } 
   })
 
+
 // Middleware Multer
-const uploadFile = multer({ storage });
+const upload = multer({ storage });
 
 const productsController = require("../controllers/products-controller");
 
