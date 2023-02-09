@@ -14,25 +14,26 @@
         <!--Include menu-->
         <%- include('../partials/menu') %>
       </div>
-    <section class="container">
+    <section class="contenedorForm">
         <form action="" method="POST">
+            <h4>Carga de productos</h4>
             <label for="producto">Nombre del producto</label>
-            <input type="text" placeholder="Nombre del producto" id="nomb">
+            <input class="w-100" type="text" placeholder="Nombre del producto" name="desc" id="nomb">
 
-            <label for="descripción">Descrpción</label>
-            <input type="text" placeholder="Descripción" id="desc">
+            <label  for="descripción">Descrpción</label>
+            <input class="w-100" type="text" placeholder="Descripción" name="desc" id="desc">
 
             <label for="imagen">Suba una imagen</label>
-            <input type="file" placeholder="Imagen" id="img">
+            <input class="w-100" type="file" placeholder="Imagen" name="img" id="img">
 
             <label for="categoria">Categoria</label>
-            <input type="text" placeholder="Categoria" id="catg">
+            <input class="w-100" type="text" placeholder="Categoria" name="catg" id="catg">
 
             <label for="caracteristicas">características</label>
-            <input type="text" placeholder="Colores, tamaños, talles, etc." id="carac">
+            <input class="w-100" type="text" placeholder="Colores, tamaños, talles, etc." name="carac" id="carac">
 
             <label for="precio">Precio</label>
-            <input type="text" placeholder="precio">
+            <input class="w-100" type="text" placeholder="precio" name="precio" id="precio">
             <button>Borrar</button>
             <button>Cargar</button>
         </form>
