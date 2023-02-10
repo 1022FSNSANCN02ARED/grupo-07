@@ -3,12 +3,12 @@
 /*Colores*/
 :root {
   --black: #000000ff;
-  --dark:#060606;
+  --dark: #060606;
   --magenta: #dc1780;
   --magenta-dark: #660846;
-  --white:  #ffffffff;
+  --white: #ffffffff;
   --Light-grayish-red: #f7e3e4;
-  --Very-light-gray:#f5f5f5;
+  --Very-light-gray: #f5f5f5;
 }
 
 /*Tipografía general: open sans , variable: Light 300*/
@@ -23,7 +23,6 @@
   font-size: 24px;
   font-weight: bold;
 }
-
 
 /*General*/
 * {
@@ -213,7 +212,7 @@ footer {
 }
 
 /*Desplegable*/
-.span{
+.span {
   width: 100%;
   height: 2px;
   background-color: var(--magenta);
@@ -259,7 +258,7 @@ footer {
   height: 1.4rem;
 }
 .contendorBuscador input {
-  border:none;
+  border: none;
 }
 .contendorBuscador input::placeholder {
   text-align: center;
@@ -303,9 +302,7 @@ footer {
 .carrusel {
   width: 100%;
   height: 30vh;
-  
 }
-
 
 /*opciones hogar, trabajo, gamer*/
 #Opciones {
@@ -381,7 +378,7 @@ footer {
   grid-template-rows: repeat(1, auto);
 }
 .contenedor-carrito div {
-  background-color:var(--white);
+  background-color: var(--white);
   color: var(--black);
   border-radius: 4px;
   box-shadow: 3px 3px 5px var(--magenta);
@@ -543,8 +540,8 @@ footer {
   padding: 5px;
 }
 
-.lupa{
-  border : none;
+.lupa {
+  border: none;
   color: var(--black);
   background-color: var(--white);
 }
@@ -575,19 +572,19 @@ footer {
   margin-top: 50px;
   margin-bottom: 50px;
   border-radius: 5px;
-  color: var(--white);  
+  color: var(--white);
 }
 
-.contenedorForm h4{
+.contenedorForm h4 {
   font-size: 5rem;
   margin-bottom: 20px;
 }
 
-.contenedorForm input{
+.contenedorForm input {
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 16px;
-  border: 1px solid var(--dark)
+  border: 1px solid var(--dark);
 }
 
 .contenedor-art {
@@ -669,6 +666,9 @@ footer {
   color: #ec268f;
   padding: 5px;
   font-size: 20px;
+}
+.error {
+  text-align: center;
 }
 
 /*======================== Media-Queries ========================*/
@@ -787,7 +787,6 @@ footer {
     align-items: center;
     flex-direction: column;
     border-bottom: 1px solid #f7e3e4;
-    
   }
 
   .footerForm {
