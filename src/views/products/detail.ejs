@@ -45,8 +45,9 @@
        
     </header>
     <main>
-      
-      <h1 class="titulo"><%=producto.nombre %>  <%= producto.marca %> </h1>
+    
+       
+      <h1 class="titulo"><%= product.nombre %>  <%= product.marca %> </h1>
      
        </h1>
       
@@ -54,7 +55,7 @@
       <div class="container">
       <div class="img">
         <img
-          src="<%= producto.imagen %> "
+          src="<%= product.imagen %> "
           alt="imagen-producto"
           class="imagen-producto"
         />
@@ -63,7 +64,7 @@
         
         
           
-          <h4 class="precio-principal">Precio:$ <%= producto.precio  %> </h4>
+          <h4 class="precio-principal">Precio:$ <%= product.precio  %> </h4>
           <h6>Precio Especial</h6>
           <p class="cuotas">
           
@@ -89,8 +90,9 @@
   
     
       <h2>Descripción</h2>
-      <p><%= producto.descripcion %>  </p>
+      <p><%= product.descripcion %>  </p>
   </section>
+  
     </main>
     <footer>    
        <!--Include Footer-->

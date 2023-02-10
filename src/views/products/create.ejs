@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Include head-->
+    <%- include('../partials/head') %>
+    <title>Argon | Carga</title>
+  </head>
+  <body>
+    <header>
+      <!--Include header-->
+      <%- include('../partials/header') %>
+    </header>
+    <div class="menuDesplegado">
+      <!--Include menu-->
+      <%- include('../partials/menu') %>
+    </div>
+    <section class="contenedorForm">
+      <form action="/" method="post" enctype="multipart/form-data">
+        <h4>Carga de productos</h4>
+        <label for="producto">Nombre del producto</label>
+        <input
+          class="w-100"
+          type="text"
+          placeholder="Nombre del producto"
+          name="nombre"
+          id="nomb"
+        />
+
+        <label for="imagen">Suba una imagen</label>
+        <input
+          class="w-100"
+          type="file"
+          placeholder="Imagen"
+          name="imagen"
+          id="imagen"
+          accept="imagen/png,image/jpeg"
+        />
+
+        <label for="categoria">Marca</label>
+        <input
+          class="w-100"
+          type="text"
+          placeholder="marca"
+          name="marca"
+          id="catg"
+        />
+        <label for="precio">Stock</label>
+        <input class="w-100" type="text" name="Stock" id="Stock" />
+
+        <label for="precio">Precio</label>
+        <input
+          class="w-100"
+          type="text"
+          placeholder="precio"
+          name="precio"
+          id="precio"
+        />
+        <label for="descripción">Descrpción</label>
+        <input
+          class="w-100"
+          type="text"
+          placeholder="Descripción"
+          name="descripción"
+          id="desc"
+        />
+        <button type="submit">Borrar</button>
+        <button type="submit">Cargar</button>
+      </form>
+    </section>
+    <footer>
+      <!--Include Footer-->
+      <%- include('../partials/footer') %>
+    </footer>
+    <!--Include scripts-->
+    <%- include('../partials/scripts') %>
+  </body>
+</html>

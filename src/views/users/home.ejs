@@ -48,7 +48,7 @@
       </div>
     </section>
     <section id="productos">
-        <% productos.forEach(producto => { %>
+        <%products.findAll().forEach(producto => { %>
         <a href="/detail/<%= producto.id %>  "
           > 
           <div class="contenedor">
