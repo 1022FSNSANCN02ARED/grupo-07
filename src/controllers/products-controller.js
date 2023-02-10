@@ -1,22 +1,35 @@
-const productos = require("../data/productos");
+const products = require("../data/products");
 
 const controller = {
-  home: (req, res)=>{
-
-  },
-  create: (req, res)=>{
+  home: (req, res) => {},
+  create: (req, res) => {
     res.render("products/create");
   },
-  store: (req, res)=>{
 
+  store: (req, res) => {
+    const product = {
+      id: Date.now(),
+      nombre: req.body.nombre,
+      marca: req.body.marca,
+      stock: req.body.stock,
+      precio: Number(req.body.precio),
+      descripción: req.body.descripción,
+      imagen: req.file ? req.file.filename : "/img/default-img.png",
+    };
+
+    products.saveProduct(product);
+    res.redirect("/");
   },
   detail: (req, res) => {
-    const id = req.params.id;
-    const producto = productos.find((producto) => producto.id == id);
-    res.render("products/detail", { producto });
+    const product = products
+      .findAll()
+      .find((producto) => producto.id == req.params.id);
+    res.render("products/detail", { product });
   },
   edit: (req, res) => {
-    const product = products.findById(req.params.id);
+    const product = products
+      .findAll()
+      .find((producto) => producto.id == req.params.id);
     res.render("products/edit", { product });
   },
   update: (req, res) => {
