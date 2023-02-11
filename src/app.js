@@ -31,6 +31,7 @@ app.set("views", path.join(__dirname, "/views"));
 
 //Ejecutar archivo mainRouter
 app.use(mainRouter);
+//  Error 404
 app.use((req, res, next) => {
   res.status("404").render("error-404");
 });
