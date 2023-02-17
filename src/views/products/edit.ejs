@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!--Include head-->
+        <%- include('../partials/head') %> 
+        <title>Argon | Carga</title>
+</head>
+<body>
+    <header>
+        <!--Include header-->
+     <%- include('../partials/header') %>
+     </header>
+     <div class="menuDesplegado">
+        <!--Include menu-->
+        <%- include('../partials/menu') %>
+      </div>
+    <section class="contenedorForm">
+        <form action="" method="POST" enctype="multipart/form-data" accept="imagen/*"></form>
+        
+            <h4>Edicion de productos</h4>
+            <label for="producto">Nombre del producto</label>
+            <select id="producto" name="Seleccione el producto a editar">
+                <option value="p1">Producto 1</option>
+                <option value="p2">Producto 2</option>
+                <option value="p3">Producto 3</option>
+                <option value="p4">Producto 4</option>
+            </select>
+            <label  for="descripción">Descrpción</label>
+            <input class="w-100" type="text" placeholder="Descripción" name="desc" id="desc">
+
+            <label for="imagen">Suba una imagen</label>
+            <input class="w-100" type="file" placeholder="Imagen" name="img" id="img">
+
+            <label for="categoria">Categoria</label>
+            <input class="w-100" type="text" placeholder="Categoria" name="catg" id="catg">
+
+            <label for="caracteristicas">características</label>
+            <input class="w-100" type="text" placeholder="Colores, tamaños, talles, etc." name="carac" id="carac">
+
+            <label for="precio">Precio</label>
+            <input class="w-100" type="text" placeholder="precio" name="precio" id="precio">
+            <button>Borrar producto seleccionado</button>
+            <button>Cargar Edicion</button>
+        </form>
+    </section>
+    <footer>
+            <!--Include Footer-->
+    <%- include('../partials/footer') %> 
+    </footer>
+    <!--Include scripts-->
+    <%- include('../partials/scripts') %>
+</body>
+</html>
