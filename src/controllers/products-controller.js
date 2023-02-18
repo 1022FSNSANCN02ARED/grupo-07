@@ -15,7 +15,7 @@ const controller = {
       precio: Number(req.body.precio),
       descripción: req.body.descripción,
       imagen: req.file
-        ? "/img/products" + req.file.filename
+        ? "/img/products/" + req.file.filename
         : "/img/products/default-img.png",
     };
 
