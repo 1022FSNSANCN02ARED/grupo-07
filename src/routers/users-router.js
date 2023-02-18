@@ -22,7 +22,7 @@ const upload = multer({
 router.get("/login", usersController.mostrarLogin);
 // Register
 router.get("/register", usersController.mostrarRegister);
-router.post("/register" ,upload.single ("image"),egister) ;
+router.post("/register", upload.single("image"), usersController.register);
 //carrito
 router.get("/carrito", usersController.carrito);
 //carga
