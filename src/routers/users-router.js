@@ -5,6 +5,7 @@ const path = require("path");
 const usersController = require("../controllers/users-controller");
 
 const multer = require("multer");
+const { mostrarRegister } = require("../controllers/users-controller");
 const storage = multer.diskStorage({
   destination: path.join(__dirname, "../../public/img/users"),
   filename: (req, file, cb) => {
@@ -18,10 +19,10 @@ const upload = multer({
 });
 
 //login
-router.get("/login", usersController.login);
+router.get("/login", usersController.mostrarLogin);
 // Register
-router.get("/register", upload.single ("image"), usersController.register);
-router.post("/users");
+router.get("/register", usersController.mostrarRegister);
+router.post("/register" ,upload.single ("image"),egister) ;
 //carrito
 router.get("/carrito", usersController.carrito);
 //carga

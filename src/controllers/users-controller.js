@@ -1,10 +1,18 @@
 
 const controller = {
-  login: (req, res) => {
+  mostrarLogin: (req, res) => {
     res.render("users/login");
   },
-  register: (req, res) => {
+  mostrarRegister: (req, res) => {
     res.render("users/register");
+  },
+
+  register:(req,res)=>{
+    res.render("user/profile");
+  },
+
+  login: (req, res) => {
+    res.render("/");
   },
 
   carga: (req, res) => {
