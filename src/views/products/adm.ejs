@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Include head-->
+    <%- include('../partials/head') %>
+    <title>Administración</title>
+  </head>
+  <!--Include header-->
+      <%- include('../partials/header') %>
+  <style>
+    body {
+      text-align: center;
+      
+    }
+    .button-create {
+      width: 50%;
+      background-color: blueviolet;
+      color: white;
+    }
+    
+   
+  </style>
+  <body>
+    <div class="menu-">
+    <div class="button-c">
+    <a href="/allproducts"
+      ><button type="submit" class="button-create">All Products</button></a
+    >
+    </div>
+    <div class="button-c">
+    <a href="/create"
+      ><button type="submit" class="button-create">Create Products</button></a
+    >
+    </div>
+    </div>
+  </body>
+  <footer>
+      <!--Include Footer-->
+      <%- include('../partials/footer') %>
+    </footer>
+        <!--Include scripts-->
+        <%- include('../partials/scripts') %>
+  </body>
+</html>
+</html>
