@@ -2,6 +2,13 @@ const products = require("../data/products");
 
 const controller = {
   home: (req, res) => {},
+
+  allProducts: (req, res) => {
+    res.render("products/allproducts", { products });
+  },
+  adm: (req, res) => {
+    res.render("products/adm");
+  },
   create: (req, res) => {
     res.render("products/create");
   },
@@ -29,17 +36,29 @@ const controller = {
     res.render("products/detail", { product });
   },
   edit: (req, res) => {
-    const product = products
-      .findAll()
-      .find((producto) => producto.id == req.params.id);
+    const product = products.findById(req.params.id);
     res.render("products/edit", { product });
   },
+
   update: (req, res) => {
-    const product = req.body;
-    res.send(product);
+    const imagenestablecida = products.findById(req.params.id);
+
+    const product = {
+      id: Number(req.params.id),
+      nombre: req.body.nombre,
+      marca: req.body.marca,
+      stock: req.body.stock,
+      precio: Number(req.body.precio),
+      descripción: req.body.descripción,
+      imagen: req.files ? req.files.originalname : imagenestablecida.imagen,
+    };
+
+    products.saveProductEdited(product);
+    res.redirect("/");
   },
   destroy: (req, res) => {
-    res.send(`deleting ${req.params.id}`);
+    products.deleteProduct(req.params.id);
+    res.redirect("/");
   },
 };
 
