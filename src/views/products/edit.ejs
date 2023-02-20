@@ -15,68 +15,61 @@
       <%- include('../partials/menu') %>
     </div>
     <section class="contenedorForm">
-      <form
-        method="POST"
-        action="/"
-        ?_method="PUT"
-        enctype="multipart/form-data"
-        accept="imagen/*"
-      >
-        <h4>Edicion de productos</h4>
-        <label for="producto">Nombre del producto</label>
-        <select id="producto" name="Seleccione el producto a editar">
-          <option value="p1">Producto 1</option>
-          <option value="p2">Producto 2</option>
-          <option value="p3">Producto 3</option>
-          <option value="p4">Producto 4</option>
-        </select>
-        <label for="descripción">Descripción</label>
-        <input
-          class="w-100"
-          type="text"
-          placeholder="Descripción"
-          name="descripción"
-          id="desc"
-        />
+       <form action="/<%= product.id %>?_method=put"  method="POST" class="formulario" 
+          enctype="multipart/form-data">
+        <h4><%= product.nombre %></h4>
+        <div class="galeria">
+          <img src="<%= product.imagen %>" />
+        </div>
         <label for="imagen">Suba una imagen</label>
         <input
           class="w-100"
           type="file"
-          placeholder="Imagen"
           name="img"
           id="img"
+          value="<%= product.imagen %>"
         />
+        <label for="producto">Nombre del producto</label>
+        <input type="text" name="nombre" value="<%= product.nombre %>" /><br />
 
-        <label for="categoria">Categoria</label>
+        <label for="descripción">Marca</label>
         <input
           class="w-100"
           type="text"
-          placeholder="Categoria"
-          name="catg"
-          id="catg"
+          name="marca"
+          id="marca"
+          value="<%= product.marca %>"
         />
-
-        <label for="caracteristicas">características</label>
+        <label for="precio">Stock</label>
         <input
           class="w-100"
           type="text"
-          placeholder="Colores, tamaños, talles, etc."
-          name="carac"
-          id="carac"
+          name="stock"
+          id="stock"
+          placeholder="<%= product.stock %>"
+          value="<%= product.stock %>"
         />
 
         <label for="precio">Precio</label>
         <input
           class="w-100"
           type="number"
-          placeholder="precio"
           name="precio"
           id="precio"
+          value="<%= product.precio %>"
         />
-        <button>Borrar producto seleccionado</button>
-        <button type="submit">Cargar Edicion</button>
+        
+  
+        <button type="submit" class="submit">EDITAR PRODUCTO / GUARDAR </i></button>
+
+       
+       
+        <form action="/<%= product.id %>?_method=delete" method="POST">
+          <button type="submit" class="rest"><span class="far fa-trash-alt"></span> Eliminar</button>
       </form>
+           
     </section>
+      </form>
     <footer>
       <!--Include Footer-->
       <%- include('../partials/footer') %>
