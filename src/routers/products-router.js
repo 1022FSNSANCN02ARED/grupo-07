@@ -21,6 +21,9 @@ const productsController = require("../controllers/products-controller");
 
 //Listado de producto
 router.get("/", productsController.home);
+router.get("/allproducts", productsController.allProducts);
+// administradores
+router.get("/adm", productsController.adm);
 
 //Formulario de creacion de productos
 router.get("/create", productsController.create);
@@ -35,7 +38,7 @@ router.get("/detail/:id", productsController.detail);
 router.get("/:id/edit", productsController.edit);
 
 //Accion de edicion
-router.put("/:id", productsController.update);
+router.put("/:id", upload.single("imagen"), productsController.update);
 
 //Accion de borrado
 router.delete("/:id", productsController.destroy);
