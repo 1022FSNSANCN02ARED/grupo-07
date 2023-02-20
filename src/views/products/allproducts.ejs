@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Include head-->
+    <%- include('../partials/head') %>
+    <title>Argon | Home</title>
+  </head>
+<style>
+   
+   #productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+  }
+  .card-article{
+    margin-bottom: 25px;
+    width: 10%;
+    text-align: center;
+    background-color: beige;
+  }
+  .button-edi-del{
+    width: 100%;
+  }
+  .submit{
+  
+    background-color:  #660846;
+    color: white;
+    border-radius: 15%;
+    width: 50%;
+  }
+     .rest{
+      background-color: #660846;;
+    color: white;
+    border-radius: 15%;
+    width: 50%;
+     } 
+      
+    </style>
+  <body>
+    <header>
+      <!--Include header-->
+      <%- include('../partials/header') %>
+    </header>
+    <div class="menuDesplegado">
+      <!--Include menu-->
+      <%- include('../partials/menu') %>
+    </div>
+    
+  
+
+    <section id="productos">
+     
+        <%products.findAll().forEach(producto => { %>
+ <article class="card-article">
+  
+        <div class="image">
+        <img
+          src="<%= producto.imagen %> "
+          alt="producto"
+          class="imagen-producto"
+        /><br>
+        </div>
+        <div class="contenedorInfo">
+          <p>Nombre: <%= producto.nombre %></p>
+          <p>PRECIO :$ <%= producto.precio %></p>
+          <p>Marca :<%= producto.marca %></p>
+          <p>EN STOCK : <%= producto.stock %></p>
+        </div>
+     <div class="button-edi-del">
+        <a href="<%= producto.id %>/edit/" >
+          <button type="submit" class="submit">Editar</button>
+        </a>
+
+        <form
+          class="button-delete"
+          action="/<%= producto.id %>?_method=delete"
+          method="POST"
+        > <br>
+          <button type="submit"class="rest">Borrar</button>
+        </form>
+     </div>
+ </article>
+        <% }) %>
+      
+    </section>
+  </body>
+   <footer>
+      <!--Include Footer-->
+      <%- include('../partials/footer') %>
+    </footer>
+        <!--Include scripts-->
+        <%- include('../partials/scripts') %>
+  
+</html>
+</html>
