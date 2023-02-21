@@ -69,3 +69,24 @@ Dejar de hacer:
 
 • Esperar a último momento
 
+
+
+Retro 5 Sprint -------------------------------------------------------------------------------------------------------------------------------------------------- Comenzar a hacer:
+
+Más de:
+
+•Trabajar en grupo durante reuniones en actividades
+
+Seguir haciendo:
+
+• Definir fechas de entrega parciales • Marcar en Trello apenas se realiza una actividad puntual
+
+Menos de:
+
+• No comunicar inconvenientes con partes del proyecto
+
+Dejar de hacer:
+
+• No consultar con los profesores
+
+
