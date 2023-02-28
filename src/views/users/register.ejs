@@ -24,40 +24,102 @@
                 <form method="POST" action="/" enctype="multipart/form-data">
                     <br>
                     <label for="nombre"></label>
-                    <input type="text" name="nombre" id="nombreUser" placeholder="Nombre" required>
+                    <input type="text" name="nombre" id="nombreUser" placeholder="Nombre" required
+                    class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.nombre : null %>"
+                    >
+                    <% if (locals.errors && errors.nombre) { %>
+                    <div class="text-danger">
+                        <%= errors.nombre.msg %>
+                    </div>
+                    <% } %> 
                     
                     <br>
                     <label for="apellido"></label>
-                    <input type="text" name="apellido" id="apllidoUser" placeholder="Apellido" required>
-                    
+                    <input type="text" name="apellido" id="apllidoUser" placeholder="Apellido" required
+                    class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.apellido : null %>"
+                    >
+                    <% if (locals.errors && errors.apellido) { %>
+                    <div class="text-danger">
+                        <%= errors.apellido.msg %>
+                    </div>
+                    <% } %> 
+
                     <br>
                     <label for="email"></label>
-                   <input type="text" name="Email" id="emailUser" id placeholder="Email" required>
+                    <input type="text" name="Email" id="emailUser" id placeholder="Email" required
+                    class="form-control <%= locals.errors && errors.Email ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.Email : null %>"
+                    >
+                    <% if (locals.errors && errors.Email) { %>
+                    <div class="text-danger">
+                        <%= errors.Email.msg %>
+                    </div>
+                    <% } %> 
                     
                     <br>
                     <label for="contacto">Teléfono de contacto</label> <br>
-                    <input type="text" name="codArea" placeholder="Código de área" required>
-                    <input type="text" name="numTel" placeholder="Número de teléfono" required>
+                    <input type="text" name="codArea" placeholder="Código de área" required
+                    class="form-control <%= locals.errors && errors.codAreal ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.codArea : null %>"
+                    >
+                    <% if (locals.errors && errors.codArea) { %>
+                    <div class="text-danger">
+                        <%= errors.codArea.msg %>
+                    </div>
+                    <% } %> 
+                    <input type="text" name="numTel" placeholder="Número de teléfono" required
+                    class="form-control <%= locals.errors && errors.numTel ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.numTel : null %>"
+                    >
+                    <% if (locals.errors && errors.numTel) { %>
+                    <div class="text-danger">
+                        <%= errors.numTel.msg %>
+                    </div>
+                    <% } %> 
 
                     <br>
                     <label for="categoria">Categoria</label>
-                    <select name="categoria" id="categoria">
+                    <select name="categoria" id="categoria"
+                    class="from-select <%= locals.errors && errors.catogoria ? 'is-invalid' : null %>"
+                    >
                         <option value="cliente">Cliente</option>
                         <option value="empleado">Empleado</option>
-                        <option value="dueño">Dueño</option>
+                        <option value="dueño">Dueño</option>           
                     </select>
 
                     <br>
                     <label for="avatar"></label>
-                    <input type="file" placeholder="Ingrese una imagen de perfil" accept="image/png,image/jpg">
+                    <input type="file" placeholder="Ingrese una imagen de perfil" accept="image/png,image/jpg"
+                    class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.avatar : null %>"
+                    >
+                    <% if (locals.errors && errors.avatar) { %>
+                    <div class="text-danger">
+                        <%= errors.avatar.msg %>
+                    </div>
+                    <% } %> 
+
                     
                     <br>
                     <label for="contraseña">Contraseña</label>
-                    <input type="password" name="contraseña" id="contra" placeholder="contraseña"  required>
+                    <input type="password" name="contraseña" id="contra" placeholder="contraseña"  required
+                    class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.password : null %>"
+                    >
+                    <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger">
+                        <%= errors.password.msg %>
+                    </div>
+                    <% } %> 
+
                     
                     <br>
                     <label for="pais">Selecciona tu país</label>
-                    <select name="pais" id="pais">
+                    <select name="pais" id="pais"
+                    class="from-select <%= locals.errors && errors.pais ? 'is-invalid' : null %>"
+                    >
                         <option value="AF">Afganistán</option>
                         <option value="AL">Albania</option>
                         <option value="DE">Alemania</option>
