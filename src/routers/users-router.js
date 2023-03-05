@@ -1,12 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
 
+//Controller
 const usersController = require("../controllers/users-controller");
 
 const multer = require("multer");
-
-const { body } = require ("express-validator");
 
 const { mostrarRegister } = require("../controllers/users-controller");
 const storage = multer.diskStorage({
@@ -16,32 +14,11 @@ const storage = multer.diskStorage({
   },
 });
 
-const validations = [
-	body("nombre").notEmpty().withMessage("Tienes que escribir tu nombre"),
-  	body("apellido").notEmpty().withMessage("Tienes que escribir tu apellido"),
-	body("email")
-		.notEmpty().withMessage("Tienes que escribir un correo electrónico").bail()
-		.isEmail().withMessage("Debes escribir un formato de correo válido"),
-   	body("contacto").notEmpty().withMessage("Tienes que escribir tu número de contacto"),
-  	body("categoria").notEmpty().withMessage("Tienes que elegir una categoria"),
-	body("contraseña").notEmpty().withMessage("Tienes que escribir una contraseña"),
-	body("pais").notEmpty().withMessage("Tienes que elegir un país"),
-	body("avatar").custom((value, { req }) => {
-		let file = req.file;
-		let acceptedExtensions = [".jpg", ".png"];
-		
-		if (!file) {
-			throw new Error("Tienes que subir una imagen");
-		} else {
-			let fileExtension = path.extname(file.originalname);
-			if (!acceptedExtensions.includes(fileExtension)) {
-				throw new Error("Las extensiones de archivo permitidas son ${acceptedExtensions.join(", ")}");
-			}
-		}
-
-		return true;
-	})
-];
+//Middlewares
+const uploadFile = require ('../middlewares/multerMiddleware');
+const validations = require ('../middlewares/validateRegisterMiddleware');
+const guestMiddleware = require ('../middlewares/guestMiddleware');
+const authtMiddleware = require ('../middlewares/authMiddleware');
 
 // Middleware Multer
 
@@ -50,12 +27,24 @@ const upload = multer({
 });
 
 //login
-router.get("/login", usersController.mostrarLogin);
+router.get("/login", guestMiddleware, usersController.mostrarLogin);
+
+//proceso de login
+router.post('login',usersController.loginProcess);
+
 // Register
-router.get("/register", usersController.mostrarRegister);
+router.get("/register", guestMiddleware, usersController.mostrarRegister);
 router.post("/register", upload.single("image"), validations, usersController.register);
+
+//Perfile
+router.get("/perfile/", authtMiddleware, usersController.profile);
+
+//Logout
+router.get("/logout/", usersController.logout);
+
 //carrito
 router.get("/carrito", usersController.carrito);
+
 //carga
 router.get("/carga", usersController.carga);
 

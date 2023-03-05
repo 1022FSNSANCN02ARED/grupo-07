@@ -21,9 +21,27 @@
                 <H3>LOGIN</H3>
                 <form method="" action="">
                     <br>
-                    E-mail:<input type="text" name="email">
+                    E-mail:<input type="text" name="email"
+                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.email : null %>"
+                    >
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %>
+                        </div>
+                    <% } %> 
+                    
                     <br>
-                    Contraseña:<input type="password" name="contraseña">
+                    Contraseña:<input type="password" name="contraseña"
+                    class="form-control <%= locals.errors && errors.contraseña ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.contraseña : null %>"
+                    >
+                    <% if (locals.errors && errors.contraseña) { %>
+                        <div class="text-danger">
+                            <%= errors.contraseña.msg %>
+                        </div>
+                    <% } %> 
+                    
                     <br>
                     <input type="submit" value="CREAR CUENTA">
                     <br>

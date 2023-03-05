@@ -14,6 +14,11 @@
         <!--Include menu-->
         <%- include('../partials/menu') %>
       </div>
+      <div>
+        <h2> Bienvenido/a <%= user.name %> </h2>
+        <img src="/public/img/user <%= user.avatar %>">
+        <div> <%= user.email %></div>
+      </div>
     
 </body>
 </html>

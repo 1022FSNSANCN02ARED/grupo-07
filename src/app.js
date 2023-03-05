@@ -3,9 +3,16 @@ const express = require("express");
 const path = require("path");
 const mainRouter = require("./routers/main-router");
 const methodOverride = require("method-override");
+const session = require ('express-session');
 
 //Ejecución de express
 const app = express();
+
+app.use (session ({
+  secret: "Shhh, it's a secret",
+  resave: false,
+  saveUninitialized: false,
+}));
 
 // Levantar el servidor
 app.listen(3001, () => {
