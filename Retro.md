@@ -94,18 +94,23 @@ Retro Sprint 6 -----------------------------------------------------------------
 Comenzar a hacer:
 
 • Mejorar partes de código antiguas
+
 Más de:
 
 • Consultarnos entre nosotros y ayudarnos
+
 Seguir haciendo:
 
 • Actividades en grupo
+
 Menos de: 
 
 • Atrasarse con partes del proyecto
+
 Dejar de hacer: 
 
 • Subir los cambios antes de las reuniones
+
 
 
 
