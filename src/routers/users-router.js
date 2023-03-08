@@ -15,10 +15,10 @@ const storage = multer.diskStorage({
 });
 
 //Middlewares
-const uploadFile = require ('../middlewares/multerMiddleware');
-const validations = require ('../middlewares/validateRegisterMiddleware');
-const guestMiddleware = require ('../middlewares/guestMiddleware');
-const authtMiddleware = require ('../middlewares/authMiddleware');
+const uploadFile = require("../middlewares/multerMiddleware");
+const validations = require("../middlewares/validateRegisterMiddleware");
+const guestMiddleware = require("../middlewares/guestMiddleware");
+const authtMiddleware = require("../middlewares/authMiddleware");
 
 // Middleware Multer
 
@@ -30,11 +30,16 @@ const upload = multer({
 router.get("/login", guestMiddleware, usersController.mostrarLogin);
 
 //proceso de login
-router.post('login',usersController.loginProcess);
+router.post("login", usersController.loginProcess);
 
 // Register
 router.get("/register", guestMiddleware, usersController.mostrarRegister);
-router.post("/register", upload.single("image"), validations, usersController.register);
+router.post(
+  "/register",
+  upload.single("image"),
+  validations,
+  usersController.register
+);
 
 //Perfile
 router.get("/perfile/", authtMiddleware, usersController.profile);
