@@ -1,5 +1,4 @@
 [
-
   {
     "Identificador": 1,
     "Nombre": "Facundo",
@@ -8,8 +7,8 @@
     "Contraseña": "fyavicoli111",
     "Categoría": "DUEÑO",
     "Imagen": "imagen",
-    "Modprod":true,
-    "Accesototal":true
+    "Modprod": true,
+    "Accesototal": true
   },
   {
     "Identificador": 2,
@@ -19,8 +18,8 @@
     "Contraseña": "mschaller111",
     "Categoría": "DUEÑO",
     "Imagen": "imagen",
-    "Modprod":true,
-    "Accesototal":true
+    "Modprod": true,
+    "Accesototal": true
   },
   {
     "Identificador": 3,
@@ -30,8 +29,8 @@
     "Contraseña": "lvoltattorni111",
     "Categoría": "DUEÑO",
     "Imagen": "imagen",
-    "Modprod":true,
-    "Accesototal":true
+    "Modprod": true,
+    "Accesototal": true
   },
   {
     "Identificador": 4,
@@ -41,8 +40,8 @@
     "Contraseña": "pguzman111",
     "Categoría": "DUEÑO",
     "Imagen": "imagen",
-    "Modprod":true,
-    "Accesototal":true
+    "Modprod": true,
+    "Accesototal": true
   },
   {
     "Identificador": 5,
@@ -52,8 +51,8 @@
     "Contraseña": "melena111",
     "Categoría": "DUEÑO",
     "Imagen": "imagen",
-    "Modprod":true,
-    "Accesototal":true
+    "Modprod": true,
+    "Accesototal": true
   },
   {
     "Identificador": 6,
@@ -63,8 +62,8 @@
     "Contraseña": "bbenitez111",
     "Categoría": "CLIENTE",
     "Imagen": "imagen",
-    "Modprod":false,
-    "Accesototal":false
+    "Modprod": false,
+    "Accesototal": false
   },
   {
     "Identificador": 7,
@@ -74,8 +73,7 @@
     "Contraseña": "rrodriguez111",
     "Categoría": "EMPLEADO",
     "Imagen": "imagen",
-    "Modprod":true,
-    "Accesototal":false
+    "Modprod": true,
+    "Accesototal": false
   }
-  
 ]
