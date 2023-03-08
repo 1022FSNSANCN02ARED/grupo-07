@@ -1,6 +1,6 @@
 const bcryptjs = require ('bcryptjs');
 const {validationResult} = require ('express-validator');
-const User = require ('../models/User');
+const User = require ('../models/user');
 
 const controller = {
   mostrarLogin: (req, res) => {
@@ -18,7 +18,7 @@ const controller = {
     const resultValidation = validationResult (req);
 
     if (resultValidation.errors.length > 0) {
-      return res.render('userRegisterForm', {
+      return res.render('register', {
         errors: resultValidation.mapped(),
         oldData: req.body
       });
@@ -27,7 +27,7 @@ const controller = {
     const userInDB = User.findByField('email', req.body.email);
     
     if (userInDB) {
-      return res.render('userRegisterFrom', {
+      return res.render('register', {
         errors: {
           email: {
             msg:"este email ya esta registrado"
@@ -48,7 +48,7 @@ const controller = {
   },
 
   login: (req, res) => {
-    return res.render('userLoginForm');
+    return res.render('login');
   },
 
   loginProcess: (req, res) =>{
@@ -69,7 +69,7 @@ const controller = {
             } 
           });
     }
-    return res.render ('userLoginForm', {
+    return res.render ('login', {
       errors:{
         email:{
           msg:"No se encuetra este email en la base de datos"
@@ -79,7 +79,7 @@ const controller = {
   },
 
   profile:(req, res) => {
-    res.render('userProfile', {
+    res.render('profile', {
       user: req.session.userLogged
     });
   },

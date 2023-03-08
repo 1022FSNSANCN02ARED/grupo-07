@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const path = require("path");
+const {body}= require('express-validator');
 
 //Controller
 const usersController = require("../controllers/users-controller");
@@ -36,11 +38,11 @@ router.post('login',usersController.loginProcess);
 router.get("/register", guestMiddleware, usersController.mostrarRegister);
 router.post("/register", upload.single("image"), validations, usersController.register);
 
-//Perfile
-router.get("/perfile/", authtMiddleware, usersController.profile);
+//Profile
+router.get("/profile/", authtMiddleware, usersController.profile);
 
 //Logout
-router.get("/logout/", usersController.logout);
+router.get("/logout/", usersController.Logout);
 
 //carrito
 router.get("/carrito", usersController.carrito);
