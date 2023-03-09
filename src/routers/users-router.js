@@ -30,14 +30,14 @@ const upload = multer({
 router.get("/login", guestMiddleware, usersController.mostrarLogin);
 
 //proceso de login
-router.post('login',usersController.loginProcess);
+router.post('/login', usersController.loginProcess);
 
 // Register
 router.get("/register", guestMiddleware, usersController.mostrarRegister);
-router.post("/register", upload.single("image"), validations, usersController.register);
+router.post("/register", upload.single("image"), validations, usersController.processRegister);
 
 //Perfile
-router.get("/perfile/", authtMiddleware, usersController.profile);
+router.get("/profile/", authtMiddleware, usersController.profile);
 
 //Logout
 router.get("/logout/", usersController.Logout);

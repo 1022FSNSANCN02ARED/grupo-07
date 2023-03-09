@@ -1,35 +1,28 @@
-const bcryptjs = require ('bcryptjs');
-const { validationResult } = require ('express-validator');
-const User = require ('../models/User');
+const bcryptjs = require ("bcryptjs");
+const { validationResult } = require ("express-validator");
+const User = require ("../models/User");
 
 
 
 const controller = {
-  mostrarLogin: (req, res) => {
-    res.render("users/login");
-  },
   mostrarRegister: (req, res) => {
     res.render("users/register");
-  },
-
-  register: (req, res) => {
-    return res.render("user/profile");
   },
 
   processRegister: (req, res) => {
     const resultValidation = validationResult (req);
 
     if (resultValidation.errors.length > 0) {
-      return res.render('userRegisterForm', {
+      return res.render("register", {
         errors: resultValidation.mapped(),
         oldData: req.body
       });
     }
   
-    const userInDB = User.findByField('email', req.body.email);
+    const userInDB = User.findByField("email", req.body.email);
     
     if (userInDB) {
-      return res.render('userRegisterFrom', {
+      return res.render("register", {
         errors: {
           email: {
             msg:"este email ya esta registrado"
@@ -46,24 +39,24 @@ const controller = {
     }
 
     const userCreater = UsersCreate (userToCreate);
-      return req.redirect('/user/login');
+      return req.redirect("/users/login");
   },
 
-  login: (req, res) => {
-    return res.render('users/login');
+  mostrarLogin: (req, res) => {
+    res.render("users/login");
   },
 
   loginProcess: (req, res) =>{
-    const userToLogin = User.findByField('email, req.body.email');
+    const userToLogin = User.findByField("email", req.body.email);
       
     if (userToLogin) {
       let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
         if (isOkThePassword) {
           delete userToLogin.password;
           req.session.userLogged = userToLogin;
-          return res.redirect('users/profile');
+          return res.redirect("users/profile");
           }
-          return res.render ('users/login', {
+          return res.render ("users/login", {
             errors:{
               email:{
                 msg:"Las credenciales son invalidas"
@@ -71,7 +64,7 @@ const controller = {
             } 
           });
     }
-    return res.render ('users/login', {
+    return res.render ("users/login", {
       errors:{
         email:{
           msg:"No se encuetra este email en la base de datos"
@@ -81,14 +74,14 @@ const controller = {
   },
 
   profile:(req, res) => {
-    res.render('userProfile', {
+    res.render("users/profile", {
       user: req.session.userLogged
     });
   },
 
   Logout: (req, res) =>{
     res.session.destroy();
-    return res.redirect('/');
+    return res.redirect("/");
   },
 
   carga: (req, res) => {
