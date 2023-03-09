@@ -1,6 +1,8 @@
 const bcryptjs = require ('bcryptjs');
-const {validationResult} = require ('express-validator');
+const { validationResult } = require ('express-validator');
 const User = require ('../models/User');
+
+
 
 const controller = {
   mostrarLogin: (req, res) => {
@@ -48,7 +50,7 @@ const controller = {
   },
 
   login: (req, res) => {
-    return res.render('userLoginForm');
+    return res.render('users/login');
   },
 
   loginProcess: (req, res) =>{
@@ -69,7 +71,7 @@ const controller = {
             } 
           });
     }
-    return res.render ('userLoginForm', {
+    return res.render ('users/login', {
       errors:{
         email:{
           msg:"No se encuetra este email en la base de datos"
