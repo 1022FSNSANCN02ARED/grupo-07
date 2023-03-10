@@ -10,12 +10,12 @@ const controller = {
   },
 
   processRegister: (req, res) => {
-    const resultValidation = validationResult (req);
+    const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
       return res.render("register", {
         errors: resultValidation.mapped(),
-        oldData: req.body
+        oldData: req.body,
       });
     }
   
@@ -25,18 +25,18 @@ const controller = {
       return res.render("register", {
         errors: {
           email: {
-            msg:"este email ya esta registrado"
-          }
+            msg: "este email ya esta registrado",
+          },
         },
-        oldData: req.body
+        oldData: req.body,
       });
     }
 
     const userToCreate = {
       ...req.body,
       password: bcryptjs.hashSync(req.body.password, 10),
-      avatar: req.file.filename
-    }
+      avatar: req.file.filename,
+    };
 
     const userCreater = UsersCreate (userToCreate);
       return req.redirect("/users/login");
@@ -79,7 +79,13 @@ const controller = {
     });
   },
 
-  Logout: (req, res) =>{
+  profile: (req, res) => {
+    res.render("userProfile", {
+      user: req.session.userLogged,
+    });
+  },
+
+  Logout: (req, res) => {
     res.session.destroy();
     return res.redirect("/");
   },
@@ -91,7 +97,6 @@ const controller = {
   carrito: (req, res) => {
     res.render("users/carrito");
   },
-
-}
+};
 
 module.exports = controller;
