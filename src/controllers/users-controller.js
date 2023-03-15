@@ -79,17 +79,6 @@ const controller = {
     });
   },
 
-  profile: (req, res) => {
-    res.render("userProfile", {
-      user: req.session.userLogged,
-    });
-  },
-
-  Logout: (req, res) => {
-    res.session.destroy();
-    return res.redirect("/");
-  },
-
   carga: (req, res) => {
     res.render("users/carga");
   },

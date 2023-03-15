@@ -39,10 +39,7 @@ router.get("/register", guestMiddleware, usersController.mostrarRegister);
 router.post("/register", upload.single("image"), validations, usersController.processRegister);
 
 //Perfile
-router.get("/profile/", authtMiddleware, usersController.profile);
-
-//Logout
-router.get("/logout/", usersController.Logout);
+router.get("/profile", authtMiddleware, usersController.profile);
 
 //carrito
 router.get("/carrito", usersController.carrito);
