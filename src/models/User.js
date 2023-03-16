@@ -1,9 +1,11 @@
 const fs = require ('fs');
+const path= require("path");
 
 const User = {
-    fileName:'./data/user.json',
+    fileName: path.join(__dirname,"../data/user.json"),
+
     getData:function(){
-        return JSON.parse(fs.readFileSync(this.fileName,utf-8));
+        return JSON.parse(fs.readFileSync(this.fileName,'utf-8'));
     },
 
     generateId: function(){
@@ -27,7 +29,8 @@ const User = {
     
     findByField: function (field,text){
         let allUser = this.findAll();
-        let userFound = allUser.find(oneUser = oneUser [field] === text);
+        let userFound = allUser.find(oneUser => oneUser [field] === text);
+        return userFound;
     },
 
     create: function(userData){

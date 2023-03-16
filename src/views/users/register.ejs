@@ -21,10 +21,10 @@
             <div class="contenedorInfo">
                 <H4>Registrarse</H4>
                 <h2>Ingresá tus datos para crear tu cuenta</h2>
-                <form method="POST" action="/profile" enctype="multipart/form-data">
+                <form method="POST" action="/users/register" enctype="multipart/form-data">
                     <br>
                     <label for="nombre"></label>
-                    <input type="text" name="nombre" id="nombreUser" placeholder="Nombre" required
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required
                     class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.nombre : null %>"
                     >
@@ -36,7 +36,7 @@
                     
                     <br>
                     <label for="apellido"></label>
-                    <input type="text" name="apellido" id="apllidoUser" placeholder="Apellido" required
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" required
                     class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.apellido : null %>"
                     >
@@ -48,7 +48,7 @@
 
                     <br>
                     <label for="email"></label>
-                    <input type="text" name="Email" id="emailUser" id placeholder="Email" required
+                    <input type="text" name="email" id="email" placeholder="Email" required
                     class="form-control <%= locals.errors && errors.Email ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.Email : null %>"
                     >
@@ -60,7 +60,7 @@
                     
                     <br>
                     <label for="contacto">Teléfono de contacto</label> <br>
-                    <input type="text" name="codArea" placeholder="Código de área" required
+                    <input type="text" name="contacto" id="contacto" placeholder="Código de área" required
                     class="form-control <%= locals.errors && errors.codAreal ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.codArea : null %>"
                     >
@@ -91,7 +91,7 @@
 
                     <br>
                     <label for="avatar"></label>
-                    <input type="file" placeholder="Ingrese una imagen de perfil" accept="image/png,image/jpg"
+                    <input name = "avatar" id= "avatar" type="file" placeholder="Ingrese una imagen de perfil" accept="image/png,image/jpg"
                     class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.avatar : null %>"
                     >
@@ -104,7 +104,7 @@
                     
                     <br>
                     <label for="contraseña">Contraseña</label>
-                    <input type="password" name="contraseña" id="contra" placeholder="contraseña"  required
+                    <input type="password" name="contraseña" id="contraseña" placeholder="contraseña"  required
                     class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.password : null %>"
                     >

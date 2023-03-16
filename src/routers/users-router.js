@@ -36,7 +36,7 @@ router.post('/login', usersController.loginProcess);
 
 // Register
 router.get("/register", guestMiddleware, usersController.mostrarRegister);
-router.post("/register", upload.single("image"), validations, usersController.processRegister);
+router.post("/register", upload.single("avatar"), validations, usersController.processRegister);
 
 //Perfile
 router.get("/profile", authtMiddleware, usersController.profile);

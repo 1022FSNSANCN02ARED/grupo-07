@@ -13,16 +13,19 @@ const controller = {
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
-      return res.render("register", {
+      console.log("fallo la validacion");
+      return res.render("users/register", {
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
+      
     }
   
     const userInDB = User.findByField("email", req.body.email);
     
     if (userInDB) {
-      return res.render("register", {
+      console.log("email");
+      return res.render("users/register", {
         errors: {
           email: {
             msg: "este email ya esta registrado",
@@ -38,7 +41,7 @@ const controller = {
       avatar: req.file.filename,
     };
 
-    const userCreater = UsersCreate (userToCreate);
+    const userCreated = User.create (userToCreate);
       return req.redirect("/users/login");
   },
 
@@ -54,7 +57,7 @@ const controller = {
         if (isOkThePassword) {
           delete userToLogin.password;
           req.session.userLogged = userToLogin;
-          return res.redirect("users/profile");
+          return res.redirect("/users/profile");
           }
           return res.render ("users/login", {
             errors:{
