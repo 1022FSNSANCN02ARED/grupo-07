@@ -1,8 +1,9 @@
-function authtMiddleware (res, req, next) {
-    if (!req.session.userLogged) {
-        return res.redirect ('/users/login');
-    }
-    next();
+function authtMiddleware(req, res, next) {
+  if (!req.session?.userLogged) {
+    res.redirect("/users/login");
+  }
+
+  next();
 }
 
 module.exports = authtMiddleware;
