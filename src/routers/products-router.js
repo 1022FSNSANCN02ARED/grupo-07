@@ -29,7 +29,7 @@ router.get("/adm", productsController.adm);
 router.get("/create", productsController.create);
 
 //Accion de creacion
-router.post("/", upload.single("imagen"), productsController.store);
+router.post("/create", upload.single("imagen"), productsController.store);
 
 //Detalle del producto
 router.get("/detail/:id", productsController.detail);

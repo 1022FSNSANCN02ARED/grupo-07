@@ -15,7 +15,11 @@
       <%- include('../partials/menu') %>
     </div>
     <section class="contenedorForm">
-      <form action="/" method="post" enctype="multipart/form-data">
+      <form
+        action="/products/create"
+        method="post"
+        enctype="multipart/form-data"
+      >
         <h4>Carga de productos</h4>
         <label for="producto">Nombre del producto</label>
         <input
