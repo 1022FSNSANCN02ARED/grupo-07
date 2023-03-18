@@ -1,8 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const {body}= require('express-validator');
-
 //Controller
 const usersController = require("../controllers/users-controller");
 
@@ -18,9 +16,9 @@ const storage = multer.diskStorage({
 
 //Middlewares
 const uploadFile = require("../middlewares/multerMiddleware");
-const validations = require("../middlewares/validateRegisterMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authtMiddleware = require("../middlewares/authMiddleware");
+const validationsRegister = require("../middlewares/validateRegisterMiddleware");
 
 // Middleware Multer
 
@@ -32,11 +30,17 @@ const upload = multer({
 router.get("/login", guestMiddleware, usersController.mostrarLogin);
 
 //proceso de login
-router.post('/login', usersController.loginProcess);
+router.post("/login", usersController.loginProcess);
 
 // Register
 router.get("/register", guestMiddleware, usersController.mostrarRegister);
-router.post("/register", upload.single("avatar"), validations, usersController.processRegister);
+router.post(
+  "/register",
+  upload.single("avatar"),
+
+  validationsRegister,
+  usersController.processRegister
+);
 
 //Perfile
 router.get("/profile", authtMiddleware, usersController.profile);
