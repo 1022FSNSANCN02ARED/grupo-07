@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "nombre": "paola",
+    "apellido": "guzman",
+    "email": "paogu20@hotmail.com",
+    "contacto": "",
+    "cotegoria": "",
+    "avatar": "",
+    "password": "1234",
+    "categoria": "administrador"
+  }
+]
