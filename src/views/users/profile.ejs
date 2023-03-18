@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!--Include head-->
-        <%- include('../partials/head') %> 
-        <title>Argon | Register</title>
-</head>
-<body>
+  <head>
+    <!--Include head-->
+    <%- include('../partials/head') %>
+    <title>Argon | Register</title>
+  </head>
+  <body>
     <header>
-        <!--Include header-->
-     <%- include('../partials/header') %>
-     </header>
-     <div class="menuDesplegado">
-        <!--Include menu-->
-        <%- include('../partials/menu') %>
-      </div>
-      <div>
-        <h2> Bienvenido/a <%= user.name %> </h2>
-        <img src="/public/img/user <%= user.imagen %>">
-        <div> <%= user.email %></div>
-      </div>
-    
-</body>
+      <!--Include header-->
+      <%- include('../partials/header') %>
+    </header>
+    <div class="menuDesplegado">
+      <!--Include menu-->
+      <%- include('../partials/menu') %>
+    </div>
+    <style>
+      body {
+        text-align: center;
+      }
+      .button-create {
+        width: 50%;
+        background-color: blueviolet;
+        color: white;
+      }
+    </style>
+    <div>
+      <h1>Hola! <%= user.nombre %></h1>
+      <br />
+      <img src="<%= user.avatar %> " />
+      <div><%= user.email %></div>
+    </div>
+  </body>
 </html>
