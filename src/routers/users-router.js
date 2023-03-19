@@ -19,12 +19,7 @@ const uploadFile = require("../middlewares/multerMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authtMiddleware = require("../middlewares/authMiddleware");
 const validationsRegister = require("../middlewares/validateRegisterMiddleware");
-
-// Middleware Multer
-
-const upload = multer({
-  storage,
-});
+const registerError = require("../middlewares/errorValidateMiddleware");
 
 //login
 router.get("/login", guestMiddleware, usersController.mostrarLogin);
@@ -36,9 +31,8 @@ router.post("/login", usersController.loginProcess);
 router.get("/register", guestMiddleware, usersController.mostrarRegister);
 router.post(
   "/register",
-  upload.single("avatar"),
-
-  validationsRegister,
+  uploadFile.single("avatar"),
+  [validationsRegister, registerError],
   usersController.processRegister
 );
 

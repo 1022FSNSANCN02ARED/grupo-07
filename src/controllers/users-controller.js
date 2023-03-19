@@ -1,6 +1,6 @@
 const bcryptjs = require("bcryptjs");
 const User = require("../models/User");
-const { validationResult } = require("express-validator");
+//const { validationResult } = require("express-validator");
 
 const controller = {
   mostrarRegister: (req, res) => {
@@ -8,7 +8,7 @@ const controller = {
   },
 
   processRegister: (req, res) => {
-    const resultValidation = validationResult(req);
+    /*const resultValidation = validationResult(req);
 
     if (resultValidation.length > 0) {
       return res.render("users/register", {
@@ -28,7 +28,7 @@ const controller = {
         },
         oldData: req.body,
       });
-    }
+    }*/
 
     const userToCreate = {
       nombre: req.body.nombre,
