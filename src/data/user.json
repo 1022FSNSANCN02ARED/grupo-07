@@ -1,81 +1,23 @@
 [
-
-  {
-    "Identificador": 1,
-    "Nombre": "Facundo",
-    "Apellido": "Yavicoli",
-    "Email": "facuyavicoli@hotmail.com",
-    "Contraseña": "fyavicoli111",
-    "Categoría": "DUEÑO",
-    "Imagen": "imagen",
-    "Modprod":true,
-    "Accesototal":true
-  },
-  {
-    "Identificador": 2,
-    "Nombre": "Martina",
-    "Apellido": "Schaller",
-    "Email": "xxxxx@hotmail.com",
-    "Contraseña": "mschaller111",
-    "Categoría": "DUEÑO",
-    "Imagen": "imagen",
-    "Modprod":true,
-    "Accesototal":true
-  },
-  {
-    "Identificador": 3,
-    "Nombre": "Luciano",
-    "Apellido": "Voltattorni",
-    "Email": "xxxxx@hotmail.com",
-    "Contraseña": "lvoltattorni111",
-    "Categoría": "DUEÑO",
-    "Imagen": "imagen",
-    "Modprod":true,
-    "Accesototal":true
-  },
-  {
-    "Identificador": 4,
-    "Nombre": "Paola",
-    "Apellido": "Guzman",
-    "Email": "xxxxx@hotmail.com",
-    "Contraseña": "pguzman111",
-    "Categoría": "DUEÑO",
-    "Imagen": "imagen",
-    "Modprod":true,
-    "Accesototal":true
-  },
-  {
-    "Identificador": 5,
-    "Nombre": "Maria",
-    "Apellido": "Elena",
-    "Email": "xxxxx@hotmail.com",
-    "Contraseña": "melena111",
-    "Categoría": "DUEÑO",
-    "Imagen": "imagen",
-    "Modprod":true,
-    "Accesototal":true
-  },
-  {
-    "Identificador": 6,
-    "Nombre": "Benito",
-    "Apellido": "Benitez",
-    "Email": "xxxxx@hotmail.com",
-    "Contraseña": "bbenitez111",
-    "Categoría": "CLIENTE",
-    "Imagen": "imagen",
-    "Modprod":false,
-    "Accesototal":false
-  },
-  {
-    "Identificador": 7,
-    "Nombre": "Rodrigo ",
-    "Apellido": "Rodriguez",
-    "Email": "xxxxx@hotmail.com",
-    "Contraseña": "rrodriguez111",
-    "Categoría": "EMPLEADO",
-    "Imagen": "imagen",
-    "Modprod":true,
-    "Accesototal":false
-  }
-  
+ {
+  "id": 1,
+  "nombre": "paola",
+  "apellido": "guzman",
+  "email": "paogu20@hotmail.com",
+  "contacto": "",
+  "cotegoria": "",
+  "avatar": "",
+  "password": "1234",
+  "categoria": "administrador"
+ },
+ {
+  "id": 2,
+  "nombre": "Martina",
+  "apellido": "Schaller",
+  "email": "martinaschaller12@gmail.com",
+  "contacto": 3364,
+  "categoria": "cliente",
+  "avatar": "/img/users/imagen1679240419759.png",
+  "password": "$2a$10$723GdwPW5souIXkFMnZi1e2RdVYiw2GP8kKqhK9jdLjXjubGXbXGS"
+ }
 ]

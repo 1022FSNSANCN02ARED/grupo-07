@@ -54,7 +54,7 @@ const controller = {
     };
 
     products.saveProductEdited(product);
-    res.redirect("/");
+    res.redirect("/products/adm");
   },
   destroy: (req, res) => {
     products.deleteProduct(req.params.id);

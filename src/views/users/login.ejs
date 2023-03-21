@@ -1,59 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-       <!--Include head-->
-       <%- include('../partials/head') %> 
-       <title>Argon | Login</title>
-</head>
-<body>
+  <head>
+    <!--Include head-->
+    <%- include('../partials/head') %>
+    <title>Argon | Login</title>
+  </head>
+  <body>
     <header>
-        <!--Include header-->
-     <%- include('../partials/header') %>
-     </header>
-     <div class="menuDesplegado">
-        <!--Include menu-->
-        <%- include('../partials/menu') %>
-      </div>
+      <!--Include header-->
+      <%- include('../partials/header') %>
+    </header>
+    <div class="menuDesplegado">
+      <!--Include menu-->
+      <%- include('../partials/menu') %>
+    </div>
     <section id="productos">
+      <div class="cajasProductos">
+        <div class="contenedorInfo">
+          <H3>LOGIN</H3>
+          <form method="POST" action="/users/login">
+            <br />
+            E-mail:<input
+              type="text"
+              name="email"
+              class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+              value="<%= locals.oldData ? oldData.email : null %>"
+            />
+            <% if (locals.errors && errors.email) { %>
+            <div class="text-danger"><%= errors.email.msg %></div>
+            <% } %>
 
-        <div class="cajasProductos">
-            <div class="contenedorInfo">
-                <H3>LOGIN</H3>
-                <form method="" action="">
-                    <br>
-                    E-mail:<input type="text" name="email"
-                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                    value="<%= locals.oldData ? oldData.email : null %>"
-                    >
-                    <% if (locals.errors && errors.email) { %>
-                        <div class="text-danger">
-                            <%= errors.email.msg %>
-                        </div>
-                    <% } %> 
-                    
-                    <br>
-                    Contraseña:<input type="password" name="contraseña"
-                    class="form-control <%= locals.errors && errors.contraseña ? 'is-invalid' : null %>"
-                    value="<%= locals.oldData ? oldData.contraseña : null %>"
-                    >
-                    <% if (locals.errors && errors.contraseña) { %>
-                        <div class="text-danger">
-                            <%= errors.contraseña.msg %>
-                        </div>
-                    <% } %> 
-                    
-                    <br>
-                    <input type="submit" value="Iniciar sesión">
-                    <br>
-                </form>
-            </div>
+            <br />
+            Contraseña:<input
+              type="password"
+              name="password"
+              class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+              value="<%= locals.oldData ? oldData.password : null %>"
+            />
+            <% if (locals.errors && errors.password) { %>
+            <div class="text-danger"><%= errors.password.msg %></div>
+            <% } %>
+            <label for="recordame">
+              <input
+                type="checkbox"
+                class="recordame"
+                name="recordame"
+              />Recordar mi cuenta </label
+            ><br />
+
+            <input type="submit" value="Iniciar sesión" />
+            <br />
+          </form>
         </div>
+      </div>
     </section>
     <footer>
-        <!--Include Footer-->
-<%- include('../partials/footer') %> 
-</footer>
-   <!--Include scripts-->
-   <%- include('../partials/scripts') %>
-</body>
+      <!--Include Footer-->
+      <%- include('../partials/footer') %>
+    </footer>
+    <!--Include scripts-->
+    <%- include('../partials/scripts') %>
+  </body>
 </html>

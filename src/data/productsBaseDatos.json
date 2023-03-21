@@ -21,26 +21,15 @@
     },
     {
         "id": 2,
-        "nombre": "Monitor",
+        "nombre": "monitor",
         "marca": "Gigabyte",
-        "modelo": "G24F",
-        "pulgadas": "24",
-        "resmaxima": "1920x1080",
-        "frecuenciamax": "165",
-        "respmin": "1ms",
-        "tipodepanel": "VA",
-        "soporteVESA": true,
-        "precio": 60000,
-        "color": "Negro",
-        "cuotas": 12,
-        "nserie": "00002",
         "stock": "si",
-        "imagen": "/img/products/monitor-curvo.jpg",
-        "vendido": false
+        "precio": 60000,
+        "imagen": "/img/products/monitor-curvo.jpg"
     },
     {
         "id": 3,
-        "nombre": "Procesador",
+        "nombre": "Procesadoro",
         "marca": "Intel",
         "stock": "no",
         "precio": 78000,
@@ -68,54 +57,5 @@
         "stock": "si",
         "precio": 13000,
         "imagen": "/img/products/memoria-ram.jpg"
-    },
-    {
-        "id": 1677017915226,
-        "nombre": "Luciano",
-        "precio": null,
-        "imagen": "/img/products/default-img.png"
-    },
-    {
-        "id": 1678230915076,
-        "nombre": "Lucianovolta",
-        "precio": null,
-        "imagen": "/img/products/default-img.png"
-    },
-    {
-        "id": 1678231451190,
-        "nombre": "Luciano",
-        "precio": null,
-        "imagen": "/img/products/default-img.png"
-    },
-    {
-        "id": 1678231595715,
-        "nombre": "aaaaaaaaa",
-        "precio": null,
-        "imagen": "/img/products/default-img.png"
-    },
-    {
-        "id": 1678232130866,
-        "nombre": "Luciano",
-        "precio": null,
-        "imagen": "/img/products/default-img.png"
-    },
-    {
-        "id": 1678232201454,
-        "nombre": "celular",
-        "marca": "aaa",
-        "precio": null,
-        "imagen": "/img/products/default-img.png"
-    },
-    {
-        "id": 1678232669637,
-        "nombre": "eeeeeeeeeeeeeeeeeeeeeee",
-        "precio": null,
-        "imagen": "/img/products/default-img.png"
-    },
-    {
-        "id": 1678233235528,
-        "nombre": "uuuuuuuuuuuuuuuuuuuuuuuuuuu",
-        "precio": null,
-        "imagen": "/img/products/default-img.png"
     }
 ]
