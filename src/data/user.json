@@ -1,23 +1,5 @@
 [
  {
-  "id": 1,
-  "nombre": "paola",
-  "apellido": "guzman",
-  "email": "paogu20@hotmail.com",
-  "contacto": "",
-  "cotegoria": "",
-  "avatar": "",
-  "password": "1234",
-  "categoria": "administrador"
- },
- {
-  "id": 2,
-  "nombre": "Martina",
-  "apellido": "Schaller",
-  "email": "martinaschaller12@gmail.com",
-  "contacto": 3364,
-  "categoria": "cliente",
-  "avatar": "/img/users/imagen1679240419759.png",
-  "password": "$2a$10$723GdwPW5souIXkFMnZi1e2RdVYiw2GP8kKqhK9jdLjXjubGXbXGS"
+    
  }
 ]

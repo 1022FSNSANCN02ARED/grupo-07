@@ -10,55 +10,56 @@
       <!--Include header-->
       <%- include('../partials/header') %>
     </header>
-    <div class="menuDesplegado">
-      <!--Include menu-->
-      <%- include('../partials/menu') %>
-    </div>
-    <section id="productos">
-      <div class="cajasProductos">
-        <div class="contenedorInfo">
-          <H3>LOGIN</H3>
-          <form method="POST" action="/users/login">
-            <br />
-            E-mail:<input
-              type="text"
-              name="email"
-              class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-              value="<%= locals.oldData ? oldData.email : null %>"
-            />
-            <% if (locals.errors && errors.email) { %>
-            <div class="text-danger"><%= errors.email.msg %></div>
-            <% } %>
-
-            <br />
-            Contraseña:<input
-              type="password"
-              name="password"
-              class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-              value="<%= locals.oldData ? oldData.password : null %>"
-            />
-            <% if (locals.errors && errors.password) { %>
-            <div class="text-danger"><%= errors.password.msg %></div>
-            <% } %>
-            <label for="recordame">
-              <input
-                type="checkbox"
-                class="recordame"
-                name="recordame"
-              />Recordar mi cuenta </label
-            ><br />
-
-            <input type="submit" value="Iniciar sesión" />
-            <br />
-          </form>
+    <div class="login-box">
+      <span class="borderLine"></span>
+      <form method="POST" action="/users/login">
+        <h2>Iniciar sesión</h2>
+        <div class="loginInput">
+          <input
+            type="text"
+            required
+            type="text"
+            name="email"
+            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+            value="<%= locals.oldData ? oldData.email : null %>"
+          />
+          <% if (locals.errors && errors.email) { %>
+          <div class="text-danger"><%= errors.email.msg %></div>
+          <% } %>
+          <span>Email</span>
+          <i></i>
         </div>
-      </div>
-    </section>
+        <div class="loginInput">
+          <input
+            type="text"
+            required
+            type="password"
+            name="password"
+            class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+            value="<%= locals.oldData ? oldData.password : null %>"
+          />
+          <% if (locals.errors && errors.password) { %>
+          <div class="text-danger"><%= errors.password.msg %></div>
+          <% } %>
+          <span>Contraseña</span>
+          <i></i>
+        </div>
+        <label for="recordame">
+          <input type="checkbox" class="recordame" name="recordame" />Recordar
+          mi cuenta </label
+        ><br />
+        <div class="links">
+          <a href="#">Olvidé mi contraseña</a>
+          <a in href="#">Registrarse</a>
+        </div>
+        <button type="submit" value="iniciar sesión" class="btn-log">
+          iniciar sesión
+        </button>
+      </form>
+    </div>
     <footer>
       <!--Include Footer-->
       <%- include('../partials/footer') %>
     </footer>
-    <!--Include scripts-->
-    <%- include('../partials/scripts') %>
   </body>
 </html>
