@@ -73,7 +73,6 @@ justify-content:center;
 align-items: center;
 }
 
-
 .header__logo{
 width: max-content;
 height: max-content;
@@ -115,6 +114,7 @@ color: var(--bright-pink);
 margin: 0;
 }
 .header__menu{
+  margin-left: 20px;
 width: 2rem;
 height: 2rem;
 background-color: #001eff;
@@ -391,8 +391,9 @@ transition: all 0.5s ease;
 
 .footer-col .social-links a:hover{
 color: #24262b;
-background-color: var( --white);
+background-color: var(--bright-pink);
 }
+
 
 
 
