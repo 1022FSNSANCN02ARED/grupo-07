@@ -28,7 +28,7 @@ body{
 }
 /* fin estilos globales */
 
-/* estilos cominicacion */
+/* estilos media*/
 .block-media{
 width: 100%;
 height: 5vh;
@@ -51,24 +51,25 @@ transition: .2s linear;
 .block-media__social-modify:hover{
 color: #000000;
 }
-/* fin estilos comunicacion */
+
+
+/*==============================HEADER==============================*/
 .header{
 width: 100%;
 height: 15vh;
 overflow: hidden;
 display: flex;
-justify-content: center;
+justify-content: right;
 align-items: center;
 position: relative;
 animation: border 10s linear infinite;
 /* box-shadow: 0px 0px 6px 1px #ff007b; */
 }
 
-/*==============================HEADER==============================*/
 .header-width{
 width: 90%;
 display: flex;
-justify-content: space-between;
+justify-content:center;
 align-items: center;
 }
 
@@ -104,16 +105,11 @@ gap: 3rem;
 .header__interactivo i{
   color: var(--bright-pink);
 }
+
 .headerLogo-Menu{
-display: flex;
-justify-content: space-around;
-align-items: start;
-gap: 2rem;
+margin-top: 20px;
 }
 
-.header__login{
-gap: 1rem;
-}
 .header__login-text{
 color: var(--bright-pink);
 margin: 0;
@@ -121,6 +117,7 @@ margin: 0;
 .header__menu{
 width: 2rem;
 height: 2rem;
+background-color: #001eff;
 display: flex;
 justify-content: space-around;
 align-items: center;
@@ -129,6 +126,7 @@ transition: .3s;
 position: relative;
 top: 4px;
 }
+
 
 .header__shadow{
 position: absolute;
@@ -142,7 +140,7 @@ box-shadow: 0px 0px 15px 2px var(--bright-pink);
 .header-search{
 width: 500px;
 position: relative;
-left: -50px;
+right: 230px;
 }
 .header-search input{
 width: 100%;
@@ -155,6 +153,7 @@ transition: .3s ease;
 outline: none;
 color: var(--very-light-gray);
 }
+
 .header-search:hover input{
 box-shadow: 0px 0px 5px 3px var(--bright-pink);
 }
@@ -395,88 +394,7 @@ color: #24262b;
 background-color: var( --white);
 }
 
-/*==============================FOOTER==============================*/
-.footer{
-background-color: var(--very-dark-gray);
-  padding: 70px 0;
-  margin-top: 25px;
-}
 
-.footer__container{
-max-width: 1170px;
-margin:auto;
-}
-.footer-row{
-display: flex;
-flex-wrap: wrap;
-}
-ul{
-list-style: none;
-}
-
-.footer-col{
- width: 25%;
- padding: 0 15px;
-}
-
-.footer-col h4{
-font-size: 18px;
-color: var( --white);
-text-transform: capitalize;
-margin-bottom: 35px;
-font-weight: 500;
-position: relative;
-}
-
-.footer-col h4::before{
-content: '';
-position: absolute;
-left:0;
-bottom: -10px;
-background-color: var( --vivid-pink);
-height: 2px;
-box-sizing: border-box;
-width: 50px;
-}
-
-.footer-col ul li:not(:last-child){
-margin-bottom: 10px;
-}
-
-.footer-col ul li a{
-font-size: 16px;
-text-transform: capitalize;
-color: var( --white);
-text-decoration: none;
-font-weight: 300;
-color: #bbbbbb;
-display: block;
-transition: all 0.3s ease;
-}
-
-.footer-col ul li a:hover{
-color: var( --white);
-padding-left: 8px;
-}
-
-.footer-col .social-links a{
-display: inline-block;
-height: 40px;
-width: 40px;
-background-color: #24262b;
-margin:0 10px 10px 0;
-text-align: center;
-line-height: 40px;
-border-radius: 50%;
-color: var( --white);
-transition: all 0.5s ease;
-}
-
-.footer-col .social-links a:hover{
-  color: var(--vivid-pink);
-  box-shadow: 0 0 5px var(--vivid-pink);
-  text-shadow: 0 0 5px var(--vivid-pink)
-}
 
 /*responsive footer*/
 @media(max-width: 767px){
@@ -1144,6 +1062,7 @@ height: 300px;
 font-size: .7rem;
 }
 
+
 /*==============================RESPONSE DESING MOBILE PROFILE==============================*/
 .profileContent{
 display: flex;
@@ -1249,12 +1168,6 @@ height: 400px;
 }
 /*==============================RESPONSE DESING TABLET HORIZONTAL Y NOTEBOOK==============================*/
 @media screen and (min-width:768px) and (max-width:1279px){
-.block-media{
-  display: none;
- }
- .header-search{
-  display: none;
- }
  .header-search-modifyr{
   display: block;
   width: 80%;
@@ -1301,6 +1214,5 @@ height: 400px;
 }
 }
 /*==============================RESPONSE DESING ESCRITORIO BIG==============================*/
-@media screen and (min-width:1280px){
-
-}
+@media screen and (min-width:1280px) {
+   }
