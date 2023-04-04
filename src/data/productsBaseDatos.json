@@ -57,5 +57,13 @@
         "stock": "si",
         "precio": 13000,
         "imagen": "/img/products/memoria-ram.jpg"
+    },
+    {
+        "id": 1680644396589,
+        "nombre": "hoja",
+        "marca": "doble",
+        "stock": "",
+        "precio": 150,
+        "imagen": "/img/products/imagen1680644396089.jpg"
     }
 ]
