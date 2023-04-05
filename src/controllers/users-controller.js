@@ -31,6 +31,7 @@ const controller = {
     }*/
 
     const userToCreate = {
+      id: Date.now(),
       nombre: req.body.nombre,
       apellido: req.body.apellido,
       email: req.body.email,
@@ -87,7 +88,7 @@ const controller = {
   },
 
   profile: (req, res) => {
-    res.render("users/profile", {
+    return res.render("users/profile", {
       user: req.session.userLogged,
     });
   },
