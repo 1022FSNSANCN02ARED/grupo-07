@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
       rol: DataTypes.STRING,
     },
     {
-      tableName: "usuario",
+      tableName: "rol",
       timestamps: false,
     }
   );

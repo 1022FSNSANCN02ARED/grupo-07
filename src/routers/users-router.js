@@ -37,7 +37,7 @@ router.post(
 );
 
 //Perfile
-router.get("/profile", authtMiddleware, usersController.profile);
+// router.get("/profile", authtMiddleware, usersController.profile);
 
 //carrito
 router.get("/carrito", usersController.carrito);

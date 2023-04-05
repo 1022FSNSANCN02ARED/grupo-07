@@ -5,10 +5,9 @@ module.exports = (sequelize, DataTypes) => {
       gama: DataTypes.STRING,
     },
     {
-      tableName: "usuario",
-      timestamps: false,
+      tableName: "gama",
+      timetamps: false,
     }
   );
+  return Model;
 };
-
-return Model;

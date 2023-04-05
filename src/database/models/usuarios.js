@@ -4,12 +4,13 @@ module.exports = (sequelize, DataTypes) => {
     {
       nombre: DataTypes.STRING,
       apellido: DataTypes.STRING,
-      correo: DataTypes.STRING,
+      email: DataTypes.STRING,
       avatar: DataTypes.STRING,
-      contraseña: DataTypes.INTEGER,
+      contraseña: DataTypes.STRING,
+      rolId: DataTypes.INTEGER,
     },
     {
-      tableName: "usuario",
+      tableName: "usuarios",
       timestamps: false,
     }
   );
@@ -17,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   Model.associate = (models) => {
     Model.belongsTo(models.Rol, {
       as: "rol",
-      foreignKey: "idRol",
+      foreignKey: "rolId",
     });
     Model.belongsToMany(models.Producto, {
       as: "productos",
@@ -27,6 +28,6 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: false,
     });
   };
-
+  console.dir(Model);
   return Model;
 };
