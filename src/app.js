@@ -48,3 +48,7 @@ app.use(mainRouter);
 app.use((req, res, next) => {
   res.status("404").render("error-404");
 });
+
+//const router = express.Router();
+//cosnt productsRouter = require('/routers/products-router');
+//app.use('/routers/products-router.js);
