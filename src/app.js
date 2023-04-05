@@ -6,6 +6,7 @@ const methodOverride = require("method-override");
 const session = require("express-session");
 const cookies = require("cookie-parser");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddlewares");
+const { Usuario } = require("./database/models");
 
 //Ejecución de express
 const app = express();
