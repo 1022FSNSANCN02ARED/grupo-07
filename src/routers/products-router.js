@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-// const res = require("express/lib/response");
+//const res = require("express/lib/response");
 const router = express.Router();
 
 // Disco de almacenamiento de Multer
@@ -18,12 +18,15 @@ const upload = multer({
 });
 
 const productsController = require("../controllers/products-controller");
+const middlewareAdmin = require("../middlewares/middlewareAdmin");
 
 //Listado de producto
+
 router.get("/", productsController.home);
+
 router.get("/allproducts", productsController.allProducts);
 // administradores
-router.get("/adm", productsController.adm);
+router.get("/adm", middlewareAdmin, productsController.adm);
 
 //Formulario de creacion de productos
 router.get("/create", productsController.create);
@@ -35,12 +38,13 @@ router.post("/create", upload.single("imagen"), productsController.store);
 router.get("/detail/:id", productsController.detail);
 
 //Formulario de edicion de productos
-router.get("/:id/edit", productsController.edit);
+router.get("/edit/:id", productsController.edit);
 
 //Accion de edicion
 router.put("/:id", upload.single("imagen"), productsController.update);
 
 //Accion de borrado
+
 router.delete("/:id", productsController.destroy);
 
 module.exports = router;

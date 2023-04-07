@@ -17,7 +17,7 @@
     margin-bottom: 25px;
     width: 10%;
     text-align: center;
-    background-color: beige;
+   
   }
   .button-edi-del{
     width: 100%;
@@ -49,9 +49,14 @@
 
     <section id="productos">
      
-        <%products.findAll().forEach(producto => { %>
+        
  <article class="card-article">
-  
+<% Producto.forEach(producto => { %>
+ 
+
+ 
+
+    
         <div class="image">
         <img
           src="<%= producto.imagen %> "
@@ -63,13 +68,12 @@
           <p>Nombre: <%= producto.nombre %></p>
           <p>PRECIO :$ <%= producto.precio %></p>
           <p>Marca :<%= producto.marca %></p>
-          <p>EN STOCK : <%= producto.stock %></p>
+          <p>Descripcion :<%= producto.descripción %></p>
         </div>
      <div class="button-edi-del">
-        <a href="<%= producto.id %>/edit/" >
+        <a href="/products/edit/<%= producto.id %>" >
           <button type="submit" class="submit">Editar</button>
         </a>
-
         <form
           class="button-delete"
           action="/products/<%= producto.id %>?_method=delete"
@@ -78,9 +82,10 @@
           <button type="submit"class="rest">Borrar</button>
         </form>
      </div>
+     <% }) %> 
  </article>
-        <% }) %>
-      
+  
+
     </section>
   </body>
   

@@ -10,12 +10,18 @@
       <!--Include header-->
       <%- include('../partials/header') %>
     </header>
+  
+   
+  
     <section class="contenedorForm">
-       <form action="/products/<%= product.id %>?_method=put"  method="POST" class="formulario" 
+  
+       
+   
+       <form action="/products/<%= Productos.id %>?_method=put"  method="POST" class="formulario" 
           enctype="multipart/form-data">
-        <h4><%= product.nombre %></h4>
+        <h4><%= Productos.nombre %></h4>
         <div class="galeria">
-          <img src="<%= product.imagen %>" />
+          <img src="/img/products/<%= Productos.imagen %>" />
         </div>
         <label for="imagen">Suba una imagen</label>
         <input
@@ -23,18 +29,18 @@
           type="file"
           name="imgagen"
           id="imagen"
-          value="<%= product.imagen %>"
+          value="<%= Productos.imagen %>"
         />
         <label for="producto">Nombre del producto</label>
-        <input type="text" name="nombre" value="<%= product.nombre %>" /><br />
+        <input type="text" name="nombre" value="<%= Productos.nombre %>" /><br />
 
-        <label for="descripción">Marca</label>
+        <label for="marca">Marca</label>
         <input
           class="w-100"
           type="text"
           name="marca"
           id="marca"
-          value="<%= product.marca %>"
+          value="<%= Productos.marca %>"
         />
         <label for="precio">Stock</label>
         <input
@@ -42,8 +48,8 @@
           type="text"
           name="stock"
           id="stock"
-          placeholder="<%= product.stock %>"
-          value="<%= product.stock %>"
+          placeholder="<%=Productos.stock %>"
+          value="<%= Productos.stock %>"
         />
 
         <label for="precio">Precio</label>
@@ -52,20 +58,30 @@
           type="number"
           name="precio"
           id="precio"
-          value="<%= product.precio %>"
+          value="<%= Productos.precio %>"
         />
         
-  
+        <label for="descripción">Descripción</label>
+        <input
+          class="w-100"
+          type="text"
+          name="descripción"
+          id="descripción"
+          value="<%= Productos.descripción %>"
+        
+  />
         <button type="submit" class="submit">EDITAR PRODUCTO / GUARDAR </i></button>
 
        
        
-        <form action="/products/<%= product.id %>?_method=delete" method="POST">
+        <form action="/products/<%= Productos.id %>?_method=delete" method="POST">
           <button type="submit" class="rest"><span class="far fa-trash-alt"></span> Eliminar</button>
       </form>
-           
+         
     </section>
+
       </form>
+        
     <footer>
       <!--Include Footer-->
       <%- include('../partials/footer') %>

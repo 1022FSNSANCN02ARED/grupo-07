@@ -20,6 +20,7 @@ const guestMiddleware = require("../middlewares/guestMiddleware");
 const authtMiddleware = require("../middlewares/authMiddleware");
 const validationsRegister = require("../middlewares/validateRegisterMiddleware");
 const registerError = require("../middlewares/errorValidateMiddleware");
+const userLoggedMiddleware = require("../middlewares/userLoggedMiddlewares");
 
 //login
 router.get("/login", guestMiddleware, usersController.mostrarLogin);
@@ -36,8 +37,7 @@ router.post(
   usersController.processRegister
 );
 
-//Perfile
-// router.get("/profile", authtMiddleware, usersController.profile);
+router.get("/profile", usersController.profile);
 
 //carrito
 router.get("/carrito", usersController.carrito);

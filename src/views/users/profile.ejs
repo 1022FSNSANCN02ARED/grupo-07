@@ -1,7 +1,7 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-  <!--Include head-->
+    <!--Include head-->
     <%- include('../partials/head') %>
     <title>Argon | Register</title>
   </head>
@@ -12,10 +12,17 @@
     </header>
     <div class="menuDesplegado">
       <!--Include menu-->
-      
     </div>
     
+     <div>
+      <h1>Hola! <%= user.nombre %></h1>
+      <br />
+      <img src=" <%= user.avatar %>  "width="120"
+      style="border-radius: 60%"
+              >
+      <div><%= user.email %></div>
+    </div>
   </body>
 </html>
       
- 
+

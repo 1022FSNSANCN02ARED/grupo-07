@@ -1,55 +1,57 @@
 const { decodeBase64 } = require("bcryptjs");
-const products = require("../data/products");
-//const db= require ("../src/database/models");
+const sequelize = require("sequelize");
+const db = require("../database/models");
+const Producto = db.Producto;
 
 const controller = {
   home: (req, res) => {},
-
   allProducts: (req, res) => {
-    res.render("products/allproducts", { products });
+    db.Producto.findAll().then((Producto) => {
+      res.render("products/allproducts", { Producto });
+    });
   },
   adm: (req, res) => {
-    res.render("products/adm");
+    res.render("products/adm", { user: req.session.userToLogin });
   },
   create: (req, res) => {
-    //db.Producto.findAll()
-    //.then(function(Productos))
-    res.render("products/create");
+    db.Producto.findAll().then(() => {
+      res.render("products/create");
+    });
   },
 
   store: (req, res) => {
-    const product = {
-      id: Date.now(),
-      nombre: req.body.nombre,
+    db.Producto.create({
+      ...req.body,
       marca: req.body.marca,
-      stock: req.body.stock,
-      precio: Number(req.body.precio),
-      descripción: req.body.descripción,
-      imagen: req.file
+      imagen: req.file,
+      descripción: req.body.descripción
         ? "/img/products/" + req.file.filename
-        : "/img/products/default-img.png",
-    };
-
-    products.saveProduct(product);
-    res.redirect("/");
+        : "/img/products/defaul-img.png",
+    }).then(() => {
+      res.redirect("/products/allproducts");
+    });
   },
+
   detail: (req, res) => {
-    //db.Producto.findByPk(req.params.id)
+    db.Producto.findByPk(req.params.id);
     const product = products
       .findAll()
-      .find((producto) => producto.id == req.params.id);
+      .then((producto) => producto.id == req.params.id);
     res.render("products/detail", { product });
   },
   edit: (req, res) => {
-    //const producto = db.Producto.fincByPk(req.params.id)
-    const product = products.findById(req.params.id);
-    res.render("products/edit", { product });
+    db.Producto.findByPk(req.params.id).then((Productos) => {
+      res.render("products/edit", {
+        Productos: {
+          ...Productos.get(),
+        },
+      });
+    });
   },
 
   update: (req, res) => {
-    const imagenestablecida = products.findById(req.params.id);
-//db.Productos.update({
-    const product = {
+    const imagenestablecida = Producto.findById(req.params.id);
+    db.Producto.update({
       id: Number(req.params.id),
       nombre: req.body.nombre,
       marca: req.body.marca,
@@ -57,18 +59,19 @@ const controller = {
       precio: Number(req.body.precio),
       descripción: req.body.descripción,
       imagen: req.files ? req.files.originalname : imagenestablecida.imagen,
-    };
-
-    products.saveProductEdited(product);
-    res.redirect("/products/adm");
+    }).then(() => {
+      res.redirect("/products/allproducts");
+    });
   },
+
   destroy: (req, res) => {
-    //db.Producto.destroy()
-    //where:{
-      //id:req.params.id
-    //}
-    products.deleteProduct(req.params.id);
-    res.redirect("/");
+    db.Producto.destroy({
+      where: {
+        id: req.params.id,
+      },
+    }).then(() => {
+      res.redirect("/products/allproducts");
+    });
   },
 };
 

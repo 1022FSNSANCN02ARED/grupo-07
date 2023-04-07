@@ -1,69 +1,61 @@
 [
-    {
-        "id": 1,
-        "nombre": "Monitor",
-        "marca": "Gigabyte",
-        "modelo": "G24F",
-        "pulgadas": "24",
-        "resmaxima": "1920x1080",
-        "frecuenciamax": "165",
-        "respmin": "1ms",
-        "tipodepanel": "IPS",
-        "soporteVESA": true,
-        "precio": 90000,
-        "color": "Negro",
-        "cuotas": 12,
-        "nserie": "00001",
-        "stock": "si",
-        "imagen": "/img/products/monitor.jpg",
-        "descripcion": "Este monitor de 27 te va a resultar cómodo para estudiar trabajar o ver una película en tus tiempos de ocio Asimismo su resolución de 1920 x 1080 te permite disfrutar de momentos únicos gracias a una imagen de alta fidelidad",
-        "vendido": false
-    },
-    {
-        "id": 2,
-        "nombre": "monitor",
-        "marca": "Gigabyte",
-        "stock": "si",
-        "precio": 60000,
-        "imagen": "/img/products/monitor-curvo.jpg"
-    },
-    {
-        "id": 3,
-        "nombre": "Procesadoro",
-        "marca": "Intel",
-        "stock": "no",
-        "precio": 78000,
-        "imagen": "/img/products/Procesador.jpg"
-    },
-    {
-        "id": 4,
-        "nombre": "Procesador",
-        "marca": "AMD",
-        "nucleos": 6,
-        "modelo": "Ryzen 5 7600x",
-        "nombreclave": "Ryzen 5",
-        "freqmax": "5.2ghz",
-        "socket": "AM4",
-        "precio": 80000,
-        "nserie": "00004",
-        "stock": "si",
-        "imagen": "/img/products/procesador-ryzen.jpg",
-        "vendido": false
-    },
-    {
-        "id": 5,
-        "nombre": "RAM",
-        "marca": "Adata",
-        "stock": "si",
-        "precio": 13000,
-        "imagen": "/img/products/memoria-ram.jpg"
-    },
-    {
-        "id": 1680644396589,
-        "nombre": "hoja",
-        "marca": "doble",
-        "stock": "",
-        "precio": 150,
-        "imagen": "/img/products/imagen1680644396089.jpg"
-    }
+  {
+    "id": 1,
+    "nombre": "Monitor",
+    "marca": "Gigabyte",
+    "modelo": "G24F",
+    "pulgadas": "24",
+    "resmaxima": "1920x1080",
+    "frecuenciamax": "165",
+    "respmin": "1ms",
+    "tipodepanel": "IPS",
+    "soporteVESA": true,
+    "precio": 90000,
+    "color": "Negro",
+    "cuotas": 12,
+    "nserie": "00001",
+    "stock": "si",
+    "imagen": "/img/products/monitor.jpg",
+    "descripcion": "Este monitor de 27 te va a resultar cómodo para estudiar trabajar o ver una película en tus tiempos de ocio Asimismo su resolución de 1920 x 1080 te permite disfrutar de momentos únicos gracias a una imagen de alta fidelidad",
+    "vendido": false
+  },
+  {
+    "id": 2,
+    "nombre": "monitor",
+    "marca": "Gigabyte",
+    "stock": "si",
+    "precio": 60000,
+    "imagen": "/img/products/monitor-curvo.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Procesadoro",
+    "marca": "Intel",
+    "stock": "no",
+    "precio": 78000,
+    "imagen": "/img/products/Procesador.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Procesador",
+    "marca": "AMD",
+    "nucleos": 6,
+    "modelo": "Ryzen 5 7600x",
+    "nombreclave": "Ryzen 5",
+    "freqmax": "5.2ghz",
+    "socket": "AM4",
+    "precio": 80000,
+    "nserie": "00004",
+    "stock": "si",
+    "imagen": "/img/products/procesador-ryzen.jpg",
+    "vendido": false
+  },
+  {
+    "id": 5,
+    "nombre": "RAM",
+    "marca": "Adata",
+    "stock": "si",
+    "precio": 13000,
+    "imagen": "/img/products/memoria-ram.jpg"
+  }
 ]

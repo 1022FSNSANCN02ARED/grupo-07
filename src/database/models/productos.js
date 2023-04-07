@@ -2,11 +2,24 @@ module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.define(
     "Producto",
     {
-      nombre: DataTypes.STRING,
-      precio: DataTypes.DECIMAL,
-      imagen: DataTypes.STRING,
-      stock: DataTypes.STRING,
-      description: DataTypes.TEXT,
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      nombre: {
+        type: DataTypes.STRING,
+      },
+      precio: {
+        type: DataTypes.DECIMAL,
+        allowNull: false,
+      },
+      descripción: {
+        type: DataTypes.STRING,
+      },
+      imagen: {
+        type: DataTypes.STRING,
+      },
     },
     {
       tableName: "productos",
@@ -16,11 +29,11 @@ module.exports = (sequelize, DataTypes) => {
   Model.associate = (models) => {
     Model.belongsTo(models.Gama, {
       as: "gama",
-      foreignKey: "idGama",
+      foreignKey: "gamaId",
     });
     Model.belongsTo(models.Marca, {
       as: "marca",
-      foreignKey: "idMarca",
+      foreignKey: "marcaId",
       timestamps: false,
     });
     Model.belongsToMany(models.Usuario, {
