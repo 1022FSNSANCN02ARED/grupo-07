@@ -1,8 +1,10 @@
-const products = require("../data/products");
+const db = require("../database/models");
 
 const controller = {
   home: (req, res) => {
-    res.render("users/home", { products });
+    db.Producto.findAll().then((Producto) => {
+      res.render("users/home", { Producto });
+    });
   },
 };
 module.exports = controller;
