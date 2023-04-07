@@ -5,6 +5,7 @@ const Producto = db.Producto;
 
 const controller = {
   home: (req, res) => {},
+
   allProducts: (req, res) => {
     db.Producto.findAll().then((Producto) => {
       res.render("products/allproducts", { Producto });
@@ -23,8 +24,8 @@ const controller = {
     db.Producto.create({
       ...req.body,
       marca: req.body.marca,
-      imagen: req.file,
-      descripción: req.body.descripción
+      descripción: req.body.descripción,
+      imagen: req.file
         ? "/img/products/" + req.file.filename
         : "/img/products/defaul-img.png",
     }).then(() => {

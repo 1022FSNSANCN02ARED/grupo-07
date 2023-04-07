@@ -21,6 +21,7 @@ const authtMiddleware = require("../middlewares/authMiddleware");
 const validationsRegister = require("../middlewares/validateRegisterMiddleware");
 const registerError = require("../middlewares/errorValidateMiddleware");
 const userLoggedMiddleware = require("../middlewares/userLoggedMiddlewares");
+const middlewareAdmin = require("../middlewares/middlewareAdmin");
 
 //login
 router.get("/login", guestMiddleware, usersController.mostrarLogin);

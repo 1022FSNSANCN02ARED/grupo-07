@@ -89,80 +89,22 @@
     </div>
 
     <!-- productos destacados -->
-    
-      <div class="productContent-product">
-        <div class="productContent-img">
-          <img src="/img/products/1060-phonex.png" alt="GTX-1060" class="" />
-        </div>
-        <hr />
-        <p class="product-charac">
-          PLACA DE VIDEO GTX-1060 <br />
-          NVIDIA
-        </p>
-        <p class="productContent-price">$32,000</p>
-      </div>
-      
-      <div class="productContent-product">
-        <div class="productContent-img">
-          <img src="/img/products/1060-phonex.png" alt="GTX-1060" class="" />
-        </div>
-        <hr />
-        <p class="product-charac">
-          PLACA DE VIDEO GTX-1060 <br />
-          NVIDIA
-        </p>
-        <p class="productContent-price">$32,000</p>
-      </div>
- 
+    <% Producto.forEach(Producto => { %>
 
-      <div class="productContent-product">
-        <div class="productContent-img">
-          <img src="/img/products/1060-phonex.png" alt="GTX-1060" class="" />
-        </div>
-        <hr />
-        <p class="product-charac">
-          PLACA DE VIDEO GTX-1060 <br />
-          NVIDIA
-        </p>
-        <p class="productContent-price">$32,000</p>
+    <div class="productContent-product">
+      <div class="productContent-img">
+        <img src="<%= Producto.imagen %>" alt="GTX-1060" class="" />
       </div>
-
-      <div class="productContent-product">
-        <div class="productContent-img">
-          <img src="/img/products/1060-phonex.png" alt="GTX-1060" class="" />
-        </div>
-        <hr />
-        <p class="product-charac">
-          PLACA DE VIDEO GTX-1060 <br />
-          NVIDIA
-        </p>
-        <p class="productContent-price">$32,000</p>
-      </div>
-
-      <div class="productContent-product">
-        <div class="productContent-img">
-          <img src="/img/products/1060-phonex.png" alt="GTX-1060" class="" />
-        </div>
-        <hr />
-        <p class="product-charac">
-          PLACA DE VIDEO GTX-1060 <br />
-          NVIDIA
-        </p>
-        <p class="productContent-price">$32,000</p>
-      </div>
-
-      <div class="productContent-product">
-        <div class="productContent-img">
-          <img src="/img/products/1060-phonex.png" alt="GTX-1060" class="" />
-        </div>
-        <hr />
-        <p class="product-charac">
-          PLACA DE VIDEO GTX-1060 <br />
-          NVIDIA
-        </p>
-        <p class="productContent-price">$32,000</p>
-      </div>
+      <hr />
+      <p class="product-charac">
+        <%= Producto.nombre %><br />
+        <p><%= Producto.marca %> </p><br>
+        <p><%= Producto.descripción %></p> 
+      </p>
+      <p class="productContent-price">$ <%= Producto.precio %></p>
     </div>
+    <% }) %>
+
     <!--Include Footer-->
     <%- include('../partials/footer') %>
   </body>
