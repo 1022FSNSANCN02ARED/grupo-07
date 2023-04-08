@@ -34,11 +34,10 @@ const controller = {
   },
 
   detail: (req, res) => {
-    db.Producto.findByPk(req.params.id);
-    const product = products
-      .findAll()
-      .then((producto) => producto.id == req.params.id);
-    res.render("products/detail", { product });
+    db.Producto.findByPk(req.params.id).then(
+      (producto) => producto.id == req.params.id
+    );
+    res.render("products/detail", { Producto });
   },
   edit: (req, res) => {
     db.Producto.findByPk(req.params.id).then((Productos) => {
