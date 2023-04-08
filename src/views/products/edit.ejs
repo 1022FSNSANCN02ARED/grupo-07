@@ -10,13 +10,7 @@
       <!--Include header-->
       <%- include('../partials/header') %>
     </header>
-  
-   
-  
     <section class="contenedorForm">
-  
-       
-   
        <form action="/products/<%= Productos.id %>?_method=put"  method="POST" class="formulario" 
           enctype="multipart/form-data">
         <h4><%= Productos.nombre %></h4>
@@ -71,18 +65,12 @@
           value="<%= Productos.descripción %>"
         
   />
-        <button type="submit" class="submit">EDITAR PRODUCTO / GUARDAR </i></button>
-
-       
-       
+        <button type="submit" class="submit">EDITAR PRODUCTO / GUARDAR </i></button>  
         <form action="/products/<%= Productos.id %>?_method=delete" method="POST">
           <button type="submit" class="rest"><span class="far fa-trash-alt"></span> Eliminar</button>
       </form>
-         
     </section>
-
       </form>
-        
     <footer>
       <!--Include Footer-->
       <%- include('../partials/footer') %>

@@ -5,58 +5,15 @@
     <%- include('../partials/head') %>
     <title>Argon | Home</title>
   </head>
-<style>
-   
-   #productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    text-align: center;
-  }
-  .card-article{
-    margin-bottom: 25px;
-    width: 10%;
-    text-align: center;
-   
-  }
-  .button-edi-del{
-    width: 100%;
-  }
-  .submit{
-  
-    background-color:  #660846;
-    color: white;
-    border-radius: 15%;
-    width: 50%;
-  }
-     .rest{
-      background-color: #660846;;
-    color: white;
-    border-radius: 15%;
-    width: 50%;
-     } 
-      
-    </style>
   <body>
     <header>
       <!--Include header-->
       <%- include('../partials/header') %>
     </header>
-    <div class="menuDesplegado">
-    </div>
-    
-  
 
     <section id="productos">
-     
-        
  <article class="card-article">
 <% Producto.forEach(producto => { %>
- 
-
- 
-
-    
         <div class="image">
         <img
           src="<%= producto.imagen %> "
@@ -84,12 +41,8 @@
      </div>
      <% }) %> 
  </article>
-  
-
     </section>
-  </body>
-  
       <!--Include Footer-->
       <%- include('../partials/footer') %>  
-</html>
+  </body>
 </html>

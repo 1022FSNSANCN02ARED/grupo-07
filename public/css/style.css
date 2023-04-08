@@ -168,6 +168,7 @@ align-items: center;
 }
 
 .header__interactivo{
+  margin-left: 10px;
   width: max-content;
   height: max-content;
   display: flex;
@@ -175,6 +176,7 @@ align-items: center;
   align-items: center;
   gap: 3rem;
 }
+
 
 .headerLogo-Menu{
 display: flex;
@@ -1060,6 +1062,7 @@ ul {
   flex-wrap: wrap;
   gap: 3rem;
 }
+
 /*==============================PROFILE==============================*/
 .profileContent {
   display: flex;
