@@ -21,7 +21,7 @@ app.use(
 
 // Levantar el servidor
 app.listen(3001, () => {
-  console.log("Funcionando");
+  console.log("Funcionando en el puerto 3001");
 });
 
 // Ruta a archivos public
