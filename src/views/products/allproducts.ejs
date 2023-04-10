@@ -11,37 +11,19 @@
       <%- include('../partials/header') %>
     </header>
 
-    <section id="productos">
- <article class="card-article">
-<% Producto.forEach(producto => { %>
-        <div class="image">
-        <img
-          src="<%= producto.imagen %> "
-          alt="producto"
-          class="imagen-producto"
-        /><br>
-        </div>
-        <div class="contenedorInfo">
-          <p>Nombre: <%= producto.nombre %></p>
-          <p>PRECIO :$ <%= producto.precio %></p>
-          <p>Marca :<%= producto.marca %></p>
-          <p>Descripcion :<%= producto.descripción %></p>
-        </div>
-     <div class="button-edi-del">
-        <a href="/products/edit/<%= producto.id %>" >
-          <button type="submit" class="submit">Editar</button>
-        </a>
-        <form
-          class="button-delete"
-          action="/products/<%= producto.id %>?_method=delete"
-          method="POST"
-        > <br>
-          <button type="submit"class="rest">Borrar</button>
-        </form>
-     </div>
-     <% }) %> 
- </article>
-    </section>
+    <div class="card-container">
+      <div class="card">Carta 1</div>
+      <div class="card">Carta 2</div>
+      <div class="card">Carta 3</div>
+      <div class="card">Carta 4</div>
+      <div class="card">Carta 5</div>
+      <div class="card">Carta 6</div>
+      <div class="card">Carta 7</div>
+      <div class="card">Carta 8</div>
+      <div class="card">Carta 9</div>
+    </div>
+    
+    
       <!--Include Footer-->
       <%- include('../partials/footer') %>  
   </body>
