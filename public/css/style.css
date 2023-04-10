@@ -131,7 +131,10 @@ gap: 2rem;
   flex-direction: column;
   transition: .3s;
   position: relative;
+  cursor: pointer;
 }
+
+
 .header__menu span{
   width: 100%;
   height: 1px;
