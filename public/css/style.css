@@ -1088,7 +1088,7 @@ ul {
 /*==============================RESPONSE DESING MOBILE==============================*/
 @media screen and (min-width: 0px) and (max-width: 480px) {
   .openMenu{
-    width: 45vh;
+    width: 60vh;
     height: 90vh;
   }
   .block-media {
