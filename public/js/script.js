@@ -1,13 +1,13 @@
+//Carga el js al final
 window.onload = function() {
-    const menu = document.querySelector(".header__menu");
+    const botonMenu= document.querySelector(".header__menu");
 const openMenu = document.querySelector(".openMenu");
-
-// menu.addEventListener("click",()=>{
-//     openMenu.classList.toggle("menuActive");
-// })
-
-menu.addEventListener("click", ()=>{
+const body = document.querySelector('body');
+//Abre el menú
+botonMenu.addEventListener("click", ()=>{
     openMenu.classList.toggle("active")
+    openMenu.classList.toggle("box-shadow")
+    body.classList.add('no-scroll');
 })
 }
 

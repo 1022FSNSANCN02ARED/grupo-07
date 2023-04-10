@@ -246,8 +246,15 @@ gap: 2rem;
   box-shadow: 5px 5px 15px 2px var(--bright-pink);
 
 }
+
+/*Hace aparecer el menú*/
 .active{
   transform: translateX(0);
+}
+
+/*Bloquea el scroll*/
+body.no-scroll {
+  overflow: hidden;
 }
 
 .openMenu-nav{
