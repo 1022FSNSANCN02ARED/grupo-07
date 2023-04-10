@@ -227,7 +227,7 @@ gap: 2rem;
 
 .openMenu{
   width: 45vh;
-  height: 85vh;
+  height: 80vh;
   background-color: var(--very-dark-gray);
   position: absolute;
   z-index: 10;
@@ -235,6 +235,10 @@ gap: 2rem;
   font-size: .9rem;
   transform: translateX(-100%);
   transition: .3s;
+  border-right: 2px solid var(--bright-pink);
+  border-bottom: 2px solid var(--bright-pink);
+  border-radius: 0 0 10px 0;
+
 }
 .active{
   transform: translateX(0);
