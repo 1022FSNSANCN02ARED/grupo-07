@@ -10,17 +10,16 @@
       <!--Include header-->
       <%- include('../partials/header') %>
     </header>
-    <section id="productos">
-      <div class="cajasProductos">
-        <div class="contenedorInfo">
-          <H4>Registrarse</H4>
+    
+      <div class="register-box">
+          <h1>Registrarse</H1>
           <h2>Ingresá tus datos para crear tu cuenta</h2>
           <form
             method="POST"
             action="/users/register"
             enctype="multipart/form-data"
           >
-            <br />
+           
             <label for="nombre"></label>
             <input type="text" name="nombre" id="nombre" placeholder="Nombre"
             class="form-control" value="<%= (locals.oldData && oldData.nombre) ?
@@ -28,7 +27,6 @@
             <div class="text-danger"><%= errors.nombre.msg %></div>
             <% } %>
 
-            <br />
             <label for="apellido"></label>
             <input type="text" name="apellido" id="apellido"
             placeholder="Apellido" class="form-control" value="<%=
@@ -37,28 +35,21 @@
             <div class="text-danger"><%= errors.apellido.msg %></div>
             <% } %>
 
-            <br />
             <label for="email"></label>
             <input type="text" name="email" id="email" placeholder="Email"
             class="form-control" value="<%= (locals.oldData && oldData.email) ?
             oldData.email : "";%>"> <% if (locals.errors && errors.email) { %>
             <div class="text-danger"><%= errors.email.msg %></div>
             <% } %>
-            <br />
-            <label for="contacto">Teléfono de contacto</label> <br />
-            <input type="text" name="contacto" id="contacto" placeholder="Código
-            de área" class="form-control" value="<%= (locals.oldData &&
-            oldData.contacto) ? oldData.contacto : "";%>"> <% if (locals.errors
-            && errors.contacto) { %>
-            <div class="text-danger"><%= errors.contacto.msg %></div>
-            <% } %> <input type="text" name="numTel" placeholder="Número de
-            teléfono" class="form-control" value="<%= (locals.oldData &&
-            oldData.numTel) ? oldData.numTel : "";%>"> <% if (locals.errors &&
-            errors.numTel) { %>
-            <div class="text-danger"><%= errors.numTel.msg %></div>
-            <% } %>
-            <br />
 
+            <label for="contacto"></label>
+            <input type="text" name="numTel" placeholder="Número de teléfono" class="form-control" value="<%= (locals.oldData &&
+          oldData.numTel) ? oldData.numTel : "";%>"> 
+            <% if (locals.errors
+          && errors.contacto) { %>
+          <div class="text-danger"><%= errors.contacto.msg %></div>
+          <% } %>
+          
             <label for="avatar"></label>
             <input name="avatar" id="avatar" type="file" placeholder="Ingrese
             una imagen de perfil" accept="image/png,image/jpg"
@@ -67,8 +58,7 @@
             <div class="text-danger"><%= errors.avatar.msg %></div>
             <% } %>
 
-            <br />
-            <label for="password">password</label>
+            <label for="password"></label>
             <input type="password" name="password" id="password"
             placeholder="password" class="form-control" value="<%=
             (locals.oldData && oldData.password) ? oldData.password : "";%>"> <%
@@ -76,14 +66,12 @@
             <div class="text-danger"><%= errors.password.msg %></div>
             <% } %>
 
-            <br />
-            
-             <input type="submit" value="Crear cuenta" />
-             <br />
+            <button type="submit" value="registrarse" class="btn-regis">
+              Registrarse
+            </button>
           </form>
-        </div>
       </div>
-    </section>
+
     <footer>
       <!--Include Footer-->
       <%- include('../partials/footer') %>
