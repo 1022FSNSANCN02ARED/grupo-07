@@ -13,14 +13,14 @@ module.exports = [
   body("contacto")
     .notEmpty()
     .withMessage("Tienes que escribir tu número de contacto"),
-  //   body("categoria").notEmpty().withMessage("Tienes que elegir una categoria"),
+
   body("password")
     .notEmpty()
     .withMessage("Tienes que escribir una contraseña")
     .bail()
     .isLength({ min: 5 })
     .withMessage("La contraseña debe tener como mínimo 5 caracteres"),
-  //   body("pais").notEmpty().withMessage("Tienes que elegir un país"),
+
   body("avatar").custom((value, { req }) => {
     let file = req.file;
     let acceptedExtensions = [".jpg", ".png"];
