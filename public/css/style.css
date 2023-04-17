@@ -28,19 +28,23 @@ body {
 }
 /* fin estilos globales */
 
+/*Home/
+
 /* estilos media*/
 .block-media {
   width: 100%;
   height: 5vh;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
   background-color: var(--strong-pink);
+  justify-content: center;
+  align-items: center;
 }
 .block-media__social {
+  margin-top: 10px;
+  font-size: 25px;
   width: 35%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .block-media__links {
@@ -76,7 +80,7 @@ align-items: center;
   height: max-content;
   text-align: center;
   text-decoration: none;
-  font-size: 1.7rem;
+  font-size: 3rem;
   transition: .3s linear;
   color: transparent;
   -webkit-text-stroke: 2px var(--bright-pink);
@@ -91,6 +95,24 @@ align-items: center;
   }
 }
 
+header input{
+border: var(--bright-pink) 2px solid;
+border-radius: 30px;
+width: 900px;
+background-color: var(--very-dark-gray);
+height: 50px;
+box-shadow: 0px 0px 15px 2px var(--bright-pink);
+margin-right: 10px;
+padding-left: 10px;
+
+}
+
+header input:focus {
+  outline: none;
+  color: var(--white);
+}
+
+
 .header__interactivo{
   width: max-content;
   height: max-content;
@@ -102,6 +124,7 @@ align-items: center;
 .header__interactivo a{
   text-decoration: none;
  color: var(--white);
+ font-size: 30px;
 }
 
 .header__interactivo a:hover{
@@ -125,8 +148,8 @@ gap: 2rem;
 
 .header__menu{
   margin-top: 4px;
-  width: 2rem;
-  height: 2rem;
+  width: 4rem;
+  height: 4rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -170,65 +193,7 @@ gap: 2rem;
 .buscadorMenu{
   display: none;
 }
-#menu-btn {
-  background-color: transparent;
-  border: none;
-  color: var(--white);
-  font-size: 20px;
-  margin-right: 20px;
-  cursor: pointer;
-}
-#menu {
-  display: none;
-  position: absolute;
-  top: 50px;
-  right: 0;
-  background-color: var(--very-dark-gray);
-  padding: 10px;
-  color: var(--white);
-}
-#menu a {
-  display: block;
-  padding: 5px;
-  color: var(--white);
-  text-decoration: none;
-}
-#menu-btn:hover,
-#menu a:hover {
-  color: #ddd;
-}
-#menu-btn:focus + #menu {
-  display: block;
-}
-#logo {
-  max-height: 50px;
-  margin-right: 20px;
-}
-#search {
-  width: 40%;
-  height: 40px;
-  background: transparent;
-  border: 1px solid var(--bright-pink);
-  border-radius: 20px;
-  text-align: center;
-  transition: .3s ease;
-  outline: none;
-  color: var(--very-light-gray);
-}
-#search:focus {
-  outline: none;
-}
-#profile-icon,
-#cart-icon {
-  font-size: 24px;
-  color: var(--white);
-  margin-right: 20px;
-  cursor: pointer;
-}
-#profile-icon:hover,
-#cart-icon:hover {
-  color: #ddd;
-}
+
 
 .openMenu{
   width: 45vh;
@@ -243,8 +208,6 @@ gap: 2rem;
   border-right: 2px solid var(--bright-pink);
   border-bottom: 2px solid var(--bright-pink);
   border-radius: 0 0 10px 0;
-  
-
 }
 
 .box-shadow{
@@ -269,6 +232,7 @@ body.no-scroll {
 .openMenu-ul{
   width: 100%;
   height: 100%;
+  font-size:1.5rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -299,9 +263,11 @@ body.no-scroll {
   padding-left: .6rem;
   outline: none;
   color: var(--very-light-gray);
-  text-align: center;
+  padding-left: 10px;
 }
-
+#menuOpen-search{
+  display: none;
+}
 
 /* estilizacion apartados */
 .block-apartados {
@@ -313,8 +279,8 @@ body.no-scroll {
   align-items: center;
 }
 .block-apartado__seleccion {
-  width: 300px;
-  height: 230px;
+  width: 30%;
+  height: 300px;
   overflow: hidden;
   font-size: 0.9rem;
   transition: 0.4s linear;
@@ -330,7 +296,7 @@ body.no-scroll {
   height: max-content;
 }
 .block-apartado__seleccion:hover {
-  height: 230px;
+  height: 350px;
   box-shadow: inset 0 0 60px var(--very-light-gray),
     inset 20px 0 80px var(--magenta), inset -20px 0 80px var(--cyan),
     inset 20px 0 300px var(--magenta), inset -20px 0 300px var(--cyan),
@@ -347,11 +313,16 @@ body.no-scroll {
 .block-publicidad {
   width: 100%;
   height: max-content;
+  
 }
 .block-publicidad img {
-  width: 100%;
-  height: 100%;
-}
+  width: 90%;
+  height: 40%;
+  border-radius: 40px;
+  display: block; 
+  margin: 0 auto; 
+}  
+
 /* productos */
 .productContent {
   width: 100%;
@@ -798,7 +769,9 @@ ul {
 
 /*==============================REGISTER==============================*/
 .register-box{
-  margin: 20px;
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 20px;
   background-color:var(--very-dark-gray);
   border-radius:8px;
   border: solid 2px var(--bright-pink);
@@ -813,12 +786,17 @@ ul {
 .register-box input{
   justify-content: center;
   align-items: center;
-  width: 98%;
-  margin: 5px;
+  width: 99%;
+  margin: 2px;
   text-align: center;
 }
+
+
 .btn-regis {
-  margin-top: 10%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
   position: relative;
   padding: 1em 1.8em;
   outline: none;
@@ -834,6 +812,7 @@ ul {
   cursor: pointer;
   font-weight: bold;
 }
+
 .btn-regis:hover {
   box-shadow: 0 0 10px var(--vivid-magenta), 0 0 25px #001eff,
     0 0 50px var(--vivid-magenta);
@@ -841,7 +820,38 @@ ul {
   color: var(--vivid-magenta);
 }
 
+/*==============================PROFILE==============================*/
+.infoProfile{
+  display: flex;
+  align-items: center;
+}
 
+.userDetail{
+text-align: center;
+}
+
+.profileIMG{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.avatarIMG{
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 250px;
+  height: 250px;
+  border-radius: 300px;
+}
+.apartados{
+  height: 15vh;
+  background-color: var(--white);
+  color: #000000;
+  border-bottom: #000000 solid 2px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /*==============================ANIMACIÓN CARGA==============================*/
 .spinner {
   margin: auto;
@@ -882,81 +892,61 @@ ul {
 }
 
 /*==============================ALL PRODUCTS==============================*/
+.allProductPage{
+  width: 100%;
+ display: flex;
+ justify-content: space-between;
+ align-items:flex-start;
+ gap: 5rem;
+ padding: 3rem;
+}
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Opcional: Ajusta el espacio entre las cartas */
-  align-items: center; /* Opcional: Alinea verticalmente las cartas */
+  width: 78%;
+  margin-left: auto;
 }
 
-.card {
-  width: 200px;
-  height: 200px;
-  background-color: #f2f2f2;
+.card{
+  width: 250px;
+  height: 400px;
   margin: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+  background-color: var(--mostly-black);  
 }
 
-/*==============================PROFILE==============================*/
-.profileContent {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.filtros{
+  width: 20%;
+  margin-top: 10px;
+  margin-left: 10px;
 }
-.profile {
+
+.card-image img{
   width: 100%;
-  height: 60vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  height: 100%;
 }
-.profile-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 1.9rem;
-}
-.profile-img img {
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
-}
-.profile-img h4 {
-  font-size: 2rem;
-}
-.profile-datos {
-  display: flex;
-  justify-content: space-around;
-  align-items: start;
-  flex-direction: column;
-  gap: 2rem;
-}
-.profile-contents h4 {
-  font-size: 1.5rem;
-  color: var(--bright-pink);
-}
-.profile-links {
-  text-decoration: none;
-  color: var(--white);
+.card p{
+  color:var(--white);
+  margin: 5px;
 }
 
 /*==============================RESPONSE DESING MOBILE==============================*/
 @media screen and (min-width: 0px) and (max-width: 480px) {
+  /*Home*/
   .openMenu{
     width: 60vh;
     height: 90vh;
   }
+  
   .block-media {
     display: none;
   }
   .header-search {
     display: none;
+  }
+  .header__interactivo a{
+    text-decoration: none;
+   color: var(--white);
+   font-size: 20px;
   }
   .header-search-modifyr {
     display: block;
@@ -964,6 +954,19 @@ ul {
     position: relative;
     left: 0;
   }
+  .header input{
+    display: none;
+  }
+  .header__menu{
+    width: 2rem;
+    height: 2rem;
+  }
+  .header__logo{
+    font-size: 1.7rem;
+  }
+  header input{
+    display: none;
+    }
   .block-apartados {
     flex-wrap: wrap;
     gap: 2rem;
@@ -994,44 +997,39 @@ ul {
   .product-charac {
     font-size: 0.7rem;
   }
+  #menuOpen-search{
+    display: block;
+  }
 
-  /*==============================RESPONSE DESING MOBILE PROFILE==============================*/
-  .profileContent {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .profile {
-    width: 100%;
-    height: max-content;
-    flex-direction: column;
-    padding: 4rem;
-    gap: 2rem;
-  }
-  .profile-img {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 1.9rem;
-  }
-  /*==============================RESPONSE DESING MOBILE ALLPRODUCTS==============================*/
-  .pageProduct-content {
-    width: 100%;
-    align-items: center;
-    flex-direction: column;
-    gap: 3rem;
-  }
-  .productContent-product-modifyr {
-    width: 420px;
-  }
-  .productContent-product-modifyr:hover {
-    width: 450px;
-    height: 320px;
-  }
+/*----------Register----------*/  
+.register-box{
+  margin: 20px;
+  width: 90%;
+}
+
+  /*--------------AllProducts*-----------------------*/
+.allProductPage{
+  width: 100%;
+  display: block;
+  justify-content: flex-start;
+}
+
+.card-container {
+  flex-direction: column;
+  display: block;
+  margin-right: 50%
+}
+.filtros{
+  margin: auto;
+  display: block;
+  display: none;
+}
 }
 /*==============================RESPONSE DESING TABLET==============================*/
 @media screen and (min-width: 480px) and (max-width: 768px) {
+  header input{
+    display: none;
+    }
   .block-media {
     display: none;
   }
@@ -1074,11 +1072,9 @@ ul {
   .product-charac {
     font-size: 0.7rem;
   }
+  
   /*==============================RESPONSE DESING TABLET PROFILE==============================*/
-  .profile-img {
-    text-align: center;
-  }
-  /*==============================RESPONSE DESING MOBILE ALLPRODUCTS==============================*/
+  /*Allprodcuts*/
   .pageProduct-content {
     width: 100%;
     align-items: center;
@@ -1136,6 +1132,11 @@ ul {
     width: 50%;
     gap: 1rem;
   }
+  .register-box{
+    margin: 20px;
+    width: 75%;
+  }
+  
 }
 /*==============================RESPONSE DESING ESCRITORIO BIG==============================*/
 @media screen and (min-width: 1280px) {

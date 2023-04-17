@@ -86,27 +86,11 @@
     </div>
     <!-- publicidad -->
     <div class="block-publicidad">
-      <img src="img/publicidad.jpg" alt="publicidad-pc" />
+      <img src="/img/sitio/publicidad2.jpg" alt="publicidad-pc" />
     </div>
 
     <!-- productos destacados -->
-    <% Producto.forEach(Producto => { %>
-
-    <div class="productContent-product">
-        <a href="products/detail/<%= Producto.id %>  ">
-      <div class="productContent-img">
-        <img src="<%= Producto.imagen %>" alt="GTX-1060" class="" />
-      </div>
-      </a>
-      <hr />
-      <p class="product-charac">
-        <%= Producto.nombre %><br />
-        <p><%= Producto.marca %> </p><br>
-        <p><%= Producto.descripción %></p> 
-      </p>
-      <p class="productContent-price">$ <%= Producto.precio %></p>
-    </div>
-    <% }) %>
+   
 
     <!--Include Footer-->
     <%- include('../partials/footer') %>

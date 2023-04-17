@@ -5,9 +5,7 @@
             
         </div>
         <div class="block-media__social">
-            <a href="" class="block-media__links block-media__social-modify">CONOCENOS</a>
-            <a href="" class="block-media__links block-media__social-modify">DESTACADO</a>
-            <a href="" class="block-media__links block-media__social-modify">CONTACTOS</a>
+            <p>¡Bienvenido/a usuario!</p>
         </div>
     </div>
     <!-- seccion de encabezado -->
@@ -22,9 +20,10 @@
                 </div>
                 <a href="/" class="header__logo">TECH ARGON</a>
             </div>
+            <input type="text" placeholder="Busca productos, marcas y más...">
             <div class="header__interactivo">
-               <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-               <a href=""><i class="fa-solid fa-circle-user"></i></a>
+               <a href="/users/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+               <a href="/users/profile"><i class="fa-solid fa-circle-user"></i></a>
                 </div>
             </div>
             <div class="header__shadow"></div>
@@ -34,12 +33,12 @@
     <div class="openMenu">
         <nav class="openMenu-nav">
             <ul class="openMenu-ul">
-                <li class="openMenu-li"><input type="text" class="menuOpen-search" placeholder="Buscar..."></li>
+                <li class="openMenu-li" id="menuOpen-search"><input type="text" class="menuOpen-search" placeholder="Buscar..."></li>
                 <li class="openMenu-li"><a href="" class="openMenu-links">Inicio</a></li>
-                <li class="openMenu-li"><a href="" class="openMenu-links">Arma tu pc</a></li>
-                <li class="openMenu-li"><a href="" class="openMenu-links">Perifericos</a></li>
-                <li class="openMenu-li"><a href="" class="openMenu-links">Conectividad</a></li>
-                <li class="openMenu-li"><a href="" class="openMenu-links">Descuentos</a></li>
+                <li class="openMenu-li"><a href="/users/carga" class="openMenu-links">¡Carga tus productos!</a></li>
+                <li class="openMenu-li"><a href="/products/allproducts" class="openMenu-links">¡Mira nuestros productos!</a></li>
+                <li class="openMenu-li"><a href="/users/login" class="openMenu-links">Iniciar sesión</a></li>
+                <li class="openMenu-li"><a href="/users/register" class="openMenu-links">Registrarse</a></li>
                 <hr>
                 <li class="openMenu-li"><a href="" class="openMenu-links">Cerrar sesión</a></li>
             </ul>

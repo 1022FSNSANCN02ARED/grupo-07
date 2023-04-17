@@ -1,6 +1,6 @@
 //Carga el js al final
 window.onload = function() {
-    const botonMenu= document.querySelector(".header__menu");
+const botonMenu= document.querySelector(".header__menu");
 const openMenu = document.querySelector(".openMenu");
 const body = document.querySelector('body');
 let paginaBloqueada = false;
@@ -10,6 +10,8 @@ botonMenu.addEventListener("click", ()=>{
   console.log("se ejecutó")
     openMenu.classList.toggle("active")
     openMenu.classList.toggle("box-shadow")
+//Sube la vista
+window.scrollTo({ top: 0, behavior: "smooth" });
 //Bloquear scroll
  // Si la página no está bloqueada
  if (!paginaBloqueada) {
@@ -29,5 +31,7 @@ botonMenu.addEventListener("click", ()=>{
     paginaBloqueada = false;
   }
 })
+
+
 }
 

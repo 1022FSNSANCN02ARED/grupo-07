@@ -1,28 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!--Include head-->
-    <%- include('../partials/head') %>
-    <title>Argon | Register</title>
-  </head>
-  
-    <header>
-      <!--Include header-->
-      <%- include('../partials/header') %>
-    </header>
-    <div class="menuDesplegado">
-      <!--Include menu-->
-    </div>
-    
-     <div>
-      <h1>Hola! <%= user.nombre %></h1>
-      <br />
-      <img src="<%= user.avatar %>  "width="120"
-      style="border-radius: 60%"
-              >
-      <div><%= user.email %></div>
-    </div>
-  </body>
-</html>
-      
 
+<head>
+  <!--Include head-->
+  <%- include('../partials/head') %>
+    <title>Argon | Register</title>
+</head>
+
+<header>
+  <!--Include header-->
+  <%- include('../partials/header') %>
+</header>
+<div class="menuDesplegado">
+  <!--Include menu-->
+</div>
+
+<div class="pageProfile">
+
+  <div class="infoProfile">
+    <div class="profileIMG">
+      <img src="/img/users/1680845792164_img.jpg" alt="" class="avatarIMG">
+    </div>
+    <div class="userDetail">
+      Correo
+    </div>
+    <div class="userDetail">
+      Teléfono
+    </div>
+  </div>
+
+    <div class="apartados">
+      Cuenta
+    </div>
+    <div class="apartados">
+      Favoritos
+    </div>
+    <div class="apartados">
+      Historial de compras
+    </div>
+    <div class="apartados">
+      Seguridad
+    </div>
+    <div class="apartados">
+      Privacidad
+    </div>
+</div>
+</body>
+
+</html>
