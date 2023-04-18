@@ -7,7 +7,6 @@ let paginaBloqueada = false;
 
 //Abre el menú
 botonMenu.addEventListener("click", ()=>{
-  console.log("se ejecutó")
     openMenu.classList.toggle("active")
     openMenu.classList.toggle("box-shadow")
 //Sube la vista

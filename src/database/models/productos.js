@@ -14,6 +14,15 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DECIMAL,
         allowNull: false,
       },
+      sockets: {
+        type: DataTypes.STRING,
+      },  
+      ram: {
+        type: DataTypes.STRING,
+      },
+      slots: {
+        type: DataTypes.DECIMAL,
+      },
       descripción: {
         type: DataTypes.STRING,
       },
