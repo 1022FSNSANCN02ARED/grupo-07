@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-04-2023 a las 00:40:52
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
+-- Tiempo de generación: 19-04-2023 a las 02:11:17
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -84,17 +84,20 @@ CREATE TABLE `productos` (
   `descripción` varchar(500) DEFAULT NULL,
   `marcaId` int(100) DEFAULT NULL,
   `gamaId` int(100) DEFAULT NULL,
-  `imagen` varchar(45) DEFAULT NULL
+  `imagen` varchar(45) DEFAULT NULL,
+  `sockets` varchar(5) DEFAULT NULL,
+  `slots` int(11) DEFAULT NULL,
+  `ram` varchar(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id`, `nombre`, `precio`, `descripción`, `marcaId`, `gamaId`, `imagen`) VALUES
-(2147483659, 'monitor', 85000, NULL, NULL, NULL, '/img/products/imagen1680847412019.jpg'),
-(2147483660, 'procesador', 80000, NULL, NULL, NULL, '/img/products/imagen1680847920047.jpg'),
-(2147483661, 'Monitor', 90, NULL, NULL, NULL, '/img/products/imagen1680906966321.jpg');
+INSERT INTO `productos` (`id`, `nombre`, `precio`, `descripción`, `marcaId`, `gamaId`, `imagen`, `sockets`, `slots`, `ram`) VALUES
+(2147483659, 'monitor', 85000, NULL, NULL, NULL, '/img/products/imagen1680847412019.jpg', NULL, NULL, NULL),
+(2147483660, 'procesador', 80000, NULL, NULL, NULL, '/img/products/imagen1680847920047.jpg', NULL, NULL, NULL),
+(2147483661, 'Monitor', 90, NULL, NULL, NULL, '/img/products/imagen1680906966321.jpg', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
