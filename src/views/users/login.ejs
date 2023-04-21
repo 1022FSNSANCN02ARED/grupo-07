@@ -12,8 +12,11 @@
     </header>
     <div class="login-box">
       <span class="borderLine"></span>
-      <form method="POST" action="/users/login">
+      <form method="POST" action="/users/login" class="form">
         <h2>Iniciar sesión</h2>
+        <div class="erroresLogin">
+          <ul></ul>
+        </div>
         <div class="loginInput">
           <input
             type="text"

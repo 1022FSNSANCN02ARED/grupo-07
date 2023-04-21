@@ -14,22 +14,26 @@
       <div class="register-box">
           <h1>Registrarse</H1>
           <h2>Ingresá tus datos para crear tu cuenta</h2>
+          <div class="erroresRegister">
+            <ul></ul>
+          </div>
           <form
             method="POST"
             action="/users/register"
             enctype="multipart/form-data"
+            class="register"
           >
            
             <label for="nombre"></label>
             <input type="text" name="nombre" id="nombre" placeholder="Nombre"
-            class="form-control" value="<%= (locals.oldData && oldData.nombre) ?
+            class="form-control nombre" value="<%= (locals.oldData && oldData.nombre) ?
             oldData.nombre : "";%>"> <% if (locals.errors && errors.nombre) { %>
             <div class="text-danger"><%= errors.nombre.msg %></div>
             <% } %>
 
             <label for="apellido"></label>
             <input type="text" name="apellido" id="apellido"
-            placeholder="Apellido" class="form-control" value="<%=
+            placeholder="Apellido" class="form-control apellido" value="<%=
             (locals.oldData && oldData.apellido) ? oldData.apellido : "";%>"> <%
             if (locals.errors && errors.apellido) { %>
             <div class="text-danger"><%= errors.apellido.msg %></div>
@@ -37,13 +41,13 @@
 
             <label for="email"></label>
             <input type="text" name="email" id="email" placeholder="Email"
-            class="form-control" value="<%= (locals.oldData && oldData.email) ?
+            class="form-control email" value="<%= (locals.oldData && oldData.email) ?
             oldData.email : "";%>"> <% if (locals.errors && errors.email) { %>
             <div class="text-danger"><%= errors.email.msg %></div>
             <% } %>
 
             <label for="contacto"></label>
-            <input type="text" name="numTel" placeholder="Número de teléfono" class="form-control" value="<%= (locals.oldData &&
+            <input type="text" name="numTel" placeholder="Número de teléfono" class="form-control numTel" value="<%= (locals.oldData &&
           oldData.numTel) ? oldData.numTel : "";%>"> 
             <% if (locals.errors
           && errors.contacto) { %>
@@ -53,14 +57,14 @@
             <label for="avatar"></label>
             <input name="avatar" id="avatar" type="file" placeholder="Ingrese
             una imagen de perfil" accept="image/png,image/jpg"
-            class="form-control" value="<%= (locals.oldData && oldData.avatar) ?
+            class="form-control avatar" value="<%= (locals.oldData && oldData.avatar) ?
             oldData.avatar : "";%>"> <% if (locals.errors && errors.avatar) { %>
             <div class="text-danger"><%= errors.avatar.msg %></div>
             <% } %>
 
             <label for="password"></label>
             <input type="password" name="password" id="password"
-            placeholder="password" class="form-control" value="<%=
+            placeholder="password" class="form-control password" value="<%=
             (locals.oldData && oldData.password) ? oldData.password : "";%>"> <%
             if (locals.errors && errors.password) { %>
             <div class="text-danger"><%= errors.password.msg %></div>

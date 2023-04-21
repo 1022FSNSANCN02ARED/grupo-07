@@ -1140,4 +1140,11 @@ text-align: center;
 }
 /*==============================RESPONSE DESING ESCRITORIO BIG==============================*/
 @media screen and (min-width: 1280px) {
+
+}
+
+
+/*==============================Validaciones==============================*/
+.errores{
+  color: red;
 }

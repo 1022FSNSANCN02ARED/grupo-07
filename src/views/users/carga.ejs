@@ -10,35 +10,44 @@
         <!--Include header-->
      <%- include('../partials/header') %>
      </header>
+
     <section class="contenedorForm">
-        <form action="" method="POST" enctype="multipart/form-data" accept="imagen/*"></form>
+        <h2>Carga tus productos</h2>
+        <div class="erroresCarga">
+            <ul></ul>
+          </div>
+        <form action="" method="POST" enctype="multipart/form-data" accept="imagen/*" class="carga"></form>
         
             <h4>Carga de productos</h4>
             <label for="producto">Nombre del producto</label>
-            <input class="w-100" type="text" placeholder="Nombre del producto" name="desc" id="nomb">
+            <input class="w-100 nombreProducto" type="text" placeholder="Nombre del producto" name="desc" id="nomb">
 
             <label  for="descripción">Descrpción</label>
-            <input class="w-100" type="text" placeholder="Descripción" name="desc" id="desc">
+            <input class="w-100 descripción" type="text" placeholder="Descripción" name="desc" id="desc">
 
             <label for="imagen">Suba una imagen</label>
-            <input class="w-100" type="file" placeholder="Imagen" name="img" id="img">
+            <input class="w-100 imgProducto" type="file" placeholder="Imagen" name="img" id="img">
 
             <label for="gama">Gama</label>
-            <input class="w-100" type="text" placeholder="gama" name="gama" id="gama">
+            <input class="w-100 gama" type="text" placeholder="gama" name="gama" id="gama">
 
             <label for="ram">Memoria/s RAM</label>
-            <input class="w-100" type="text" placeholder="DDR3, DDR4, DDR5..." name="ram" id="ram">
+            <input class="w-100 ram" type="text" placeholder="DDR3, DDR4, DDR5..." name="ram" id="ram">
 
             <label for="slots">Slots</label>
-            <input class="w-100" type="text" placeholder="2, 4..." name="slots" id="slots">
+            <input class="w-100 slots" type="text" placeholder="2, 4..." name="slots" id="slots">
             
             <label for="sockets">Sockets</label>
-            <input class="w-100" type="text" placeholder="1700, am4..." name="sockets" id="sockets">
+            <input class="w-100 sockets" type="text" placeholder="1700, am4..." name="sockets" id="sockets">
 
             <label for="precio">Precio</label>
-            <input class="w-100" type="text" placeholder="precio" name="precio" id="precio">
-            <button>Vaciar</button>
-            <button>Cargar</button>
+            <input class="w-100 precio" type="text" placeholder="precio" name="precio" id="precio">
+            <button type="submit" value="registrarse" class="btn-regis">
+                Vaciar
+              </button>
+            <button type="submit" value="cargar" class="btn-regis">
+                Cargar
+              </button>
         </form>
     </section>
     <footer>
