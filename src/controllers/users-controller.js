@@ -1,40 +1,43 @@
 const bcryptjs = require("bcryptjs");
-const User = require("../models/User");
-//const { validationResult } = require("express-validator");
+
+const { validationResult } = require("express-validator");
 const db = require("../database/models");
-const { Producto } = require("../database/models");
-const Usuario = db.Usuario;
 
 const controller = {
   mostrarRegister: (req, res) => {
     res.render("users/register");
   },
 
-  processRegister: (req, res) => {
-    // const resultValidation = validationResult(req);
-    // if (resultValidation.length > 0) {
-    //   return res.render("users/register", {
-    //     errors: resultValidation.mapped(),
-    //     oldData: req.body,
-    //   });
-    // }
-    // const userInDB = User.findByField("email", req.body.email);
-    // if (userInDB) {
-    //   return res.render("users/register", {
-    //     errors: {
-    //       email: {
-    //         msg: "este email ya esta registrado",
-    //       },
-    //     },
-    //     oldData: req.body,
-    //   });
-    // }
+  processRegister: async (req, res) => {
+    console.log("error1");
+    const resultValidation = validationResult(req);
+    if (resultValidation.length > 0) {
+      console.log("error2");
+      return res.render("users/register", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
+    console.log("ENTRÓ");
+    //const userInDB = db.Usuario.findByField("email", req.body.email);
+    let userInDB= await db.Usuario.findAll({where:{email:req.body.email}})
+    console.log(userInDB);
+    if (userInDB.length>0) {
+      return res.render("users/register", {
+        errors: {
+          email: {
+            msg: "este email ya está registrado",
+          },
+        },
+        oldData: req.body,
+      });
+    }
 
     db.Usuario.create({
       nombre: req.body.nombre,
       apellido: req.body.apellido,
       email: req.body.email,
-      contacto: Number(req.body.contacto),
+      //contacto: Number(req.body.contacto),
       rolId: 2,
       avatar: req.file
         ? "/img/users/" + req.file.filename

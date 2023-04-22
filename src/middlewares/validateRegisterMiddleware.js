@@ -10,7 +10,7 @@ module.exports = [
     .bail()
     .isEmail()
     .withMessage("Debes escribir un formato de correo válido"),
-  body("contacto")
+  body("numTel")
     .notEmpty()
     .withMessage("Tienes que escribir tu número de contacto"),
 
