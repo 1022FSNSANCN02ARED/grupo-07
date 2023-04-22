@@ -76,7 +76,7 @@ window.addEventListener("load", function () {
         campo: "password",
         errorMsg: "El campo de contraseña debe estar completo",
       });
-    } /*else if (
+    } else if (
       !/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{5,}/.test(campoPassword.value)
     ) {
       erroresRegister.push({
@@ -85,7 +85,7 @@ window.addEventListener("load", function () {
       }
        
       );
-    }*/
+    }
 
     //Si hay errores
     if (erroresRegister.length > 0) {

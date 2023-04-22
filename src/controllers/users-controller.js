@@ -1,6 +1,6 @@
 const bcryptjs = require("bcryptjs");
-
-const { validationResult } = require("express-validator");
+const session = require("express-session");
+const { validationResult, body } = require("express-validator");
 const db = require("../database/models");
 
 const controller = {
@@ -9,20 +9,18 @@ const controller = {
   },
 
   processRegister: async (req, res) => {
-    console.log("error1");
     const resultValidation = validationResult(req);
     if (resultValidation.length > 0) {
-      console.log("error2");
       return res.render("users/register", {
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
     }
-    console.log("ENTRÓ");
     //const userInDB = db.Usuario.findByField("email", req.body.email);
-    let userInDB= await db.Usuario.findAll({where:{email:req.body.email}})
-    console.log(userInDB);
-    if (userInDB.length>0) {
+    let userInDB = await db.Usuario.findAll({
+      where: { email: req.body.email },
+    });
+    if (userInDB.length > 0) {
       return res.render("users/register", {
         errors: {
           email: {
@@ -57,32 +55,38 @@ const controller = {
       where: { email: req.body.email },
     }).then((usuario) => {
       if (usuario) {
-        delete usuario.password.dataValues;
-        req.session.userToLogin = usuario.dataValues;
-
-        if (req.body.recordame) {
-          res.cookie("userEmail", req.body.email, {
-            maxAge: 1000 * 60 * 60,
-          });
+        let isOkThePassword = bcryptjs.compareSync(
+          req.body.password,
+          usuario.password
+        );
+        if (isOkThePassword) {
+          delete usuario.password;
+          req.session.userLogged ={nombre:usuario.nombre,apellido:usuario.apellido,correo:usuario.email,avatar:usuario.avatar};
+          if (req.body.recordame) {
+            res.cookie("userEmail", req.body.email, {
+              maxAge: 1000 * 60 * 60,
+            });
+          }
+          return res.redirect("/users/profile");
         }
-        return res.redirect("/users/profile");
-      } else {
-        return res.render("users/login", {
-          errors: {
-            email: {
-              msg: "Las credenciales son invalidas",
-            },
-          },
-        });
       }
+      return res.render("users/login", {
+        errors: {
+          email: {
+            msg: "Las credenciales son invalidas",
+          },
+        },
+      });
     });
   },
 
   profile: (req, res) => {
-    return res.render("users/profile", {
-      user: req.session.userToLogin,
+    //console.log(req.session);
+    res.render("users/profile", {
+      user: req.session.userLogged,
     });
   },
+  
 
   carga: (req, res) => {
     res.render("users/carga");

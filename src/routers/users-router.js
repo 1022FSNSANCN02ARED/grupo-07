@@ -37,7 +37,7 @@ router.post(
   [validationsRegister, registerError],
   usersController.processRegister
 );
-
+//perfil
 router.get("/profile", usersController.profile);
 
 //carrito
