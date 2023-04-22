@@ -769,8 +769,8 @@ ul {
 
 /*==============================REGISTER==============================*/
 .register-box{
-  margin-left: 700px;
-  margin-right: 700px;
+  margin-left: 300px;
+  margin-right: 300px;
   margin-top: 20px;
   background-color:var(--very-dark-gray);
   border-radius:8px;
