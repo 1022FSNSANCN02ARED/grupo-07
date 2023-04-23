@@ -95,6 +95,29 @@ const controller = {
   carrito: (req, res) => {
     res.render("users/carrito");
   },
+
+  //Api Allusers
+  allusersAPI: (req, res) => {
+    db.Usuario.findAll().then((usuario) => {
+      res.json({
+        status:200,
+        data:usuario
+      });
+    });
+  },
+
+  //Api Usuario por id
+  Usuario: (req, res) => {
+    let usuario = db.Usuario.findByPk(req.params.id).then(
+      (Usuario) => Usuario
+    );
+    Promise.all([usuario]).then(([usuario])=>{
+      res.json({
+        status:200,
+        data:usuario
+      });
+    })
+  }
 };
 
 module.exports = controller;

@@ -7,8 +7,8 @@ const controller = {
   home: (req, res) => {},
 
   allProducts: (req, res) => {
-    db.Producto.findAll().then((Producto) => {
-      res.render("products/allproducts", { Producto });
+    db.Producto.findAll().then((Productos) => {
+      res.render("products/allproducts", { Productos });
     });
   },
   adm: (req, res) => {
@@ -73,6 +73,52 @@ const controller = {
       res.redirect("/products/allproducts");
     });
   },
+
+  //Api Allproductos
+  allProductsAPI: (req, res) => {
+    db.Producto.findAll().then((Productos) => {
+      res.json({
+        status:200,
+        data:Productos
+      });
+    });
+  },
+
+  //Api producto por id
+  producto: (req, res) => {
+    let producto = db.Producto.findByPk(req.params.id).then(
+      (producto) => producto
+    );
+    Promise.all([producto]).then(([producto])=>{
+      res.json({
+        status:200,
+        data:producto
+      });
+    })
+  },
+
+  //Buscador por nombre
+  filterProductsByName: (req, res) => {
+    if(req.query.nombreProducto){
+      db.Producto.findAll({
+        where:{
+         nombre:{
+          [sequelize.Op.like]:req.query.nombreProducto
+         }
+        }
+      }).then((Productos) => {
+        res.render("products/allproducts", { Productos });
+      });
+    }
+    else{
+      controller.allProducts(req, res);
+    }
+  },
+
 };
+
+
+
+
 
 module.exports = controller;

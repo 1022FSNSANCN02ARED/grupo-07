@@ -20,7 +20,10 @@
                 </div>
                 <a href="/" class="header__logo">TECH ARGON</a>
             </div>
-            <input type="text" placeholder="Busca productos, marcas y más...">
+            <form action="/products/filter" method="GET">
+            <input type="text" placeholder="Busca productos, marcas y más..." name="nombreProducto">
+            <button class="btn btn-primary">Buscar</button>
+            </form>
             <div class="header__interactivo">
                <a href="/users/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
                <a href="/users/profile"><i class="fa-solid fa-circle-user"></i></a>

@@ -46,4 +46,10 @@ router.get("/carrito", usersController.carrito);
 //carga
 router.get("/carga", usersController.carga);
 
+//Api all user
+router.get("/api/all", usersController.allusersAPI);
+
+//Api user por id
+router.get("/api/:id", usersController.Usuario);
+
 module.exports = router;

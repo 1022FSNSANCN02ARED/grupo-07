@@ -47,4 +47,14 @@ router.put("/:id", upload.single("imagen"), productsController.update);
 
 router.delete("/:id", productsController.destroy);
 
+//get Allproducts api
+router.get("/api/all", productsController.allProductsAPI);
+
+//get product por id
+router.get("/api/:id", productsController.producto);
+
+//Buscador por nombre
+router.get("/filter", productsController.filterProductsByName);
+
+
 module.exports = router;
