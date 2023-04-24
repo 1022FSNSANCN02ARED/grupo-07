@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-04-2023 a las 02:11:17
+-- Tiempo de generación: 24-04-2023 a las 05:04:40
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -69,7 +69,26 @@ CREATE TABLE `marca` (
 
 INSERT INTO `marca` (`id`, `marca`) VALUES
 (1, 'Dell'),
-(2, 'gigabyte');
+(2, 'gigabyte'),
+(3, 'ViewSonic'),
+(4, 'Asus'),
+(5, 'Intel'),
+(6, 'Amd'),
+(7, 'Corsair'),
+(8, 'Logitech'),
+(9, 'Adata'),
+(10, 'Zotac'),
+(11, 'Western Digital'),
+(12, 'Samsung'),
+(13, 'MSI'),
+(14, 'PNY'),
+(15, 'Redragon'),
+(16, 'Noganet'),
+(17, 'Deepcool'),
+(18, 'GENERICO'),
+(19, 'Overtech'),
+(20, 'TForce'),
+(21, 'IdCooling');
 
 -- --------------------------------------------------------
 
@@ -95,9 +114,50 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `precio`, `descripción`, `marcaId`, `gamaId`, `imagen`, `sockets`, `slots`, `ram`) VALUES
-(2147483659, 'monitor', 85000, NULL, NULL, NULL, '/img/products/imagen1680847412019.jpg', NULL, NULL, NULL),
+(2147483659, 'Monitor', 85000, 'Samsung 24\" curvo 75hz', 12, 2, '/img/products/imagen1680847412019.jpg', '', 0, ''),
 (2147483660, 'procesador', 80000, NULL, NULL, NULL, '/img/products/imagen1680847920047.jpg', NULL, NULL, NULL),
-(2147483661, 'Monitor', 90, NULL, NULL, NULL, '/img/products/imagen1680906966321.jpg', NULL, NULL, NULL);
+(2147483661, 'Monitor', 90, NULL, NULL, NULL, '/img/products/imagen1680906966321.jpg', NULL, NULL, NULL),
+(2147483671, 'GPU', 211000, 'ZOTAC RTX 3070 TWIN EDGE 8GB', 10, 2, '', '', 0, ''),
+(2147483672, 'GPU', 110000, 'ASUS RTX 3060 DUAL 12GB', 4, 2, '', '', 0, ''),
+(2147483673, 'Mother', 54300, 'ASUS TUF B450M PLUS II', 4, 2, '', 'AM4', 0, 'DDR4'),
+(2147483674, 'RAM', 16000, 'ADATA D41 8GB 3200MHZ', 9, 2, '', '', 0, 'DDR4'),
+(2147483684, 'SSD', 8000, 'WD BLUE 240GB SATA', 11, 3, '', '', 0, ''),
+(2147483685, 'HDD', 12000, 'WD BLUE 1TB SATA', 11, 3, '', '', 0, ''),
+(2147483686, 'Mother', 24000, 'ASUS PRIME B250M-A', 4, 3, '', '1151V', 0, 'DDR4'),
+(2147483687, 'Mother', 45000, 'GIGABYTE H610M S2H DDR4', 2, 3, '', '1700', 4, 'DDR4'),
+(2147483688, 'CPU', 130000, 'AMD RYZEN 5 5600X (6C/12T)', 6, 2, '', 'AM4', 0, ''),
+(2147483689, 'GPU', 880000, 'MSI RTX 4090 SUPRIM LIQUID X 24GB GDDR6X', 13, 1, '', '', 0, ''),
+(2147483690, 'GPU', 13000, 'ASUS GT 730 2GB', 4, 3, '', '', 0, ''),
+(2147483691, 'GPU', 115000, 'PNY XLR8 RTX 3060 GAMING REVEL EPIC-X RGB  12GB', 14, 2, '', '', 0, ''),
+(2147483692, 'PSU', 20000, 'REDRAGON RGPS 600W 80 PLUS BRONCE', 15, 2, '', '', 0, ''),
+(2147483693, 'PSU', 35000, 'ADATA CORE REACTOR 800W 80 PLUS GOLD', 9, 2, '', '', 0, ''),
+(2147483694, 'PSU', 14000, 'NOGANET 500W ', 15, 3, '', '', 0, ''),
+(2147483695, 'PSU', 17000, 'CORSAIR VS550 500W 80 PLUS', 7, 3, '', '', 0, ''),
+(2147483696, 'PCARMADA', 92000, 'PC de Escritorio Armada Completa Intel Celeron J4005I-C 8GB SSD 240GB', 18, 3, '', '', 0, ''),
+(2147483697, 'PCARMADA', 115000, 'PC de Escritorio Armada Completa Intel Pentium G6405 8GB SSD 256GB', 18, 3, '', '', 0, ''),
+(2147483698, 'PCARMADA', 205000, 'PC Armada Completa AMD Ryzen 5 4600G 16GB SSD 500GB + Mouse de Regalo', 18, 3, '', '', 0, ''),
+(2147483699, 'PCARMADA', 901000, 'PC Gamer Armada Completa AMD Ryzen 7 7700X 32GB SSD NVME 512GB HDD 2TB RX 6750 XT + Mouse de Regalo', 18, 1, '', '', 0, ''),
+(2147483708, 'PCARMADA', 815000, 'PC Gamer Armada Completa AMD Ryzen 7 7700X 32GB SSD 960GB NVME 512GB RX 6700 XT + Mouse de Regalo', 18, 1, '', '', 0, ''),
+(2147483709, 'PCARMADA', 650000, 'PC Gamer Armada Completa Intel Core I7 10700KF 32GB SSD NVME 512 GB RTX 3060 TI + Mouse de Regalo', 18, 2, '', '', 0, ''),
+(2147483710, 'PCARMADA', 502000, 'PC Gamer Armada Completa Intel Core I5 12400 32GB SSD NVME 512 GB RX 6700 XT + Mouse de Regalo', 18, 2, '', '', 0, ''),
+(2147483711, 'PCARMADA', 325000, 'PC Gamer Armada Completa Intel i3 10105 8GB SSD 240GB RTX 3060 Ti 8GB GDDR6', 18, 2, '', '', 0, ''),
+(2147483712, 'PCARMADA', 209800, 'PC Gamer Armada Completa Intel Core I3 10100F 16GB SSD 480GB GT 1030 + Mouse de Regalo', 18, 3, '', '', 0, ''),
+(2147483713, 'PCARMADA', 217000, 'PC De Escritorio Armada Completa AMD Ryzen 7 4700S 16GB 480GB SSD RX 550', 18, 3, '', '', 0, ''),
+(2147483714, 'PCARMADA', 188000, 'PC de Escritorio Armada Completa Intel I5 10400 16GB SSD 500GB', 18, 3, '', '', 0, ''),
+(2147483715, 'PCARMADA', 161000, 'PC De Escritorio Armada Completa AMD KIT Ryzen 7 4700S 16GB 240GB SSD GT 210', 18, 3, '', '', 0, ''),
+(2147483716, 'PCARMADA', 315000, 'PC Gamer Armada Completa Intel Core I3 12100F 16GB SSD NVME 512GB GTX 1650 + Mouse de Regalo', 18, 3, '', '', 0, ''),
+(2147483717, 'Gabinete', 57800, 'Corsair 4000D', 7, 2, '', '', 0, ''),
+(2147483718, 'Gabinete', 45000, 'Deepcool Matrexx 55 Mesh', 17, 2, '', '', 0, ''),
+(2147483719, 'Gabinete', 8000, 'Overtech C/Fuente generica, sin fuente - $2000', 19, 3, '', '', 0, ''),
+(2147483720, 'Gabinete', 83000, 'Corsair 5000D Airflow', 7, 1, '', '', 0, ''),
+(2147483721, 'CPU', 200000, 'Intel Core i7 13700k', 5, 1, '', '1700', 0, ''),
+(2147483722, 'CPU', 200000, 'Amd Ryzen 7 7700X', 6, 1, '', 'AM5', 0, ''),
+(2147483723, 'Mother', 100000, 'ASUS TUF B650 PLUS', 4, 2, '', 'AM5', 0, 'DDR5'),
+(2147483724, 'RAM', 40000, 'T FORCE DDR5 16GB 5000mHz', 20, 2, '', '', 0, 'DDR5'),
+(2147483725, 'CPUCOOLER', 0, 'STOCK AMD', 6, 3, '', '', 0, ''),
+(2147483726, 'CPUCOOLER', 0, 'STOCK INTEL', 5, 3, '', '', 0, ''),
+(2147483727, 'CPUCOOLER', 40000, 'DEEPCOOL AK620', 17, 1, '', '', 0, ''),
+(2147483728, 'CPUCOOLER', 8000, 'IDCOOLING 224XT', 21, 2, '', '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -197,13 +257,13 @@ ALTER TABLE `gama`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(50) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2147483671;
+  MODIFY `id` int(50) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2147483729;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
