@@ -25,9 +25,7 @@ module.exports = [
     let file = req.file;
     let acceptedExtensions = [".jpg", ".png"];
 
-    if (!file) {
-      throw new Error("Tienes que subir una imagen");
-    } else {
+    if (file=="") {
       let fileExtension = path.extname(file.originalname);
       if (!acceptedExtensions.includes(fileExtension)) {
         throw new Error(

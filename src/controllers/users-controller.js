@@ -39,7 +39,7 @@ const controller = {
       rolId: 2,
       avatar: req.file
         ? "/img/users/" + req.file.filename
-        : "/img/users/default-img.png",
+        : "/img/users/usuario-generico.jpg",
       password: bcryptjs.hashSync(req.body.password, 10),
     }).then(() => {
       res.redirect("/users/login");
@@ -67,7 +67,7 @@ const controller = {
               maxAge: 1000 * 60 * 60,
             });
           }
-          return res.redirect("/users/profile");
+          return res.redirect("/");
         }
       }
       return res.render("users/login", {
