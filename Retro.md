@@ -111,6 +111,50 @@ Dejar de hacer:
 
 • Subir los cambios antes de las reuniones
 
+Retro Sprint 7 --------------------------------------------------------------------------------------------------------------------------------------------------
+
+Comenzar a realizar:
+
+• Refinar secciones de código previas y actualizarlas
+
+Más de:
+
+• Colaborar y asistirnos mutuamente
+
+Seguir haciendo:
+
+• Realizar tareas en conjunto
+
+Menos de:
+
+• Retrasarnos con las etapas del proyecto
+
+Dejar de hacer:
+
+• Subir actualizaciones sin antes discutirlas en las reuniones.
+
+Retro Sprint 8 --------------------------------------------------------------------------------------------------------------------------------------------------
+
+Comenzar a realizar:
+
+• Revisar toda la funcionalidad del sitio
+
+Más de:
+
+• Consulta entre el equipo
+
+Seguir haciendo:
+
+• Realizar tareas en conjunto
+
+Menos de:
+
+•Agregar cosas innecesarias
+
+Dejar de hacer:
+
+•Funcionalidades inecesarias
+
 
 
 
