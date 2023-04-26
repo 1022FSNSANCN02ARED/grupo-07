@@ -90,9 +90,21 @@
     </div>
 
     <!-- productos destacados -->
-   
+    <% producto.forEach(producto => { %>
+
+      <div class="productContent">
+        <div class="productContent-product">
+          >
+          <hr />
+          <p class="product-charac">
+            <%= producto.nombre %> <br />
+            NVIDIA
+          </p>
+          <p class="productContent-price"><%= producto.precio %></p>
+        </div>
+        <% }) %>
 
     <!--Include Footer-->
-    <%- include('../partials/footer') %>
+
   </body>
 </html>
