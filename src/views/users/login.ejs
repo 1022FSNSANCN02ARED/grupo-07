@@ -3,6 +3,7 @@
   <head>
     <!--Include head-->
     <%- include('../partials/head') %>
+    <script src="/js/LoginValidation.js"></script>
     <title>Argon | Login</title>
   </head>
   <body>
@@ -17,40 +18,36 @@
         <div class="erroresLogin">
           <ul></ul>
         </div>
-        <div class="loginInput">
+        <div class="loginInput email">
           <input
             type="text"
-            required
-            type="text"
             name="email"
-            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+            class="form-control email <%= locals.errors && errors.email ? 'is-invalid' : null %>"
             value="<%= locals.oldData ? oldData.email : null %>"
           />
           <% if (locals.errors && errors.email) { %>
-          <div class="text-danger"><%= errors.email.msg %></div>
+          <div class="text-danger email"><%= errors.email.msg %></div>
           <% } %>
           <span>Email</span>
           <i></i>
         </div>
-        <div class="loginInput">
+        <div class="loginInput password">
           <input
             type="password"
-            required
-            type="password"
             name="password"
-            class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+            class="form-control password <%= locals.errors && errors.password ? 'is-invalid' : null %>"
             value="<%= locals.oldData ? oldData.password : null %>"
           />
           <% if (locals.errors && errors.password) { %>
-          <div class="text-danger"><%= errors.password.msg %></div>
+          <div class="text-danger password"><%= errors.password.msg %></div>
           <% } %>
           <span>Contraseña</span>
           <i></i>
         </div>
         <label for="recordame" class="recordame">
           <input type="checkbox" class="recordame" name="recordame" />Recordar
-          mi cuenta </label
-        >
+          mi cuenta
+        </label>
         <div class="links">
           <a href="#">Olvidé mi contraseña</a>
           <a href="/users/register">Registrarse</a>
