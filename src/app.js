@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(cookies());
-app.use(userLoggedMiddleware);
+
 //EJS  --------------------------------------------------
 //Configuracón EJS
 //motor EJS

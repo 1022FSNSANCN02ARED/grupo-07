@@ -61,22 +61,36 @@ const controller = {
         );
         if (isOkThePassword) {
           delete usuario.password;
-          req.session.userLogged ={nombre:usuario.nombre,apellido:usuario.apellido,correo:usuario.email,avatar:usuario.avatar};
+          req.session.userLogged = {
+            nombre: usuario.nombre,
+            apellido: usuario.apellido,
+            correo: usuario.email,
+            avatar: usuario.avatar,
+          };
           if (req.body.recordame) {
             res.cookie("userEmail", req.body.email, {
               maxAge: 1000 * 60 * 60,
             });
           }
-          return res.redirect("/");
+          return res.redirect("/", { usuario: req.session.userLogged });
+        } else {
+          return res.render("users/login", {
+            errors: {
+              password: {
+                msg: "La contraseña es incorrecta",
+              },
+            },
+          });
         }
-      }
-      return res.render("users/login", {
-        errors: {
-          email: {
-            msg: "Las credenciales son invalidas",
+      } else {
+        return res.render("users/login", {
+          errors: {
+            email: {
+              msg: "No se encontró un usuario con ese mail",
+            },
           },
-        },
-      });
+        });
+      }
     });
   },
 
@@ -86,7 +100,6 @@ const controller = {
       user: req.session.userLogged,
     });
   },
-  
 
   carga: (req, res) => {
     res.render("users/carga");
@@ -100,24 +113,22 @@ const controller = {
   allusersAPI: (req, res) => {
     db.Usuario.findAll().then((usuario) => {
       res.json({
-        status:200,
-        data:usuario
+        status: 200,
+        data: usuario,
       });
     });
   },
 
   //Api Usuario por id
   Usuario: (req, res) => {
-    let usuario = db.Usuario.findByPk(req.params.id).then(
-      (Usuario) => Usuario
-    );
-    Promise.all([usuario]).then(([usuario])=>{
+    let usuario = db.Usuario.findByPk(req.params.id).then((Usuario) => Usuario);
+    Promise.all([usuario]).then(([usuario]) => {
       res.json({
-        status:200,
-        data:usuario
+        status: 200,
+        data: usuario,
       });
-    })
-  }
+    });
+  },
 };
 
 module.exports = controller;

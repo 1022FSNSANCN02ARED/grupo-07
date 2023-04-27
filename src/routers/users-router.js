@@ -38,7 +38,7 @@ router.post(
   usersController.processRegister
 );
 //perfil
-router.get("/profile", usersController.profile);
+router.get("/profile",userLoggedMiddleware, usersController.profile);
 
 //carrito
 router.get("/carrito", usersController.carrito);

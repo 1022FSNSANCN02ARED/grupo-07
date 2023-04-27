@@ -12,7 +12,7 @@ window.addEventListener("load", function () {
   const formularioRegister = document.querySelector("form.register");
 
   formularioRegister.addEventListener("submit", function (e) {
-    //e.preventDefault();
+    e.preventDefault();
     if (campoNombre.value === "") {
       erroresRegister.push({
         campo: "nombre",
