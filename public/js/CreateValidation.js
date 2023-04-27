@@ -67,25 +67,39 @@ window.addEventListener("load", function () {
 
       for (let i = 0; i < erroresCreate.length; i++) {
         switch (erroresCreate[i]?.campo) {
-          case "nombre":
+          case "nombre": 
+      console.log("nombre")
+      console.log(erroresCreate[i])
+
             errorNombre.innerHTML += `<p>${erroresCreate[i].errorMsg}</p>`;
             break;
           case "ram":
+      console.log("ram")
+      console.log(erroresCreate[i])
+
             errorNombre.innerHTML += `<p>${erroresCreate[i].errorMsg}</p>`;
             break;
           case "slots":
+      console.log("slots")
+      console.log(erroresCreate[i])
+
             errorNombre.innerHTML += `<p>${erroresCreate[i].errorMsg}</p>`;
             break;
           case "precio":
+      console.log("precio")
+      console.log(erroresCreate[i])
+
             errorNombre.innerHTML += `<p>${erroresCreate[i].errorMsg}</p>`;
             break;
           default:
-            ulErroresCreate.innerHTML += "<li>" + erroresCreate[i] + "<li>";
+            ulErroresCreate.innerHTML += "<li>" + erroresCreate[i].errorMsg + "<li>";
+      console.log("default")
+      console.log(erroresCreate[i])
+
             break;
         }
       }
-      console.log(ulErroresCreate.innerHTML)
-      console.log(ulErroresCreate);
+      console.log()
       erroresCreate = [];
     }
   });

@@ -3,6 +3,9 @@
 <head>
         <!--Include head-->
         <%- include('../partials/head') %> 
+        <script src="/js/CreateValidation.js"></script>
+        <script src="/js/RegisterValidation.js"></script>
+
         <title>Argon | Carga</title>
 </head>
 <body>
@@ -13,43 +16,81 @@
 
     <section class="contenedorForm">
         <h2>Carga tus productos</h2>
-        <div class="erroresCarga">
+        <!-- <div class="erroresCreate">
             <ul>
 
             </ul>
-          </div>
+          </div> -->
 
-        <form action="" method="POST" enctype="multipart/form-data" accept="imagen/*" class="create"></form>
+        <form action="" method="POST" enctype="multipart/form-data" accept="imagen/*" class="create">
         
             <h4>Carga de productos</h4>
             <label for="producto">Nombre del producto</label>
-            <input class="text-danger nombre" type="text" placeholder="Nombre del producto" name="nombre" id="nombre">
+            <input class="nombre" type="text" placeholder="Nombre del producto" name="nombre" id="nombre"> 
+            <div class="text-danger nombre">
+              <% if (locals.errors && errors.nombre) { %><%= errors.nombre.msg
+              %> <% } %>
+              </div> 
+              <br>
 
             <label  for="descripción">Descrpción</label>
-            <input class="text-danger desc" type="text" placeholder="Descripción" name="desc" id="desc">
+            <input class="desc" type="text" placeholder="Descripción" name="desc" id="desc"> 
+            <div class="text-danger desc">
+              <% if (locals.errors && errors.desc) { %><%= errors.desc.msg
+              %> <% } %>
+            </div>
+            <br>
 
             <label for="imagen">Suba una imagen</label>
-            <input class="img" type="file" placeholder="Imagen" name="img" id="img">
+            <input class="img" type="file" placeholder="Imagen" name="img" id="img"> 
+            <div class="text-danger img">
+              <% if (locals.errors && errors.img) { %><%= errors.img.msg
+              %> <% } %>
+            </div>
+            <br>
 
             <label for="gama">Gama</label>
             <select name="gama" id="gama">
               <option value="baja" selected>Baja</option>
               <option value="media">Media</option>
               <option value="alta">Alta</option>
-            </select>
+            </select> 
+            <div class="text-danger gama">
+              <% if (locals.errors && errors.gama) { %><%= errors.gama.msg
+              %> <% } %>
+            </div>
 
             <label for="ram">Memoria/s RAM</label>
-            <input class="text-danger ram" type="text" placeholder="DDR3, DDR4, DDR5..." name="ram" id="ram">
+            <input class="ram" type="text" placeholder="DDR3, DDR4, DDR5..." name="ram" id="ram"> 
+            <div class="text-danger ram">
+              <% if (locals.errors && errors.ram) { %><%= errors.ram.msg
+              %> <% } %>
+            </div>
+            
 
-            <label for="slots">Slots</label>
-            <input class="text-danger slots" type="text" placeholder="2, 4..." name="slots" id="slots">
+            <label for="precio">Slots</label>
+            <input class="slots" type="text" placeholder="2, 4..." name="slots" id="slots"> 
+            <div class="text-danger slots">
+              <% if (locals.errors && errors.slots) { %><%= errors.slots.msg
+              %> <% } %>
+            </div>
             
             <label for="sockets">Sockets</label>
-            <input class="text-danger sockets" type="text" placeholder="1700, am4..." name="sockets" id="sockets">
+            <input class="sockets" type="text" placeholder="1700, am4..." name="sockets" id="sockets"> 
+            <div class="text-danger sockets">
+              <% if (locals.errors && errors.sockets) { %><%= errors.sockets.msg
+              %> <% } %>
+            </div>
+            <br>
 
             <label for="precio">Precio</label>
             <input class="precio" type="text" placeholder="precio" name="precio" id="precio">
-            <button type="text-danger submit" value="registrarse" class="btn-regis">
+            <div class="text-danger precio">
+              <% if (locals.errors && errors.precio) { %><%= errors.precio.msg
+              %> <% } %>
+            </div>
+            <br>
+            <button type="submit" value="registrarse" class="btn-regis">
                 Vaciar
               </button>
             <button type="submit" value="cargar" class="btn-regis" id="create">
