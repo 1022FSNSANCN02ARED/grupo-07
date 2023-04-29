@@ -21,10 +21,8 @@ window.addEventListener("load", function () {
     } else if (campoNombre.value.length < 3) {
       erroresRegister.push({
         campo: "nombre",
-        errorMsg:  "El campo de nombre debe tener al menos 3 caracteres",
-      }
-       
-      );
+        errorMsg: "El campo de nombre debe tener al menos 3 caracteres",
+      });
     }
 
     if (campoApellido.value === "") {
@@ -36,25 +34,19 @@ window.addEventListener("load", function () {
       erroresRegister.push({
         campo: "apellido",
         errorMsg: "El campo de apellido debe tener al menos 3 caracteres",
-      }
-        
-      );
+      });
     }
 
     if (campoEmail.value === "") {
       erroresRegister.push({
         campo: "email",
         errorMsg: "El campo de correo electrónico debe estar completo",
-      }
-        
-      );
+      });
     } else if (!campoEmail.value.includes("@")) {
       erroresRegister.push({
         campo: "email",
         errorMsg: "El campo de correo electrónico debe contener un '@'",
-      }
-        
-      );
+      });
     }
 
     if (campoTelefono.value === "") {
@@ -62,13 +54,12 @@ window.addEventListener("load", function () {
         campo: "numTel",
         errorMsg: "El campo de teléfono debe estar completo",
       });
-    } else if (campoTelefono.value=="") {
+    } else if (campoTelefono.value == "") {
       erroresRegister.push({
         campo: "numTel",
-        errorMsg: "El campo de teléfono debe contener un número de teléfono válido",
-      }
-        
-      );
+        errorMsg:
+          "El campo de teléfono debe contener un número de teléfono válido",
+      });
     }
 
     if (campoPassword.value === "") {
@@ -81,10 +72,9 @@ window.addEventListener("load", function () {
     ) {
       erroresRegister.push({
         campo: "password",
-        errorMsg:  "La contraseña debe contener al menos una letra mayúscula, una letra minúscula, un número, un símbolo y tener al menos 6 caracteres",
-      }
-       
-      );
+        errorMsg:
+          "La contraseña debe contener al menos una letra mayúscula, una letra minúscula, un número, un símbolo y tener al menos 6 caracteres",
+      });
     }
 
     //Si hay errores
@@ -96,27 +86,29 @@ window.addEventListener("load", function () {
       const errorNumTel = document.querySelector(".text-danger.numTel");
       const errorAvatar = document.querySelector(".text-danger.avatar");
       const errorPassword = document.querySelector(".text-danger.password");
-      const ulErroresRegister = document.querySelector(
-        "div.erroresRegister ul"
-      );
-        errorNombre.innerHTML='';
-        errorApellido.innerHTML='';
-        errorEmail.innerHTML='';
-        errorNumTel.innerHTML='';
-        errorPassword.innerHTML='';
+      const ulErroresRegister = document.querySelector("div.erroresRegister ul");
+      errorNombre.innerHTML = "";
+      errorApellido.innerHTML = "";
+      errorEmail.innerHTML = "";
+      errorNumTel.innerHTML = "";
+      errorPassword.innerHTML = "";
 
       for (let i = 0; i < erroresRegister.length; i++) {
         switch (erroresRegister[i]?.campo) {
           case "nombre":
+            console.log("nombre")
             errorNombre.innerHTML += `<p>${erroresRegister[i].errorMsg}</p>`;
             break;
           case "apellido":
+            console.log("apellido")
             errorApellido.innerHTML += `<p>${erroresRegister[i].errorMsg}</p>`;
             break;
           case "email":
+            console.log("email")
             errorEmail.innerHTML += `<p>${erroresRegister[i].errorMsg}</p>`;
             break;
           case "numTel":
+            console.log("numTel")
             errorNumTel.innerHTML += `<p>${erroresRegister[i].errorMsg}</p>`;
             break;
           case "avatar":
@@ -131,7 +123,7 @@ window.addEventListener("load", function () {
             break;
         }
       }
-      erroresRegister=[];
+      erroresRegister = [];
     }
   });
 });

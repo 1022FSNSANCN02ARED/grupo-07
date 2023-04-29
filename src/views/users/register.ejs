@@ -28,7 +28,10 @@
         <input type="text" name="nombre" id="nombre" placeholder="Nombre"
         class="form-control nombre" value="<%= (locals.oldData &&
         oldData.nombre) ? oldData.nombre : "";%>">
-        
+        <div class="text-danger nombre">
+          <% if (locals.errors && errors.nombre) { %><%= errors.nombre.msg %> <%
+          } %>
+        </div>
 
         <label for="apellido"></label>
         <input type="text" name="apellido" id="apellido" placeholder="Apellido"
@@ -42,17 +45,20 @@
         <label for="email"></label>
         <input type="text" name="email" id="email" placeholder="Email"
         class="form-control email" value="<%= (locals.oldData && oldData.email)
-        ? oldData.email : "";%>"> 
-        <div class="text-danger email"><% if (locals.errors && errors.email) { %><%= errors.email.msg %><% } %></div>
-        
+        ? oldData.email : "";%>">
+        <div class="text-danger email">
+          <% if (locals.errors && errors.email) { %><%= errors.email.msg %><% }
+          %>
+        </div>
 
         <label for="contacto"></label>
         <input type="text" name="numTel" placeholder="Número de teléfono"
         class="form-control numTel" value="<%= (locals.oldData &&
-        oldData.numTel) ? oldData.numTel : "";%>"> 
-        <div class="text-danger numTel"><% if (locals.errors &&
-          errors.contacto) { %><%= errors.contacto.msg %><% } %></div>
-        
+        oldData.numTel) ? oldData.numTel : "";%>">
+        <div class="text-danger numTel">
+          <% if (locals.errors && errors.contacto) { %><%= errors.contacto.msg
+          %><% } %>
+        </div>
 
         <label for="avatar"></label>
         <input name="avatar" id="avatar" type="file" placeholder="Ingrese una
@@ -65,10 +71,11 @@
         <label for="password"></label>
         <input type="password" name="password" id="password"
         placeholder="password" class="form-control password" value="<%=
-        (locals.oldData && oldData.password) ? oldData.password : "";%>"> 
-        <div class="text-danger password"><% if
-          (locals.errors && errors.password) { %><%= errors.password.msg %><% } %></div>
-        
+        (locals.oldData && oldData.password) ? oldData.password : "";%>">
+        <div class="text-danger password">
+          <% if (locals.errors && errors.password) { %><%= errors.password.msg
+          %><% } %>
+        </div>
 
         <button type="submit" value="registrarse" class="btn-regis btn-submit">
           Registrarse
