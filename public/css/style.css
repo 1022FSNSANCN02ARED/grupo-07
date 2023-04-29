@@ -457,6 +457,9 @@ ul {
 }
 
 /*==============================LOGIN==============================*/
+.login{
+  margin: 2rem 6rem;
+}
 
 /*==============================Create==============================*/
  .create input{
@@ -625,7 +628,7 @@ text-align: center;
   color:var(--white);
   margin: 5px;
 }
-.card a{
+.card-container a{
   text-decoration: none;
 }
 

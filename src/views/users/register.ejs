@@ -62,7 +62,7 @@
 
         <label for="avatar"></label>
         <input name="avatar" id="avatar" type="file" placeholder="Ingrese una
-        imagen de perfil" accept="image/png,image/jpg" class="form-control
+        imagen de perfil" accept="image/*" class="form-control
         avatar" value="<%= (locals.oldData && oldData.avatar) ? oldData.avatar :
         "";%>"> <% if (locals.errors && errors.avatar) { %>
         <div class="text-danger avatar"><%= errors.avatar.msg %></div>

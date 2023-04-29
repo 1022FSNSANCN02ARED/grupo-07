@@ -2,6 +2,7 @@
 window.addEventListener("load",function() {
 const botonMenu= document.querySelector(".header__menu");
 const openMenu = document.querySelector(".openMenu");
+const carrousel = document.querySelector(".carrusel");
 const body = document.querySelector('body');
 let paginaBloqueada = false;
 //Abre el menú

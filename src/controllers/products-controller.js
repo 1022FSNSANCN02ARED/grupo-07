@@ -103,7 +103,7 @@ const controller = {
       db.Producto.findAll({
         where:{
          nombre:{
-          [sequelize.Op.like]:req.query.nombreProducto
+          [sequelize.Op.like]:`%${req.query.nombreProducto}%`
          }
         }
       }).then((Productos) => {

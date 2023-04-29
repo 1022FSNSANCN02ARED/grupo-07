@@ -5,7 +5,11 @@
             
         </div>
         <div class="block-media__social">
-            <p>¡Bienvenido/a usuario!</p>
+            <!--REVISAR------------------------------->
+            <% console.log(locals.userLogged) %>
+            <p>¡Bienvenido/a <% if (locals.userLogged) { %>
+             <%= locals.user.nombre %>
+            <% }else{ %>usuario!<% } %></p>
         </div>
     </div>
     <!-- seccion de encabezado -->
@@ -43,7 +47,7 @@
                 <li class="openMenu-li"><a href="/users/login" class="openMenu-links">Iniciar sesión</a></li>
                 <li class="openMenu-li"><a href="/users/register" class="openMenu-links">Registrarse</a></li>
                 <hr>
-                <li class="openMenu-li"><a href="" class="openMenu-links">Cerrar sesión</a></li>
+                <li class="openMenu-li"><a href="/users/logout" class="openMenu-links">Cerrar sesión</a></li>
             </ul>
         </nav>
     </div>

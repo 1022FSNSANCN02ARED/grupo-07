@@ -38,7 +38,7 @@ router.post("/create", upload.single("imagen"), productsController.store);
 router.get("/detail/:id", productsController.detail);
 
 //Formulario de edicion de productos
-router.get("/edit/:id", productsController.edit);
+router.get("/:id/edit", productsController.edit);
 
 //Accion de edicion
 router.put("/:id", upload.single("imagen"), productsController.update);

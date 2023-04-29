@@ -19,15 +19,17 @@
           <ul></ul>
         </div>
         <div class="loginInput email">
+          <!--Primero revisa si existe cookies y luego si contiene el email-->
           <input
             type="text"
             name="email"
             class="form-control email <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-            value="<%= locals.oldData ? oldData.email : null %>"
+            value="<%= locals.cookies ? locals.cookies['userEmail'] : null %>"
           />
-          <% if (locals.errors && errors.email) { %>
-          <div class="text-danger email"><%= errors.email.msg %></div>
-          <% } %>
+          <div class="text-danger email">
+            <% if (locals.errors && errors.email) { %> <%= errors.email.msg %>
+            <% } %>
+          </div>
           <span>Email</span>
           <i></i>
         </div>
@@ -38,8 +40,9 @@
             class="form-control password <%= locals.errors && errors.password ? 'is-invalid' : null %>"
             value="<%= locals.oldData ? oldData.password : null %>"
           />
-          <% if (locals.errors && errors.password) { %>
-          <div class="text-danger password"><%= errors.password.msg %></div>
+         
+          <div class="text-danger password">
+            <% if (locals.errors && errors.password) { %><%= errors.password.msg %></div>
           <% } %>
           <span>Contraseña</span>
           <i></i>

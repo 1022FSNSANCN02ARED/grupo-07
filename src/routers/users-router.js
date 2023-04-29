@@ -26,8 +26,12 @@ const middlewareAdmin = require("../middlewares/middlewareAdmin");
 //login
 router.get("/login", guestMiddleware, usersController.mostrarLogin);
 
+
 //proceso de login
 router.post("/login", usersController.loginProcess);
+
+//Logout
+router.get("/logout",usersController.logoutProcess);
 
 // Register
 router.get("/register", guestMiddleware, usersController.mostrarRegister);

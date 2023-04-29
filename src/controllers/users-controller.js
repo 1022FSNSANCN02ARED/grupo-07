@@ -35,8 +35,8 @@ const controller = {
       nombre: req.body.nombre,
       apellido: req.body.apellido,
       email: req.body.email,
-      //contacto: Number(req.body.contacto),
-      rolId: 2,
+      telefono: Number(req.body.numTel),
+      rolId: 1,
       avatar: req.file
         ? "/img/users/" + req.file.filename
         : "/img/users/usuario-generico.jpg",
@@ -47,7 +47,7 @@ const controller = {
   },
 
   mostrarLogin: (req, res) => {
-    res.render("users/login");
+    res.render("users/login",{req});
   },
 
   loginProcess: (req, res) => {
@@ -61,20 +61,24 @@ const controller = {
         );
         if (isOkThePassword) {
           delete usuario.password;
-          req.session.userLogged = {
+          req.session.userLogged=true;
+          req.session.user= {
             nombre: usuario.nombre,
             apellido: usuario.apellido,
             correo: usuario.email,
             avatar: usuario.avatar,
           };
+          res.locals.user=req.session.user;
+          res.locals.userLogged = req.session.userLogged;
           if (req.body.recordame) {
             res.cookie("userEmail", req.body.email, {
               maxAge: 1000 * 60 * 60,
             });
           }
-          return res.redirect("/", { usuario: req.session.userLogged });
+          return res.redirect("/");
         } else {
           return res.render("users/login", {
+            req,
             errors: {
               password: {
                 msg: "La contraseña es incorrecta",
@@ -84,6 +88,7 @@ const controller = {
         }
       } else {
         return res.render("users/login", {
+          req, 
           errors: {
             email: {
               msg: "No se encontró un usuario con ese mail",
@@ -94,10 +99,14 @@ const controller = {
     });
   },
 
+  logoutProcess:(req,res)=>{
+    req.session.destroy();
+    res.redirect("/")
+  },
+
   profile: (req, res) => {
-    //console.log(req.session);
     res.render("users/profile", {
-      user: req.session.userLogged,
+      user: req.session.user,
     });
   },
 
