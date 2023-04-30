@@ -56,4 +56,7 @@ router.get("/api/all", usersController.allusersAPI);
 //Api user por id
 router.get("/api/:id", usersController.Usuario);
 
+//404
+router.get("/*",(req,res)=>{res.redirect("/error-404")});
+
 module.exports = router;

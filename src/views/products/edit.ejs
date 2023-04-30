@@ -11,12 +11,15 @@
       <%- include('../partials/header') %>
     </header>
     <section class="contenedorForm">
-       <form action="/products/<%= Productos.id %>?_method=put"  method="POST" class="formulario" 
-          enctype="multipart/form-data">
+      <form
+        action="/products/<%= Productos.id %>?_method=put"
+        method="POST"
+        class="formProductEdit"
+        enctype="multipart/form-data"
+      >
         <h4><%= Productos.nombre %></h4>
         <div class="galeria">
           <img src="<%= Productos.imagen %>" />
-          
         </div>
         <label for="imagen">Suba una imagen</label>
         <input
@@ -27,7 +30,11 @@
           value="<%= Productos.imagen %>"
         />
         <label for="producto">Nombre del producto</label>
-        <input type="text" name="nombre" value="<%= Productos.nombre %>" /><br />
+        <input
+          type="text"
+          name="nombre"
+          value="<%= Productos.nombre %>"
+        /><br />
 
         <label for="marca">Marca</label>
         <input
@@ -35,16 +42,34 @@
           type="text"
           name="marca"
           id="marca"
-          value="<%= Productos.marca %>"
+          value="<%= Productos.Marca.marca %>"
         />
-        <label for="precio">Stock</label>
+        <label for="precio">Sockets</label>
         <input
           class="w-100"
           type="text"
-          name="stock"
-          id="stock"
-          placeholder="<%=Productos.stock %>"
-          value="<%= Productos.stock %>"
+          name="sockets"
+          id="sockets"
+          placeholder="<%=Productos.sockets %>"
+          value="<%= Productos.sockets %>"
+        />
+
+        <label for="slots">Slots</label>
+        <input
+          class="w-100"
+          type="number"
+          name="slots"
+          id="slots"
+          value="<%= Productos.slots %>"
+        />
+
+        <label for="ram">RAM</label>
+        <input
+          class="w-100"
+          type="text"
+          name="ram"
+          id="ram"
+          value="<%= Productos.ram %>"
         />
 
         <label for="precio">Precio</label>
@@ -55,25 +80,32 @@
           id="precio"
           value="<%= Productos.precio %>"
         />
-        
-        <label for="descripción">Descripción</label>
+
+        <label for="descripcion">Descripción</label>
         <input
           class="w-100"
           type="text"
-          name="descripción"
-          id="descripción"
-          value="<%= Productos.descripción %>"
+          name="descripcion"
+          id="descripcion"
+          value="<%= Productos.descripcion %>"
+        />
+
         
-  />
-        <button type="submit" class="submit">EDITAR PRODUCTO / GUARDAR </i></button>  
-        <form action="/products/<%= Productos.id %>?_method=delete" method="POST">
-          <button type="submit" class="rest"><span class="far fa-trash-alt"></span> Eliminar</button>
+        <label for="gama">Gama</label>
+        <select name="gama" id="gama">
+          <option value="1" <% if(Productos.gamaId==1){ %><%= "selected"  %><% }%>>Alta</option>
+          <option value="2" <% if(Productos.gamaId==2){ %><%= "selected"  %><% }%>>Media</option>
+          <option value="3" <% if(Productos.gamaId==3){ %><%= "selected"  %><% }%>>Baja</option>
+        </select>
+
+        <button type="submit" class="submit">EDITAR PRODUCTO / GUARDAR</button>
+        <button type="submit" class="rest">
+          <span class="far fa-trash-alt"></span>Eliminar
+        </button>
       </form>
     </section>
-      </form>
-    <footer>
-      <!--Include Footer-->
-      <%- include('../partials/footer') %>
-    </footer>
+
+    <!--Include Footer-->
+    <%- include('../partials/footer') %>
   </body>
 </html>

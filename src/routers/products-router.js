@@ -38,13 +38,12 @@ router.post("/create", upload.single("imagen"), productsController.store);
 router.get("/detail/:id", productsController.detail);
 
 //Formulario de edicion de productos
-router.get("/:id/edit", productsController.edit);
+router.get("/edit/:id", productsController.edit);
 
 //Accion de edicion
 router.put("/:id", upload.single("imagen"), productsController.update);
 
 //Accion de borrado
-
 router.delete("/:id", productsController.destroy);
 
 //get Allproducts api
@@ -56,5 +55,7 @@ router.get("/api/:id", productsController.producto);
 //Buscador por nombre
 router.get("/filter", productsController.filterProductsByName);
 
+//404
+router.get("/*",(req,res)=>{res.redirect("/error-404")});
 
 module.exports = router;

@@ -11,4 +11,7 @@ router.use("/products", productsRouter);
 const usersRouter = require("../routers/users-router");
 router.use("/users", usersRouter);
 
+//404
+router.get("/*",(req,res)=>{res.redirect("/error-404")});
+
 module.exports = router;

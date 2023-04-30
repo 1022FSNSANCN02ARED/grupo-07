@@ -1,7 +1,6 @@
-const { decodeBase64 } = require("bcryptjs");
 const sequelize = require("sequelize");
 const db = require("../database/models");
-const Producto = db.Producto;
+
 
 const controller = {
   home: (req, res) => {},
@@ -42,12 +41,11 @@ const controller = {
     res.render("products/detail", { Producto });
   },
   edit: (req, res) => {
-    db.Producto.findByPk(req.params.id).then((Productos) => {
-      res.render("products/edit", {
-        Productos: {
-          ...Productos.get(),
-        },
-      });
+    db.Producto.findByPk(req.params.id, {
+      include: [{ model: db.Marca }, { model: db.Gama,attributes:["gama"], }],
+    }).then((Productos) => {
+      console.log(Productos);
+      res.render("products/edit", { Productos });
     });
   },
 
@@ -103,6 +101,7 @@ const controller = {
   filterProductsByName: (req, res) => {
     if (req.query.nombreProducto) {
       db.Producto.findAll({
+        include: [{ model: db.Marca }, { model: db.Gama }],
         where: {
           nombre: {
             [sequelize.Op.like]: `%${req.query.nombreProducto}%`,

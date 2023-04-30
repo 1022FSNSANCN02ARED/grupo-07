@@ -465,6 +465,10 @@ ul {
  .create input{
   margin-bottom: 20px;
 }
+/*==============================EDIT==============================*/
+.formProductEdit{
+  margin: 2rem 6rem;
+}
 
 /*==============================REGISTER==============================*/
 .register-box{

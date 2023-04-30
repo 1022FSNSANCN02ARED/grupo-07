@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       slots: {
         type: DataTypes.DECIMAL,
       },
-      descripción: {
+      descripcion: {
         type: DataTypes.STRING,
       },
       imagen: {
@@ -37,15 +37,14 @@ module.exports = (sequelize, DataTypes) => {
   );
   Model.associate = (models) => {
     Model.belongsTo(models.Gama, {
-      as: "gama",
       foreignKey: "gamaId",
+      timestamps: false,
     });
     Model.belongsTo(models.Marca, {
       foreignKey: "marcaId",
       timestamps: false,
     });
     Model.belongsToMany(models.Usuario, {
-      as: "usuario",
       through: "carrito",
       foreignKey: "idUsuario",
       otherKey: "idProducto",
