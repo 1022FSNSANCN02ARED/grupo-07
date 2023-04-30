@@ -7,9 +7,11 @@ const controller = {
   home: (req, res) => {},
 
   allProducts: (req, res) => {
-    db.Producto.findAll().then((Productos) => {
-      res.render("products/allproducts", { Productos });
-    });
+    db.Producto.findAll({ include: [{ model: db.Marca }] }).then(
+      (Productos) => {
+        res.render("products/allproducts", { Productos });
+      }
+    );
   },
   adm: (req, res) => {
     res.render("products/adm", { user: req.session.userToLogin });
@@ -78,8 +80,8 @@ const controller = {
   allProductsAPI: (req, res) => {
     db.Producto.findAll().then((Productos) => {
       res.json({
-        status:200,
-        data:Productos
+        status: 200,
+        data: Productos,
       });
     });
   },
@@ -89,36 +91,30 @@ const controller = {
     let producto = db.Producto.findByPk(req.params.id).then(
       (producto) => producto
     );
-    Promise.all([producto]).then(([producto])=>{
+    Promise.all([producto]).then(([producto]) => {
       res.json({
-        status:200,
-        data:producto
+        status: 200,
+        data: producto,
       });
-    })
+    });
   },
 
   //Buscador por nombre
   filterProductsByName: (req, res) => {
-    if(req.query.nombreProducto){
+    if (req.query.nombreProducto) {
       db.Producto.findAll({
-        where:{
-         nombre:{
-          [sequelize.Op.like]:`%${req.query.nombreProducto}%`
-         }
-        }
+        where: {
+          nombre: {
+            [sequelize.Op.like]: `%${req.query.nombreProducto}%`,
+          },
+        },
       }).then((Productos) => {
         res.render("products/allproducts", { Productos });
       });
-    }
-    else{
+    } else {
       controller.allProducts(req, res);
     }
   },
-
 };
-
-
-
-
 
 module.exports = controller;

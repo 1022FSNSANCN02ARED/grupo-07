@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       sockets: {
         type: DataTypes.STRING,
-      },  
+      },
       ram: {
         type: DataTypes.STRING,
       },
@@ -41,7 +41,6 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "gamaId",
     });
     Model.belongsTo(models.Marca, {
-      as: "marca",
       foreignKey: "marcaId",
       timestamps: false,
     });
