@@ -35,17 +35,19 @@ const controller = {
   },
 
   detail: (req, res) => {
-    db.Producto.findByPk(req.params.id).then(
-      (producto) => producto.id == req.params.id
-    );
-    res.render("products/detail", { Producto });
+    db.Producto.findByPk(req.params.id, {
+      include: [{ model: db.Marca }, { model: db.Gama,attributes:["gama"], }],
+    }).then((Productos) => {
+      
+      res.render("products/detail", {Productos});
+    });
   },
   edit: (req, res) => {
     db.Producto.findByPk(req.params.id, {
       include: [{ model: db.Marca }, { model: db.Gama,attributes:["gama"], }],
-    }).then((Producto) => {
-      console.log(Producto);
-      res.render("products/edit", { Producto });
+    }).then((Productos) => {
+      
+      res.render("products/edit", {Productos});
     });
   },
 

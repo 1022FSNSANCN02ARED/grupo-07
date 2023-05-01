@@ -12,7 +12,7 @@
     </header>
     <section class="contenedorForm">
       <form
-        action="/products/<%= Producto.id %>?_method=put"
+        action="/products/<%= Productos.id %>?_method=put"
         method="POST"
         class="formProductEdit"
         enctype="multipart/form-data"
@@ -93,9 +93,9 @@
         
         <label for="gama">Gama</label>
         <select name="gama" id="gama">
-          <option value="1" <% if(Productoss.gamaId==1){ %><%= "selected"  %><% }%>>Alta</option>
-          <option value="2" <% if(Productoss.gamaId==2){ %><%= "selected"  %><% }%>>Media</option>
-          <option value="3" <% if(Productoss.gamaId==3){ %><%= "selected"  %><% }%>>Baja</option>
+          <option value="1" <% if(Productos.gamaId==1){ %><%= "selected"  %><% }%>>Alta</option>
+          <option value="2" <% if(Productos.gamaId==2){ %><%= "selected"  %><% }%>>Media</option>
+          <option value="3" <% if(Productos.gamaId==3){ %><%= "selected"  %><% }%>>Baja</option>
         </select>
 
         <button type="submit" class="submit">EDITAR PRODUCTO / GUARDAR</button>

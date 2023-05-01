@@ -28,7 +28,7 @@
            <input class="barra-buscar"
             type="text"
             name="search"
-            placeholder="Buscá productos por nombre, marcas o palabras clave"
+            placeholder="Buscá productoss por nombre, marcas o palabras clave"
           />
           <button type="submit" class="button-glass" >
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -47,22 +47,22 @@
     <main>
     
        
-      <h1 class="titulo"><%= Producto.nombre %>  <%= Producto.marca %> </h1>
+      <h1 class="titulo"><%= Productos.nombre %>  <%= Productos.marca %> </h1>
       
     <main>
       <div class="container">
       <div class="img">
         <img
-          src="<%= Producto.imagen %> "
-          alt="imagen-producto"
-          class="imagen-producto"
+          src="<%= Productos.imagen %> "
+          alt="imagen-productos"
+          class="imagen-productos"
         />
       </div>
       <div class="detalle-venta">
         
         
           
-          <h4 class="precio-principal">Precio:$ <%= Producto.precio  %> </h4>
+          <h4 class="precio-principal">Precio:$ <%= Productos.precio  %> </h4>
           <h6>Precio Especial</h6>
           <p class="cuotas">
           
@@ -88,7 +88,7 @@
   
     
       <h2>Descripción</h2>
-      <p><%= Producto.descripcion %>  </p>
+      <p><%= Productos.descripcion %>  </p>
   </section>
   
     </main>
