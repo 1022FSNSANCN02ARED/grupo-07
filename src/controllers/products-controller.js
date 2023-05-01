@@ -43,9 +43,9 @@ const controller = {
   edit: (req, res) => {
     db.Producto.findByPk(req.params.id, {
       include: [{ model: db.Marca }, { model: db.Gama,attributes:["gama"], }],
-    }).then((Productos) => {
-      console.log(Productos);
-      res.render("products/edit", { Productos });
+    }).then((Producto) => {
+      console.log(Producto);
+      res.render("products/edit", { Producto });
     });
   },
 

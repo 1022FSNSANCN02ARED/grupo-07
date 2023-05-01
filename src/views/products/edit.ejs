@@ -17,9 +17,9 @@
         class="formProductEdit"
         enctype="multipart/form-data"
       >
-        <h4><%= Productos.nombre %></h4>
+        <h4><%= Producto.nombre %></h4>
         <div class="galeria">
-          <img src="<%= Productos.imagen %>" />
+          <img src="<%= Producto.imagen %>" />
         </div>
         <label for="imagen">Suba una imagen</label>
         <input
@@ -27,13 +27,13 @@
           type="file"
           name="imgagen"
           id="imagen"
-          value="<%= Productos.imagen %>"
+          value="<%= Producto.imagen %>"
         />
         <label for="producto">Nombre del producto</label>
         <input
           type="text"
           name="nombre"
-          value="<%= Productos.nombre %>"
+          value="<%= Producto.nombre %>"
         /><br />
 
         <label for="marca">Marca</label>
@@ -42,7 +42,7 @@
           type="text"
           name="marca"
           id="marca"
-          value="<%= Productos.Marca.marca %>"
+          value="<%= Producto.Marca.marca %>"
         />
         <label for="precio">Sockets</label>
         <input
@@ -50,7 +50,7 @@
           type="text"
           name="sockets"
           id="sockets"
-          placeholder="<%=Productos.sockets %>"
+          placeholder="<%=Producto.sockets %>"
           value="<%= Productos.sockets %>"
         />
 
@@ -60,7 +60,7 @@
           type="number"
           name="slots"
           id="slots"
-          value="<%= Productos.slots %>"
+          value="<%= Producto.slots %>"
         />
 
         <label for="ram">RAM</label>
@@ -69,7 +69,7 @@
           type="text"
           name="ram"
           id="ram"
-          value="<%= Productos.ram %>"
+          value="<%= Producto.ram %>"
         />
 
         <label for="precio">Precio</label>
@@ -78,7 +78,7 @@
           type="number"
           name="precio"
           id="precio"
-          value="<%= Productos.precio %>"
+          value="<%= Producto.precio %>"
         />
 
         <label for="descripcion">Descripción</label>
@@ -87,7 +87,7 @@
           type="text"
           name="descripcion"
           id="descripcion"
-          value="<%= Productos.descripcion %>"
+          value="<%= Producto.descripcion %>"
         />
 
         
