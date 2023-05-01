@@ -12,14 +12,14 @@
     </header>
     <section class="contenedorForm">
       <form
-        action="/products/<%= Productos.id %>?_method=put"
+        action="/products/<%= Producto.id %>?_method=put"
         method="POST"
         class="formProductEdit"
         enctype="multipart/form-data"
       >
-        <h4><%= Producto.nombre %></h4>
+        <h4><%= Productos.nombre %></h4>
         <div class="galeria">
-          <img src="<%= Producto.imagen %>" />
+          <img src="<%= Productos.imagen %>" />
         </div>
         <label for="imagen">Suba una imagen</label>
         <input
@@ -27,13 +27,13 @@
           type="file"
           name="imgagen"
           id="imagen"
-          value="<%= Producto.imagen %>"
+          value="<%= Productos.imagen %>"
         />
-        <label for="producto">Nombre del producto</label>
+        <label for="producto">Nombre del productos</label>
         <input
           type="text"
           name="nombre"
-          value="<%= Producto.nombre %>"
+          value="<%= Productos.nombre %>"
         /><br />
 
         <label for="marca">Marca</label>
@@ -42,7 +42,7 @@
           type="text"
           name="marca"
           id="marca"
-          value="<%= Producto.Marca.marca %>"
+          value="<%= Productos.Marca.marca %>"
         />
         <label for="precio">Sockets</label>
         <input
@@ -50,7 +50,7 @@
           type="text"
           name="sockets"
           id="sockets"
-          placeholder="<%=Producto.sockets %>"
+          placeholder="<%=Productos.sockets %>"
           value="<%= Productos.sockets %>"
         />
 
@@ -60,7 +60,7 @@
           type="number"
           name="slots"
           id="slots"
-          value="<%= Producto.slots %>"
+          value="<%= Productos.slots %>"
         />
 
         <label for="ram">RAM</label>
@@ -69,7 +69,7 @@
           type="text"
           name="ram"
           id="ram"
-          value="<%= Producto.ram %>"
+          value="<%= Productos.ram %>"
         />
 
         <label for="precio">Precio</label>
@@ -78,7 +78,7 @@
           type="number"
           name="precio"
           id="precio"
-          value="<%= Producto.precio %>"
+          value="<%= Productos.precio %>"
         />
 
         <label for="descripcion">Descripción</label>
@@ -87,15 +87,15 @@
           type="text"
           name="descripcion"
           id="descripcion"
-          value="<%= Producto.descripcion %>"
+          value="<%= Productos.descripcion %>"
         />
 
         
         <label for="gama">Gama</label>
         <select name="gama" id="gama">
-          <option value="1" <% if(Productos.gamaId==1){ %><%= "selected"  %><% }%>>Alta</option>
-          <option value="2" <% if(Productos.gamaId==2){ %><%= "selected"  %><% }%>>Media</option>
-          <option value="3" <% if(Productos.gamaId==3){ %><%= "selected"  %><% }%>>Baja</option>
+          <option value="1" <% if(Productoss.gamaId==1){ %><%= "selected"  %><% }%>>Alta</option>
+          <option value="2" <% if(Productoss.gamaId==2){ %><%= "selected"  %><% }%>>Media</option>
+          <option value="3" <% if(Productoss.gamaId==3){ %><%= "selected"  %><% }%>>Baja</option>
         </select>
 
         <button type="submit" class="submit">EDITAR PRODUCTO / GUARDAR</button>
