@@ -36,7 +36,7 @@ const controller = {
       apellido: req.body.apellido,
       email: req.body.email,
       telefono: Number(req.body.numTel),
-      rolId: 1,
+      rolId: 2,
       avatar: req.file
         ? "/img/users/" + req.file.filename
         : "/img/users/usuario-generico.jpg",

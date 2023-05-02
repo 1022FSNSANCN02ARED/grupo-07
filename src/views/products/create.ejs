@@ -56,6 +56,35 @@
         </div>
         <br />
 
+        <label for="marca">Marca</label>
+        <select name="marca" id="marca">
+          <option value="1">Dell</option>
+          <option value="2">Gigabyte</option>
+          <option value="3">ViewSonic</option>
+          <option value="4">Asus</option>
+          <option value="5">Intel</option>
+          <option value="6">md</option>
+          <option value="7">Corsair</option>
+          <option value="8">Logitech</option>
+          <option value="9">Adata</option>
+          <option value="10">Zotac</option>
+          <option value="11">Western Digital</option>
+          <option value="12">Samsung</option>
+          <option value="13">SI</option>
+          <option value="14"> NY</option>
+          <option value="15">Redragon</option>
+          <option value="16">Noganet</option>
+          <option value="17">Deepcool</option>
+          <option value="18">Overtech</option>
+          <option value="19">TForce</option>
+          <option value="20">IdCooling</option>
+          <option value="21">GENERICO</option>
+        </select>
+        <div class="text-danger marca">
+          <% if (locals.errors && errors.marca) { %><%= errors.marca.msg %> <% }
+          %>
+        </div>
+
         <label for="imagen">Suba una imagen</label>
         <input
           class="img"

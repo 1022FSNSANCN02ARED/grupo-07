@@ -54,6 +54,7 @@ window.addEventListener("load", function () {
       const errorPrecio = document.querySelector(".text-danger.precio");
       const errorRam = document.querySelector(".text-danger.ram");
       const errorSlots = document.querySelector(".text-danger.slots");
+      const errorMarca = document.querySelector(".text-danger.marca");
       const ulErroresCreate = document.querySelector("div.erroresCreate ul");
       errorNombre.innerHTML = "";
       errorRam.innerHTML = "";
@@ -68,12 +69,7 @@ console.log(erroresCreate);
             console.log(erroresCreate[i]);
             errorNombre.innerHTML += `<p>${erroresCreate[i].errorMsg}</p>`;
             break;
-          case "ram":
-            console.log(i);
-            console.log("ram");
-            console.log(erroresCreate[i]);
-            errorRam.innerHTML += `<p>${erroresCreate[i].errorMsg}</p>`;
-            break;
+
           case "slots":
             console.log("slots");
             console.log(erroresCreate[i]);
