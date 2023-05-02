@@ -25,22 +25,23 @@ const middlewareAdmin = require("../middlewares/middlewareAdmin");
 router.get("/", productsController.home);
 
 router.get("/allproducts", productsController.allProducts);
+
 // administradores
 router.get("/adm", middlewareAdmin, productsController.adm);
 
-//Formulario de creacion de productos
+//Formulario de creación de productos
 router.get("/create", productsController.create);
 
-//Accion de creacion
+//Accion de creación
 router.post("/create", upload.single("imagen"), productsController.store);
 
 //Detalle del producto
 router.get("/detail/:id", productsController.detail);
 
-//Formulario de edicion de productos
+//Formulario de edición de productos
 router.get("/edit/:id", productsController.edit);
 
-//Accion de edicion
+//Accion de edición
 router.put("/:id", upload.single("imagen"), productsController.update);
 
 //Accion de borrado

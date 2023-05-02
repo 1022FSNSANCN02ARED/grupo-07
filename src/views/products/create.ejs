@@ -1,106 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <!--Include head-->
-        <%- include('../partials/head') %> 
-        <script src="/js/CreateValidation.js"></script>
-        <script src="/js/RegisterValidation.js"></script>
+  <head>
+    <!--Include head-->
+    <%- include('../partials/head') %>
+    <script src="/js/CreateValidation.js"></script>
 
-        <title>Argon | Carga</title>
-</head>
-<body>
+    <title>Argon | Carga</title>
+  </head>
+  <body>
     <header>
-        <!--Include header-->
-     <%- include('../partials/header') %>
-     </header>
+      <!--Include header-->
+      <%- include('../partials/header') %>
+    </header>
 
     <section class="contenedorForm">
-        <h2>Carga tus productos</h2>
-        <!-- <div class="erroresCreate">
+      <h2>Carga tus productos</h2>
+      <!-- <div class="erroresCreate">
             <ul>
 
             </ul>
           </div> -->
 
-        <form action="" method="POST" enctype="multipart/form-data" accept="imagen/*" class="create">
+      <form
+        action="/products/create"
+        method="POST"
+        enctype="multipart/form-data"
+        class="create"
+      >
+        <h4>Carga de productos</h4>
+        <label for="producto">Nombre del producto</label>
+        <input
+          class="nombre"
+          type="text"
+          placeholder="Nombre del producto"
+          name="nombre"
+          id="nombre"
+        />
+        <div class="text-danger nombre">
+          <% if (locals.errors && errors.nombre) { %><%= errors.nombre.msg %> <%
+          } %>
+        </div>
+        <br />
+
+        <label for="descripción">Descrpción</label>
+        <input
+          class="desc"
+          type="text"
+          placeholder="Descripción"
+          name="desc"
+          id="desc"
+        />
+        <div class="text-danger desc">
+          <% if (locals.errors && errors.desc) { %><%= errors.desc.msg %> <% }
+          %>
+        </div>
+        <br />
+
+        <label for="imagen">Suba una imagen</label>
+        <input
+          class="img"
+          type="file"
+          placeholder="Imagen"
+          name="img"
+          id="img"
+        />
+        <div class="text-danger img">
+          <% if (locals.errors && errors.img) { %><%= errors.img.msg %> <% } %>
+        </div>
+        <br />
+
+        <label for="gama">Gama</label>
+        <select name="gama" id="gama">
+          <option value="baja" selected>Baja</option>
+          <option value="media">Media</option>
+          <option value="alta">Alta</option>
+        </select>
+        <div class="text-danger gama">
+          <% if (locals.errors && errors.gama) { %><%= errors.gama.msg %> <% }
+          %>
+        </div>
+
+        <label for="ram">Memoria/s RAM</label>
+        <input
+          class="ram"
+          type="text"
+          placeholder="DDR3, DDR4, DDR5..."
+          name="ram"
+          id="ram"
+        />
+        <div class="text-danger ram">
+          <% if (locals.errors && errors.ram) { %><%= errors.ram.msg %> <% } %>
+        </div>
+
+        <label for="slots">Slots</label>
+        <select name="slots" id="slots">
+          <option value="0">No aplica</option>
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+        </select>
+
+        <div class="text-danger slots">
+          <% if (locals.errors && errors.slots) { %><%= errors.slots.msg %> <% }
+          %>
+        </div>
+
+        <label for="sockets">Sockets</label>
+        <input
+          class="sockets"
+          type="text"
+          placeholder="1700, am4..."
+          name="sockets"
+          id="sockets"
+        />
         
-            <h4>Carga de productos</h4>
-            <label for="producto">Nombre del producto</label>
-            <input class="nombre" type="text" placeholder="Nombre del producto" name="nombre" id="nombre"> 
-            <div class="text-danger nombre">
-              <% if (locals.errors && errors.nombre) { %><%= errors.nombre.msg
-              %> <% } %>
-              </div> 
-              <br>
+        <div class="text-danger sockets">
+          <% if (locals.errors && errors.sockets) { %><%= errors.sockets.msg %>
+          <% } %>
+        </div>
+        <br />
 
-            <label  for="descripción">Descrpción</label>
-            <input class="desc" type="text" placeholder="Descripción" name="desc" id="desc"> 
-            <div class="text-danger desc">
-              <% if (locals.errors && errors.desc) { %><%= errors.desc.msg
-              %> <% } %>
-            </div>
-            <br>
-
-            <label for="imagen">Suba una imagen</label>
-            <input class="img" type="file" placeholder="Imagen" name="img" id="img"> 
-            <div class="text-danger img">
-              <% if (locals.errors && errors.img) { %><%= errors.img.msg
-              %> <% } %>
-            </div>
-            <br>
-
-            <label for="gama">Gama</label>
-            <select name="gama" id="gama">
-              <option value="baja" selected>Baja</option>
-              <option value="media">Media</option>
-              <option value="alta">Alta</option>
-            </select> 
-            <div class="text-danger gama">
-              <% if (locals.errors && errors.gama) { %><%= errors.gama.msg
-              %> <% } %>
-            </div>
-
-            <label for="ram">Memoria/s RAM</label>
-            <input class="ram" type="text" placeholder="DDR3, DDR4, DDR5..." name="ram" id="ram"> 
-            <div class="text-danger ram">
-              <% if (locals.errors && errors.ram) { %><%= errors.ram.msg
-              %> <% } %>
-            </div>
-            
-
-            <label for="precio">Slots</label>
-            <input class="slots" type="text" placeholder="2, 4..." name="slots" id="slots"> 
-            <div class="text-danger slots">
-              <% if (locals.errors && errors.slots) { %><%= errors.slots.msg
-              %> <% } %>
-            </div>
-            
-            <label for="sockets">Sockets</label>
-            <input class="sockets" type="text" placeholder="1700, am4..." name="sockets" id="sockets"> 
-            <div class="text-danger sockets">
-              <% if (locals.errors && errors.sockets) { %><%= errors.sockets.msg
-              %> <% } %>
-            </div>
-            <br>
-
-            <label for="precio">Precio</label>
-            <input class="precio" type="text" placeholder="precio" name="precio" id="precio">
-            <div class="text-danger precio">
-              <% if (locals.errors && errors.precio) { %><%= errors.precio.msg
-              %> <% } %>
-            </div>
-            <br>
-            <button type="submit" value="registrarse" class="btn-regis">
-                Vaciar
-              </button>
-            <button type="submit" value="cargar" class="btn-regis" id="create">
-                Cargar
-              </button>
-        </form>
+        <label for="precio">Precio</label>
+        <input
+          class="precio"
+          type="number"
+          placeholder="precio"
+          name="precio"
+          id="precio"
+        />
+        <div class="text-danger precio">
+          <% if (locals.errors && errors.precio) { %><%= errors.precio.msg %> <%
+          } %>
+        </div>
+        <br />
+        <button type="reset" value="registrarse" class="btn-regis">
+          Vaciar
+        </button>
+        <button type="submit" value="cargar" class="btn-regis" id="create">
+          Cargar
+        </button>
+      </form>
     </section>
     <footer>
-            <!--Include Footer-->
-    <%- include('../partials/footer') %> 
+      <!--Include Footer-->
+      <%- include('../partials/footer') %>
     </footer>
-</body>
+  </body>
 </html>

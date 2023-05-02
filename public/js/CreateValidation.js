@@ -1,4 +1,5 @@
 window.addEventListener("load", function () {
+  console.log("Entró");
   //Validación de front
   const campoNombre = document.querySelector("input.nombre");
   const campoDescripcion = document.querySelector("input.desc");
@@ -11,8 +12,13 @@ window.addEventListener("load", function () {
   //Create
   let erroresCreate = [];
   const formularioCreate = document.querySelector("form.create");
+  console.log(formularioCreate);
   formularioCreate.addEventListener("submit", function (e) {
     e.preventDefault();
+    console.log(campoPrecio.value<0);
+    console.log(campoPrecio.value==0);
+    console.log(campoPrecio.value>0);
+    console.log(campoPrecio.value);
     if (campoNombre.value === "") {
       erroresCreate.push({
         campo: "nombre",
@@ -25,19 +31,8 @@ window.addEventListener("load", function () {
       });
     }
 
-    if (campoRam.value === "") {
-      erroresCreate.push({
-        campo: "ram",
-        errorMsg: "El campo de ram debe estar completo",
-      });
-    } else {
-      let slots = campo.value % 2;
-      if (campoSlots.value == "") {
-        erroresCreate.push({
-          campo: "slots",
-          errorMsg: "El campo de slots debe estar completo",
-        });
-      } else if (slots != 0) {
+    if (campoRam.value != "") {
+      if (campoSlots.value == 0) {
         erroresCreate.push({
           campo: "slots",
           errorMsg: "El campo de slots debe tener un valor valido",
@@ -45,10 +40,10 @@ window.addEventListener("load", function () {
       }
     }
 
-    if (campoPrecio.value === "") {
+    if (campoPrecio.value ==="" || campoPrecio.value<=0) {
       erroresCreate.push({
         campo: "precio",
-        errorMsg: "El campo de precio debe estar completo",
+        errorMsg: "El campo de precio debe tener un valor valido",
       });
     }
 
@@ -64,39 +59,36 @@ window.addEventListener("load", function () {
       errorRam.innerHTML = "";
       errorSlots.innerHTML = "";
       errorPrecio.innerHTML = "";
-
+console.log(erroresCreate);
       for (let i = 0; i < erroresCreate.length; i++) {
         switch (erroresCreate[i]?.campo) {
           case "nombre":
+            console.log(i);
             console.log("nombre");
             console.log(erroresCreate[i]);
-
             errorNombre.innerHTML += `<p>${erroresCreate[i].errorMsg}</p>`;
             break;
           case "ram":
+            console.log(i);
             console.log("ram");
             console.log(erroresCreate[i]);
-
-            errorNombre.innerHTML += `<p>${erroresCreate[i].errorMsg}</p>`;
+            errorRam.innerHTML += `<p>${erroresCreate[i].errorMsg}</p>`;
             break;
           case "slots":
             console.log("slots");
             console.log(erroresCreate[i]);
-
-            errorNombre.innerHTML += `<p>${erroresCreate[i].errorMsg}</p>`;
+            errorSlots.innerHTML += `<p>${erroresCreate[i].errorMsg}</p>`;
             break;
           case "precio":
             console.log("precio");
             console.log(erroresCreate[i]);
-
-            errorNombre.innerHTML += `<p>${erroresCreate[i].errorMsg}</p>`;
+            errorPrecio.innerHTML += `<p>${erroresCreate[i].errorMsg}</p>`;
             break;
           default:
             ulErroresCreate.innerHTML +=
               "<li>" + erroresCreate[i].errorMsg + "<li>";
             console.log("default");
             console.log(erroresCreate[i]);
-
             break;
         }
       }

@@ -1,7 +1,6 @@
 const sequelize = require("sequelize");
 const db = require("../database/models");
 
-
 const controller = {
   home: (req, res) => {},
 
@@ -12,6 +11,7 @@ const controller = {
       }
     );
   },
+
   adm: (req, res) => {
     res.render("products/adm", { user: req.session.userToLogin });
   },
@@ -36,32 +36,34 @@ const controller = {
 
   detail: (req, res) => {
     db.Producto.findByPk(req.params.id, {
-      include: [{ model: db.Marca }, { model: db.Gama,attributes:["gama"], }],
+      include: [{ model: db.Marca }, { model: db.Gama, attributes: ["gama"] }],
     }).then((Productos) => {
-      
-      res.render("products/detail", {Productos});
+      res.render("products/detail", { Productos });
     });
   },
   edit: (req, res) => {
     db.Producto.findByPk(req.params.id, {
-      include: [{ model: db.Marca }, { model: db.Gama,attributes:["gama"], }],
+      include: [{ model: db.Marca }, { model: db.Gama, attributes: ["gama"] }],
     }).then((Productos) => {
-      
-      res.render("products/edit", {Productos});
+      res.render("products/edit", { Productos });
     });
   },
 
-  update: (req, res) => {
-    const imagenestablecida = Producto.findById(req.params.id);
+  update: async (req, res) => {
+    const imagenEstablecida = await db.Producto.findByPk(req.params.id);
     db.Producto.update({
-      id: Number(req.params.id),
       nombre: req.body.nombre,
-      marca: req.body.marca,
-      stock: req.body.stock,
-      precio: Number(req.body.precio),
-      descripción: req.body.descripción,
-      imagen: req.files ? req.files.originalname : imagenestablecida.imagen,
-    }).then(() => {
+      marcaId: parseInt(req.body.marca),
+      gamaId: parseInt(req.body.gama),
+      sockets: req.body.sockets,
+      slots: parseInt(req.body.slots),
+      ram: req.body.ram,
+      precio: parseFloat(req.body.precio),
+      descripcion: req.body.descripcion,
+      imagen: req.file
+        ? "/img/products/" + req.file.filename
+        : imagenEstablecida.imagen,
+    },   { where: { id:req.params.id } }).then(() => {
       res.redirect("/products/allproducts");
     });
   },
@@ -103,7 +105,7 @@ const controller = {
   filterProductsByName: (req, res) => {
     if (req.query.nombreProducto) {
       db.Producto.findAll({
-        include: [{ model: db.Marca }, { model: db.Gama }],
+        include: [{ model: db.Marca }],
         where: {
           nombre: {
             [sequelize.Op.like]: `%${req.query.nombreProducto}%`,
@@ -113,7 +115,7 @@ const controller = {
         res.render("products/allproducts", { Productos });
       });
     } else {
-      controller.allProducts(req, res);
+      res.redirect("/products/allproducts");
     }
   },
 };

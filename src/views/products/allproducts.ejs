@@ -37,15 +37,15 @@
       
     <div class="card-container">
       <% Productos.forEach(producto => { %>
-        <a href="./edit/<%= producto.id %>/" >
-          <button type="submit" class="submit">Editar</button>
-        </a>  
         <a href="./detail/<%= producto.id %>">
         <div class="card">
           <div class="card-image"><img src="<%= producto.imagen  %>" alt="" ></div>
           <p class="price">$<%= producto.precio %></p>
           <p class="description"> <%= producto.nombre %></p>
             <p class="marca"> <%= producto.Marca.marca %></p>
+            <a href="./edit/<%= producto.id %>/" >
+              <button type="submit" class="submit">Editar</button>
+            </a>  
         </div>  
       <% }) %>
     </div>

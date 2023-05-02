@@ -9,6 +9,7 @@
     <header>
       <!--Include header-->
       <%- include('../partials/header') %>
+      <script src="/js/"></script>
     </header>
     <section class="contenedorForm">
       <form
@@ -25,7 +26,7 @@
         <input
           class="w-100"
           type="file"
-          name="imgagen"
+          name="imagen"
           id="imagen"
           value="<%= Productos.imagen %>"
         />
@@ -37,13 +38,31 @@
         /><br />
 
         <label for="marca">Marca</label>
-        <input
-          class="w-100"
-          type="text"
-          name="marca"
-          id="marca"
-          value="<%= Productos.Marca.marca %>"
-        />
+        <select name="marca" id="marca">
+          <option value="1" <% if(Productos.marca=="Dell"){ %><%= "selected"  %><% }%>>Dell</option>
+          <option value="2" <% if(Productos.marca=="Gigabyte"){ %><%= "selected"  %><% }%>>Gigabyte</option>
+          <option value="3" <% if(Productos.marca=="ViewSonic"){ %><%= "selected"  %><% }%>>ViewSonic</option>
+          <option value="4" <% if(Productos.marca=="Asus"){ %><%= "selected"  %><% }%>>Asus</option>
+          <option value="5" <% if(Productos.marca=="Intel"){ %><%= "selected"  %><% }%>>Intel</option>
+          <option value="6" <% if(Productos.marca=="Amd"){ %><%= "selected"  %><% }%>>Amd</option>
+          <option value="7" <% if(Productos.marca=="Corsair"){ %><%= "selected"  %><% }%>>Corsair</option>
+          <option value="8" <% if(Productos.marca=="Logitech"){ %><%= "selected"  %><% }%>>Logitech</option>
+          <option value="9" <% if(Productos.marca=="Adata"){ %><%= "selected"  %><% }%>>Adata</option>
+          <option value="10" <% if(Productos.marca=="Zotac"){ %><%= "selected"  %><% }%>>Zotac</option>
+          <option value="11" <% if(Productos.marca=="Western Digital"){ %><%= "selected"  %><% }%>>Western Digital</option>
+          <option value="12" <% if(Productos.marca=="Samsung"){ %><%= "selected"  %><% }%>>Samsung</option>
+          <option value="13" <% if(Productos.marca=="MSI"){ %><%= "selected"  %><% }%>>MSI</option>
+          <option value="14" <% if(Productos.marca=="PNY"){ %><%= "selected"  %><% }%>>PNY</option>
+          <option value="15" <% if(Productos.marca=="Redragon"){ %><%= "selected"  %><% }%>>Redragon</option>
+          <option value="16" <% if(Productos.marca=="Noganet"){ %><%= "selected"  %><% }%>>Noganet</option>
+          <option value="17" <% if(Productos.marca=="Deepcool"){ %><%= "selected"  %><% }%>>Deepcool</option>
+          <option value="18" <% if(Productos.marca=="Overtech"){ %><%= "selected"  %><% }%>>Overtech</option>
+          <option value="19" <% if(Productos.marca=="TForce"){ %><%= "selected"  %><% }%>>TForce</option>
+          <option value="20" <% if(Productos.marca=="IdCooling"){ %><%= "selected"  %><% }%>>IdCooling</option>
+          <option value="21" <% if(Productos.marca=="GENERICO"){ %><%= "selected"  %><% }%>>GENERICO</option>
+        </select>
+
+        
         <label for="precio">Sockets</label>
         <input
           class="w-100"
@@ -55,22 +74,21 @@
         />
 
         <label for="slots">Slots</label>
-        <input
-          class="w-100"
-          type="number"
-          name="slots"
-          id="slots"
-          value="<%= Productos.slots %>"
-        />
+        <select name="slots" id="slots">
+          <option value="0" <% if(Productos.slots==0){ %><%= "selected"  %><% }%>>No aplica</option>
+          <option value="2" <% if(Productos.slots==2){ %><%= "selected"  %><% }%>>2</option>
+          <option value="4" <% if(Productos.slots==4){ %><%= "selected"  %><% }%>>4</option>
+          <option value="6" <% if(Productos.slots==6){ %><%= "selected"  %><% }%>>6</option>
+          <option value="8" <% if(Productos.slots==8){ %><%= "selected"  %><% }%>>8</option>
+        </select>
 
         <label for="ram">RAM</label>
-        <input
-          class="w-100"
-          type="text"
-          name="ram"
-          id="ram"
-          value="<%= Productos.ram %>"
-        />
+        <select name="ram" id="ram">
+          <option value="" <% if(Productos.ram==""){ %><%= "selected"  %><% }%>>No aplica</option>
+          <option value="DDR3" <% if(Productos.ram=="DDR3"){ %><%= "selected"  %><% }%>>DDR3</option>
+          <option value="DDR4" <% if(Productos.ram=="DDR4"){ %><%= "selected"  %><% }%>>DDR4</option>
+          <option value="DDR5" <% if(Productos.ram=="DDR5"){ %><%= "selected"  %><% }%>>DDR5</option>
+        </select>
 
         <label for="precio">Precio</label>
         <input
