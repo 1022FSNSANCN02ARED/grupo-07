@@ -460,6 +460,39 @@ ul {
 .login{
   margin: 2rem 6rem;
 }
+.login-box{
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 20px;
+  background-color:var(--very-dark-gray);
+  border-radius:8px;
+  border: solid 2px var(--bright-pink);
+}
+.login-box h2{
+  text-align: center;
+  padding-bottom: 30px;
+}
+.loginInput{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.link-regis a{
+  display: flex;
+  justify-content: flex-start;
+  text-decoration: none;
+  width: 20px;
+  margin-top: 20px;
+}
+.links a{
+  margin-top: 20px;
+  text-decoration: none;
+}
+.link-contra {
+  display: flex;
+  justify-content: space-between;
+}
+
+
 
 /*==============================Create==============================*/
  .create input{
@@ -471,6 +504,9 @@ ul {
 }
 
 /*==============================REGISTER==============================*/
+.register{
+  margin: 2rem 6rem;
+}
 .register-box{
   margin-left: 300px;
   margin-right: 300px;
@@ -482,16 +518,18 @@ ul {
 
 .register-box h1{
   text-align: center;
+  margin: 10px;
 }
-.register-box h2{
+.register-box h5{
   text-align: center;
 }
 .register-box input{
   justify-content: center;
-  align-items: center;
-  width: 99%;
+  /*align-items: center;*/
+  margin: 20px;
+  width: 100%;
   margin: 2px;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 
@@ -525,8 +563,14 @@ ul {
 
 /*==============================PROFILE==============================*/
 .infoProfile{
+  margin: 50px;
+  background-color: var(--white);
+  color: #000000;
+  border-bottom: #000000 solid 2px;
   display: flex;
-  align-items: center;
+  justify-content: flex-start;
+  border-radius: 20px;
+  width: 1000px;
 }
 
 .userDetail{
@@ -541,19 +585,26 @@ text-align: center;
 .avatarIMG{
   margin-bottom: 10px;
   margin-top: 10px;
-  width: 250px;
-  height: 250px;
+  margin: 20px;
+  width: 150px;
+  height: 150px;
   border-radius: 300px;
 }
+
 .apartados{
+  margin: 50px;
+  width: 250px;
   height: 15vh;
   background-color: var(--white);
   color: #000000;
   border-bottom: #000000 solid 2px;
-  text-align: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  border-radius: 20px;
+
+}
+.categorias{
+  padding: 10px;
 }
 /*==============================ANIMACIÓN CARGA==============================*/
 .spinner {

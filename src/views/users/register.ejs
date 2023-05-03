@@ -14,7 +14,7 @@
 
     <div class="register-box">
       <h1>Registrarse</h1>
-      <h2>Ingresá tus datos para crear tu cuenta</h2>
+      <h5>Ingresá tus datos para crear tu cuenta</h5>
       <div class="erroresRegister">
         <ul></ul>
       </div>
@@ -70,7 +70,7 @@
 
         <label for="password"></label>
         <input type="password" name="password" id="password"
-        placeholder="password" class="form-control password" value="<%=
+        placeholder="Contraseña" class="form-control password" value="<%=
         (locals.oldData && oldData.password) ? oldData.password : "";%>">
         <div class="text-danger password">
           <% if (locals.errors && errors.password) { %><%= errors.password.msg

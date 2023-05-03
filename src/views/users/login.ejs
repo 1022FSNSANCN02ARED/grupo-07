@@ -23,6 +23,7 @@
           <input
             type="text"
             name="email"
+            placeholder="Email"
             class="form-control email <%= locals.errors && errors.email ? 'is-invalid' : null %>"
             value="<%= locals.cookies ? locals.cookies['userEmail'] : null %>"
           />
@@ -30,32 +31,38 @@
             <% if (locals.errors && errors.email) { %> <%= errors.email.msg %>
             <% } %>
           </div>
-          <span>Email</span>
           <i></i>
         </div>
         <div class="loginInput password">
           <input
             type="password"
             name="password"
+            placeholder="Contraseña"
             class="form-control password <%= locals.errors && errors.password ? 'is-invalid' : null %>"
             value="<%= locals.oldData ? oldData.password : null %>"
           />
          
           <div class="text-danger password">
-            <% if (locals.errors && errors.password) { %><%= errors.password.msg %></div>
+            <% if (locals.errors && errors.password) { %><%= errors.password.msg %>
           <% } %>
-          <span>Contraseña</span>
+          </div>
           <i></i>
         </div>
         <label for="recordame" class="recordame">
-          <input type="checkbox" class="recordame" name="recordame" />Recordar
-          mi cuenta
+          <input type="checkbox" class="recordame" name="recordame" /> Recordar mi cuenta
+          
         </label>
         <div class="links">
-          <a href="#">Olvidé mi contraseña</a>
-          <a href="/users/register">Registrarse</a>
+          <div class="link-contra">
+            <a href="/users/register" class="link-regis" >Registrarse</a>
+            <div class="link-contra">
+              <a href="#">Olvidé mi contraseña</a>
+
+            </div>
+          </div>
+          
         </div>
-        <button type="submit" value="iniciar sesión" class="btn-log">
+        <button type="submit" value="iniciar sesión" class="btn-regis">
           iniciar sesión
         </button>
       </form>
