@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Include head-->
+  <%- include('../partials/head') %>
+    <title>Argon | Home</title>
+</head>
+
+<body>
+  <header>
+    <!--Include header-->
+    <%- include('../partials/header') %>
+  </header>
+
+  <h1 class="title">Armá tu PC</h1>
+
+<div class="title">Componentes principales</div>
+
+<div class="item container">
+<div class="row">
+  
+
+
+  <div class="col-9 list">
+      <div class="item_title">Procesador</div>
+      <select class="select" id="cpu">
+          <option>-- Seleccionar Procesador --</option>
+        </select>
+  </div>
+
+</div>
+</div> <!-- /item -->
+
+<div class="item container">
+<div class="row">
+  
+  <div class="col-2 img">
+      <img id="mbimg" src="">
+      
+    </div>
+
+  <div class="col-9 list">
+      <div class="item_title">Motherboard</div>
+      <select class="select" id="motherboard">
+          <option>-- Seleccionar Motherboard --</option>
+  </div>
+
+</div>
+</div> <!-- /item -->
+
+
+<div class="item container">
+<div class="row">
+  
+  <div class="col-2 img">
+      <img id="memimg" src="">
+    </div>
+
+  <div class="col-9 list">
+      <div class="item_title">Memoria RAM</div>
+      <select class="select" id="memoria">
+     
+        <option >-- Seleccionar Memoria --</option>
+  </div>
+
+  <div class="col-1 cant">
+      <select class="select" id="cantmemoria">
+          <option>1</option><option>2</option><option>3</option><option>4</option>                    </select>
+  </div>
+
+</div>
+</div> <!-- /item -->
+
+
+<div class="item container">
+<div class="row">
+  
+  <div class="col-2 img">
+      <img id="vgaimg" src="" >
+    </div>
+
+  <div class="col-9 list">
+      <div class="item_title">Placa de video</div>
+      <select class="select" id="video" onchange="actualizar()">
+          <option>-- Seleccionar Placa de Video --</option>
+  </div>
+
+  </div>
+
+</div>
+</div> <!-- /item -->
+
+</div> <!-- /box -->
+
+
+<div class="box">
+<div class="title">Almacenamiento</div>
+
+<div class="item container">
+<div class="row">
+  
+  <div class="col-2 img">
+      <img id="hddimg" src="">
+    </div>
+
+  <div class="col-9 list">
+      <div class="item_title">Disco Rígido</div>
+      <select class="select" id="hdd">
+          <option>-- Seleccionar Disco Rigido --</option>
+  </div>
+
+      <div class="item_title"> </div>
+      <select class="select" id="canthdd">
+      <option>1</option><option>2</option><option>3</option><option>4</option>                    </select>
+  </div>
+
+</div>
+</div> <!-- /item -->
+
+<div class="item container">
+<div class="row">
+  
+  <div class="col-2 img">
+      <img id="ssdimg" src="">
+  
+    </div>
+
+  <div class="col-9 list">
+      <div class="item_title">Disco Sólido</div>
+      <select class="select" id="ssd">
+          <option>-- Seleccionar Disco Sólido --</option>
+  </div>
+
+  <div class="col-1 cant">
+      <div class="item_title"></div>
+      <select class="select" id="cantssd">
+      <option>1</option><option>2</option><option>3</option><option>4</option>                    </select>
+  </div>
+
+</div>
+</div> 
+
+<div class="item container">
+<div class="row">
+  
+  <div class="col-2 img">
+      <img id="m2img" src="" >
+      
+  </div>
+
+  <div class="col-9 list">
+      <div class="item_title">Disco Sólido NVMe M.2</div>
+      <select class="select" id="m2">
+          <option>-- Seleccionar Disco Solido M.2 --</option>
+          
+  </div>
+
+  <div class="col-1 cant">
+      <div class="item_title"></div>
+      <select class="select" id="cantm2">
+      <option>1</option><option>2</option><option>3</option><option>4</option>                    </select>
+  </div>
+
+</div>
+</div> 
+</div> 
+
+
+<div class="box">
+<div class="title">Energía y refrigeración</div>
+
+<div class="item container">
+<div class="row">
+  
+  <div class="col-2 img">
+      <img id="fueimg" src=""">
+    </div>
+
+  <div class="col-9 list">
+      <div class="item_title">Fuente</div>
+      <select class="select" id="fuente">
+          <option >-- Seleccionar Fuente --</option>
+          
+  </div>
+
+
+</div>
+</div> <!-- /item -->
+
+<div class="item container">
+<div class="row">
+  
+  <div class="col-2 img">
+      <img id="colimg" src="">
+    </div>
+
+  <div class="col-9 list">
+      <div class="item_title">Cooler CPU / Watercooler</div>
+      <select class="select" id="cooler">
+          
+        <option>-- Seleccionar Cooler CPU --</option>
+  </div>
+
+</div>
+</div> <!-- /item -->
+
+<div class="item container">
+<div class="row">
+  
+  <div class="col-2 img">
+      <img id="colGimg" src="">
+    </div>
+
+  <div class="col-9 list">
+      <div class="item_title">Cooler Gabinete</div>
+      <select class="select" id="coolerGab">
+          <option>-- Seleccionar Cooler Gabinete --</option>
+          
+  </div>
+
+  <div class="col-1 cant">
+      <div class="item_title"></div>
+      <select class="select" id="cantCgab">
+      <option>1</option><option>2</option><option>3</option><option>4</option>                    </select>
+  </div>
+
+</div>
+</div> 
+</div> 
+
+
+<div class="box">
+<div class="title">Conectividad</div>
+
+<div class="item container">
+<div class="row">
+  
+  <div class="col-2 img">
+      <img id="wifiimg" src="" >
+    </div>
+
+  <div class="col-9 list">
+      <div class="item_title">Placa Wifi</div>
+      <select class="select" id="wifi">
+      <option>-- Seleccionar Capturador WIFI --</option>
+
+  </div>
+
+
+</div>
+</div> <!-- /item -->
+</div> <!-- /box -->
+
+
+<div class="box">
+<div class="title">Ensamblado</div>
+
+<div class="item container">
+<div class="row">
+  
+  <div class="col-2 img">
+      <img id="gabimg" src="" >
+    </div>
+
+  <div class="col-9 list">
+      <div class="item_title">Gabinete</div>
+      <select class="select" id="gabinete">
+          <option>-- Seleccionar Gabinete --</option>
+          
+  </div>
+
+</div>
+</div> 
+</div>
+
+
+
+
+<div id="resumen">
+<div class="container">
+
+<div class="row">
+  <div class="col-7">
+      <div id="pTransferencia">Total: <div id="pTransferenciaVal">$0</div></div>
+    </div>
+  
+  <div class="col-5">
+          <button type="button" class="button" >Hacer pedido</button>
+          <button type="button" class="button" >Mostrar Enlance</button>
+      </div>						
+  </div>
+</div>
+
+
+<footer>
+
+</footer>
+</div>
+
+</body>
+
+</html>
