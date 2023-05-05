@@ -23,9 +23,12 @@ const registerError = require("../middlewares/errorValidateMiddleware");
 const userLoggedMiddleware = require("../middlewares/userLoggedMiddlewares");
 const middlewareAdmin = require("../middlewares/middlewareAdmin");
 
+
 //login
 router.get("/login", guestMiddleware, usersController.mostrarLogin);
 
+// administradores
+router.get("/admin", middlewareAdmin, usersController.adm);
 
 //proceso de login
 router.post("/login", usersController.loginProcess);
@@ -41,14 +44,12 @@ router.post(
   [validationsRegister, registerError],
   usersController.processRegister
 );
+
 //perfil
 router.get("/profile",userLoggedMiddleware, usersController.profile);
 
 //carrito
 router.get("/carrito", usersController.carrito);
-
-//carga
-router.get("/carga", usersController.carga);
 
 //Api all user
 router.get("/api/all", usersController.allusersAPI);

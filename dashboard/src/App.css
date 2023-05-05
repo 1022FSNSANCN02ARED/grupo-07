@@ -1,0 +1,40 @@
+/*colores*/
+:root {
+  --white: #ffffff;
+  --very-dark-gray: #0f0f0f;
+  --very-light-gray: #f0f0f0;
+  --strong-pink: #c82775de;
+  --bright-pink: #e02c83;
+  --bright-pink-deg: #e02c83cb;
+  --very-soft-lime-green: #98ec9b;
+  --vivid-magenta: #ff0cd6;
+  --magenta: #f0f;
+  --vivid-pink: #e91e63;
+  --cyan: #0ff;
+  --mostly-black: #1b1c20;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.body {
+  background-color: var(--very-dark-gray);
+  color: white;
+}
+.HeaderProducto{
+  margin-top: 2px;
+}
+
+

@@ -12,9 +12,7 @@ const controller = {
     );
   },
 
-  adm: (req, res) => {
-    res.render("products/adm", { user: req.session.userToLogin });
-  },
+
   create: (req, res) => {
     db.Producto.findAll().then(() => {
       res.render("products/create");

@@ -50,6 +50,7 @@ const controller = {
     res.render("users/login",{req});
   },
 
+
   loginProcess: (req, res) => {
     const userToLogin = db.Usuario.findOne({
       where: { email: req.body.email },
@@ -62,14 +63,17 @@ const controller = {
         if (isOkThePassword) {
           delete usuario.password;
           req.session.userLogged=true;
+          
           req.session.user= {
             nombre: usuario.nombre,
             apellido: usuario.apellido,
             correo: usuario.email,
             avatar: usuario.avatar,
+            rolId: usuario.rolId,
           };
           res.locals.user=req.session.user;
           res.locals.userLogged = req.session.userLogged;
+          
           if (req.body.recordame) {
             res.cookie("userEmail", req.body.email, {
               maxAge: 1000 * 60 * 60,
@@ -97,6 +101,10 @@ const controller = {
         });
       }
     });
+  },
+
+  adm: (req, res) => {
+    res.render("users/admin", { user: req.session.userToLogin });
   },
 
   logoutProcess:(req,res)=>{

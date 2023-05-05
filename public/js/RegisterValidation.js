@@ -85,7 +85,9 @@ window.addEventListener("load", function () {
       const errorNumTel = document.querySelector(".text-danger.numTel");
       const errorAvatar = document.querySelector(".text-danger.avatar");
       const errorPassword = document.querySelector(".text-danger.password");
-      const ulErroresRegister = document.querySelector("div.erroresRegister ul");
+      const ulErroresRegister = document.querySelector(
+        "div.erroresRegister ul"
+      );
       errorNombre.innerHTML = "";
       errorApellido.innerHTML = "";
       errorEmail.innerHTML = "";
@@ -95,19 +97,15 @@ window.addEventListener("load", function () {
       for (let i = 0; i < erroresRegister.length; i++) {
         switch (erroresRegister[i]?.campo) {
           case "nombre":
-            console.log("nombre")
             errorNombre.innerHTML += `<p>${erroresRegister[i].errorMsg}</p>`;
             break;
           case "apellido":
-            console.log("apellido")
             errorApellido.innerHTML += `<p>${erroresRegister[i].errorMsg}</p>`;
             break;
           case "email":
-            console.log("email")
             errorEmail.innerHTML += `<p>${erroresRegister[i].errorMsg}</p>`;
             break;
           case "numTel":
-            console.log("numTel")
             errorNumTel.innerHTML += `<p>${erroresRegister[i].errorMsg}</p>`;
             break;
           case "avatar":
