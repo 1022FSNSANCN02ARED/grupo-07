@@ -78,7 +78,7 @@ const controller = {
     });
   },
 
-  //Api Allproductos
+  //Api Allproducts
   allProductsAPI: (req, res) => {
     db.Producto.findAll().then((Productos) => {
       res.json({
@@ -87,6 +87,7 @@ const controller = {
       });
     });
   },
+  //Api total products
   totalProductsAPI: (req, res) => {
     db.Producto.findAll().then((Productos) => {
       res.json({
@@ -95,6 +96,7 @@ const controller = {
       });
     });
   },
+  // Api Last Product
   lastProductsAPI: (req, res) => {
     db.Producto.findAll({
       order: [["id", "DESC"]],
@@ -106,6 +108,7 @@ const controller = {
       });
     });
   },
+  // Api detail Products
   detailProductsApi: (req, res) => {
     db.Producto.findByPk(req.params.id, {
       include: [{ model: db.Marca }, { model: db.Gama, attributes: ["gama"] }],
@@ -116,6 +119,7 @@ const controller = {
       });
     });
   },
+  // Api delete Product
   deleteProductsAPI: (req, res) => {
     db.Producto.destroy({
       where: {

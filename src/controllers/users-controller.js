@@ -134,7 +134,7 @@ const controller = {
       });
     });
   },
-  //Last users Api
+  //Last user Api
   lastusersAPI: (req, res) => {
     db.Usuario.findAll({
       order: [["id", "DESC"]],
@@ -157,6 +157,7 @@ const controller = {
       });
     });
   },
+  // Api total Users
   totalUsersAPI: (req, res) => {
     db.Usuario.findAll().then((usuarios) => {
       res.json({

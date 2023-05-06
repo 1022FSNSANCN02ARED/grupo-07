@@ -51,23 +51,25 @@ router.delete("/:id", productsController.destroy);
 
 ///////////////////////////////////////////////////////API//////////////////////////////////////////////////////////////////////
 
-//get Allproducts api
+// Allproducts api
 router.get("/api/all", productsController.allProductsAPI);
 
-// totalproducts api
+// Totalproducts api
 router.get("/api/total", productsController.totalProductsAPI);
 
-// last products api
+// Last products api
 router.get("/api/last", productsController.lastProductsAPI);
 
 //Detail products api
 router.get("/api/detail/:id", productsController.detailProductsApi);
 
-//get product por id api
+// Product por id api
 router.get("/api/:id", productsController.producto);
 
-//destroy products api
+//Destroy products api
 router.delete("/api/:id", productsController.deleteProductsAPI);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Buscador por nombre
 router.get("/filter", productsController.filterProductsByName);
