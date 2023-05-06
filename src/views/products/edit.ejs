@@ -3,6 +3,7 @@
   <head>
     <!--Include head-->
     <%- include('../partials/head') %>
+    <script src="/js/EditValidation.js"></script>
     <title>Argon | Carga</title>
   </head>
   <body>
@@ -15,8 +16,8 @@
       <form
         action="/products/<%= Productos.id %>?_method=put"
         method="POST"
-        class="formProductEdit"
         enctype="multipart/form-data"
+        class="edit"
       >
         <h4><%= Productos.nombre %></h4>
         <div class="galeria">
@@ -34,8 +35,15 @@
         <input
           type="text"
           name="nombre"
+          class="nombre"
+          id="nombre"
           value="<%= Productos.nombre %>"
-        /><br />
+        />
+        <div class="text-danger nombre">
+          <% if (locals.errors && errors.nombre) { %><%= errors.nombre.msg %> <%
+          } %>
+          </div>
+          <br />
 
         <label for="marca">Marca</label>
         <select name="marca" id="marca">
@@ -63,7 +71,7 @@
         </select>
 
         
-        <label for="precio">Sockets</label>
+        <label for="sockets">Sockets</label>
         <input
           class="w-100"
           type="text"
@@ -92,13 +100,16 @@
 
         <label for="precio">Precio</label>
         <input
-          class="w-100"
+          class="precio"
           type="number"
           name="precio"
           id="precio"
           value="<%= Productos.precio %>"
         />
-
+        <div class="text-danger precio">
+          <% if (locals.errors && errors.precio) { %><%= errors.precio.msg %> <%
+          } %>
+          </div>
         <label for="descripcion">Descripción</label>
         <input
           class="w-100"

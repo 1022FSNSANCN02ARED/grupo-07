@@ -13,8 +13,6 @@ window.addEventListener("load", function () {
   const formularioCreate = document.querySelector("form.create");
 
   formularioCreate.addEventListener("submit", function (e) {
-    e.preventDefault();
-
     if (campoNombre.value === "") {
       erroresCreate.push({
         campo: "nombre",

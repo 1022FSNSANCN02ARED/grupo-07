@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 
 function UsersList() {
+  const [users,setUsers] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3001/users/api/all", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((infoProduct)=>{
+      infoProduct.json().then((usersList)=>{
+        console.log(usersList);
+        setUsers(usersList.data);
+      });
+
+    });
+  }, []);
+  console.log(users);
   return (
     <div className="UserssContainer">
       <div className="UsersList">

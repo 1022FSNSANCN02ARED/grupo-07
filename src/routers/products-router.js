@@ -22,7 +22,6 @@ const productsController = require("../controllers/products-controller");
 const middlewareAdmin = require("../middlewares/middlewareAdmin");
 
 //Listado de producto
-
 router.get("/", productsController.home);
 
 router.get("/allproducts", productsController.allProducts);

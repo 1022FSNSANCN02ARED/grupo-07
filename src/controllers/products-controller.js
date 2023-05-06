@@ -22,11 +22,11 @@ const controller = {
   store: (req, res) => {
     db.Producto.create({
       ...req.body,
-      marca: req.body.marca,
+      marcaId: req.body.marca,
       descripción: req.body.descripción,
       imagen: req.file
         ? "/img/products/" + req.file.filename
-        : "/img/products/defaul-img.png",
+        : "/img/products/default-img.png",
     }).then(() => {
       res.redirect("/products/allproducts");
     });

@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import HeaderProducts from './components/products/HeaderProducts';
+import {Products} from "./pages";
+import UsersList from './components/users/UsersList.jsx';
 
 
 function App() {
   return (
     <div className="body">
-      <HeaderProducts/>
+      <UsersList/>
+      <Products/>
     </div>
   );
 }
