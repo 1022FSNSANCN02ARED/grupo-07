@@ -12,7 +12,6 @@ const controller = {
     );
   },
 
-
   create: (req, res) => {
     db.Producto.findAll().then(() => {
       res.render("products/create");
@@ -49,19 +48,22 @@ const controller = {
 
   update: async (req, res) => {
     const imagenEstablecida = await db.Producto.findByPk(req.params.id);
-    db.Producto.update({
-      nombre: req.body.nombre,
-      marcaId: parseInt(req.body.marca),
-      gamaId: parseInt(req.body.gama),
-      sockets: req.body.sockets,
-      slots: parseInt(req.body.slots),
-      ram: req.body.ram,
-      precio: parseFloat(req.body.precio),
-      descripcion: req.body.descripcion,
-      imagen: req.file
-        ? "/img/products/" + req.file.filename
-        : imagenEstablecida.imagen,
-    },   { where: { id:req.params.id } }).then(() => {
+    db.Producto.update(
+      {
+        nombre: req.body.nombre,
+        marcaId: parseInt(req.body.marca),
+        gamaId: parseInt(req.body.gama),
+        sockets: req.body.sockets,
+        slots: parseInt(req.body.slots),
+        ram: req.body.ram,
+        precio: parseFloat(req.body.precio),
+        descripcion: req.body.descripcion,
+        imagen: req.file
+          ? "/img/products/" + req.file.filename
+          : imagenEstablecida.imagen,
+      },
+      { where: { id: req.params.id } }
+    ).then(() => {
       res.redirect("/products/allproducts");
     });
   },
@@ -85,7 +87,47 @@ const controller = {
       });
     });
   },
-
+  totalProductsAPI: (req, res) => {
+    db.Producto.findAll().then((Productos) => {
+      res.json({
+        status: 200,
+        total: Productos.length,
+      });
+    });
+  },
+  lastProductsAPI: (req, res) => {
+    db.Producto.findAll({
+      order: [["id", "DESC"]],
+      limit: 2,
+    }).then((producto) => {
+      res.json({
+        status: 200,
+        data: producto,
+      });
+    });
+  },
+  detailProductsApi: (req, res) => {
+    db.Producto.findByPk(req.params.id, {
+      include: [{ model: db.Marca }, { model: db.Gama, attributes: ["gama"] }],
+    }).then((Productos) => {
+      res.json({
+        status: 200,
+        data: Productos,
+      });
+    });
+  },
+  deleteProductsAPI: (req, res) => {
+    db.Producto.destroy({
+      where: {
+        id: req.params.id,
+      },
+    }).then((response) => {
+      return res.json({
+        satatus: 200,
+        data: response,
+      });
+    });
+  },
   //Api producto por id
   producto: (req, res) => {
     let producto = db.Producto.findByPk(req.params.id).then(

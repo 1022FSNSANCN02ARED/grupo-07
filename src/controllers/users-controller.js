@@ -47,9 +47,8 @@ const controller = {
   },
 
   mostrarLogin: (req, res) => {
-    res.render("users/login",{req});
+    res.render("users/login", { req });
   },
-
 
   loginProcess: (req, res) => {
     const userToLogin = db.Usuario.findOne({
@@ -62,18 +61,18 @@ const controller = {
         );
         if (isOkThePassword) {
           delete usuario.password;
-          req.session.userLogged=true;
-          
-          req.session.user= {
+          req.session.userLogged = true;
+
+          req.session.user = {
             nombre: usuario.nombre,
             apellido: usuario.apellido,
             correo: usuario.email,
             avatar: usuario.avatar,
             rolId: usuario.rolId,
           };
-          res.locals.user=req.session.user;
+          res.locals.user = req.session.user;
           res.locals.userLogged = req.session.userLogged;
-          
+
           if (req.body.recordame) {
             res.cookie("userEmail", req.body.email, {
               maxAge: 1000 * 60 * 60,
@@ -92,7 +91,7 @@ const controller = {
         }
       } else {
         return res.render("users/login", {
-          req, 
+          req,
           errors: {
             email: {
               msg: "No se encontró un usuario con ese mail",
@@ -107,9 +106,9 @@ const controller = {
     res.render("users/admin", { user: req.session.userToLogin });
   },
 
-  logoutProcess:(req,res)=>{
+  logoutProcess: (req, res) => {
     req.session.destroy();
-    res.redirect("/")
+    res.redirect("/");
   },
 
   profile: (req, res) => {
@@ -127,8 +126,20 @@ const controller = {
   },
 
   //Api Allusers
-  allusersAPI: (req, res) => {
+  allUsersAPI: (req, res) => {
     db.Usuario.findAll().then((usuario) => {
+      res.json({
+        status: 200,
+        data: usuario,
+      });
+    });
+  },
+  //Last users Api
+  lastusersAPI: (req, res) => {
+    db.Usuario.findAll({
+      order: [["id", "DESC"]],
+      limit: 1,
+    }).then((usuario) => {
       res.json({
         status: 200,
         data: usuario,
@@ -143,6 +154,14 @@ const controller = {
       res.json({
         status: 200,
         data: usuario,
+      });
+    });
+  },
+  totalUsersAPI: (req, res) => {
+    db.Usuario.findAll().then((usuarios) => {
+      res.json({
+        status: 200,
+        total: usuarios.length,
       });
     });
   },

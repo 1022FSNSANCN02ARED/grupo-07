@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 //Controller
-const usersController= require("../controllers/users-controller");
+const usersController = require("../controllers/users-controller");
 
 const multer = require("multer");
 
@@ -23,7 +23,6 @@ const registerError = require("../middlewares/errorValidateMiddleware");
 const userLoggedMiddleware = require("../middlewares/userLoggedMiddlewares");
 const middlewareAdmin = require("../middlewares/middlewareAdmin");
 
-
 //login
 router.get("/login", guestMiddleware, usersController.mostrarLogin);
 
@@ -34,7 +33,7 @@ router.get("/admin", middlewareAdmin, usersController.adm);
 router.post("/login", usersController.loginProcess);
 
 //Logout
-router.get("/logout",usersController.logoutProcess);
+router.get("/logout", usersController.logoutProcess);
 
 // Register
 router.get("/register", guestMiddleware, usersController.mostrarRegister);
@@ -46,18 +45,28 @@ router.post(
 );
 
 //perfil
-router.get("/profile",userLoggedMiddleware, usersController.profile);
+router.get("/profile", userLoggedMiddleware, usersController.profile);
 
 //carrito
 router.get("/carrito", usersController.carrito);
 
+////////////////////////////////////////////////////Api///////////////////////////////////////////////////////////////////////
+
+//Api last user
+router.get("/api/last", usersController.lastusersAPI);
+
+// Api total users
+router.get("/api/total", usersController.totalUsersAPI);
+
 //Api all user
-router.get("/api/all", usersController.allusersAPI);
+router.get("/api/all", usersController.allUsersAPI);
 
 //Api user por id
 router.get("/api/:id", usersController.Usuario);
 
 //404
-router.get("/*",(req,res)=>{res.redirect("/error-404")});
+router.get("/*", (req, res) => {
+  res.redirect("/error-404");
+});
 
 module.exports = router;
