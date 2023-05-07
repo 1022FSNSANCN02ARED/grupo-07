@@ -142,7 +142,7 @@ const controller = {
     }).then((usuario) => {
       res.json({
         status: 200,
-        data: usuario,
+        data: usuario[0],
       });
     });
   },
