@@ -2,6 +2,7 @@ import {
     HeaderUsers,
     LastUser,
     UsersList,
+    TotalUser,
   } from "../../components/UsersComponents";
   
   function Users() {
@@ -10,6 +11,7 @@ import {
         <HeaderUsers />
         <LastUser />
         <UsersList />
+        <TotalUser />
       </div>
     );
   }
