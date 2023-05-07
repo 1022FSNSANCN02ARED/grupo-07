@@ -23,6 +23,7 @@ const controller = {
     db.Producto.create({
       ...req.body,
       marcaId: req.body.marca,
+      gamaId:req.body.gama,
       descripción: req.body.descripción,
       imagen: req.file
         ? "/img/products/" + req.file.filename
@@ -116,12 +117,27 @@ const controller = {
   // Api Last Product
   lastProductsAPI: (req, res) => {
     db.Producto.findAll({
+      include: [{ model: db.Marca }, { model: db.Gama, attributes: ["gama"] }],
       order: [["id", "DESC"]],
-      limit: 2,
+      limit: 1,
     }).then((producto) => {
+      let productLast = producto.map((producto) => {
+        console.log(producto);
+        return {
+          nombre: producto.nombre,
+          precio: producto.precio,
+          descripcion: producto.descripcion,
+          marca: producto.Marca.marca,
+          gama: producto.Gama.gama,
+          imagen:producto.imagen,
+          sockets:producto.sockets,
+          slots:producto.slots,
+          ram:producto.ram,
+        };
+      });
       res.json({
         status: 200,
-        data: producto,
+        data: productLast[0],
       });
     });
   },
