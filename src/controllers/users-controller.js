@@ -68,7 +68,7 @@ const controller = {
             apellido: usuario.apellido,
             correo: usuario.email,
             avatar: usuario.avatar,
-            rolId: usuario.rolId,
+            rolId: usuario.rol,
           };
           res.locals.user = req.session.user;
           res.locals.userLogged = req.session.userLogged;
@@ -100,10 +100,6 @@ const controller = {
         });
       }
     });
-  },
-
-  adm: (req, res) => {
-    res.render("users/admin", { user: req.session.userToLogin });
   },
 
   logoutProcess: (req, res) => {

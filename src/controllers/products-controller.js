@@ -68,6 +68,13 @@ const controller = {
       res.redirect("/products/allproducts");
     });
   },
+  adm: (req, res) => {
+    db.Producto.findAll({ include: [{ model: db.Marca }] }).then(
+      (Productos) => {
+        res.render("products/admin", { Productos });
+      }
+    );
+  },
 
   destroy: (req, res) => {
     db.Producto.destroy({
@@ -92,10 +99,10 @@ const controller = {
           descripcion: producto.descripcion,
           marca: producto.Marca.marca,
           gama: producto.Gama.gama,
-          imagen:producto.imagen,
-          sockets:producto.sockets,
-          slots:producto.slots,
-          ram:producto.ram,
+          imagen: producto.imagen,
+          sockets: producto.sockets,
+          slots: producto.slots,
+          ram: producto.ram,
         };
       });
       res.json({
