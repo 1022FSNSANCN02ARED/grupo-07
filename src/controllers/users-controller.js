@@ -68,7 +68,7 @@ const controller = {
             apellido: usuario.apellido,
             correo: usuario.email,
             avatar: usuario.avatar,
-            rolId: usuario.rol,
+            rolId: usuario.rolId,
           };
           res.locals.user = req.session.user;
           res.locals.userLogged = req.session.userLogged;
