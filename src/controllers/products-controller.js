@@ -1,5 +1,6 @@
 const sequelize = require("sequelize");
 const db = require("../database/models");
+const productos = require("../database/models/productos");
 
 const controller = {
   home: (req, res) => {},
@@ -80,10 +81,26 @@ const controller = {
 
   //Api Allproducts
   allProductsAPI: (req, res) => {
-    db.Producto.findAll().then((Productos) => {
+    db.Producto.findAll({
+      include: [{ model: db.Marca }, { model: db.Gama, attributes: ["gama"] }],
+    }).then((Productos) => {
+      let productsList = Productos.map((producto) => {
+        console.log(producto);
+        return {
+          nombre: producto.nombre,
+          precio: producto.precio,
+          descripcion: producto.descripcion,
+          marca: producto.Marca.marca,
+          gama: producto.Gama.gama,
+          imagen:producto.imagen,
+          sockets:producto.sockets,
+          slots:producto.slots,
+          ram:producto.ram,
+        };
+      });
       res.json({
         status: 200,
-        data: Productos,
+        data: productsList,
       });
     });
   },
