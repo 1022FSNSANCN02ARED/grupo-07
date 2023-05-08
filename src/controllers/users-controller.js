@@ -102,10 +102,6 @@ const controller = {
     });
   },
 
-  adm: (req, res) => {
-    res.render("users/admin", { user: req.session.userToLogin });
-  },
-
   logoutProcess: (req, res) => {
     req.session.destroy();
     res.redirect("/");

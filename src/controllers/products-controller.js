@@ -69,6 +69,13 @@ const controller = {
       res.redirect("/products/allproducts");
     });
   },
+  adm: (req, res) => {
+    db.Producto.findAll({ include: [{ model: db.Marca }] }).then(
+      (Productos) => {
+        res.render("products/admin", { Productos });
+      }
+    );
+  },
 
   destroy: (req, res) => {
     db.Producto.destroy({

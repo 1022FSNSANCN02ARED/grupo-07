@@ -100,9 +100,9 @@
 
         <label for="gama">Gama</label>
         <select name="gama" id="gama">
-          <option value="3">Baja</option>
-          <option value="2">Media</option>
-          <option value="1">Alta</option>
+          <option value="baja" selected>Baja</option>
+          <option value="media">Media</option>
+          <option value="alta">Alta</option>
         </select>
         <div class="text-danger gama">
           <% if (locals.errors && errors.gama) { %><%= errors.gama.msg %> <% }
