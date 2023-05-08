@@ -1,6 +1,6 @@
 const sequelize = require("sequelize");
 const db = require("../database/models");
-const productos = require("../database/models/productos");
+
 
 const controller = {
   home: (req, res) => {},
@@ -23,7 +23,7 @@ const controller = {
     db.Producto.create({
       ...req.body,
       marcaId: req.body.marca,
-      gamaId:req.body.gama,
+      gamaId: req.body.gama,
       descripción: req.body.descripción,
       imagen: req.file
         ? "/img/products/" + req.file.filename
@@ -80,23 +80,40 @@ const controller = {
     });
   },
 
+  //Buscador por nombre
+  filterProductsByName: (req, res) => {
+    if (req.query.nombreProducto) {
+      db.Producto.findAll({
+        include: [{ model: db.Marca }],
+        where: {
+          nombre: {
+            [sequelize.Op.like]: `%${req.query.nombreProducto}%`,
+          },
+        },
+      }).then((Productos) => {
+        res.render("products/allproducts", { Productos });
+      });
+    } else {
+      res.redirect("/products/allproducts");
+    }
+  },
+
   //Api Allproducts
   allProductsAPI: (req, res) => {
     db.Producto.findAll({
       include: [{ model: db.Marca }, { model: db.Gama, attributes: ["gama"] }],
     }).then((Productos) => {
       let productsList = Productos.map((producto) => {
-        console.log(producto);
         return {
           nombre: producto.nombre,
           precio: producto.precio,
           descripcion: producto.descripcion,
           marca: producto.Marca.marca,
           gama: producto.Gama.gama,
-          imagen:producto.imagen,
-          sockets:producto.sockets,
-          slots:producto.slots,
-          ram:producto.ram,
+          imagen: producto.imagen,
+          sockets: producto.sockets,
+          slots: producto.slots,
+          ram: producto.ram,
         };
       });
       res.json({
@@ -121,23 +138,20 @@ const controller = {
       order: [["id", "DESC"]],
       limit: 1,
     }).then((producto) => {
-      let productLast = producto.map((producto) => {
-        console.log(producto);
-        return {
-          nombre: producto.nombre,
-          precio: producto.precio,
-          descripcion: producto.descripcion,
-          marca: producto.Marca.marca,
-          gama: producto.Gama.gama,
-          imagen:producto.imagen,
-          sockets:producto.sockets,
-          slots:producto.slots,
-          ram:producto.ram,
-        };
-      });
+      let productLast = {
+        nombre: producto[0].nombre,
+        precio: producto[0].precio,
+        descripcion: producto[0].descripcion,
+        marca: producto[0].Marca.marca,
+        gama: producto[0].Gama.gama,
+        imagen: producto[0].imagen,
+        sockets: producto[0].sockets,
+        slots: producto[0].slots,
+        ram: producto[0].ram,
+      };
       res.json({
         status: 200,
-        data: productLast[0],
+        data: productLast,
       });
     });
   },
@@ -178,22 +192,15 @@ const controller = {
     });
   },
 
-  //Buscador por nombre
-  filterProductsByName: (req, res) => {
-    if (req.query.nombreProducto) {
-      db.Producto.findAll({
-        include: [{ model: db.Marca }],
-        where: {
-          nombre: {
-            [sequelize.Op.like]: `%${req.query.nombreProducto}%`,
-          },
-        },
-      }).then((Productos) => {
-        res.render("products/allproducts", { Productos });
+  // Api producto por marca
+  marca: (req, res) => {
+    db.Marca.findAll().then((marca) => {
+      console.log(marca);
+      res.json({
+        status: 200,
+        data: marca,
       });
-    } else {
-      res.redirect("/products/allproducts");
-    }
+    });
   },
 };
 
