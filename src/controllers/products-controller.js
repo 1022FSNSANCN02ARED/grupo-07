@@ -23,7 +23,7 @@ const controller = {
     db.Producto.create({
       ...req.body,
       marcaId: req.body.marca,
-      gamaId:req.body.gama,
+      gamaId: req.body.gama,
       descripción: req.body.descripción,
       imagen: req.file
         ? "/img/products/" + req.file.filename
@@ -83,7 +83,7 @@ const controller = {
         id: req.params.id,
       },
     }).then(() => {
-      res.redirect("/products/allproducts");
+      res.redirect("/products/admin");
     });
   },
 
@@ -136,10 +136,10 @@ const controller = {
           descripcion: producto.descripcion,
           marca: producto.Marca.marca,
           gama: producto.Gama.gama,
-          imagen:producto.imagen,
-          sockets:producto.sockets,
-          slots:producto.slots,
-          ram:producto.ram,
+          imagen: producto.imagen,
+          sockets: producto.sockets,
+          slots: producto.slots,
+          ram: producto.ram,
         };
       });
       res.json({
