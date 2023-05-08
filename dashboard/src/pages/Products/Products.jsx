@@ -3,6 +3,7 @@ import {
   LastProduct,
   MarkList,
   ProductsList,
+  TotalProducts,
 } from "../../components/ProductsComponents";
 
 function Products() {
@@ -12,6 +13,7 @@ function Products() {
       <LastProduct />
       <MarkList />
       <ProductsList />
+      <TotalProducts />
     </div>
   );
 }

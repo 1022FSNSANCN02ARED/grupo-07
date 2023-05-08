@@ -31,7 +31,7 @@ function LastProduct(){
   console.log(LastProduct);
     return (
         <div className="LastProduct">
-            <img src={"http://localhost:3001"+LastProduct.avatar} width="250px" height="250px"  />
+            <img src={"http://localhost:3001"+LastProduct.imagen} width="250px" height="250px"  />
             <div className='infoProducts' />
             <ul>
                 <li>Nombre: {LastProduct.nombre}</li>
