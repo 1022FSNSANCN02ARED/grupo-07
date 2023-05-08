@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Products,Users } from "./pages";
+import { Products, Users } from "./pages";
 import Menu from "./components/Menu/Menu";
 import Home from "./components/Home/Home";
 
@@ -15,15 +15,17 @@ import {
 function App() {
   return (
     <div className="App">
-      <Menu/>
       <Router>
+        <div className="sidebar">
+          <Menu />
         <Routes>
-          <Route path="/" element={<Home />}>
-          <Route path="Home"  />
+          <Route path="/">
+            <Route index element={<Home />} />
             <Route path="Products" element={<Products />} />
-            <Route path="Users" element={<Users />} /> 
+            <Route path="Users" element={<Users />} />
           </Route>
         </Routes>
+        </div>
       </Router>
     </div>
   );
