@@ -200,15 +200,17 @@ const controller = {
   },
 
   // Api producto por marca
-  marca: (req, res) => {
-    db.Marca.findAll().then((marca) => {
-      console.log(marca);
+  MarcaProductsApi: (req, res)=>{
+    db.Marca.findAll({
+      attributes: ["marca","id"],
+      include: [{model: db.Producto}],
+    }).then((productList) => {
       res.json({
         status: 200,
-        data: marca,
+        data: productList,
       });
-    });
-  },
+    })
+  }
 };
 
 module.exports = controller;

@@ -22,15 +22,7 @@ window.addEventListener("load", function () {
         campo: "password",
         errorMsg: "El campo de contraseña debe estar completo",
       });
-    } else if (
-      !/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{5,}/.test(campoPassword.value)
-    ) {
-      erroresLogin.push({
-        campo: "password",
-        errorMsg:
-          "La contraseña debe contener al menos una letra mayúscula, una letra minúscula, un número, un símbolo y tener al menos 6 caracteres",
-      });
-    }
+    } 
 
     //Si hay errores
     if (erroresLogin.length > 0) {
