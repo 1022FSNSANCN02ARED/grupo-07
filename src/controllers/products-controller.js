@@ -1,7 +1,6 @@
 const sequelize = require("sequelize");
 const db = require("../database/models");
 
-
 const controller = {
   home: (req, res) => {},
 
@@ -83,7 +82,7 @@ const controller = {
         id: req.params.id,
       },
     }).then(() => {
-      res.redirect("/products/allproducts");
+      res.redirect("/products/admin");
     });
   },
 

@@ -64,10 +64,12 @@ const controller = {
           req.session.userLogged = true;
 
           req.session.user = {
+            id: usuario.id,
             nombre: usuario.nombre,
             apellido: usuario.apellido,
             correo: usuario.email,
             avatar: usuario.avatar,
+            telefono: usuario.telefono,
             rolId: usuario.rolId,
           };
           res.locals.user = req.session.user;
