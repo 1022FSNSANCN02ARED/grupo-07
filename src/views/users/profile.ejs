@@ -14,39 +14,43 @@
 <div class="menuDesplegado">
   <!--Include menu-->
 </div>
-
-<div class="pageProfile">
-
-  <div class="infoProfile">
-    <div class="profileIMG">
+<body>
+  <div class="pageProfile">
+    <div class="apartados">
+        <div class="categorias">
+          <svg width="15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svgphoto"><defs></defs><path d="M22.71 4.08A3 3 0 0020.41 3H4.24l-.04-.35A3 3 0 001.22 0H1a1 1 0 000 2h.22a1 1 0 011 .88l1.37 11.7A5 5 0 008.56 19H19a1 1 0 000-2H8.56a3 3 0 01-2.82-2h11.92a5 5 0 004.92-4.11l.78-4.36a3 3 0 00-.65-2.45zm-1.31 2.1l-.79 4.35A3 3 0 0117.66 13H5.42l-.94-8H20.4a1 1 0 01.99 1.18z"></path><circle cx="7" cy="22" r="2"></circle><circle cx="17" cy="22" r="2"></circle></svg>
+          Historial de Compras
+        </div>
+        
+        <div class="categorias">
+          <img decoding="async" width="15px" src="https://http2.mlstatic.com/storage/homes-korriban/assets/images/ecosystem/protected.svg" class="img-container">
+          Seguridad
+        </div>
       
-      <img src="<%= user.avatar %>" alt="" class="avatarIMG">
-      <!--/img/users/1682198133444_img.png-->
+        <div class="categorias">
+          <svg width="15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve" class="svgphoto"><path d="M400 188H188v-82c0-36 30-66 68-66s68 30 68 66v38h40v-38C364 47 316 0 256 0S148 47 148 106v82h-36c-33 0-60 27-60 60v204c0 33 27 60 60 60h288c33 0 60-27 60-60V248c0-33-27-60-60-60zm20 264c0 11-9 20-20 20H112c-11 0-20-9-20-20V248c0-11 9-20 20-20h288c11 0 20 9 20 20v204z"></path><path d="M256 286a37 37 0 0 0-20 68v44a20 20 0 0 0 40 0v-44a37 37 0 0 0-20-68z"></path></svg>
+          Privacidad
+        </div>
+        
     </div>
-    <div class="userDetail">
-      Correo
-    </div>
-    <div class="userDetail">
-      Teléfono
+  
+    <div class="infoProfile">
+      <div class="profileIMG">
+        <img src="<%= user.avatar %>" alt="" class="avatarIMG">
+        <h2 class="titleProfile">Datos del usuario</h2>
+        <!--/img/users/1682198133444_img.png-->
+      </div>
+      <div class="userDetail">
+        <h5>N° de usuario: <%= user.id %> </h5>
+        <h5>Nombre: <%= user.nombre %> <%= user.apellido %></h5>
+        <h5>Correo: <%= user.correo %></h5>
+        <h5>Telfono: <%= user.telefono %></h5>
+      </div>
     </div>
   </div>
-
-    <div class="apartados">
-      Correo: <%=user.correo %>
-    </div>
-    <div class="apartados">
-      
-    </div>
-    <div class="apartados">
-      Historial de compras
-    </div>
-    <div class="apartados">
-      Seguridad
-    </div>
-    <div class="apartados">
-      Privacidad
-    </div>
-</div>
+  <footer>    
+    <!--Include Footer-->
+    <%- include('../partials/footer') %> 
+  </footer>
 </body>
-
 </html>

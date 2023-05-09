@@ -14,7 +14,6 @@ import {
 function Menu() {
   return (
     <div className="Menu">
-      <Router>
         <nav id="#">
           <a href="#">
             <img src={logo} alt="Logo Argon" />
@@ -33,11 +32,6 @@ function Menu() {
             </a>
           </ul>
         </nav>
-        <Routes>
-          <Route path="/Products" element={<Products />} />
-          <Route path="/Users" element={<Users />} />
-        </Routes>
-      </Router>
     </div>
   );
 }

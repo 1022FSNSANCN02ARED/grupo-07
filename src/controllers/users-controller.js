@@ -64,10 +64,12 @@ const controller = {
           req.session.userLogged = true;
 
           req.session.user = {
+            id: usuario.id,
             nombre: usuario.nombre,
             apellido: usuario.apellido,
             correo: usuario.email,
             avatar: usuario.avatar,
+            telefono: usuario.telefono,
             rolId: usuario.rolId,
           };
           res.locals.user = req.session.user;
@@ -77,6 +79,10 @@ const controller = {
             res.cookie("userEmail", req.body.email, {
               maxAge: 1000 * 60 * 60,
             });
+          }
+
+          if (usuario.rolId == "1") {
+            return res.redirect("/products/admin");
           }
           return res.redirect("/");
         } else {
@@ -100,10 +106,6 @@ const controller = {
         });
       }
     });
-  },
-
-  adm: (req, res) => {
-    res.render("users/admin", { user: req.session.userToLogin });
   },
 
   logoutProcess: (req, res) => {

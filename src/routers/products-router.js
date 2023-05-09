@@ -25,6 +25,8 @@ const middlewareAdmin = require("../middlewares/middlewareAdmin");
 router.get("/", productsController.home);
 
 router.get("/allproducts", productsController.allProducts);
+// administradores
+router.get("/admin", middlewareAdmin, productsController.adm);
 
 //Formulario de creación de productos
 router.get("/create", productsController.create);
@@ -53,6 +55,9 @@ router.delete("/:id", productsController.destroy);
 
 // Allproducts api
 router.get("/api/all", productsController.allProductsAPI);
+
+// Cantidad productos por marca
+router.get("/api/marca", productsController.MarcaProductsApi);
 
 // Totalproducts api
 router.get("/api/total", productsController.totalProductsAPI);

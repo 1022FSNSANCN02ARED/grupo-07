@@ -28,6 +28,11 @@
             <a href="./edit/<%= producto.id %>/" >
               <button type="submit" class="submit">Editar</button>
             </a>  
+            <form
+          class="button-delete" method="Post"
+          action="/products/<%= producto.id %>?_method=Delete" >
+          <button type="submit"class="rest">Borrar</button>
+        </form>
         </div>  
       <% }) %>
     </div>

@@ -1,6 +1,5 @@
 const sequelize = require("sequelize");
 const db = require("../database/models");
-const productos = require("../database/models/productos");
 
 const controller = {
   home: (req, res) => {},
@@ -23,6 +22,7 @@ const controller = {
     db.Producto.create({
       ...req.body,
       marcaId: req.body.marca,
+      gamaId: req.body.gama,
       descripción: req.body.descripción,
       imagen: req.file
         ? "/img/products/" + req.file.filename
@@ -39,6 +39,7 @@ const controller = {
       res.render("products/detail", { Productos });
     });
   },
+
   edit: (req, res) => {
     db.Producto.findByPk(req.params.id, {
       include: [{ model: db.Marca }, { model: db.Gama, attributes: ["gama"] }],
@@ -46,6 +47,8 @@ const controller = {
       res.render("products/edit", { Productos });
     });
   },
+
+  
 
   update: async (req, res) => {
     const imagenEstablecida = await db.Producto.findByPk(req.params.id);
@@ -68,6 +71,13 @@ const controller = {
       res.redirect("/products/allproducts");
     });
   },
+  adm: (req, res) => {
+    db.Producto.findAll({ include: [{ model: db.Marca }] }).then(
+      (Productos) => {
+        res.render("products/admin", { Productos });
+      }
+    );
+  },
 
   destroy: (req, res) => {
     db.Producto.destroy({
@@ -75,8 +85,26 @@ const controller = {
         id: req.params.id,
       },
     }).then(() => {
-      res.redirect("/products/allproducts");
+      res.redirect("/products/admin");
     });
+  },
+
+  //Buscador por nombre
+  filterProductsByName: (req, res) => {
+    if (req.query.nombreProducto) {
+      db.Producto.findAll({
+        include: [{ model: db.Marca }],
+        where: {
+          nombre: {
+            [sequelize.Op.like]: `%${req.query.nombreProducto}%`,
+          },
+        },
+      }).then((Productos) => {
+        res.render("products/allproducts", { Productos });
+      });
+    } else {
+      res.redirect("/products/allproducts");
+    }
   },
 
   //Api Allproducts
@@ -85,17 +113,16 @@ const controller = {
       include: [{ model: db.Marca }, { model: db.Gama, attributes: ["gama"] }],
     }).then((Productos) => {
       let productsList = Productos.map((producto) => {
-        console.log(producto);
         return {
           nombre: producto.nombre,
           precio: producto.precio,
           descripcion: producto.descripcion,
           marca: producto.Marca.marca,
           gama: producto.Gama.gama,
-          imagen:producto.imagen,
-          sockets:producto.sockets,
-          slots:producto.slots,
-          ram:producto.ram,
+          imagen: producto.imagen,
+          sockets: producto.sockets,
+          slots: producto.slots,
+          ram: producto.ram,
         };
       });
       res.json({
@@ -116,12 +143,24 @@ const controller = {
   // Api Last Product
   lastProductsAPI: (req, res) => {
     db.Producto.findAll({
+      include: [{ model: db.Marca }, { model: db.Gama, attributes: ["gama"] }],
       order: [["id", "DESC"]],
-      limit: 2,
+      limit: 1,
     }).then((producto) => {
+      let productLast = {
+        nombre: producto[0].nombre,
+        precio: producto[0].precio,
+        descripcion: producto[0].descripcion,
+        marca: producto[0].Marca.marca,
+        gama: producto[0].Gama.gama,
+        imagen: producto[0].imagen,
+        sockets: producto[0].sockets,
+        slots: producto[0].slots,
+        ram: producto[0].ram,
+      };
       res.json({
         status: 200,
-        data: producto,
+        data: productLast,
       });
     });
   },
@@ -162,23 +201,18 @@ const controller = {
     });
   },
 
-  //Buscador por nombre
-  filterProductsByName: (req, res) => {
-    if (req.query.nombreProducto) {
-      db.Producto.findAll({
-        include: [{ model: db.Marca }],
-        where: {
-          nombre: {
-            [sequelize.Op.like]: `%${req.query.nombreProducto}%`,
-          },
-        },
-      }).then((Productos) => {
-        res.render("products/allproducts", { Productos });
+  // Api producto por marca
+  MarcaProductsApi: (req, res)=>{
+    db.Marca.findAll({
+      attributes: ["marca","id"],
+      include: [{model: db.Producto}],
+    }).then((productList) => {
+      res.json({
+        status: 200,
+        data: productList,
       });
-    } else {
-      res.redirect("/products/allproducts");
-    }
-  },
+    })
+  }
 };
 
 module.exports = controller;
