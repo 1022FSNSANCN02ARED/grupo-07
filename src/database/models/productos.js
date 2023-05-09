@@ -1,56 +1,52 @@
 module.exports = (sequelize, DataTypes) => {
-  const Model = sequelize.define(
-    "Producto",
-    {
+  let alias = "Producto";
+  let cols = {
       id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
+          type: DataTypes.INTEGER(50),
+          primaryKey: true,
+          autoIncrement: true,
       },
       nombre: {
-        type: DataTypes.STRING,
+          type: DataTypes.STRING(100),
       },
       precio: {
-        type: DataTypes.DECIMAL,
-        allowNull: false,
-      },
-      sockets: {
-        type: DataTypes.STRING,
-      },
-      ram: {
-        type: DataTypes.STRING,
-      },
-      slots: {
-        type: DataTypes.DECIMAL,
+          type: DataTypes.INTEGER(100),
       },
       descripcion: {
-        type: DataTypes.STRING,
+          type: DataTypes.STRING(500),
+      },
+      marcaId: {
+          type: DataTypes.INTEGER(100),
+      },
+      gamaId: {
+          type: DataTypes.INTEGER(100),
       },
       imagen: {
-        type: DataTypes.STRING,
+          type: DataTypes.STRING(45),
       },
-    },
-    {
-      tableName: "productos",
-      timestamps: false,
-    }
-  );
-  Model.associate = (models) => {
-    Model.belongsTo(models.Gama, {
-      foreignKey: "gamaId",
-      timestamps: false,
-    });
-    Model.belongsTo(models.Marca, {
-      foreignKey: "marcaId",
-      timestamps: false,
-    });
-    Model.belongsToMany(models.Usuario, {
-      through: "carrito",
-      foreignKey: "idUsuario",
-      otherKey: "idProducto",
-      timestamps: false,
-    });
+      sockets: {
+          type: DataTypes.STRING(5),
+      },
+      slots: {
+          type: DataTypes.INTEGER(11),
+      },
+      ram: {
+          type: DataTypes.STRING(4),
+      },
+  };
+  let config = { tableName: "productos", timestamps: false };
+
+  const Producto = sequelize.define(alias, cols, config);
+
+  Producto.associate = function (models) {
+      Producto.belongsTo(models.Marca);
+      Producto.belongsTo(models.Gama);
+  Producto.belongsToMany(models.Usuario, {
+    through: "carrito",
+    sourceKey: "id",
+    timestamps: false,
+  });
   };
 
-  return Model;
+  return Producto;
 };

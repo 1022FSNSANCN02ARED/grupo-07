@@ -204,12 +204,12 @@ const controller = {
   // Api producto por marca
   MarcaProductsApi: (req, res)=>{
     db.Marca.findAll({
-      attributes: ["marca","id"],
+      //attributes: ["marca","id"],
       include: [{model: db.Producto}],
-    }).then((productList) => {
+    }).then((productsList) => {
       res.json({
         status: 200,
-        data: productList,
+        data: productsList,
       });
     })
   }
