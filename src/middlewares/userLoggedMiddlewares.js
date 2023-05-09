@@ -3,7 +3,7 @@ function userLoggedMiddleware(req, res, next) {
   if(req.session.userLogged){
     next();
   } else{
-    res.render("users/login");
+    res.redirect("/users/login");
   }
 }
 

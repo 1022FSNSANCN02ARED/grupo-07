@@ -7,7 +7,6 @@ module.exports = [
   body("img").custom((value, { req }) => {
     const file = req.file;
     const acceptedExtensions = [".jpg", ".png"];
-    console.log("hola");
 
     if (file=="") {
       const fileExtension = path.extname(file.originalname);
