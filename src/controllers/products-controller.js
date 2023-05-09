@@ -48,8 +48,6 @@ const controller = {
     });
   },
 
-  
-
   update: async (req, res) => {
     const imagenEstablecida = await db.Producto.findByPk(req.params.id);
     db.Producto.update(
@@ -202,17 +200,17 @@ const controller = {
   },
 
   // Api producto por marca
-  MarcaProductsApi: (req, res)=>{
+  MarcaProductsApi: (req, res) => {
     db.Marca.findAll({
-      attributes: ["marca","id"],
-      include: [{model: db.Producto}],
+      attributes: ["marca", "id"],
+      include: [{ model: db.Producto }],
     }).then((productList) => {
       res.json({
         status: 200,
         data: productList,
       });
-    })
-  }
+    });
+  },
 };
 
 module.exports = controller;
