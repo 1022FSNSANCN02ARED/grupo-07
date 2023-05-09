@@ -3,7 +3,7 @@
   <head>
     <!--Include head-->
     <%- include('../partials/head') %>
-   <!-- <script src="/js/CreateValidation.js"></script>-->
+    <script src="/js/CreateValidation.js"></script>
 
     <title>Argon | Carga</title>
   </head>
@@ -12,8 +12,9 @@
       <!--Include header-->
       <%- include('../partials/header') %>
     </header>
-
-    <section class="contenedorForm">
+    
+    <section class="create-box">
+    </br>
       <h2>Carga tus productos</h2>
       <!-- <div class="erroresCreate">
             <ul>
@@ -25,12 +26,14 @@
         action="/products/create"
         method="POST"
         enctype="multipart/form-data"
-        class="create"
+        class="create register"
       >
-        <h4>Carga de productos</h4>
-        <label for="producto">Nombre del producto</label>
+
+  
+      
+        <label for="producto"></label>
         <input
-          class="nombre"
+          class="form-control nombre"
           type="text"
           placeholder="Nombre del producto"
           name="nombre"
@@ -42,9 +45,9 @@
         </div>
         <br />
 
-        <label for="descripción">Descrpción</label>
+        <label for="descripción"></label>
         <input
-          class="desc"
+          class="form-control desc"
           type="text"
           placeholder="Descripción"
           name="desc"
@@ -85,9 +88,9 @@
           %>
         </div>
 
-        <label for="imagen">Suba una imagen</label>
+        <label for="imagen"></label>
         <input
-          class="img"
+          class="form-control img"
           type="file"
           placeholder="Imagen"
           name="img"
@@ -97,29 +100,37 @@
           <% if (locals.errors && errors.img) { %><%= errors.img.msg %> <% } %>
         </div>
         <br />
-
+        
         <label for="gama">Gama</label>
         <select name="gama" id="gama">
+<<<<<<< HEAD
+          
           <option value="baja" selected>Baja</option>
           <option value="media">Media</option>
           <option value="alta">Alta</option>
+=======
+          <option value="3" selected>Baja</option>
+          <option value="2">Media</option>
+          <option value="1">Alta</option>
+>>>>>>> 34e8cd728e0719591fe79063093eb8af425afe29
         </select>
         <div class="text-danger gama">
           <% if (locals.errors && errors.gama) { %><%= errors.gama.msg %> <% }
           %>
         </div>
-
-        <label for="ram">Memoria/s RAM</label>
+    
+        <label for="ram"></label>
         <input
-          class="ram"
+          class="form-control ram"
           type="text"
-          placeholder="DDR3, DDR4, DDR5..."
+          placeholder="Memoria/s RAM: (ejemplo: DDR3, DDR4, DDR5...)"
           name="ram"
           id="ram"
         />
         <div class="text-danger ram">
           <% if (locals.errors && errors.ram) { %><%= errors.ram.msg %> <% } %>
         </div>
+        <br />
 
         <label for="slots">Slots</label>
         <select name="slots" id="slots">
@@ -135,11 +146,11 @@
           %>
         </div>
 
-        <label for="sockets">Sockets</label>
+        <label for="sockets"></label>
         <input
-          class="sockets"
+          class="form-control sockets"
           type="text"
-          placeholder="1700, am4..."
+          placeholder="Sockets: (ejemplo: 1700, am4...)"
           name="sockets"
           id="sockets"
         />
@@ -150,11 +161,11 @@
         </div>
         <br />
 
-        <label for="precio">Precio</label>
+        <label for="precio"></label>
         <input
-          class="precio"
+          class="form-control precio"
           type="number"
-          placeholder="precio"
+          placeholder="Precio"
           name="precio"
           id="precio"
         />
@@ -163,14 +174,18 @@
           } %>
         </div>
         <br />
+        <div class="create-btn">
         <button type="reset" value="registrarse" class="btn-regis">
           Vaciar
         </button>
-        <button type="submit" value="cargar" class="btn-regis" id="create">
+      </div>
+      <div class="create-btn2">
+        <button type="submit" value="cargar" class="btn-regis btn-submit" id="create">
           Cargar
         </button>
+      </div>
       </form>
-    </section>
+    </section>
     <footer>
       <!--Include Footer-->
       <%- include('../partials/footer') %>

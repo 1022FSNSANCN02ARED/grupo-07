@@ -5,6 +5,7 @@ const router = express.Router();
 const productsController = require("../controllers/products-controller");
 const middlewareAdmin = require("../middlewares/middlewareAdmin");
 const validateCreate = require("../middlewares/validateCreate");
+const createError = require("../middlewares/errorValideteMiddlewareCreate");
 
 // Disco de almacenamiento de Multer
 
@@ -28,13 +29,13 @@ router.get("/allproducts", productsController.allProducts);
 router.get("/admin", middlewareAdmin, productsController.adm);
 
 //Formulario de creación de productos
-router.get("/create",productsController.create);
+router.get("/create", productsController.create);
 
 //Accion de creación
 router.post(
   "/create",
   upload.single("imagen"),
-  validateCreate,
+  [validateCreate, createError],
   productsController.store
 );
 
