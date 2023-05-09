@@ -496,7 +496,63 @@ ul {
 
 /*==============================Create==============================*/
  .create input{
-  margin-bottom: 20px;
+  margin-bottom: 2%;
+}
+.create-box h2{
+  font-size: 1.7vw;
+  text-align: center;
+}
+.create-box h1{
+  text-align: center;
+  padding-bottom: 5%;
+}
+.create-box{
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 20px;
+  background-color:var(--very-dark-gray);
+  border-radius:8px;
+  border: solid 2px var(--bright-pink);
+  padding-bottom: 5px;
+  padding-top: 20px;
+  display:grid;
+  justify-content: center;
+  align-items: center;
+  
+  
+  
+}
+.create-btn{
+  display: inline-block;
+  padding-left:10%;
+  padding-right:5%;
+  justify-content: center;
+  align-items: center;
+}
+.create-btn2{
+  display: inline-block;
+  padding-left:10%;
+  padding-right:5%;
+  justify-content: center;
+  align-items: center;
+}
+.create-box input[type="text"], textarea {
+  width: 100%;
+}
+.link-regis a{
+  display: flex;
+  justify-content: flex-start;
+  text-decoration: none;
+  width: 20px;
+  margin-top: 20px;
+}
+.links a{
+  margin-top: 20px;
+  text-decoration: none;
+}
+.link-contra {
+  display: flex;
+  justify-content: space-between;
 }
 /*==============================EDIT==============================*/
 .formProductEdit{
