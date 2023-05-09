@@ -581,6 +581,7 @@ ul {
   border-bottom: #000000 solid 2px;
   border-radius: 20px;
   width: 800px;
+  border: 2px solid var(--bright-pink);
 }
 .avatarIMG{
   margin: 5px;
@@ -588,14 +589,15 @@ ul {
   height: 100px;
   border-radius: 300px;
   position: absolute;
-  top: 195px; 
-  left: 400px;
+  top: 400px; 
+  left: 10px;
+  border: 2px solid var(--bright-pink);
 }
 
 .apartados{
   margin: 50px;
   width: 250px;
-  height: 21vh;
+  height: 16vh;
   background-color: var(--white);
   color: #000000;
   border-bottom: #000000 solid 2px;
@@ -793,20 +795,19 @@ ul {
 }
   /*--------------profile*-----------------------*/
 .apartados{
-  height: 21vh;
+  height: 23vh;
 }
 .infoProfile{
   margin: 10px;
 }
 .avatarIMG{
-  /*margin: 10px;
-  width: 70px;
-  height: 70px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
   border-radius: 300px;
   position: absolute;
-  top: 370px;
-  left: 10px;*/
-  display: none;
+  top: 340px;
+  left: 9px;
 }
 }
 /*==============================RESPONSE DESING TABLET==============================*/
@@ -875,7 +876,7 @@ ul {
   }
    /*--------------profile*-----------------------*/
 .apartados{
-  height: 21vh;
+  height: 16vh;
 }
 .infoProfile{
   margin: 10px;
@@ -892,6 +893,7 @@ ul {
 }
 
 }
+
 /*==============================RESPONSE DESING TABLET HORIZONTAL Y NOTEBOOK==============================*/
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .header-search-modifyr {
@@ -940,7 +942,7 @@ ul {
   }
   /*--------------profile*-----------------------*/
 .apartados{
-  height: 21vh;
+  height: 16vh;
 }
 .infoProfile{
   margin: 10px;
@@ -957,8 +959,52 @@ ul {
 }
   
 }
+@media screen and (min-width: 768px) and (max-width: 1070px){
+  .avatarIMG{
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 300px;
+    position: absolute;
+    top: 410px;
+    left: 14px;
+  }
+
+}
 /*==============================RESPONSE DESING ESCRITORIO BIG==============================*/
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1267px) {
+  .infoProfile{
+    margin: 50px;
+    background-color: var(--very-light-gray);
+    color: #000000;
+    border-bottom: #000000 solid 2px;
+    border-radius: 20px;
+    width: 800px;
+    border: 2px solid var(--bright-pink);
+  }
+  .avatarIMG{
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 300px;
+    position: absolute;
+    top: 195px; 
+    left: 450px;
+    border: 2px solid var(--bright-pink);
+  }
+  
+  .apartados{
+    margin: 50px;
+    width: 250px;
+    height: 16vh;
+    background-color: var(--white);
+    color: #000000;
+    border-bottom: #000000 solid 2px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 6px;
+  
+  }
 
 }
 
