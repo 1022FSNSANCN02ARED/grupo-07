@@ -39,6 +39,7 @@ const controller = {
       res.render("products/detail", { Productos });
     });
   },
+
   edit: (req, res) => {
     db.Producto.findByPk(req.params.id, {
       include: [{ model: db.Marca }, { model: db.Gama, attributes: ["gama"] }],
@@ -46,6 +47,8 @@ const controller = {
       res.render("products/edit", { Productos });
     });
   },
+
+  
 
   update: async (req, res) => {
     const imagenEstablecida = await db.Producto.findByPk(req.params.id);

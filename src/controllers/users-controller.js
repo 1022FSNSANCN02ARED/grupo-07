@@ -80,6 +80,10 @@ const controller = {
               maxAge: 1000 * 60 * 60,
             });
           }
+
+          if (usuario.rolId == "1") {
+            return res.redirect("/products/admin");
+          }
           return res.redirect("/");
         } else {
           return res.render("users/login", {
