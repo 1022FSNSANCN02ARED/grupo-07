@@ -209,7 +209,8 @@ const controller = {
       let brandsList = marcas.map((producto) => {
         return {
           id: producto.id,
-          nombre: producto.nombre,
+          marca: producto.marca,
+          cantidad: producto.Productos.length
         };
       });
       res.json({
