@@ -496,63 +496,7 @@ ul {
 
 /*==============================Create==============================*/
  .create input{
-  margin-bottom: 2%;
-}
-.create-box h2{
-  font-size: 1.7vw;
-  text-align: center;
-}
-.create-box h1{
-  text-align: center;
-  padding-bottom: 5%;
-}
-.create-box{
-  margin-left: 30%;
-  margin-right: 30%;
-  margin-top: 20px;
-  background-color:var(--very-dark-gray);
-  border-radius:8px;
-  border: solid 2px var(--bright-pink);
-  padding-bottom: 5px;
-  padding-top: 20px;
-  display:grid;
-  justify-content: center;
-  align-items: center;
-  
-  
-  
-}
-.create-btn{
-  display: inline-block;
-  padding-left:10%;
-  padding-right:5%;
-  justify-content: center;
-  align-items: center;
-}
-.create-btn2{
-  display: inline-block;
-  padding-left:10%;
-  padding-right:5%;
-  justify-content: center;
-  align-items: center;
-}
-.create-box input[type="text"], textarea {
-  width: 100%;
-}
-.link-regis a{
-  display: flex;
-  justify-content: flex-start;
-  text-decoration: none;
-  width: 20px;
-  margin-top: 20px;
-}
-.links a{
-  margin-top: 20px;
-  text-decoration: none;
-}
-.link-contra {
-  display: flex;
-  justify-content: space-between;
+  margin-bottom: 20px;
 }
 /*==============================EDIT==============================*/
 .formProductEdit{
@@ -619,12 +563,18 @@ ul {
 
 /*==============================PROFILE==============================*/
 .titleProfile{
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 50px;
   text-align: center;
 }
-.userDetail{
+.w-400{
+  width: 400px;
+}
+.detail{
+  display: flex;
+  flex-direction: row;
   margin: 20px;
-  margin-top:60px;
+  
 }
 .pageProfile{
   display: flex;
@@ -644,33 +594,31 @@ ul {
   width: 100px;
   height: 100px;
   border-radius: 300px;
-  position: absolute;
-  top: 400px; 
-  left: 10px;
+  display: flex;
+  justify-content: center;
   border: 2px solid var(--bright-pink);
 }
 
 .apartados{
   margin: 50px;
-  width: 250px;
-  height: 16vh;
+  width: 260px;
+  height: 42vh;
   background-color: var(--white);
   color: #000000;
   border-bottom: #000000 solid 2px;
-  display: flex;
-  flex-wrap: wrap;
   border-radius: 6px;
 
 }
 .categorias{
-  width: 300px;
+  width: 260px;
   height: 50px;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   padding: 10px;
 }
 .categorias:hover{
+  border-bottom: none;
   border: 3px solid var(--bright-pink) ;
-  border-radius: 5px;
+  
 }
 /*==============================ANIMACIÓN CARGA==============================*/
 .spinner {
@@ -850,21 +798,21 @@ ul {
   display: none;
 }
   /*--------------profile*-----------------------*/
-.apartados{
-  height: 23vh;
-}
-.infoProfile{
-  margin: 10px;
-}
-.avatarIMG{
-  margin: 10px;
-  width: 50px;
-  height: 50px;
-  border-radius: 300px;
-  position: absolute;
-  top: 340px;
-  left: 9px;
-}
+  .w-400{
+    width: 200px;
+  }
+  .infoProfile{
+    margin: 4px;
+    width: 365px;
+  }
+  .apartados{
+    height: auto;
+  }
+  .profileIMG{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 /*==============================RESPONSE DESING TABLET==============================*/
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -931,22 +879,15 @@ ul {
     height: 400px;
   }
    /*--------------profile*-----------------------*/
-.apartados{
-  height: 16vh;
-}
-.infoProfile{
-  margin: 10px;
-  width: 700px;
-}
-.avatarIMG{
-  margin: 10px;
-  width: 90px;
-  height: 90px;
-  border-radius: 300px;
-  position: absolute;
-  top: 370px;
-  left: 10px;
-}
+
+   .apartados{
+    height: auto;
+  }
+  .profileIMG{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
 }
 
@@ -997,71 +938,28 @@ ul {
     width: 75%;
   }
   /*--------------profile*-----------------------*/
-.apartados{
-  height: 16vh;
-}
-.infoProfile{
-  margin: 10px;
-  width: 700px;
-}
-.avatarIMG{
-  margin: 5px;
-  width: 100px;
-  height: 100px;
-  border-radius: 300px;
-  position: absolute;
-  top: 155px; 
-  left: 370px;
-}
-  
-}
-@media screen and (min-width: 768px) and (max-width: 1070px){
-  .avatarIMG{
-    margin: 10px;
-    width: 80px;
-    height: 80px;
-    border-radius: 300px;
-    position: absolute;
-    top: 410px;
-    left: 14px;
+
+  .apartados{
+    height: auto;
+  }
+  .profileIMG{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
 }
+
 /*==============================RESPONSE DESING ESCRITORIO BIG==============================*/
 @media screen and (min-width: 1267px) {
-  .infoProfile{
-    margin: 50px;
-    background-color: var(--very-light-gray);
-    color: #000000;
-    border-bottom: #000000 solid 2px;
-    border-radius: 20px;
-    width: 800px;
-    border: 2px solid var(--bright-pink);
-  }
-  .avatarIMG{
-    margin: 5px;
-    width: 100px;
-    height: 100px;
-    border-radius: 300px;
-    position: absolute;
-    top: 195px; 
-    left: 450px;
-    border: 2px solid var(--bright-pink);
-  }
-  
   .apartados{
-    margin: 50px;
-    width: 250px;
-    height: 16vh;
-    background-color: var(--white);
-    color: #000000;
-    border-bottom: #000000 solid 2px;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 6px;
-  
+    height: 42vh;
   }
-
+  .profileIMG{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 
