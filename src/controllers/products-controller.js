@@ -108,10 +108,11 @@ const controller = {
   //Api Allproducts
   allProductsAPI: (req, res) => {
     db.Producto.findAll({
-      include: [{ model: db.Marca }, { model: db.Gama, attributes: ["gama"] }],
+      include: [{ model: db.Marca }, { model: db.Gama }],
     }).then((Productos) => {
       let productsList = Productos.map((producto) => {
         return {
+          id: producto.id,
           nombre: producto.nombre,
           precio: producto.precio,
           descripcion: producto.descripcion,
@@ -141,7 +142,7 @@ const controller = {
   // Api Last Product
   lastProductsAPI: (req, res) => {
     db.Producto.findAll({
-      include: [{ model: db.Marca }, { model: db.Gama, attributes: ["gama"] }],
+      include: [{ model: db.Marca }, { model: db.Gama }],
       order: [["id", "DESC"]],
       limit: 1,
     }).then((producto) => {
@@ -203,11 +204,17 @@ const controller = {
   MarcaProductsApi: (req, res) => {
     db.Marca.findAll({
       //attributes: ["marca","id"],
-      include: [{model: db.Producto}],
-    }).then((productsList) => {
+      include: [{ model: db.Producto }],
+    }).then((marcas) => {
+      let brandsList = marcas.map((producto) => {
+        return {
+          id: producto.id,
+          nombre: producto.nombre,
+        };
+      });
       res.json({
         status: 200,
-        data: productsList,
+        data: brandsList,
       });
     });
   },

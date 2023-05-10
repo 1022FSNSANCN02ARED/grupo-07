@@ -11,12 +11,12 @@ function UsersList() {
       },
     }).then((infoUsers) => {
       infoUsers.json().then((usersList) => {
-       // console.log(usersList);
+
         setUsers(usersList.data);
       });
     });
   }, []);
-  //console.log(users);
+
   return (
     <div className="UserssContainer">
       <div className="UsersList">

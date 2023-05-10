@@ -2,7 +2,6 @@ window.addEventListener("load", function () {
   //Validación de front
   const campoNombre = document.querySelector("input.nombre");
   const campoPrecio = document.querySelector("input.precio");
-  console.log(campoNombre.value, campoPrecio.value);
 
   //register
   let erroresEdit = [];
@@ -20,7 +19,7 @@ window.addEventListener("load", function () {
         errorMsg: "El campo de nombre debe tener al menos 3 caracteres",
       });
     }
-    console.log(campoPrecio.value);
+
      if (campoPrecio.value <= 0) {
       erroresEdit.push({
         campo: "precio",

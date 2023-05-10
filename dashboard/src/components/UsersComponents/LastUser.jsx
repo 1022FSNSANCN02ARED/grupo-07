@@ -21,12 +21,10 @@ function LastUser(){
       },
     }).then((infoLastUser) => {
       infoLastUser.json().then((lastUser) => {
-        //console.log(lastUser);
         setLastUser(lastUser.data);
       });
     });
   }, []);
-  //console.log(LastUser);
     return (
         <div className="LastUser">
             <img src={"http://localhost:3001"+LastUser.avatar} width="250px" height="250px"  />

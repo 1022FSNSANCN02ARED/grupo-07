@@ -11,14 +11,13 @@ function ProductsList() {
       },
     }).then((infoProducts) => {
       infoProducts.json().then((productsList) => {
-       // console.log(usersList);
         setProducts(productsList.data);
       });
     });
   }, []);
   return (
     <div className="ProductsContainer">
-      <div className="ProductList">
+      <div className="ProductsList">
       <table>
         <caption>Lista de usuarios</caption>
           <thead>

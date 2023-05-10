@@ -1,9 +1,10 @@
 import {
   HeaderProducts,
   LastProduct,
-  MarkList,
+  BrandsList,
   ProductsList,
   TotalProducts,
+  TotalBrands,
 } from "../../components/ProductsComponents";
 
 function Products() {
@@ -11,9 +12,10 @@ function Products() {
     <div className="body">
       <HeaderProducts />
       <LastProduct />
-      <MarkList />
+      <BrandsList />
       <ProductsList />
       <TotalProducts />
+      <TotalBrands />
     </div>
   );
 }

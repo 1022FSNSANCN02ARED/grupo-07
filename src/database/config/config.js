@@ -5,6 +5,7 @@ module.exports = {
     database: "argondb_dh",
     host: "mysql-argondb.alwaysdata.net",
     dialect: "mysql",
+    dialectOptions: { connectTimeout: 100000 },
   },
   test: {
     username: "root",

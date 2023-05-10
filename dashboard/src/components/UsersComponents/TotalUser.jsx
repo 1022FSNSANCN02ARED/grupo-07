@@ -11,12 +11,12 @@ function TotalUser() {
       },
     }).then((infoUsersCant) => {
       infoUsersCant.json().then((totalUser) => {
-        console.log(totalUser);
+
         setUsersCant(totalUser.data);
       });
     });
   }, []);
-  console.log(usersCant.length);
+
   return (<div>
     <span>Total de usuarios</span>
     <br />

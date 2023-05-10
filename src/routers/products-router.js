@@ -51,7 +51,12 @@ router.put("/:id", upload.single("imagen"), productsController.update);
 //Accion de borrado
 router.delete("/:id", productsController.destroy);
 
-///////////////////////////////////////////////////////API//////////////////////////////////////////////////////////////////////
+//Buscador por nombre
+router.get("/filter", productsController.filterProductsByName);
+
+
+
+/*================================================API================================================*/
 
 // Allproducts api
 router.get("/api/all", productsController.allProductsAPI);
@@ -73,11 +78,6 @@ router.get("/api/:id", productsController.producto);
 
 //Destroy products api
 router.delete("/api/:id", productsController.deleteProductsAPI);
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//Buscador por nombre
-router.get("/filter", productsController.filterProductsByName);
 
 //404
 router.get("/*", (req, res) => {

@@ -22,4 +22,3 @@ module.exports = [
     return true;
   }),
 ];
-console.log("hola");

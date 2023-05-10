@@ -11,12 +11,10 @@ function TotalProducts() {
       },
     }).then((infoProductsCant) => {
       infoProductsCant.json().then((totalProducts) => {
-        console.log(totalProducts);
         setUsersCant(totalProducts.data);
       });
     });
   }, []);
-  console.log(productsCant.length);
   return (<div>
     <span>Total de productos</span>
     <br />
