@@ -579,6 +579,7 @@ ul {
 .pageProfile{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .infoProfile{
   margin: 50px;
@@ -953,7 +954,7 @@ ul {
 /*==============================RESPONSE DESING ESCRITORIO BIG==============================*/
 @media screen and (min-width: 1267px) {
   .apartados{
-    height: 42vh;
+    height: max-content;
   }
   .profileIMG{
     display: flex;
