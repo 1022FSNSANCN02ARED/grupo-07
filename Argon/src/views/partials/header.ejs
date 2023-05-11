@@ -1,53 +1,75 @@
 <div id="page">
-    <!-- seccion contactos -->
-    <div class="block-media block-media__modifir">
-        <div class="block-media__Vtelefonica block-media__social-modify">
-            
-        </div>
-        <div class="block-media__social">
-            <!--REVISAR------------------------------->
-            <% console.log(locals.user) %>
-            <p>¡Bienvenido/a <% if (locals.userLogged) { %>
-             <%= locals.user.nombre %>
-            <% }else{ %>usuario!<% } %></p>
-        </div>
+  <!-- seccion contactos -->
+  <div class="block-media block-media__modifir">
+    <div class="block-media__Vtelefonica block-media__social-modify"></div>
+    <div class="block-media__social">
+      <!--REVISAR------------------------------->
+      <% console.log(locals.user) %>
+      <p>
+        ¡Bienvenido/a <% if (locals.userLogged) { %> <%= locals.user.nombre %>
+        <% }else{ %>usuario!<% } %>
+      </p>
     </div>
-    <!-- seccion de encabezado -->
-    <header class="header">
-        <div class="header-width">
-            <div class="headerLogo-Menu">
-
-                <div class="header__menu">
-                    <span class="header__menu-span linea1"></span>
-                    <span class="header__menu-span linea2"></span>
-                    <span class="header__menu-span linea3"></span>
-                </div>
-                <a href="/" class="header__logo">TECH ARGON</a>
-            </div>
-            <form action="/products/filter" method="GET">
-            <input type="text" placeholder="Busca productos, marcas y más..." name="nombreProducto">
-            <button class="btn btn-primary">Buscar</button>
-            </form>
-            <div class="header__interactivo">
-               <a href="/users/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-               <a href="/users/profile"><i class="fa-solid fa-circle-user"></i></a>
-                </div>
-            </div>
-            <div class="header__shadow"></div>
+  </div>
+  <!-- seccion de encabezado -->
+  <header class="header">
+    <div class="header-width">
+      <div class="headerLogo-Menu">
+        <div class="header__menu">
+          <span class="header__menu-span linea1"></span>
+          <span class="header__menu-span linea2"></span>
+          <span class="header__menu-span linea3"></span>
         </div>
-    </header>
-    <!-- menu -->
-    <div class="openMenu">
-        <nav class="openMenu-nav">
-            <ul class="openMenu-ul">
-                <li class="openMenu-li" id="menuOpen-search"><input type="text" class="menuOpen-search" placeholder="Buscar..."></li>
-                <li class="openMenu-li"><a href="/" class="openMenu-links">Inicio</a></li>
-                <li class="openMenu-li"><a href="/products/create" class="openMenu-links">¡Carga tus productos!</a></li>
-                <li class="openMenu-li"><a href="/products/allproducts" class="openMenu-links">¡Mira nuestros productos!</a></li>
-                <li class="openMenu-li"><a href="/users/login" class="openMenu-links">Iniciar sesión</a></li>
-                <li class="openMenu-li"><a href="/users/register" class="openMenu-links">Registrarse</a></li>
-                <hr>
-                <li class="openMenu-li"><a href="/users/logout" class="openMenu-links">Cerrar sesión</a></li>
-            </ul>
-        </nav>
+        <a href="/" class="header__logo">TECH ARGON</a>
+      </div>
+      <form action="/products/filter" method="GET">
+        <input
+          type="text"
+          placeholder="Busca productos, marcas y más..."
+          name="nombreProducto"
+        />
+        <button class="btn-search">
+          <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <div class="header__interactivo">
+        <a href="/users/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="/users/profile"><i class="fa-solid fa-circle-user"></i></a>
+      </div>
     </div>
+    <div class="header__shadow"></div>
+  </header>
+  <!-- menu -->
+  <div class="openMenu">
+    <nav class="openMenu-nav">
+      <ul class="openMenu-ul">
+        <li class="openMenu-li" id="menuOpen-search">
+          <input type="text" class="menuOpen-search" placeholder="Buscar..." />
+        </li>
+        <li class="openMenu-li">
+          <a href="/" class="openMenu-links">Inicio</a>
+        </li>
+        <li class="openMenu-li">
+          <a href="/products/create" class="openMenu-links"
+            >¡Carga tus productos!</a
+          >
+        </li>
+        <li class="openMenu-li">
+          <a href="/products/allproducts" class="openMenu-links"
+            >¡Mira nuestros productos!</a
+          >
+        </li>
+        <li class="openMenu-li">
+          <a href="/users/login" class="openMenu-links">Iniciar sesión</a>
+        </li>
+        <li class="openMenu-li">
+          <a href="/users/register" class="openMenu-links">Registrarse</a>
+        </li>
+        <hr />
+        <li class="openMenu-li">
+          <a href="/users/logout" class="openMenu-links">Cerrar sesión</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
