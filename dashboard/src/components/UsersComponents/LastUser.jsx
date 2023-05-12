@@ -28,7 +28,7 @@ function LastUser(){
     return (
         <div className="lastUser">
             <img src={"http://localhost:3001"+LastUser.avatar} width="250px" height="250px"  />
-            <div className='infoUsers' />
+            <div className='infoUser'>
             <ul>
                 <li>Id: {LastUser.id}</li>
                 <li>Nombre: {LastUser.nombre}</li>
@@ -36,6 +36,7 @@ function LastUser(){
                 <li>Email: {LastUser.email}</li>
                 <li>RolId: {LastUser.rolId}</li>
             </ul>
+            </div>
         </div>
     )
 }
