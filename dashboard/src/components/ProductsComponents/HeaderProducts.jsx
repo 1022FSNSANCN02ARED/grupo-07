@@ -2,7 +2,7 @@ import React from "react";
 
 function HeaderProducts() {
   return (
-    <div className="HeaderProducto">
+    <div className="headerProducts">
       <h1 className="title">Productos</h1>
     </div>
   );

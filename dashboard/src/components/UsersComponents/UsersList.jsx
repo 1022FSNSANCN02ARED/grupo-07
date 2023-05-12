@@ -11,42 +11,46 @@ function UsersList() {
       },
     }).then((infoUsers) => {
       infoUsers.json().then((usersList) => {
-
         setUsers(usersList.data);
       });
     });
   }, []);
 
   return (
-    <div className="UserssContainer">
-      <div className="UsersList">
-        <table>
-        <caption>Lista de usuarios</caption>
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Email</th>
-              <th>RolId</th>
-              <th>Avatar</th>
-              <th>Telefono</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user) => {
-               return(
+    <table className="userTable">
+      <caption>Lista de usuarios</caption>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th className="email">Email</th>
+          <th>RolId</th>
+          <th>Avatar</th>
+          <th>Telefono</th>
+        </tr>
+      </thead>
+      <tbody>
+        {users.map((user) => {
+          return (
             <tr key={`user-${user.id}`}>
               <td>{user.nombre}</td>
               <td>{user.apellido}</td>
               <td>{user.email}</td>
               <td>{user.rolId}</td>
-              <td><img src={"http://localhost:3001"+user.avatar} alt="" width="50px" height="50px" /></td>
+              <td>
+                <img
+                  src={"http://localhost:3001" + user.avatar}
+                  alt=""
+                  width="50px"
+                  height="50px"
+                />
+              </td>
               <td>{user.telefono}</td>
-            </tr>)})}
-          </tbody>
-        </table>
-      </div>
-    </div>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
   );
 }
 export default UsersList;

@@ -2,43 +2,221 @@
 :root {
   --white: #ffffff;
   --very-dark-gray: #0f0f0f;
-  --very-light-gray: #f0f0f0;
+  --very-light-gray: #f0f0f089;
   --strong-pink: #c82775de;
   --bright-pink: #e02c83;
-  --bright-pink-deg: #e02c83cb;
   --very-soft-lime-green: #98ec9b;
   --vivid-magenta: #ff0cd6;
   --magenta: #f0f;
   --vivid-pink: #e91e63;
   --cyan: #0ff;
   --mostly-black: #1b1c20;
-}
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  --bright-pink-deg: #e02c837b;
 }
 
 .body {
   background-color: var(--very-dark-gray);
   color: white;
-}
-.HeaderProducto{
-  margin-top: 2px;
+  width: 80%;
+  text-align: center;
+  justify-content: center;
 }
 
-
-.sidebar{
+.page {
   display: flex;
   flex-direction: row;
+  background-color: var(--very-dark-gray);
+  width: 100vw;
+}
+
+/*=====================MENU=====================*/
+.menu {
+  width: 15%;
+  text-align: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  max-height: 101vh;
+  border: 2px solid var(--bright-pink);
+  background-color: var(--very-dark-gray);
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+.menu img {
+  width: 200px;
+  height: 200px;
+  margin: 1rem;
+}
+
+.opciones {
+  margin-top: 3rem;
+}
+
+.opciones ul li {
+  background-color: var(--very-dark-gray);
+  padding: 1rem 0.5rem;
+  color: var(--bright-pink);
+  margin: 10px;
+  border-radius: 0.5rem;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+
+.opciones ul li:hover {
+  background-color: var(--mostly-black);
+}
+
+/*=====================PRODUCTS=====================*/
+.products {
+  display: flex;
+  flex-direction: row;
+}
+.productsBrandsTotal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.mainProducts {
+  display: flex;
+  flex-direction: row;
+}
+.headerProducts {
+  width: 100%;
+  background-color: var(--very-dark-gray);
+  padding: 1rem;
+  border: var(--bright-pink) 2px solid;
+  border-radius: 2rem;
+  margin: 1rem;
+}
+.totalProducts {
+  background-color: var(--very-dark-gray);
+  padding: 2rem;
+  border: var(--bright-pink) 2px solid;
+  border-radius: 2rem;
+  margin: 0 0 1rem 1rem;
+  width: 100%;
+  height: 8rem;
+}
+.totalBrands {
+  background-color: var(--very-dark-gray);
+  padding: 2rem;
+  border: var(--bright-pink) 2px solid;
+  border-radius: 2rem;
+  margin: 0 0 1rem 1rem;
+  width: 100%;
+  height: 8rem;
+}
+.infoProducts {
+  display: flex;
+  flex-direction: column;
+}
+.productsTable {
+  border: solid 1px rgba(224, 54, 156, 0.627);
+  font-size: 1.2rem;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-radius: 2rem;
+  table-layout: auto;
+  width: 81%;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+.BrandList {
+  width: 18%;
+}
+.lastProduct {
+  display: flex;
+  width: 80%;
+  background-color: var(--very-dark-gray);
+  padding: 1rem;
+  border: var(--bright-pink) 2px solid;
+  border-radius: 2rem;
+  margin: 0 0 1rem 1rem;
+}
+.lastProduct img {
+  border: var(--bright-pink) 2px solid;
+  padding: 0.7rem;
+  border-radius: 2rem;
+}
+
+td .desc{
+  white-space: nowrap; 
+}
+/*=====================USERS=====================*/
+.users {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-content: space-between;
+}
+.totalUsers {
+  margin-top: 1rem;
+  width: 20rem;
+  height: 20rem;
+  font-size: 2rem;
+}
+.mainUsers{
+  display: flex;
+  flex-direction: row;
+}
+.userTable {
+  table-layout: auto;
+  border: solid 1px rgba(224, 54, 156, 0.627);
+  font-size: 1.2rem;
+  width: 80%;
+  border-collapse: collapse;
+  border-radius: 2rem;
+  margin-right: 1rem;
+}
+
+thead {
+  background-color: rgba(224, 54, 156, 0.627);
+  border-bottom: var(--white) 2px solid;
+}
+
+th {
+  padding: 0.2rem 0.1rem;
+}
+
+td {
+  padding: 0.5rem 0.5rem;
+}
+
+td .email{
+  white-space: nowrap; 
+}
+tbody tr {
+  cursor: pointer;
+}
+
+tbody tr:hover {
+  background-color: rgba(224, 54, 156, 0.627);
+}
+tbody td:hover {
+  background-color: rgba(224, 54, 156, 0.627);
+}
+
+.totalUsers {
+  background-color: var(--very-dark-gray);
+  padding: 1rem;
+  border: var(--bright-pink) 2px solid;
+  width: 20%;
+}
+
+.lastUser {
+  display: flex;
+  width: 70%;
+  background-color: var(--very-dark-gray);
+  padding: 1rem;
+  border: var(--bright-pink) 2px solid;
+  border-radius: 2rem;
+  
+}
+.lastUser img {
+  border: var(--bright-pink) 2px solid;
+  padding: 0.7rem;
+  border-radius: 2rem;
+}
+.infoUser ul li {
+  display: inline-block;
 }

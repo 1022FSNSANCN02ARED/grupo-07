@@ -16,43 +16,50 @@ function ProductsList() {
     });
   }, []);
   return (
-    <div className="ProductsContainer">
-      <div className="ProductsList">
-      <table>
-        <caption>Lista de usuarios</caption>
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Precio</th>
-              <th>Descripcion</th>
-              <th>Marca</th>
-              <th>Gama</th>
-              <th>Sockets</th>
-              <th>Slots</th>
-              <th>Ram</th>
-              <th>Imagen</th>
-              
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((producto) => {
-               return(
+    <table className="productsTable">
+      <caption>Lista de usuarios</caption>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th className="desc">Descripcion</th>
+          <th>Marca</th>
+          <th>Gama</th>
+          <th>Sockets</th>
+          <th>Slots</th>
+          <th>Ram</th>
+          <th>Imagen</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {products.map((producto) => {
+          return (
             <tr key={`producto-${producto.id}`}>
               <td>{producto.nombre}</td>
               <td>{producto.precio}</td>
-              <td>{producto.descripcion}</td>
+              <td className="desc">{producto.descripcion}</td>
               <td>{producto.marca}</td>
               <td>{producto.gama}</td>
               <td>{producto.sockets}</td>
               <td>{producto.slots}</td>
               <td>{producto.ram}</td>
-              <td><img src={"http://localhost:3001"+producto.imagen} alt="" width="50px" height="50px" /></td>
-              <td><button>Editar</button></td>
-            </tr>)})}
-          </tbody>
-        </table>
-      </div>
-    </div>
+              <td>
+                <img
+                  src={"http://localhost:3001" + producto.imagen}
+                  alt=""
+                  width="50px"
+                  height="50px"
+                />
+              </td>
+              <td>
+                <button>Editar</button>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
   );
 }
 export default ProductsList;

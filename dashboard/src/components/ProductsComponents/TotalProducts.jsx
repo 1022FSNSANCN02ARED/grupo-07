@@ -15,9 +15,9 @@ function TotalProducts() {
       });
     });
   }, []);
-  return (<div>
+  return (<div className="totalProducts">
     <span>Total de productos</span>
-    <br />
+
     <span>{productsCant.length}</span>
   </div>);
 }

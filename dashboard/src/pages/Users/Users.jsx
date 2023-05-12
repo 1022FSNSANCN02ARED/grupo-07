@@ -9,9 +9,14 @@ import {
     return (
       <div className="body">
         <HeaderUsers />
+        <div className="mainUsers">
         <LastUser />
-        <UsersList />
         <TotalUser />
+      </div>
+        <div className="users">
+        <UsersList />
+        
+        </div>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { Products, Users } from "./pages";
 import Menu from "./components/Menu/Menu";
@@ -9,15 +9,19 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  useLocation,
   //Link
 } from "react-router-dom";
 
 function App() {
+  const url = useLocation();
+  useEffect(() => {
+    console.log(url);
+  }, [url]);
   return (
     <div className="App">
-      <Router>
-        <div className="sidebar">
-          <Menu />
+      <div className="page">
+        <Menu />
         <Routes>
           <Route path="/">
             <Route index element={<Home />} />
@@ -25,8 +29,7 @@ function App() {
             <Route path="Users" element={<Users />} />
           </Route>
         </Routes>
-        </div>
-      </Router>
+      </div>
     </div>
   );
 }
