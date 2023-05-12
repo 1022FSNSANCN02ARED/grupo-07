@@ -1,10 +1,10 @@
-
 function userLoggedMiddleware(req, res, next) {
-  if(req.session.userLogged){
-    next();
-  } else{
-    res.redirect("/users/login");
+  res.locals.isLogged = false;
+  if (req.session.userLogged) {
+    res.locals.isLogged = true;
+    res.locals.userLogged = req.session.user;
   }
+  next();
 }
 
 module.exports = userLoggedMiddleware;

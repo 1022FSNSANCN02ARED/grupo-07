@@ -2,14 +2,7 @@
   <!-- seccion contactos -->
   <div class="block-media block-media__modifir">
     <div class="block-media__Vtelefonica block-media__social-modify"></div>
-    <div class="block-media__social">
-      <!--REVISAR------------------------------->
-      <% console.log(locals.user) %>
-      <p>
-        ¡Bienvenido/a <% if (locals.userLogged) { %> <%= locals.user.nombre %>
-        <% }else{ %>usuario!<% } %>
-      </p>
-    </div>
+    <div class="block-media__social"></div>
   </div>
   <!-- seccion de encabezado -->
   <header class="header">
@@ -33,8 +26,31 @@
         </button>
       </form>
       <div class="header__interactivo">
-        <a href="/users/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-        <a href="/users/profile"><i class="fa-solid fa-circle-user"></i></a>
+        <% if (locals.isLogged) { %>
+        <a
+          class="nav-link dropdown-toggle"
+          id="dropUser"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="<%= locals.userLogged.avatar %>"
+            width="40"
+            style="border-radius: 100%"
+          />
+          <%= locals.userLogged.nombre %>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/users/profile">Mi Perfil</a>
+          <li><hr class="dropdown-divider" /></li>
+          <a class="dropdown-item" href="/users/logout">Logout</a>
+        </ul>
+
+        <% } else { %>
+        <a href="/users/carrito"><i class="fa-solid fa-cart-shopping"></i></a>s
+        <a href="/users/login"><i class="fa-solid fa-circle-user"></i></a>
+        <% } %>
       </div>
     </div>
     <div class="header__shadow"></div>
