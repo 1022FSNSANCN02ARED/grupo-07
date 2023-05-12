@@ -15,11 +15,10 @@ function TotalBrands() {
       });
     });
   }, []);
-
   return (
     <div className="totalBrands">
       <span>Total de marcas</span>
-      <br />
+
       <span>{brandsCant.length}</span>
     </div>
   );

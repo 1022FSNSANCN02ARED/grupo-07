@@ -22,7 +22,7 @@ function ProductsList() {
         <tr>
           <th>Nombre</th>
           <th>Precio</th>
-          <th>Descripcion</th>
+          <th className="desc">Descripcion</th>
           <th>Marca</th>
           <th>Gama</th>
           <th>Sockets</th>
@@ -38,7 +38,7 @@ function ProductsList() {
             <tr key={`producto-${producto.id}`}>
               <td>{producto.nombre}</td>
               <td>{producto.precio}</td>
-              <td>{producto.descripcion}</td>
+              <td className="desc">{producto.descripcion}</td>
               <td>{producto.marca}</td>
               <td>{producto.gama}</td>
               <td>{producto.sockets}</td>

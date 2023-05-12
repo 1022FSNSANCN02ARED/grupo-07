@@ -14,27 +14,27 @@ function BrandsList() {
       });
     });
   }, []);
-  return(
-    <div className="BrandsListContainer">
-      <div className="BrandList">
+  return (
+    <div className="BrandList">
       <table>
         <caption>Lista de marcas</caption>
-          <thead>
-            <tr>
-              <th>Marca</th>
-              <th>Cantidad</th>
-            </tr>
-          </thead>
-          <tbody>
-            {brandsList.map((producto) => {
-               return(
-            <tr key={`marca-${producto.id}`}>
-              <td>{producto.marca}</td>
-              <td>{producto.cantidad}</td>
-            </tr>)})}
-          </tbody>
-        </table>
-      </div>
+        <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          {brandsList.map((producto) => {
+            return (
+              <tr key={`marca-${producto.id}`}>
+                <td>{producto.marca}</td>
+                <td>{producto.cantidad}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }

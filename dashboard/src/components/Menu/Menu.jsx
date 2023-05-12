@@ -2,7 +2,6 @@ import React from "react";
 import logo from "./logo.png";
 import { Products, Users } from "../../pages";
 
-
 import {
   //redireccionamiento
   BrowserRouter as Router,
@@ -14,24 +13,24 @@ import {
 function Menu() {
   return (
     <div className="menu">
-        <nav id="#">
-          <a href="#">
-            <img src={logo} alt="Logo Argon" />
+      <nav id="#">
+        <Link to="/">
+          <img src={logo} alt="Logo Argon" />
+        </Link>
+      </nav>
+      <nav className="opciones">
+        <ul>
+          <Link to="/Products">
+            <li>Productos</li>
+          </Link>
+          <Link to="/Users">
+            <li>Usuarios</li>
+          </Link>
+          <a href="http://localhost:3001/" target="about_blank">
+            <li>Argon</li>
           </a>
-        </nav>
-        <nav className="opciones">
-          <ul>
-            <Link to="/Products">
-              <li>Productos</li>
-            </Link>
-            <Link to="/Users">
-              <li>Usuarios</li>
-            </Link>
-            <a href="http://localhost:3001/" target="about_blank">
-              <li>Argon</li>
-            </a>
-          </ul>
-        </nav>
+        </ul>
+      </nav>
     </div>
   );
 }

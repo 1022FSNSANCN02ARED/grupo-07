@@ -23,7 +23,7 @@ function UsersList() {
         <tr>
           <th>Nombre</th>
           <th>Apellido</th>
-          <th>Email</th>
+          <th className="email">Email</th>
           <th>RolId</th>
           <th>Avatar</th>
           <th>Telefono</th>

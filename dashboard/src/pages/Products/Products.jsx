@@ -11,9 +11,13 @@ function Products() {
   return (
     <div className="body">
       <HeaderProducts />
+      <div className="mainProducts">
       <LastProduct />
+      <div className="productsBrandsTotal">
       <TotalProducts />
       <TotalBrands />
+      </div>  
+      </div>
       <div className="products">
         <ProductsList />
         <BrandsList />

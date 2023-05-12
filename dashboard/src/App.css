@@ -26,6 +26,7 @@
   display: flex;
   flex-direction: row;
   background-color: var(--very-dark-gray);
+  width: 100vw;
 }
 
 /*=====================MENU=====================*/
@@ -70,7 +71,15 @@
   display: flex;
   flex-direction: row;
 }
-
+.productsBrandsTotal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.mainProducts {
+  display: flex;
+  flex-direction: row;
+}
 .headerProducts {
   width: 100%;
   background-color: var(--very-dark-gray);
@@ -79,26 +88,40 @@
   border-radius: 2rem;
   margin: 1rem;
 }
-
-.totalBrands {
+.totalProducts {
   background-color: var(--very-dark-gray);
-  padding: 1rem;
+  padding: 2rem;
   border: var(--bright-pink) 2px solid;
   border-radius: 2rem;
   margin: 0 0 1rem 1rem;
+  width: 100%;
+  height: 8rem;
 }
-
+.totalBrands {
+  background-color: var(--very-dark-gray);
+  padding: 2rem;
+  border: var(--bright-pink) 2px solid;
+  border-radius: 2rem;
+  margin: 0 0 1rem 1rem;
+  width: 100%;
+  height: 8rem;
+}
+.infoProducts {
+  display: flex;
+  flex-direction: column;
+}
 .productsTable {
   border: solid 1px rgba(224, 54, 156, 0.627);
   font-size: 1.2rem;
   table-layout: fixed;
   border-collapse: collapse;
   border-radius: 2rem;
-  width: 80%;
+  table-layout: auto;
+  width: 81%;
   margin-bottom: 1rem;
   margin-right: 1rem;
 }
-.BrandList{
+.BrandList {
   width: 18%;
 }
 .lastProduct {
@@ -115,17 +138,9 @@
   padding: 0.7rem;
   border-radius: 2rem;
 }
-.totalProducts {
-  background-color: var(--very-dark-gray);
-  padding: 1rem;
-  border: var(--bright-pink) 2px solid;
-  border-radius: 2rem;
-  margin: 0 0 1rem 1rem;
-}
-.totalBrands {
-  background-color: var(--very-dark-gray);
-  padding: 1rem;
-  border: var(--bright-pink) 2px solid;
+
+td .desc{
+  white-space: nowrap; 
 }
 /*=====================USERS=====================*/
 .users {
@@ -134,17 +149,21 @@
   width: 100%;
   align-content: space-between;
 }
-.totalUsers{
+.totalUsers {
   margin-top: 1rem;
   width: 20rem;
   height: 20rem;
   font-size: 2rem;
 }
+.mainUsers{
+  display: flex;
+  flex-direction: row;
+}
 .userTable {
-  width: 80%;
+  table-layout: auto;
   border: solid 1px rgba(224, 54, 156, 0.627);
   font-size: 1.2rem;
-  table-layout: fixed;
+  width: 80%;
   border-collapse: collapse;
   border-radius: 2rem;
   margin-right: 1rem;
@@ -163,6 +182,9 @@ td {
   padding: 0.5rem 0.5rem;
 }
 
+td .email{
+  white-space: nowrap; 
+}
 tbody tr {
   cursor: pointer;
 }
@@ -178,15 +200,17 @@ tbody td:hover {
   background-color: var(--very-dark-gray);
   padding: 1rem;
   border: var(--bright-pink) 2px solid;
+  width: 20%;
 }
 
 .lastUser {
   display: flex;
-  width: 80%;
+  width: 70%;
   background-color: var(--very-dark-gray);
   padding: 1rem;
   border: var(--bright-pink) 2px solid;
   border-radius: 2rem;
+  
 }
 .lastUser img {
   border: var(--bright-pink) 2px solid;
