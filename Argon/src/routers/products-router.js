@@ -6,6 +6,8 @@ const productsController = require("../controllers/products-controller");
 const middlewareAdmin = require("../middlewares/middlewareAdmin");
 const validateCreate = require("../middlewares/validateCreate");
 const createError = require("../middlewares/errorValideteMiddlewareCreate");
+const validateEdit = require("../middlewares/validateEdit");
+const errorValidateEdit = require("../middlewares/errorValidateEdit");
 
 // Disco de almacenamiento de Multer
 
@@ -46,15 +48,18 @@ router.get("/detail/:id", productsController.detail);
 router.get("/edit/:id", productsController.edit);
 
 //Accion de edición
-router.put("/:id", upload.single("imagen"), productsController.update);
+router.put(
+  "/:id",
+  upload.single("imagen"),
+  [validateEdit, errorValidateEdit],
+  productsController.update
+);
 
 //Accion de borrado
 router.delete("/:id", productsController.destroy);
 
 //Buscador por nombre
 router.get("/filter", productsController.filterProductsByName);
-
-
 
 /*================================================API================================================*/
 
