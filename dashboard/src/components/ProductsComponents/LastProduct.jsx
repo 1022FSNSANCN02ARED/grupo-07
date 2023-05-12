@@ -34,14 +34,15 @@ function LastProduct() {
         width="250px"
         height="250px"
       />
-      <div className="infoProducts" />
-      <ul>
-        <li>Nombre: {LastProduct.nombre}</li>
-        <li>Precio: {LastProduct.precio}</li>
-        <li>Descripción: {LastProduct.descripcion}</li>
-        <li>Gama: {LastProduct.gama}</li>
-        <li>Marca: {LastProduct.marca}</li>
-      </ul>
+      <div className="infoProducts">
+        <ul>
+          <li>Nombre: {LastProduct.nombre}</li>
+          <li>Precio: {LastProduct.precio}</li>
+          <li>Descripción: {LastProduct.descripcion}</li>
+          <li>Gama: {LastProduct.gama}</li>
+          <li>Marca: {LastProduct.marca}</li>
+        </ul>
+      </div>
     </div>
   );
 }
