@@ -9,7 +9,6 @@ const cookies = require("cookie-parser");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddlewares");
 const { Usuario } = require("./database/models");
 
-
 //Ejecución de express
 const app = express();
 
@@ -36,7 +35,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(cookies());
-
+app.use(userLoggedMiddleware);
 //EJS  --------------------------------------------------
 //Configuracón EJS
 //motor EJS
@@ -47,7 +46,6 @@ app.set("views", path.join(__dirname, "/views"));
 
 //Ejecutar archivo mainRouter
 app.use(mainRouter);
-
 
 //const router = express.Router();
 //cosnt productsRouter = require('/routers/products-router');

@@ -86,24 +86,31 @@
     </div>
     <!-- publicidad -->
     <div class="block-publicidad">
-     <a href="https://latam.msi.com/" target="about_blank"><img src="/img/sitio/publicidad2.jpg" alt="publicidad-pc" /></a> 
+      <a href="https://latam.msi.com/" target="about_blank"
+        ><img src="/img/sitio/publicidad2.jpg" alt="publicidad-pc"
+      /></a>
     </div>
 
     <!-- productos destacados -->
-        <div class="productContent">
-          <% producto.forEach(producto => { %>
-            <div class="productContent-product">
-              <div class="productContent-img">
-                 <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>" class="">
-              </div>
-              <hr>
-              <p class="product-charac"><%= producto.nombre %>
-              </p>
-              <p class="productContent-price">$<%= producto.precio %>
-              </p>
-          </div>
-            <% }) %>
+
+    <div class="productContent">
+      <% producto.forEach(producto => { %>
+         <a href="/products/detail/<%= producto.id %>">
+                <div class="productContent-product">
+        <div class="productContent-img">
+          <img
+            src="<%= producto.imagen %>"
+            alt="<%= producto.nombre %>"
+            class=""
+          />
+          </a>
         </div>
+        <hr />
+        <p class="product-charac"><%= producto.nombre %></p>
+        <p class="productContent-price">$<%= producto.precio %></p>
+      </div>
+      <% }) %>
+    </div>
 
     <!--Include Footer-->
     <%- include('../partials/footer') %>

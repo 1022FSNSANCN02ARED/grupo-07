@@ -66,7 +66,7 @@ const controller = {
       },
       { where: { id: req.params.id } }
     ).then(() => {
-      res.redirect("/products/allproducts");
+      res.redirect("/products/admin");
     });
   },
   adm: (req, res) => {
@@ -210,7 +210,7 @@ const controller = {
         return {
           id: producto.id,
           marca: producto.marca,
-          cantidad: producto.Productos.length
+          cantidad: producto.Productos.length,
         };
       });
       res.json({
