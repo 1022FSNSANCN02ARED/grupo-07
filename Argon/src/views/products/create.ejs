@@ -59,7 +59,9 @@
         </div>
         <br />
 
+        
         <label for="marca">Marca</label>
+        <div class="content-select">
         <select name="marca" id="marca">
           <option value="1">Dell</option>
           <option value="2">Gigabyte</option>
@@ -87,6 +89,8 @@
           <% if (locals.errors && errors.marca) { %><%= errors.marca.msg %> <% }
           %>
         </div>
+        <i></i>
+        </div>
 
         <label for="imagen"></label>
         <input
@@ -102,23 +106,20 @@
         <br />
         
         <label for="gama">Gama</label>
+        <div class="content-select">
         <select name="gama" id="gama">
-<<<<<<< HEAD
-          
-          <option value="baja" selected>Baja</option>
-          <option value="media">Media</option>
-          <option value="alta">Alta</option>
-=======
           <option value="3" selected>Baja</option>
           <option value="2">Media</option>
           <option value="1">Alta</option>
->>>>>>> 34e8cd728e0719591fe79063093eb8af425afe29
         </select>
         <div class="text-danger gama">
           <% if (locals.errors && errors.gama) { %><%= errors.gama.msg %> <% }
           %>
         </div>
-    
+        <i></i>
+        </div>
+        
+        <div class="cont">
         <label for="ram"></label>
         <input
           class="form-control ram"
@@ -130,9 +131,11 @@
         <div class="text-danger ram">
           <% if (locals.errors && errors.ram) { %><%= errors.ram.msg %> <% } %>
         </div>
+      </div>
         <br />
 
         <label for="slots">Slots</label>
+        <div class="content-select">
         <select name="slots" id="slots">
           <option value="0">No aplica</option>
           <option value="2">2</option>
@@ -140,10 +143,11 @@
           <option value="6">6</option>
           <option value="8">8</option>
         </select>
-
         <div class="text-danger slots">
           <% if (locals.errors && errors.slots) { %><%= errors.slots.msg %> <% }
           %>
+        </div>
+        <i></i>
         </div>
 
         <label for="sockets"></label>
