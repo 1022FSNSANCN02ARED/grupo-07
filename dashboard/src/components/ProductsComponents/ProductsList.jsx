@@ -16,9 +16,9 @@ function ProductsList() {
     });
   }, []);
   return (
-    <div className="ProductsContainer">
-      <div className="ProductsList">
-      <table>
+    <div className="productsContainer">
+      <div className="productsList">
+      <table className="productsTable">
         <caption>Lista de usuarios</caption>
           <thead>
             <tr>
@@ -31,6 +31,7 @@ function ProductsList() {
               <th>Slots</th>
               <th>Ram</th>
               <th>Imagen</th>
+              <th></th>
               
             </tr>
           </thead>

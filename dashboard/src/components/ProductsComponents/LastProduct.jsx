@@ -28,7 +28,7 @@ function LastProduct() {
   }, []);
 
   return (
-    <div className="LastProduct">
+    <div className="lastProduct">
       <img
         src={"http://localhost:3001" + LastProduct.imagen}
         width="250px"
