@@ -12,16 +12,13 @@ function Products() {
     <div className="body">
       <HeaderProducts />
       <LastProduct />
-      <div className="lists">
+      <TotalProducts />
+      <TotalBrands />
       <div className="products">
-        <TotalProducts />
         <ProductsList />
-      </div>
-      <div className="brands">
-        <TotalBrands />
         <BrandsList />
       </div>
-      </div>
+      <div className="brands"></div>
     </div>
   );
 }

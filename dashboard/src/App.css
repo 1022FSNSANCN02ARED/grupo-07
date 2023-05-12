@@ -30,7 +30,7 @@
 
 /*=====================MENU=====================*/
 .menu {
-  width: 18%;
+  width: 15%;
   text-align: center;
   justify-content: center;
   position: sticky;
@@ -66,7 +66,12 @@
 }
 
 /*=====================PRODUCTS=====================*/
-.headerProducts{
+.products {
+  display: flex;
+  flex-direction: row;
+}
+
+.headerProducts {
   width: 100%;
   background-color: var(--very-dark-gray);
   padding: 1rem;
@@ -75,52 +80,74 @@
   margin: 1rem;
 }
 
+.totalBrands {
+  background-color: var(--very-dark-gray);
+  padding: 1rem;
+  border: var(--bright-pink) 2px solid;
+  border-radius: 2rem;
+  margin: 0 0 1rem 1rem;
+}
+
 .productsTable {
   border: solid 1px rgba(224, 54, 156, 0.627);
   font-size: 1.2rem;
   table-layout: fixed;
   border-collapse: collapse;
   border-radius: 2rem;
+  width: 80%;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
 }
-
-.lastProduct{
+.BrandList{
+  width: 18%;
+}
+.lastProduct {
   display: flex;
   width: 80%;
   background-color: var(--very-dark-gray);
   padding: 1rem;
   border: var(--bright-pink) 2px solid;
+  border-radius: 2rem;
+  margin: 0 0 1rem 1rem;
 }
-
-.totalProducts{
+.lastProduct img {
+  border: var(--bright-pink) 2px solid;
+  padding: 0.7rem;
+  border-radius: 2rem;
+}
+.totalProducts {
   background-color: var(--very-dark-gray);
   padding: 1rem;
   border: var(--bright-pink) 2px solid;
+  border-radius: 2rem;
+  margin: 0 0 1rem 1rem;
 }
-.totalBrands{
+.totalBrands {
   background-color: var(--very-dark-gray);
   padding: 1rem;
   border: var(--bright-pink) 2px solid;
 }
 /*=====================USERS=====================*/
 .users {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
   width: 100%;
   align-content: space-between;
 }
-
-.usersList {
-  display: inline-block;
-  width: 10%;
-  margin: 50px;
+.totalUsers{
+  margin-top: 1rem;
+  width: 20rem;
+  height: 20rem;
+  font-size: 2rem;
 }
-
-
 .userTable {
+  width: 80%;
   border: solid 1px rgba(224, 54, 156, 0.627);
   font-size: 1.2rem;
   table-layout: fixed;
   border-collapse: collapse;
   border-radius: 2rem;
+  margin-right: 1rem;
 }
 
 thead {
@@ -159,8 +186,13 @@ tbody td:hover {
   background-color: var(--very-dark-gray);
   padding: 1rem;
   border: var(--bright-pink) 2px solid;
+  border-radius: 2rem;
 }
-
+.lastUser img {
+  border: var(--bright-pink) 2px solid;
+  padding: 0.7rem;
+  border-radius: 2rem;
+}
 .infoUser ul li {
   display: inline-block;
 }

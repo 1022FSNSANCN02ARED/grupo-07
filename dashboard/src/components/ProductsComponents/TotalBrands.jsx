@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 function TotalBrands() {
   // [variable a consultar, dar valor]= vacio
   const [brandsCant, setBrandsCant] = useState([]);
-   useEffect(() => {
+  useEffect(() => {
     fetch("http://localhost:3001/products/api/marca", {
       method: "GET",
       headers: {
@@ -16,10 +16,12 @@ function TotalBrands() {
     });
   }, []);
 
-  return (<div className="totalBrands">
-    <span>Total de marcas</span>
-    <br />
-    <span>{brandsCant.length}</span>
-  </div>);
+  return (
+    <div className="totalBrands">
+      <span>Total de marcas</span>
+      <br />
+      <span>{brandsCant.length}</span>
+    </div>
+  );
 }
 export default TotalBrands;
