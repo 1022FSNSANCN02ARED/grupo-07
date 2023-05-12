@@ -11,16 +11,18 @@ function TotalUser() {
       },
     }).then((infoUsersCant) => {
       infoUsersCant.json().then((totalUser) => {
-
         setUsersCant(totalUser.data);
       });
     });
   }, []);
 
-  return (<div>
-    <span>Total de usuarios</span>
-    <br />
-    <span>{usersCant.length}</span>
-  </div>);
+  return (
+    <>
+      <div className="totalUsers">
+        <span>Total de usuarios</span>
+        <span>{usersCant.length}</span>
+      </div>
+    </>
+  );
 }
-export default TotalUser
+export default TotalUser;

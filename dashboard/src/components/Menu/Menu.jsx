@@ -13,13 +13,13 @@ import {
 
 function Menu() {
   return (
-    <div className="Menu">
+    <div className="menu">
         <nav id="#">
           <a href="#">
             <img src={logo} alt="Logo Argon" />
           </a>
         </nav>
-        <nav id="opciones">
+        <nav className="opciones">
           <ul>
             <Link to="/Products">
               <li>Productos</li>
@@ -27,7 +27,7 @@ function Menu() {
             <Link to="/Users">
               <li>Usuarios</li>
             </Link>
-            <a href="#">
+            <a href="http://localhost:3001/" target="about_blank">
               <li>Argon</li>
             </a>
           </ul>

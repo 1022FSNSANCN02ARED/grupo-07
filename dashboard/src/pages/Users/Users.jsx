@@ -10,8 +10,10 @@ import {
       <div className="body">
         <HeaderUsers />
         <LastUser />
+        <div className="users">
         <UsersList />
         <TotalUser />
+        </div>
       </div>
     );
   }

@@ -26,7 +26,7 @@ function LastUser(){
     });
   }, []);
     return (
-        <div className="LastUser">
+        <div className="lastUser">
             <img src={"http://localhost:3001"+LastUser.avatar} width="250px" height="250px"  />
             <div className='infoUsers' />
             <ul>

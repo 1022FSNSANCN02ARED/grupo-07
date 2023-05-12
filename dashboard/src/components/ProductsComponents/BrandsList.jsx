@@ -14,7 +14,6 @@ function BrandsList() {
       });
     });
   }, []);
-  console.log(brandsList);
   return(
     <div className="BrandsListContainer">
       <div className="BrandList">
