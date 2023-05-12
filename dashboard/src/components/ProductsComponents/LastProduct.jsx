@@ -39,6 +39,9 @@ function LastProduct() {
           <li>Nombre: {LastProduct.nombre}</li>
           <li>Precio: {LastProduct.precio}</li>
           <li>Descripción: {LastProduct.descripcion}</li>
+          <li>Ram: {LastProduct.ram}</li>
+          <li>Slots: {LastProduct.slots} </li>
+          <li>sockets: {LastProduct.sockets} </li>
           <li>Gama: {LastProduct.gama}</li>
           <li>Marca: {LastProduct.marca}</li>
         </ul>

@@ -17,7 +17,7 @@ function ProductsList() {
   }, []);
   return (
     <table className="productsTable">
-      <caption>Lista de usuarios</caption>
+      <caption>Lista de productos</caption>
       <thead>
         <tr>
           <th>Nombre</th>
