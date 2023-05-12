@@ -506,6 +506,128 @@ ul {
  .create input{
   margin-bottom: 20px;
 }
+
+.create{
+  margin: 2rem 6rem;
+}
+
+.create-box{
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 20px;
+  background-color:var(--very-dark-gray);
+  border-radius:8px;
+  border: solid 2px var(--bright-pink);
+}
+
+.create-box h2{
+  text-align: center;
+  margin: 10px;
+}
+
+.create-box input{
+  justify-content: center;
+  /*align-items: center;*/
+  margin: 20px;
+  width: 100%;
+  margin: 2px;
+  /*text-align: center;*/
+}
+
+.btn-create {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 1em 1.8em;
+  outline: none;
+  border: 1px solid #303030;
+  background: #212121;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  overflow: hidden;
+  transition: 0.2s;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-create:hover {
+  box-shadow: 0 0 10px var(--vivid-magenta), 0 0 25px #001eff,
+    0 0 50px var(--vivid-magenta);
+  transition-delay: 0.1s;
+  color: var(--vivid-magenta);
+}
+
+/* selec button*/
+.content-input input,
+.content-select select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.content-select select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.content-select select::-ms-expand {
+  display: none;
+}
+
+.content-select{
+	max-width: 150px;
+	position: relative;
+}
+
+.content-select select{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #c40a76;
+	font-size: 1em;
+	color: #000000;
+	font-family: 
+	'Quicksand', sans-serif;
+  border:2px solid #c40a76;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+
+.content-select select:hover{
+	background: #ffffff;
+}
+
+.content-select i{
+	position: absolute;
+	right: 20px;
+	top: calc(50% - 13px);
+	width: 16px;
+	height: 16px;
+	display: block;
+	border-left:4px solid #47002a;
+	border-bottom:4px solid #c40a76;
+	transform: rotate(-45deg); /* Giramos el cuadrado */
+	transition: all 0.25s ease;
+}
+ 
+.content-select:hover i{
+	margin-top: 3px;
+}
+
+
 /*==============================EDIT==============================*/
 .formProductEdit{
   margin: 2rem 6rem;
@@ -539,7 +661,6 @@ ul {
   margin: 2px;
   /*text-align: center;*/
 }
-
 
 .btn-regis {
   display: block;
@@ -985,6 +1106,7 @@ ul {
   }
 }
 
+
 /*==============================RESPONSE DESING ESCRITORIO BIG==============================*/
 @media screen and (min-width: 1267px) {
   .apartados{
@@ -1002,3 +1124,4 @@ ul {
 .errores{
   color: red;
 }
+
