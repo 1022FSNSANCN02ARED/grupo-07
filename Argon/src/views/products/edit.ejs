@@ -3,7 +3,7 @@
   <head>
     <!--Include head-->
     <%- include('../partials/head') %>
-    <script src="/js/EditValidation.js"></script>
+     <!-- <script src="/js/EditValidation.js"></script>  -->
     <title>Argon | Carga</title>
   </head>
   <body>
@@ -12,6 +12,8 @@
       <%- include('../partials/header') %>
       <script src="/js/"></script>
     </header>
+     
+   
     <section class="contenedorForm">
       <form
         action="/products/<%= Productos.id %>?_method=put"
@@ -29,7 +31,8 @@
           type="file"
           name="imagen"
           id="imagen"
-          value="<%= Productos.imagen %>"
+       
+          
         />
         <label for="producto">Nombre del productos</label>
         <input
