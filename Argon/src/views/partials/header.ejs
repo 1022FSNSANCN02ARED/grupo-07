@@ -16,14 +16,16 @@
         <a href="/" class="header__logo">TECH ARGON</a>
       </div>
       <form action="/products/filter" method="GET">
+        <div class="search">
         <input
           type="text"
           placeholder="Busca productos, marcas y más..."
-          name="nombreProducto"
+          name="nombreProducto" autocomplete="off"
         />
         <button class="btn-search">
           <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
         </button>
+      </div>
       </form>
       <div class="header__interactivo">
         <% if (locals.isLogged) { %>
@@ -33,6 +35,7 @@
             src="<%= locals.userLogged.avatar %>"
             width="40"
             style="border-radius: 100%"
+            class="nav-img-user"
           />
         </a>
 
@@ -47,6 +50,7 @@
   <!-- menu -->
   <div class="openMenu">
     <nav class="openMenu-nav">
+      <img src="/img/sitio/logo-argon.png" alt="" class="logo-openMenu" />
       <ul class="openMenu-ul">
         <li class="openMenu-li" id="menuOpen-search">
           <input type="text" class="menuOpen-search" placeholder="Buscar..." />
@@ -58,6 +62,9 @@
           <a href="/products/allproducts" class="openMenu-links"
             >¡Mira nuestros productos!</a
           >
+        </li>
+        <li class="openMenu-li">
+          <a href="/users/profile" class="openMenu-links">Tu perfil</a>
         </li>
         <% if (locals.userLogged && locals.userLogged.rolId == "1") {%>
         <li class="openMenu-li">
