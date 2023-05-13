@@ -4,97 +4,57 @@
     <!--Include head-->
     <%- include('../partials/head') %>
   </head>
+  <header>
+    <!--Include header-->
+    <%- include('../partials/header') %>
+  </header>
+  <div class="menuDesplegado">
+    <!--Include menu-->
+  </div>
 
-<body class="font-gnr">
-  <header class="font-gnr">
-    <nav >
-       
-      <div class="nav">
-               
-        <ul>
-           <li><i class="fa-sharp fa-solid fa-truck-fast color-g  pd-5"></i>Seguir mi pedido UPS</li>
-           <li><i class="fa-solid fa-file-lines color-g  pd-5"></i>Subir comprobantes</li>
-           <li><i class="fa-solid fa-file-lines color-g  pd-5"></i>RMA Garantia</li>
-           <li><i class="fa-regular fa-circle-question color-g  pd-5"></i>Ayuda</li>
-          </ul>
-     
-     
-         </nav> 
-    
-      <div class="buscador">
-      
-        <form action="/">
-          
-           <input class="barra-buscar"
-            type="text"
-            name="search"
-            placeholder="Buscá productoss por nombre, marcas o palabras clave"
-          />
-          <button type="submit" class="button-glass" >
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
-            <div class="icon-header">
-<i class="fa-regular fa-circle-user  usuario"></i>
-<p class="usuario-p">Usuario</p>
-<i class="fa-solid fa-cart-shopping cart-shop"></i>
-            </div>     
-          
-        </div>   
-          </div>
-       
-    </header>
-    <main>
-    
-       
-      <h1 class="titulo"><%= Productos.nombre %>  <%= Productos.marca %> </h1>
-      
-    <main>
-      <div class="container">
-      <div class="img">
+<body >
+  <div class="container box-shadow">
+    <div class="detail-product">
+      <div class="img-producto">
         <img
           src="<%= Productos.imagen %> "
           alt="imagen-productos"
           class="imagen-productos"
+          width="400px"
         />
       </div>
       <div class="detalle-venta">
-        
-        
-          
-          <h4 class="precio-principal">Precio:$ <%= Productos.precio  %> </h4>
-          <h6>Precio Especial</h6>
-          <p class="cuotas">
-          
-          </p>
-          <a href="#">ver cuotas</a>
-
-          <h4 class="stock-web">
-            <i class="fa-regular fa-circle-check"></i> Stock Alto en la web
-          </h4>
-          <p class="ph4">Solo para ventas web</p>
-
-          <p class="envios">
-            <i class="fa-solid fa-truck-fast"></i>Envios a todo el pais
-          </p>
-          <h4 class="garantia"><i class="fa-solid fa-shield"></i>Garantia</h4>
-          <p class="garantia-dias">180 Dias</p>
-          <div class="number-b">
-          <input type="number" id="tentacles" name="tentacles"
-       min="1" max="100" class="button-number">
-         </div>
-          <button type="submit" class="button">Agregar al Carrito</button>
+        <h1 class="titulo"><%= Productos.nombre %>  <%= Productos.Marca.marca %> </h1>    
+        <h4 class="precio-principal">$<%= Productos.precio  %> </h4>
+        <div class="cuotas">
+          <h5 style="padding-left: 20px; padding: 5px;">12 cuotas sin interes de $<%= Math.floor(Productos.precio / 12) %> </h5>
+        </div>
+        <img src="/img/sitio/credito-tarjetas.png" alt="" width="110px">
+        <hr>
+        <h5 class="stock-web">
+          <i class="fa-regular fa-circle-check check"></i> Stock Alto en la web
+        </h5>
+        <p class="ph4">Solo para ventas web</p>
+        <div class="envio-garantia">
+          <h5><i class="fa-solid fa-truck-fast camion-envio"></i>Envios a todo el pais</h5>
+          <h5 ><i class="fa-solid fa-shield"></i>Garantia</h5>
+          <!--<p class="garantia-dias">180 Dias</p>-->
+        </div>
+        <hr>
+        <div class="number-b">
+          <h5>Cantidad</h5>
+          <input type="number" id="tentacles" name="tentacles" min="1" max="100" class="button-number">
+        </div>
+          <h4>Descripción</h2>
+        <p><%= Productos.descripcion %>  </p>
+        <button type="submit" class="btn-regis">Agregar al Carrito</button>
       </div>
-  
-    
-      <h2>Descripción</h2>
-      <p><%= Productos.descripcion %>  </p>
-  </section>
-  
-    </main>
-    <footer>    
-       <!--Include Footer-->
-      <%- include('../partials/footer') %> 
-    </footer>
-  </body>
+    </div>
+  </div>
+</div>
+  <footer>    
+    <!--Include Footer-->
+    <%- include('../partials/footer') %> 
+  </footer>
+</body>
 </html>

@@ -241,7 +241,7 @@ body.no-scroll {
 }
 .openMenu-li{
   width: 80%;
-  height: 40px;
+  height: 40px; 
   padding-top: 50px;
   padding-bottom: 60px;
   display: flex;
@@ -754,8 +754,65 @@ ul {
 .content-select:hover i{
 	margin-top: 3px;
 }
-
-
+/*==============================DETAIL==============================*/
+.titulo{
+  padding: 10px;
+  align-items: center;
+}
+.precio-principal{
+  font-size: 40px;
+}
+.container{
+  max-width: 1050px;
+  margin: 20px;
+  margin-left: 200px;
+  padding: 20px;
+  background-color: var(--white);
+  color: #000000;
+}
+.detail-product{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  justify-content: center;
+}
+.envio-garantia{
+  display: flex;
+  flex-wrap: wrap;
+}
+.envio-garantia h5{
+  padding-right: 50px;
+}
+.number-b{
+  margin-bottom: 15px;
+}
+.cuotas{
+  margin-top: 10px;
+  border: 2px solid var(--magenta);
+}
+.img-producto{
+  flex-basis: 10%;
+  margin-right: 20px;
+}
+.detalle-venta{
+  margin: 20px;
+  flex-basis: 50%;
+}
+.detalle-venta i{
+  padding: 5px;
+}
+.check{
+  transition: 1s;
+}
+.check:hover{
+  color: green;
+}
+.camion-envio{
+  transition: 2s;
+}
+.camion-envio:hover{
+  transform: rotate(360deg);
+}
 
 /*==============================PROFILE==============================*/
 .titleProfile{
@@ -1021,6 +1078,17 @@ ul {
     justify-content: center;
     flex-wrap: wrap;
   }
+  /*--------------detail*-----------------------*/
+
+  .container{
+    max-width: 700px;
+    margin: 20px;
+    margin-left: 5px;
+    padding: 20px;
+  }
+  .imagen-productos{
+    width: 300px;
+  }
 }
 /*==============================RESPONSE DESING TABLET==============================*/
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -1105,6 +1173,17 @@ ul {
     /*flex-direction: column;
     align-items: center;*/
   }
+   /*--------------detail*-----------------------*/
+
+   .container{
+    max-width: 600px;
+    margin: 20px;
+    margin-left: 60px;
+    padding: 20px;
+  }
+  .imagen-productos{
+    width: 500px;
+  }
 }
 
 /*==============================RESPONSE DESING TABLET HORIZONTAL Y NOTEBOOK==============================*/
@@ -1171,6 +1250,17 @@ ul {
   .link-contra {
    /* flex-direction: column;
     align-items: center;*/
+  }
+   /*--------------detail*-----------------------*/
+
+   .container{
+    max-width: 600px;
+    margin: 20px;
+    margin-left: 60px;
+    padding: 20px;
+  }
+  .imagen-productos{
+    width: 500px;
   }
 }
 
