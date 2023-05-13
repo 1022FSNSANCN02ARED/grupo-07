@@ -67,22 +67,15 @@
           <a href="/" class="openMenu-links">Inicio</a>
         </li>
         <li class="openMenu-li">
-          <a href="/products/create" class="openMenu-links"
-            >¡Carga tus productos!</a
-          >
-        </li>
-        <li class="openMenu-li">
           <a href="/products/allproducts" class="openMenu-links"
-            >¡Mira nuestros productos!</a
-          >
+            >¡Mira nuestros productos!</a>
         </li>
-        <li class="openMenu-li">
-          <a href="/users/login" class="openMenu-links">Iniciar sesión</a>
-        </li>
-        <li class="openMenu-li">
-          <a href="/users/register" class="openMenu-links">Registrarse</a>
-        </li>
-        <hr />
+        <% if (locals.userLogged && locals.userLogged.rolId == "1") {%> 
+          <li class="openMenu-li">
+            <a href="/products/admin" class="openMenu-links"
+              >Administrador</a>
+          </li>
+          <%} %>
         <li class="openMenu-li">
           <a href="/users/logout" class="openMenu-links">Cerrar sesión</a>
         </li>

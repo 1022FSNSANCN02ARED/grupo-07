@@ -82,7 +82,7 @@ const controller = {
           }
 
           if (usuario.rolId == "1") {
-            return res.redirect("/products/admin");
+            return res.redirect("/");
           }
           return res.redirect("/");
         } else {
