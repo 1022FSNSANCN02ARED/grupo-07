@@ -28,7 +28,7 @@ body {
 }
 /* fin estilos globales */
 
-/*Home/
+/*Home*/
 
 /* estilos media*/
 .block-media {
@@ -234,6 +234,7 @@ body.no-scroll {
   width: 100%;
   height: 100%;
 }
+
 .openMenu-ul{
   width: 100%;
   height: 100%;
@@ -366,11 +367,19 @@ body.no-scroll {
   font-size: 1rem;
   margin-left: 1.4rem;
 }
-.product-charac {
+.productContent a{
+  text-decoration: none;
+}
+.product-character {
+  color: var(--white);
   width: 100%;
   text-align: center;
   padding: 0.5rem;
   font-size: 0.8rem;
+}
+.whiteLine{
+  color: var(--white);
+  background-color: var(--white);
 }
 /*==============================FOOTER==============================*/
 .footer {
@@ -969,7 +978,7 @@ ul {
     width: 200px;
     height: 300px;
   }
-  .product-charac {
+  .product-character {
     font-size: 0.7rem;
   }
   #menuOpen-search{
@@ -1070,7 +1079,7 @@ ul {
     height: 200px;
     height: 400px;
   }
-  .product-charac {
+  .product-character{
     font-size: 0.7rem;
   }
   
@@ -1146,7 +1155,7 @@ ul {
     height: 200px;
     height: 400px;
   }
-  .product-charac {
+  .product-character {
     font-size: 0.7rem;
   }
   .footer-col {

@@ -28,25 +28,13 @@
       <div class="header__interactivo">
         <% if (locals.isLogged) { %>
         <a href="/users/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-        <a
-          class="nav-link dropdown-toggle"
-          id="dropUser"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
+        <a href="/users/profile">
           <img
             src="<%= locals.userLogged.avatar %>"
             width="40"
             style="border-radius: 100%"
           />
-          <%= locals.userLogged.nombre %>
         </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/users/profile">Mi Perfil</a>
-          <li><hr class="dropdown-divider" /></li>
-          <a class="dropdown-item" href="/users/logout">Logout</a>
-        </ul>
 
         <% } else { %>
         <a href="/users/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -68,14 +56,14 @@
         </li>
         <li class="openMenu-li">
           <a href="/products/allproducts" class="openMenu-links"
-            >¡Mira nuestros productos!</a>
+            >¡Mira nuestros productos!</a
+          >
         </li>
-        <% if (locals.userLogged && locals.userLogged.rolId == "1") {%> 
-          <li class="openMenu-li">
-            <a href="/products/admin" class="openMenu-links"
-              >Administrador</a>
-          </li>
-          <%} %>
+        <% if (locals.userLogged && locals.userLogged.rolId == "1") {%>
+        <li class="openMenu-li">
+          <a href="/products/admin" class="openMenu-links">Administrador</a>
+        </li>
+        <%} %>
         <li class="openMenu-li">
           <a href="/users/logout" class="openMenu-links">Cerrar sesión</a>
         </li>
