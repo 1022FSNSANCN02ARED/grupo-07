@@ -3,7 +3,7 @@
   <head>
     <!--Include head-->
     <%- include('../partials/head') %>
-     <!-- <script src="/js/EditValidation.js"></script>  -->
+    <script src="/js/EditValidation.js"></script>
     <title>Argon | Carga</title>
   </head>
   <body>
@@ -12,8 +12,6 @@
       <%- include('../partials/header') %>
       <script src="/js/"></script>
     </header>
-     
-   
     <section class="contenedorForm">
       <form
         action="/products/<%= Productos.id %>?_method=put"
@@ -21,33 +19,35 @@
         enctype="multipart/form-data"
         class="edit"
       >
+      <section class="edit-box">
         <h4><%= Productos.nombre %></h4>
+      
         <div class="galeria">
           <img src="<%= Productos.imagen %>" />
         </div>
-        <label for="imagen">Suba una imagen</label>
+        <label for="imagen"></label>
         <input
-          class="w-100"
+          class="form-control img"
           type="file"
-          name="imagen"
-          id="imagen"
-       
-          
+          placeholder="Imagen"
+          name="img"
+          id="img"
+          value="<%= Productos.imagen %>"
         />
-        <label for="producto">Nombre del productos</label>
+        <label for="producto">Nombre del producto</label>
         <input
           type="text"
           name="nombre"
-          class="nombre"
+          class="form-control Nombre del Producto"
           id="nombre"
           value="<%= Productos.nombre %>"
         />
         <div class="text-danger nombre">
           <% if (locals.errors && errors.nombre) { %><%= errors.nombre.msg %> <%
           } %>
-          </div>
-          <br />
+        </div>
 
+        <div class="content-select">
         <label for="marca">Marca</label>
         <select name="marca" id="marca">
           <option value="1" <% if(Productos.marca=="Dell"){ %><%= "selected"  %><% }%>>Dell</option>
@@ -71,12 +71,14 @@
           <option value="19" <% if(Productos.marca=="TForce"){ %><%= "selected"  %><% }%>>TForce</option>
           <option value="20" <% if(Productos.marca=="IdCooling"){ %><%= "selected"  %><% }%>>IdCooling</option>
           <option value="21" <% if(Productos.marca=="GENERICO"){ %><%= "selected"  %><% }%>>GENERICO</option>
+        <li></li>
         </select>
-
+        <li></li>
+        </div>
         
         <label for="sockets">Sockets</label>
         <input
-          class="w-100"
+          class="form-control sockets"
           type="text"
           name="sockets"
           id="sockets"
@@ -85,6 +87,7 @@
         />
 
         <label for="slots">Slots</label>
+        <div class="content-select">
         <select name="slots" id="slots">
           <option value="0" <% if(Productos.slots==0){ %><%= "selected"  %><% }%>>No aplica</option>
           <option value="2" <% if(Productos.slots==2){ %><%= "selected"  %><% }%>>2</option>
@@ -92,18 +95,23 @@
           <option value="6" <% if(Productos.slots==6){ %><%= "selected"  %><% }%>>6</option>
           <option value="8" <% if(Productos.slots==8){ %><%= "selected"  %><% }%>>8</option>
         </select>
+        <i></i>
+        </div>
 
-        <label for="ram">RAM</label>
+        <label for="ram">Ram</label>
+        <div class="content-select">
         <select name="ram" id="ram">
           <option value="" <% if(Productos.ram==""){ %><%= "selected"  %><% }%>>No aplica</option>
           <option value="DDR3" <% if(Productos.ram=="DDR3"){ %><%= "selected"  %><% }%>>DDR3</option>
           <option value="DDR4" <% if(Productos.ram=="DDR4"){ %><%= "selected"  %><% }%>>DDR4</option>
           <option value="DDR5" <% if(Productos.ram=="DDR5"){ %><%= "selected"  %><% }%>>DDR5</option>
         </select>
+        <i></i>
+        </div>
 
         <label for="precio">Precio</label>
         <input
-          class="precio"
+          class="form-control precio"
           type="number"
           name="precio"
           id="precio"
@@ -115,27 +123,30 @@
           </div>
         <label for="descripcion">Descripción</label>
         <input
-          class="w-100"
+          class="form-control descripcion"
           type="text"
           name="descripcion"
           id="descripcion"
           value="<%= Productos.descripcion %>"
         />
 
-        
         <label for="gama">Gama</label>
+        <div class="content-select">
         <select name="gama" id="gama">
           <option value="1" <% if(Productos.gamaId==1){ %><%= "selected"  %><% }%>>Alta</option>
           <option value="2" <% if(Productos.gamaId==2){ %><%= "selected"  %><% }%>>Media</option>
           <option value="3" <% if(Productos.gamaId==3){ %><%= "selected"  %><% }%>>Baja</option>
         </select>
+        <i></i>
+        </div>
 
-        <button type="submit" class="submit">EDITAR PRODUCTO / GUARDAR</button>
-        <button type="submit" class="rest">
-          <span class="far fa-trash-alt"></span>Eliminar
+        <button type="submit" class="btn-edit submit">EDITAR PRODUCTO / GUARDAR</button>
+        <button type="submit" class="btn-edit rest ">
+          <span class="far fa-trash-alt"></span> Eliminar
         </button>
       </form>
     </section>
+  </section>
 
     <!--Include Footer-->
     <%- include('../partials/footer') %>
