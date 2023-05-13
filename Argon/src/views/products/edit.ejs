@@ -12,9 +12,13 @@
       <%- include('../partials/header') %>
       <script src="/js/"></script>
     </header>
+    <span class="prueba">
+      VALOR
+    <%= Productos.marca %>
+    </span>
     <section class="contenedorForm">
       <form
-        action="/products/<%= Productos.id %>?_method=put"
+        action="/products/<%= Productos.id %>?_method=PUT"
         method="POST"
         enctype="multipart/form-data"
         class="edit"
@@ -50,27 +54,27 @@
         <div class="content-select">
         <label for="marca">Marca</label>
         <select name="marca" id="marca">
-          <option value="1" <% if(Productos.marca=="Dell"){ %><%= "selected"  %><% }%>>Dell</option>
-          <option value="2" <% if(Productos.marca=="Gigabyte"){ %><%= "selected"  %><% }%>>Gigabyte</option>
-          <option value="3" <% if(Productos.marca=="ViewSonic"){ %><%= "selected"  %><% }%>>ViewSonic</option>
-          <option value="4" <% if(Productos.marca=="Asus"){ %><%= "selected"  %><% }%>>Asus</option>
-          <option value="5" <% if(Productos.marca=="Intel"){ %><%= "selected"  %><% }%>>Intel</option>
-          <option value="6" <% if(Productos.marca=="Amd"){ %><%= "selected"  %><% }%>>Amd</option>
-          <option value="7" <% if(Productos.marca=="Corsair"){ %><%= "selected"  %><% }%>>Corsair</option>
-          <option value="8" <% if(Productos.marca=="Logitech"){ %><%= "selected"  %><% }%>>Logitech</option>
-          <option value="9" <% if(Productos.marca=="Adata"){ %><%= "selected"  %><% }%>>Adata</option>
-          <option value="10" <% if(Productos.marca=="Zotac"){ %><%= "selected"  %><% }%>>Zotac</option>
-          <option value="11" <% if(Productos.marca=="Western Digital"){ %><%= "selected"  %><% }%>>Western Digital</option>
-          <option value="12" <% if(Productos.marca=="Samsung"){ %><%= "selected"  %><% }%>>Samsung</option>
-          <option value="13" <% if(Productos.marca=="MSI"){ %><%= "selected"  %><% }%>>MSI</option>
-          <option value="14" <% if(Productos.marca=="PNY"){ %><%= "selected"  %><% }%>>PNY</option>
-          <option value="15" <% if(Productos.marca=="Redragon"){ %><%= "selected"  %><% }%>>Redragon</option>
-          <option value="16" <% if(Productos.marca=="Noganet"){ %><%= "selected"  %><% }%>>Noganet</option>
-          <option value="17" <% if(Productos.marca=="Deepcool"){ %><%= "selected"  %><% }%>>Deepcool</option>
-          <option value="18" <% if(Productos.marca=="Overtech"){ %><%= "selected"  %><% }%>>Overtech</option>
-          <option value="19" <% if(Productos.marca=="TForce"){ %><%= "selected"  %><% }%>>TForce</option>
-          <option value="20" <% if(Productos.marca=="IdCooling"){ %><%= "selected"  %><% }%>>IdCooling</option>
-          <option value="21" <% if(Productos.marca=="GENERICO"){ %><%= "selected"  %><% }%>>GENERICO</option>
+          <option value="1" <% if(Productos.Marca.marca=="Dell"){ %><%= "selected"  %><% }%>>Dell</option>
+          <option value="2" <% if(Productos.Marca.marca=="Gigabyte"){ %><%= "selected"  %><% }%>>Gigabyte</option>
+          <option value="3" <% if(Productos.Marca.marca=="ViewSonic"){ %><%= "selected"  %><% }%>>ViewSonic</option>
+          <option value="4" <% if(Productos.Marca.marca=="Asus"){ %><%= "selected"  %><% }%>>Asus</option>
+          <option value="5" <% if(Productos.Marca.marca=="Intel"){ %><%= "selected"  %><% }%>>Intel</option>
+          <option value="6" <% if(Productos.Marca.marca=="Amd"){ %><%= "selected"  %><% }%>>Amd</option>
+          <option value="7" <% if(Productos.Marca.marca=="Corsair"){ %><%= "selected"  %><% }%>>Corsair</option>
+          <option value="8" <% if(Productos.Marca.marca=="Logitech"){ %><%= "selected"  %><% }%>>Logitech</option>
+          <option value="9" <% if(Productos.Marca.marca=="Adata"){ %><%= "selected"  %><% }%>>Adata</option>
+          <option value="10" <% if(Productos.Marca.marca=="Zotac"){ %><%= "selected"  %><% }%>>Zotac</option>
+          <option value="11" <% if(Productos.Marca.marca=="Western Digital"){ %><%= "selected"  %><% }%>>Western Digital</option>
+          <option value="12" <% if(Productos.Marca.marca=="Samsung"){ %><%= "selected"  %><% }%>>Samsung</option>
+          <option value="13" <% if(Productos.Marca.marca=="MSI"){ %><%= "selected"  %><% }%>>MSI</option>
+          <option value="14" <% if(Productos.Marca.marca=="PNY"){ %><%= "selected"  %><% }%>>PNY</option>
+          <option value="15" <% if(Productos.Marca.marca=="Redragon"){ %><%= "selected"  %><% }%>>Redragon</option>
+          <option value="16" <% if(Productos.Marca.marca=="Noganet"){ %><%= "selected"  %><% }%>>Noganet</option>
+          <option value="17" <% if(Productos.Marca.marca=="Deepcool"){ %><%= "selected"  %><% }%>>Deepcool</option>
+          <option value="18" <% if(Productos.Marca.marca=="Overtech"){ %><%= "selected"  %><% }%>>Overtech</option>
+          <option value="19" <% if(Productos.Marca.marca=="TForce"){ %><%= "selected"  %><% }%>>TForce</option>
+          <option value="20" <% if(Productos.Marca.marca=="IdCooling"){ %><%= "selected"  %><% }%>>IdCooling</option>
+          <option value="21" <% if(Productos.Marca.marca=="GENERICO"){ %><%= "selected"  %><% }%>>GENERICO</option>
         <li></li>
         </select>
         <li></li>

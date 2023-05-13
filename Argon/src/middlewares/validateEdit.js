@@ -4,9 +4,7 @@ module.exports = [
   body("nombre").notEmpty().withMessage("Tienes que escribir un nombre"),
   body("precio").notEmpty().withMessage("Tienes que escribir un precio"),
   body("imagen").custom((value, { req }) => {
-  console.log(value);
-  console.log(req.body);
-  console.log(req.file); 
+
   const file = req.file;
     const acceptedExtensions = [".jpg", ".png"];
 

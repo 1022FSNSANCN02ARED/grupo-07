@@ -160,6 +160,10 @@ gap: 2rem;
   cursor: pointer;
 }
 
+.prueba{
+  color: var(--white);
+  background-color: palevioletred;
+}
 
 .header__menu span{
   width: 100%;
