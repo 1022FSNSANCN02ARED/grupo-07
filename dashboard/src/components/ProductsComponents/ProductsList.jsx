@@ -53,7 +53,7 @@ function ProductsList() {
                 />
               </td>
               <td>
-                <button>Editar</button>
+                <a href="#" target="a_blank"><button>Editar</button></a>
               </td>
             </tr>
           );

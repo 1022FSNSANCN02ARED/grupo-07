@@ -4,10 +4,11 @@ module.exports = [
   body("nombre").notEmpty().withMessage("Tienes que escribir un nombre"),
   body("precio").notEmpty().withMessage("Tienes que escribir un precio"),
   body("imagen").custom((value, { req }) => {
-    const file = req.file;
+
+  const file = req.file;
     const acceptedExtensions = [".jpg", ".png"];
 
-    if (file == "") {
+    if (file) {
       const fileExtension = path.extname(file.originalname);
       if (!acceptedExtensions.includes(fileExtension)) {
         throw new Error(

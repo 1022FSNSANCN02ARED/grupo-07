@@ -15,9 +15,9 @@ function BrandsList() {
     });
   }, []);
   return (
-    <div className="BrandList">
-      <table>
-        <caption>Lista de marcas</caption>
+    <div>
+      <table className="BrandsList">
+        <caption>Marcas</caption>
         <thead>
           <tr>
             <th>Marca</th>

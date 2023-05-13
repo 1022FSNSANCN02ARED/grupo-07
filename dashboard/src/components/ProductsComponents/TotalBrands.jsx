@@ -18,8 +18,7 @@ function TotalBrands() {
   return (
     <div className="totalBrands">
       <span>Total de marcas</span>
-
-      <span>{brandsCant.length}</span>
+      <span className="brandNum">{brandsCant.length}</span>
     </div>
   );
 }

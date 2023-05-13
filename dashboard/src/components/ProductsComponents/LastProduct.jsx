@@ -37,7 +37,7 @@ function LastProduct() {
       <div className="infoProducts">
         <ul>
           <li>Nombre: {LastProduct.nombre}</li>
-          <li>Precio: {LastProduct.precio}</li>
+          <li>Precio: ${LastProduct.precio}</li>
           <li>Descripción: {LastProduct.descripcion}</li>
           <li>Ram: {LastProduct.ram}</li>
           <li>Slots: {LastProduct.slots} </li>
