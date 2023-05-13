@@ -112,36 +112,45 @@
   color: rgb(237, 232, 232);
 }
 .totalProducts {
-  background-color: var(--very-dark-gray);
-  padding: 2rem;
-  border: var(--bright-pink) 2px solid;
-  border-radius: 2rem;
-  margin: 0 0 1rem 1rem;
-  width: 100%;
-  height: 8rem;
-}
-.totalBrands {
-  background-color: var(--very-dark-gray);
-  padding: 2rem;
-  border: var(--bright-pink) 2px solid;
-  border-radius: 2rem;
-  margin: 0 0 1rem 1rem;
-  width: 100%;
-  height: 8rem;
-}
-.infoProducts {
   display: flex;
   flex-direction: column;
+  background-color: var(--very-dark-gray);
+  padding: 2rem;
+  border: var(--bright-pink) 2px solid;
+  border-radius: 2rem;
+  margin: 0 0 1rem 1rem;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+}
+
+.totalBrands {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--very-dark-gray);
+  padding: 2rem;
+  border: var(--bright-pink) 2px solid;
+  border-radius: 2rem;
+  margin: 0 0 1rem 1rem;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+}
+
+.infoProducts {
+  display: flex;
   font-size: 1.2rem;
 }
 
 .infoProducts ul{
+  width: 70%;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: .5rem;
   align-items: center;
-  height: 100%;
-  width: 100%;
-  margin-left: 6rem;
+  height: 100%; 
+  margin-left: 7rem;
 }
 
 .productsTable {
@@ -155,9 +164,23 @@
   margin-bottom: 1rem;
   margin-right: 1rem;
 }
-.BrandList {
+.BrandsList {
   width: 18%;
+  table-layout: auto;
+  border: solid 1px rgba(224, 54, 156, 0.627);
+  font-size: 1.2rem;
+  border-collapse: collapse;
+  border-radius: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+} 
+
+
+
+caption{
+  font-size: 2rem;
 }
+
 .lastProduct {
   display: flex;
   width: 80%;
@@ -253,7 +276,7 @@ tbody td:hover {
 
 .lastUser {
   display: flex;
-  width: 80%;
+  width: 60%;
   background-color: var(--very-dark-gray);
   padding: 1rem;
   border: var(--bright-pink) 2px solid;
@@ -267,14 +290,15 @@ tbody td:hover {
 }
 .infoUser{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-size: 1.2rem;
 }
 .infoUser ul  {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   height: 100%;
   width: 100%;
-  margin-left: 6rem;
+  margin-left: 1rem;
 }

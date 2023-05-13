@@ -34,7 +34,7 @@ function LastUser(){
                 <li>Nombre: {LastUser.nombre}</li>
                 <li>Apellido: {LastUser.apellido}</li>
                 <li>Email: {LastUser.email}</li>
-                <li>RolId: {LastUser.rolId}</li>
+                <li>Rol id: {LastUser.rolId}</li>
             </ul>
             </div>
         </div>
