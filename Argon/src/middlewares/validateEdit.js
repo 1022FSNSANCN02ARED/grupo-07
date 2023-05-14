@@ -1,11 +1,11 @@
 const { body } = require("express-validator");
-
+const path = require("path");
+console.log("ValidateEdit");
 module.exports = [
   body("nombre").notEmpty().withMessage("Tienes que escribir un nombre"),
   body("precio").notEmpty().withMessage("Tienes que escribir un precio"),
   body("imagen").custom((value, { req }) => {
-
-  const file = req.file;
+    const file = req.file;
     const acceptedExtensions = [".jpg", ".png"];
 
     if (file) {

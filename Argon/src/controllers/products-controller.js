@@ -49,6 +49,7 @@ const controller = {
   },
 
   update: async (req, res) => {
+    console.log("hola");
     const imagenEstablecida = await db.Producto.findByPk(req.params.id);
     db.Producto.update(
       {
