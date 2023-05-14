@@ -12,7 +12,18 @@
     <!--Include header-->
     <%- include('../partials/header') %>
   </header>
-
+  <form action="/products/filter" method="GET">
+    <div class="search" id="search">
+    <input
+      type="text"
+      placeholder="Busca productos, marcas y más..."
+      name="nombreProducto" autocomplete="off"
+    />
+    <button class="btn-search">
+      <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+  </form>
   <div class="allProductPage">
     <div class="card-container">
       <% Productos.forEach(producto => { %>
