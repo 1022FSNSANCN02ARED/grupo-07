@@ -765,7 +765,9 @@ justify-content: space-evenly;
   margin-right: 10px;
   padding-left: 10px;
 }
-
+.buscador-mobile{
+  display: none;
+}
 .content-select select {
   display: inline-block;
   width: 100%;
@@ -892,6 +894,11 @@ justify-content: space-evenly;
   border-radius: 20px;
   width: 800px;
   border: 2px solid var(--bright-pink);
+}
+.profileIMG {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .avatarIMG {
   margin: 5px;
@@ -1280,6 +1287,30 @@ a {
     border-radius: 8px;
     border: none;
   }
+  .buscador-mobile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: var(--bright-pink) 2px solid;
+    border-radius: 30px;
+    width: 300px;
+    background-color: var(--very-dark-gray);
+    height: 50px;
+    box-shadow: 0px 0px 15px 2px var(--bright-pink);
+    margin-left: 30px;
+    margin-top: 20px;
+    padding-left: 10px;
+  }
+  .buscador-mobile input{
+    width: 400px;
+    height: 2.2rem;
+    outline: none;
+    border: none;
+    margin-right: 10px;
+    padding-left: 10px;
+    color: var(--white);
+    background-color: var(--very-dark-gray);
+  }
 }
 
 /*==============================RESPONSE DESING TABLET==============================*/
@@ -1380,10 +1411,34 @@ a {
   .imagen-productos {
     width: 500px;
   }
+  .buscador-mobile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: var(--bright-pink) 2px solid;
+    border-radius: 30px;
+    width: 450px;
+    background-color: var(--very-dark-gray);
+    height: 50px;
+    box-shadow: 0px 0px 15px 2px var(--bright-pink);
+    margin-left: 170px;
+    margin-top: 20px;
+    padding-left: 10px;
+  }
+  .buscador-mobile input{
+    width: 400px;
+    height: 2.2rem;
+    outline: none;
+    border: none;
+    margin-right: 10px;
+    padding-left: 10px;
+    color: var(--white);
+    background-color: var(--very-dark-gray);
+  }
 }
 
 /*==============================RESPONSE DESING TABLET HORIZONTAL Y NOTEBOOK==============================*/
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 769px) and (max-width: 1279px) {
   .header-search-modifyr {
     display: block;
     width: 80%;
@@ -1457,6 +1512,9 @@ a {
   }
   .imagen-productos {
     width: 500px;
+  }
+  .buscador-mobile{
+    display: none;
   }
 }
 
