@@ -998,7 +998,10 @@ justify-content: space-evenly;
   margin: 10px;
   background-color: var(--mostly-black);
 }
-
+.card p{
+position: relative;
+left: 2rem;
+}
 .filtros {
   width: 20%;
   margin-top: 10px;
