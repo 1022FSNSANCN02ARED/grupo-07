@@ -584,7 +584,6 @@ ul {
 }
 
 /*==============================EDIT==============================*/
-
 .edit-box {
   display: flex;
   width: 100%;
@@ -593,38 +592,47 @@ ul {
   margin-top: 20px;
 }
 
-
 .edit {
-  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
   margin: 0;
   border-radius: 8px;
   border: solid 2px var(--bright-pink);
+  justify-content: center;
 }
 .edit-box img {
-  width: 100px;
-  height: 100px;
-  margin: 2rem;
+  width: 30%;
+  height: 30%;
+}
+.img-edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .edit-box input {
   justify-content: center;
   /*align-items: center;*/
   width: 95%;
-  margin: 2rem;
+  margin: 1rem 0 0 1rem;
   /*text-align: center;*/
 }
 .edit-box select {
-  margin: 2rem;
+  margin: 1rem 0 0 1rem;
 }
 .edit-box label {
-  margin: 2rem;
+  margin: 1rem 0 0 1rem;
 }
 
 .edit-box h2 {
   margin-top: 2rem;
   text-align: center;
-  /*margin: 10px;*/
 }
-
+.edit-box-btn {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
 .btn-edit {
   display: block;
   margin: 0 auto;
@@ -1237,33 +1245,33 @@ a {
   .imagen-productos {
     width: 300px;
   }
-/*--------------Create*-----------------------*/
-.create-box {
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 90%;
-  margin-top: 20px;
-  background-color: var(--very-dark-gray);
-  border-radius: 8px;
-  border: solid 2px var(--bright-pink);
-}
+  /*--------------Create*-----------------------*/
+  .create-box {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    margin-top: 20px;
+    background-color: var(--very-dark-gray);
+    border-radius: 8px;
+    border: solid 2px var(--bright-pink);
+  }
 
-/*--------------Edit*-----------------------*/
-.edit-box {
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 90%;
-  margin-top: 20px;
-  background-color: var(--very-dark-gray);
-  border-radius: 8px;
-  border: solid 2px var(--bright-pink);
-}
-.edit {
-  width: 100%;
-  margin: 0;
-  border-radius: 8px;
-  border: none;
-}
+  /*--------------Edit*-----------------------*/
+  .edit-box {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    margin-top: 20px;
+    background-color: var(--very-dark-gray);
+    border-radius: 8px;
+    border: solid 2px var(--bright-pink);
+  }
+  .edit {
+    width: 100%;
+    margin: 0;
+    border-radius: 8px;
+    border: none;
+  }
 }
 
 /*==============================RESPONSE DESING TABLET==============================*/
@@ -1443,7 +1451,6 @@ a {
     width: 500px;
   }
 }
-
 
 /*==============================Validaciones==============================*/
 .errores {

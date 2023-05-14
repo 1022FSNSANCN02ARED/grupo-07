@@ -25,7 +25,7 @@
         <div class="img-edit">
           <img src="<%= Productos.imagen %>" />
         </div>
-        <label for="imagen"></label>
+        <label for="imagen">Imagen</label>
         <input
           class="form-control img"
           type="file"
@@ -137,9 +137,10 @@
           <option value="3" <% if(Productos.gamaId==3){ %><%= "selected"  %><% }%>>Baja</option>
         </select>
         </div>
-
+      <div class="edit-box-btn">
         <button type="submit" class="btn-edit submit">GUARDAR</button>
         <button type="submit" class="btn-edit rest ">Eliminar</button>
+      </div>
       </form>
     
     </div>
