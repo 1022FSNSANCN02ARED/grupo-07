@@ -821,6 +821,7 @@ justify-content: space-evenly;
   margin-bottom: 2rem;
   background-color: var(--white);
   color: #000000;
+  border-radius: 10px;
 }
 .detail-product {
   display: flex;
