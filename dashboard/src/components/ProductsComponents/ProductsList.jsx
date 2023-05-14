@@ -53,7 +53,7 @@ function ProductsList() {
                 />
               </td>
               <td>
-                <a href="#" target="a_blank"><button>Editar</button></a>
+                <a href={`http://localhost:3001/products/edit/${producto.id}/`} target="about_blank"><button>Editar</button></a>
               </td>
             </tr>
           );

@@ -16,7 +16,6 @@ import {
 function App() {
   const url = useLocation();
   useEffect(() => {
-    console.log(url);
   }, [url]);
   return (
     <div className="App">
