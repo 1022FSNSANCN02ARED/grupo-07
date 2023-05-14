@@ -1,6 +1,5 @@
 const { body } = require("express-validator");
 const path = require("path");
-console.log("ValidateEdit");
 module.exports = [
   body("nombre").notEmpty().withMessage("Tienes que escribir un nombre"),
   body("precio").notEmpty().withMessage("Tienes que escribir un precio"),
