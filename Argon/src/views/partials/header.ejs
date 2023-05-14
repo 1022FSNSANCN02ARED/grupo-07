@@ -63,9 +63,11 @@
             >¡Mira nuestros productos!</a
           >
         </li>
+        <% if (locals.isLogged) { %>
         <li class="openMenu-li">
           <a href="/users/profile" class="openMenu-links">Tu perfil</a>
         </li>
+        <%} %>
         <% if (locals.userLogged && locals.userLogged.rolId == "1") {%>
         <li class="openMenu-li">
           <a href="/products/admin" class="openMenu-links">Administrador</a>
