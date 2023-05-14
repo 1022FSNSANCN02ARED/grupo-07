@@ -1288,22 +1288,27 @@ a {
     border-radius: 8px;
     border: none;
   }
+  .search-mobile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .buscador-mobile{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border: var(--bright-pink) 2px solid;
     border-radius: 30px;
-    width: 300px;
+    width: 80%;
     background-color: var(--very-dark-gray);
     height: 50px;
     box-shadow: 0px 0px 15px 2px var(--bright-pink);
-    margin-left: 30px;
+    margin-left: 20px;
     margin-top: 20px;
     padding-left: 10px;
   }
   .buscador-mobile input{
-    width: 400px;
+    width: 30rem;
     height: 2.2rem;
     outline: none;
     border: none;
@@ -1364,7 +1369,10 @@ a {
   .product-character {
     font-size: 0.7rem;
   }
-
+  .openMenu {
+    width: 65vh;
+    height: 90vh;
+  }
   /*==============================RESPONSE DESING TABLET PROFILE==============================*/
   /*Allprodcuts*/
   .pageProduct-content {
