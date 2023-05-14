@@ -1368,7 +1368,10 @@ a {
   .product-character {
     font-size: 0.7rem;
   }
-
+  .openMenu {
+    width: 65vh;
+    height: 90vh;
+  }
   /*==============================RESPONSE DESING TABLET PROFILE==============================*/
   /*Allprodcuts*/
   .pageProduct-content {
