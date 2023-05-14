@@ -217,6 +217,8 @@ td .desc {
   color: rgb(237, 232, 232);
 }
 .totalUsers {
+  display:flex;
+  flex-direction: column;
   margin-top: 1rem;
   width: 20rem;
   height: 20rem;
