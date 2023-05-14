@@ -4,27 +4,25 @@
     <!--Include head-->
     <%- include('../partials/head') %>
     <script src="/js/EditValidation.js"></script>
-    <title>Argon | Carga</title>
+    <title>Argon | Edición</title>
   </head>
   <body>
     <header>
       <!--Include header-->
       <%- include('../partials/header') %>
-      <script src="/js/"></script>
     </header>
-    <%= Productos.marca %>
-    </span>
-    <section class="contenedorForm">
+
+  
+    <div class="edit-box">
       <form
         action="/products/<%= Productos.id %>?_method=PUT"
         method="POST"
         enctype="multipart/form-data"
         class="edit"
       >
-      <section class="edit-box">
-        <h4><%= Productos.nombre %></h4>
+        <h2><%= Productos.nombre %></h2>
       
-        <div class="galeria">
+        <div class="img-edit">
           <img src="<%= Productos.imagen %>" />
         </div>
         <label for="imagen"></label>
@@ -40,7 +38,7 @@
         <input
           type="text"
           name="nombre"
-          class="form-control Nombre del Producto"
+          class="form-control nombre"
           id="nombre"
           value="<%= Productos.nombre %>"
         />
@@ -52,7 +50,7 @@
         <div class="content-select">
         <label for="marca">Marca</label>
         <select name="marca" id="marca">
-          <option value="1" <% if(Productos.Marca.marca=="Dell"){ %><%= "selected"  %><% }%>>Dell</option>
+          <option value="1" <% if(Productos.Marca.marca=="Dell"){ %><%= "selected"  %><% } %> >Dell</option>
           <option value="2" <% if(Productos.Marca.marca=="Gigabyte"){ %><%= "selected"  %><% }%>>Gigabyte</option>
           <option value="3" <% if(Productos.Marca.marca=="ViewSonic"){ %><%= "selected"  %><% }%>>ViewSonic</option>
           <option value="4" <% if(Productos.Marca.marca=="Asus"){ %><%= "selected"  %><% }%>>Asus</option>
@@ -73,9 +71,9 @@
           <option value="19" <% if(Productos.Marca.marca=="TForce"){ %><%= "selected"  %><% }%>>TForce</option>
           <option value="20" <% if(Productos.Marca.marca=="IdCooling"){ %><%= "selected"  %><% }%>>IdCooling</option>
           <option value="21" <% if(Productos.Marca.marca=="GENERICO"){ %><%= "selected"  %><% }%>>GENERICO</option>
-        <li></li>
+  
         </select>
-        <li></li>
+     
         </div>
         
         <label for="sockets">Sockets</label>
@@ -97,7 +95,6 @@
           <option value="6" <% if(Productos.slots==6){ %><%= "selected"  %><% }%>>6</option>
           <option value="8" <% if(Productos.slots==8){ %><%= "selected"  %><% }%>>8</option>
         </select>
-        <i></i>
         </div>
 
         <label for="ram">Ram</label>
@@ -108,7 +105,7 @@
           <option value="DDR4" <% if(Productos.ram=="DDR4"){ %><%= "selected"  %><% }%>>DDR4</option>
           <option value="DDR5" <% if(Productos.ram=="DDR5"){ %><%= "selected"  %><% }%>>DDR5</option>
         </select>
-        <i></i>
+       
         </div>
 
         <label for="precio">Precio</label>
@@ -139,16 +136,13 @@
           <option value="2" <% if(Productos.gamaId==2){ %><%= "selected"  %><% }%>>Media</option>
           <option value="3" <% if(Productos.gamaId==3){ %><%= "selected"  %><% }%>>Baja</option>
         </select>
-        <i></i>
         </div>
 
-        <button type="submit" class="btn-edit submit">EDITAR PRODUCTO / GUARDAR</button>
-        <button type="submit" class="btn-edit rest ">
-          <span class="far fa-trash-alt"></span> Eliminar
-        </button>
+        <button type="submit" class="btn-edit submit">GUARDAR</button>
+        <button type="submit" class="btn-edit rest ">Eliminar</button>
       </form>
-    </section>
-  </section>
+    
+    </div>
 
     <!--Include Footer-->
     <%- include('../partials/footer') %>

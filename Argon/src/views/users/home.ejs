@@ -93,8 +93,8 @@
 
     <!-- productos destacados -->
     <div>
-    <p class="lastsProducts">¡Últimos ingresos!</p>
-  </div>
+      <p class="lastsProducts">¡Últimos ingresos!</p>
+    </div>
     <div class="productContent">
       <% producto.forEach(producto => { %>
       <a href="/products/detail/<%= producto.id %>">
@@ -106,7 +106,7 @@
               class=""
             />
           </div>
-          <hr class="whiteLine"/>
+          <hr class="whiteLine" />
           <p class="product-character"><%= producto.nombre %></p>
           <p class="product-character">$<%= producto.precio %></p>
         </div>

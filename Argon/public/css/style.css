@@ -532,13 +532,10 @@ ul {
   margin-bottom: 20px;
 }
 
-.create {
-  margin: 2rem 6rem;
-}
-
 .create-box {
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
   margin-top: 20px;
   background-color: var(--very-dark-gray);
   border-radius: 8px;
@@ -553,9 +550,8 @@ ul {
 .create-box input {
   justify-content: center;
   /*align-items: center;*/
-  margin: 20px;
   width: 100%;
-  margin: 2px;
+  margin: 0.2rem;
   /*text-align: center;*/
 }
 
@@ -589,38 +585,44 @@ ul {
 
 /*==============================EDIT==============================*/
 
-.edit {
-  margin: 2rem 6rem;
+.edit-box {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
-.edit-box {
-  margin-left: 300px;
-  margin-right: 300px;
-  margin-top: 20px;
-  background-color: var(--very-dark-gray);
+
+.edit {
+  width: 80vw;
+  margin: 0;
   border-radius: 8px;
   border: solid 2px var(--bright-pink);
 }
-
-.edit-box h4 {
-  text-align: center;
-  margin: 10px;
+.edit-box img {
+  width: 100px;
+  height: 100px;
+  margin: 2rem;
 }
-
 .edit-box input {
   justify-content: center;
   /*align-items: center;*/
-  margin: 20px;
-  width: 100%;
-  margin: 10px;
+  width: 95%;
+  margin: 2rem;
   /*text-align: center;*/
 }
-
 .edit-box select {
-  margin: 20px;
-  width: 100%;
-  margin: 10px;
-  /*text-align: center;*/
+  margin: 2rem;
+}
+.edit-box label {
+  margin: 2rem;
+}
+
+.edit-box h2 {
+  margin-top: 2rem;
+  text-align: center;
+  /*margin: 10px;*/
 }
 
 .btn-edit {
@@ -708,7 +710,7 @@ ul {
   color: var(--vivid-magenta);
 }
 
-/* --------- selec button de create edit productos*/
+/* --------- select button de create edit productos*/
 .content-input input,
 .content-select select {
   appearance: none;
@@ -980,7 +982,7 @@ ul {
 }
 
 .card-image img {
-  border-radius: 2rem 2rem 0 0 ;
+  border-radius: 2rem 2rem 0 0;
   width: 100%;
   height: 100%;
   background-color: var(--white);
@@ -1023,11 +1025,11 @@ ul {
 a {
   text-decoration: none;
 }
-.options{
+.options {
   display: flex;
   flex-direction: row;
 }
-.btn-products-admin{
+.btn-products-admin {
   width: 90%;
   display: flex;
   flex-direction: row;
@@ -1039,7 +1041,7 @@ a {
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
-  padding:.3em;
+  padding: 0.3em;
   outline: none;
   border: 1px solid #303030;
   background: #212121;
@@ -1054,20 +1056,20 @@ a {
   font-weight: bold;
   text-decoration: none;
 }
-.edit-admin:hover{
+.edit-admin:hover {
   box-shadow: 0 0 10px var(--vivid-magenta), 0 0 25px #001eff,
-  0 0 50px var(--vivid-magenta);
-transition-delay: 0.1s;
-color: var(--vivid-magenta);
+    0 0 50px var(--vivid-magenta);
+  transition-delay: 0.1s;
+  color: var(--vivid-magenta);
 }
 
-.rest-admin{
+.rest-admin {
   display: block;
   margin-left: 2rem;
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
-  padding:.3em;
+  padding: 0.3em;
   outline: none;
   border: 1px solid #303030;
   background: #212121;
@@ -1082,13 +1084,14 @@ color: var(--vivid-magenta);
   font-weight: bold;
   text-decoration: none;
 }
-.rest-admin:hover{
+.rest-admin:hover {
   box-shadow: 0 0 10px var(--vivid-magenta), 0 0 25px #001eff,
-  0 0 50px var(--vivid-magenta);
-transition-delay: 0.1s;
-color: var(--vivid-magenta);
+    0 0 50px var(--vivid-magenta);
+  transition-delay: 0.1s;
+  color: var(--vivid-magenta);
 }
 /*==============================RESPONSE DESING MOBILE==============================*/
+
 @media screen and (min-width: 0px) and (max-width: 480px) {
   /*Home*/
   .openMenu {
@@ -1234,7 +1237,35 @@ color: var(--vivid-magenta);
   .imagen-productos {
     width: 300px;
   }
+/*--------------Create*-----------------------*/
+.create-box {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  margin-top: 20px;
+  background-color: var(--very-dark-gray);
+  border-radius: 8px;
+  border: solid 2px var(--bright-pink);
 }
+
+/*--------------Edit*-----------------------*/
+.edit-box {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  margin-top: 20px;
+  background-color: var(--very-dark-gray);
+  border-radius: 8px;
+  border: solid 2px var(--bright-pink);
+}
+.edit {
+  width: 100%;
+  margin: 0;
+  border-radius: 8px;
+  border: none;
+}
+}
+
 /*==============================RESPONSE DESING TABLET==============================*/
 @media screen and (min-width: 481px) and (max-width: 768px) {
   header input {
@@ -1413,17 +1444,6 @@ color: var(--vivid-magenta);
   }
 }
 
-/*==============================RESPONSE DESING ESCRITORIO BIG==============================*/
-@media screen and (min-width: 1267px) {
-  .apartados {
-    height: max-content;
-  }
-  .profileIMG {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-}
 
 /*==============================Validaciones==============================*/
 .errores {
