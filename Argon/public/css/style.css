@@ -994,7 +994,7 @@ justify-content: space-evenly;
   border: var(--bright-pink) 2px solid;
   border-radius: 2rem;
   width: 250px;
-  height: 400px;
+  height: 20%;
   margin: 10px;
   background-color: var(--mostly-black);
 }
@@ -1008,7 +1008,7 @@ justify-content: space-evenly;
 .card-image img {
   border-radius: 2rem 2rem 0 0;
   width: 100%;
-  height: 20%;
+  height: 15rem;
   background-color: var(--white);
 }
 .card p {
